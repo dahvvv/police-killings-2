@@ -21,6 +21,16 @@ body {
   top: 8em;
 }
 
+#display-container {
+	position: absolute;
+  height: 65%; /* for main view */
+/*  height: 73%; */ /* for state view */
+  width: 69%;
+  top: 0%;
+  left: 15.5%;
+  background: black;
+}
+
 #weights-container {
 	position: absolute;
   height: 35em;
