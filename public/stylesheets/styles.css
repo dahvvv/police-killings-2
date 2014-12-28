@@ -14,6 +14,21 @@ body {
   padding: 0px;
 }
 
+#filters-container {
+	position: relative;
+  height: 35em;
+  width: 15%;
+  top: 8em;
+}
+
+#weights-container {
+	position: absolute;
+  height: 35em;
+  width: 15%;
+  top: 8em;
+  right: 0;
+}
+
 #program {
 	position: absolute;
   height: 27%;
