@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <script src="/javascripts/lib/jquery.js"></script>
+    <script src="/javascripts/lib/underscore.js"></script>
+    <script src="/javascripts/lib/backbone.js"></script>
+    <script language="javascript" src="/javascripts/lib/jit.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+    <script src="/javascripts/lib/heatmap.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+    <%= erb :_popup_template %>
+
+    <title>Police Killings</title>
+
+  </head>
+  <body>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.0/leaflet-heat.js'></script>
+    <script src="/javascripts/models/Killing.js"></script>
+
+    <%= yield %>
+    
+  </body>
+</html>
