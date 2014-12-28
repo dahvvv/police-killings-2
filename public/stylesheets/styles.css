@@ -5,3 +5,29 @@ body {
   height: 100%;
   font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
+
+#container {
+  position: relative;
+  height: 43em;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#program {
+	position: absolute;
+  height: 27%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.program-text {
+  text-align: center;
+  position: relative;
+  font-size: 1.5em;
+  color: #101535;
+  opacity: 0.8;
+  letter-spacing: 1.5px;
+  padding: 0 5em;
+}
