@@ -31,3 +31,29 @@ body {
   letter-spacing: 1.5px;
   padding: 0 5em;
 }
+
+.popup-container {
+  background-color: #c8cdcf;
+  border-radius: 15px;
+  font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.popup-img {
+  max-width: 500px;
+  max-height: 300px;
+}
+
+.tip {
+    color: #111;
+    width: 139px;
+    background-color: white;
+    border:1px solid #ccc;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    padding:17px;
+    border-radius: 5px;
+    font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+}
