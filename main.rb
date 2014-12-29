@@ -9,6 +9,8 @@ get '/' do
 end
 
 get '/api' do
+	content_type :json
+  Killing.all.to_json
 end
 
 get '/console' do
