@@ -64,6 +64,32 @@ function filterData(choosers){
 	}
 };
 
+function filterHeatmap(choosers){
+  if (choosers.weight === "none"){
+    return filterHeatmapWeightNone(choosers);
+  }
+};
+
+function filterHeatmapWeightNone(choosers){
+  if (choosers.filter === "usPop"){
+    return allKillings;
+  } else if (choosers.filter === "race"){
+    var checkedBoxes = $('#race-selection').children('input:checked');
+    var races = $(checkedBoxes).map(function(){
+      return this.name;
+    })
+    .get();
+    var arr = [];
+    $.each(races, function(i,val){
+      var filtered = allKillings.filter(function(el){
+        return el.victim_race === val;
+      });
+      arr = arr.concat(filtered);
+    });
+    return arr;
+  }
+};
+
 function filterMarkermap(choosers){
 	if (choosers.weight === "none"){
 		return filterMarkermapWeightNone(choosers);

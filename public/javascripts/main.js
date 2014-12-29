@@ -14,14 +14,13 @@ $(function(){
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
-  $('.chooser').on('click', function(){
+  $('.chooser').on('click', function(e){
+    e.preventDefault();
     replaceChooser(this, function(){
       var choosers = detectChoosers();
       var data = filterData(choosers);
       updateDisplay(data, choosers);
-    //     replaceDisplay().then(function(){
-    //       replaceProgram();
-    //     })
+        // replaceProgram();
     })
   });
 
@@ -35,6 +34,4 @@ $(function(){
     }
   });
 
-  var killingList = new KillingList();
-  killingList.fetch();
 });
