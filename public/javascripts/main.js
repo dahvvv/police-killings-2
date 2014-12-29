@@ -3,11 +3,12 @@ L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd
 var defaultLat = 37.78808138412046;
 var defaultLon = -94.39453125;
 var defaultZoom = 4;
+var geoLayer;
+var heatLayer;
+var graph;
 
-function updateDisplay(data, choosers){
-  console.log(choosers);
-  // var data = data(choosers);
-  // processDisplay(choosers, data);
+function filterData(choosers){
+  return [1,2,3,4,5,"hooray!"];
 };
 
 $(function(){
