@@ -83,24 +83,22 @@ function addGeoLayer(geoData){
       return L.circleMarker(latlng);
     },
     style: function(feature){
-    	if (feature.properties.filter === "usPop"){
-    		if (feature.properties.weight === "none"){
-    			return styleMarkerFilterPopWeightNone(feature);
-    		}
-    	}
+      if (feature.properties.filter === "usPop"){
+        if (feature.properties.weight === "none"){
+          return styleMarkerFilterPopWeightNone(feature);
+        }
+      }
     },
     onEachFeature: function(feature,layer){
-      // var template = _.template($('#popup-template').html());
-      // var popupContent = template(feature.properties);
-      var popupContent = feature.properties.popupContent;
+      // var popupContent = feature.properties.popupContent;
+      var template = _.template($('#popup-template').html());
+      var popupContent = template(feature.properties);
       layer.bindPopup(popupContent, {
         maxHeight: 400,
         maxWidth: 700
       });
-      // layer.bindPopup(template(feature.properties));
     }
   });
-  debugger;
   if ($('#map-one').css('display') === "none") {
     // $('#infovis-canvaswidget').remove();
     // $('#map-one').slideToggle(750, function(e){

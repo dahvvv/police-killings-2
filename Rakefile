@@ -7,7 +7,6 @@ require 'csv'
 require_relative 'connection'
 require_relative 'models/killing'
 
-
 namespace :db do
 
   def urlencode(str)
@@ -194,7 +193,10 @@ namespace :db do
       data_from = csv[19]
       formatted_address = csv[20]
       lat = csv[21]
-      lon = csv[22]
+      lng = csv[22]
+      popupName = v_name != nil ? v_name : ""
+      popupAge = v_age != nil ? "  " + v_age.to_s : ""
+      popupContent = "<div class='popup-container'><h4>" + popupName + "</h4></div>"
 
       Killing.create(
         victim_name: v_name,
@@ -219,7 +221,8 @@ namespace :db do
         data_from: data_from,
         formatted_address: formatted_address,
         lat: lat,
-        lng: lon
+        lng: lng,
+        popupContent: popupContent
         )
     end
   end
