@@ -1,11 +1,7 @@
 function filterData(choosers){
-	if (choosers.displaySelector === "heatmap"){
-		return filterHeatmap(choosers);
-	} else if (choosers.displaySelector === "marker"){
-		return filterMarkermap(choosers);
-	} else if (choosers.displaySelector === "graph"){
-		return filterGraph(choosers);
-	}
+  if (choosers.weight === "none"){
+    return filterWeightNone(choosers);
+  }
 };
 
 function filterByRace(){
@@ -33,13 +29,7 @@ function filterByAge(){
   return arr;
 };
 
-function filterHeatmap(choosers){
-  if (choosers.weight === "none"){
-    return filterHeatmapWeightNone(choosers);
-  }
-};
-
-function filterHeatmapWeightNone(choosers){
+function filterWeightNone(choosers){
   if (choosers.filter === "usPop"){
     return allKillings;
   } else if (choosers.filter === "race"){
@@ -47,16 +37,4 @@ function filterHeatmapWeightNone(choosers){
   } else if (choosers.filter === "age"){
     return filterByAge();
   }
-};
-
-function filterMarkermap(choosers){
-	if (choosers.weight === "none"){
-		return filterMarkermapWeightNone(choosers);
-	}
-};
-
-function filterMarkermapWeightNone(choosers){
-	if (choosers.filter === "usPop"){
-		return allKillings;
-	}
 };
