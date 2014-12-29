@@ -4,6 +4,12 @@ var defaultLat = 37.78808138412046;
 var defaultLon = -94.39453125;
 var defaultZoom = 4;
 
+function updateDisplay(data, choosers){
+  console.log(choosers);
+  // var data = data(choosers);
+  // processDisplay(choosers, data);
+};
+
 $(function(){
 
   map = L.mapbox.map('map-one', 'marpborxmarrrpborrrrrx.kg7bjg5l', {
@@ -14,11 +20,22 @@ $(function(){
   $('.chooser').on('click', function(){
     replaceChooser(this, function(){
       var choosers = detectChoosers();
+      var data = filterData(choosers);
+      updateDisplay(data, choosers);
     //     replaceDisplay().then(function(){
     //       replaceProgram();
     //     })
-      console.log(choosers);
     })
+  });
+
+  $.ajax({
+    url: '/api',
+    dataType: 'JSON',
+    success: function(data){
+      allKillings = data;
+      var choosers = detectChoosers();
+      updateDisplay(allKillings, choosers);
+    }
   });
 
   var killingList = new KillingList();
