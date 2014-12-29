@@ -1,5 +1,10 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd3ZZIn0.VNcoUZ2TFXUuID8JQ2-t2A';
 
+function replaceProgram(choosers){
+  var program = programs[choosers.displaySelector][choosers.filter][choosers.weight];
+  $('#program').html(program);
+};
+
 var defaultLat = 37.78808138412046;
 var defaultLon = -94.39453125;
 var defaultZoom = 4;
@@ -20,7 +25,7 @@ $(function(){
       var choosers = detectChoosers();
       var data = filterData(choosers);
       updateDisplay(data, choosers);
-        // replaceProgram();
+      replaceProgram(choosers);
     })
   });
 
