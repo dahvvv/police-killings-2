@@ -10,22 +10,9 @@ function makeHeatmap(data, choosers){
     var lng = elem.lng;
     coords.push([lat,lng]);
   });
-  while (map.hasLayer(geoLayer)) {
-    map.removeLayer(geoLayer);
-  };
-  while (map.hasLayer(heatLayer)) {
-    map.removeLayer(heatLayer);
-  };
+  removeExistingMaps();
   var stateView = $('#state-filter').val();
-  if (stateView === null || stateView === "USA"){
-  	$('#display-and-selectors').animate({"height":"31em"},100);
-    $('#program').animate({"height":"17%"},100);   
-    map.setView([defaultLat,defaultLon],defaultZoom);
-  } else {
-  	$('#display-and-selectors').animate({"height":"31em"},100);
-    $('#program').animate({"height":"17%"},500);   
-    setMapToStateView(stateView);
-  };
+  setMapView(stateView);
   heatLayer = L.heatLayer(coords, {
     radius: 27,
     gradient: selectGradient(stateView),

@@ -7,10 +7,6 @@ var geoLayer;
 var heatLayer;
 var graph;
 
-function filterData(choosers){
-  return [1,2,3,4,5,"hooray!"];
-};
-
 $(function(){
 
   map = L.mapbox.map('map-one', 'marpborxmarrrpborrrrrx.kg7bjg5l', {

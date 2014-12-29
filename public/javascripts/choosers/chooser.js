@@ -53,3 +53,25 @@ function detectWeight(){
     return "arrests";
   };
 };
+
+function filterData(choosers){
+	if (choosers.displaySelector === "heatmap"){
+		return filterHeatmap(choosers);
+	} else if (choosers.displaySelector === "marker"){
+		return filterMarkermap(choosers);
+	} else if (choosers.displaySelector === "graph"){
+		return filterGraph(choosers);
+	}
+};
+
+function filterMarkermap(choosers){
+	if (choosers.weight === "none"){
+		return filterMarkermapWeightNone(choosers);
+	}
+};
+
+function filterMarkermapWeightNone(choosers){
+	if (choosers.filter === "usPop"){
+		return allKillings;
+	}
+};
