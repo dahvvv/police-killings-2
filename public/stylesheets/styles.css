@@ -62,7 +62,6 @@ select.button-filter {
 }
 
 #display-and-selectors {
-  background: green;
   position: relative;
   height: 31em;
   width: 70%;
@@ -70,24 +69,32 @@ select.button-filter {
 }
 
 #display-container {
-  height: 87%;
+  height: 89%;
   width: 100%;
   background: black;
 }
 
 #selectors-container {
-/*  display: inline;
+  height: 11%;
   position: absolute;
-  border: none;
+  width: 100%;
+/*  z-index: 2;*/
+}
+
+#selectors-container .chooser {
+  display: inline;
   font-size: 1.3em;
+  height: 100%;
+  width: 33%;
+  padding: 0;
+  margin: 0;
   letter-spacing: 2px;
-  border-radius: 6px;
-  height: 8%;
-  width: 23%;
-  top: 65%;
-  background-color: rgba(136,123,107,0.4);
-  cursor: pointer;
-  z-index: 2;*/
+}
+
+#selectors-container .display-selector.display-type {
+  background-color: rgba(136,123,107,0.8);
+  font-size: 1.6em;
+  color: black;
 }
 
 #weights-container {
@@ -104,7 +111,6 @@ select.button-filter {
   width: 70%;
   bottom: 0;
   left: 15%;
-  background: blue;
 }
 
 .program-text {
