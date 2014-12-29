@@ -28,12 +28,16 @@ function replaceWeight(weight){
   };  
 };
 
+var defaultLat = 37.78808138412046;
+var defaultLon = -94.39453125;
+var defaultZoom = 4;
+
 $(function(){
   map = L.mapbox.map('map-one', 'marpborxmarrrpborrrrrx.kg7bjg5l', {
     scrollWheelZoom: true,
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
-  
+
 	$('.chooser').on('click', function(){
 		if ($(this).hasClass('button-filter')) {
 			replaceFilter(this);
