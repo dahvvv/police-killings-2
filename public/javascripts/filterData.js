@@ -1,6 +1,8 @@
 function filterData(choosers){
   if (choosers.weight === "none"){
     return filterWeightNone(choosers);
+  } else if (choosers.weight === "usPop"){
+    return filterWeightUspop(choosers);
   }
 };
 
@@ -53,3 +55,11 @@ function filterAgeWeightNone(choosers){
     return filterAgeNotNil();
   }
 };
+
+function filterWeightUspop(choosers){
+  if (choosers.filter === "usPop"){
+    alert('u must have picked a graph??  check filterData');
+  } else if (choosers.filter === "race"){
+    return filterByRace();
+  }
+}

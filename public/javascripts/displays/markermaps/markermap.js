@@ -90,6 +90,8 @@ function addGeoLayer(geoData){
       } else if (feature.properties.filter === "race"){
         if (feature.properties.weight === "none"){
           return styleMarkerFilterRaceWeightNone(feature);
+        } else if (feature.properties.weight === "usPop"){
+          return styleMarkerFilterRaceWeightUspop(feature);
         }
       } else if (feature.properties.filter === "age"){
         if (feature.properties.weight === "none"){
