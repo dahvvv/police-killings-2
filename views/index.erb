@@ -13,7 +13,14 @@
         <input type="checkbox" id="select-other" name="other" value="other" checked />Other<br>
         <input class="race-selection-submit chooser button-filter" type="submit" value="Enter" />
       </form>
-			<button class="chooser button-filter" id="age-filter">Age</button>
+			<button class="chooser-listview button-filter" id="age-filter">Age</button>
+			<form id="age-range">
+        <label for="age-min">Age Min:</label>
+        <input type="text" id="age-min" name="age-min" />
+        <label for="age-max">Age Max:</label>
+        <input type="text" id="age-max" name="age-max" />
+        <input class="age-range-submit chooser button-filter" type="submit" />
+      </form>
 			<button class="chooser button-filter" id="unarmed">Armed</button>
 		</div>
 

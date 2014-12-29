@@ -106,10 +106,28 @@ select.button-filter {
   display: none;
 }
 
+#age-range {
+  display: none;
+}
+
+#age-range input, label {
+  margin: 0.5em 1em;
+}
+
+#age-range input {
+  width: 17%;
+  margin-left: 0;
+}
+
 .race-selection-submit {
   position: absolute;
   top: 64%;
   right: 10%;
+}
+
+#age-range .age-range-submit {
+  width: 80px;
+  margin: 4% 10% 8%;
 }
 
 #display-and-selectors {
