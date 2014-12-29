@@ -11,6 +11,23 @@ function replaceFilter(filter){
   $(filter).addClass('filter-type');
 };
 
+function replaceSelector(selector){
+  if (selector.id != "heatmaps-selector"){
+    $('#age-range').children().css({"display":"none"});
+  };
+  $('.display-selector').removeClass('display-type');
+  $(selector).addClass('display-type');
+};
+
+function replaceWeight(weight){
+  if ($(weight).hasClass('weight-type')) {
+    $(weight).removeClass('weight-type');
+  } else {
+    $('.button-weight').removeClass('weight-type');
+    $(weight).addClass('weight-type');
+  };  
+};
+
 $(function(){
 	$('.chooser').on('click', function(){
 		if ($(this).hasClass('button-filter')) {

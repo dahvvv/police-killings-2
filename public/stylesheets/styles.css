@@ -114,6 +114,13 @@ select.button-filter {
   right: 0;
 }
 
+.button-weight.weight-type {
+  background-color: rgba(136,123,107,0.6);
+  font-size: 1.3em;
+  height: 11%;
+  color: black;
+}
+
 #program {
 	position: fixed;
   height: 17%;
