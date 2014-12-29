@@ -1,15 +1,5 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd3ZZIn0.VNcoUZ2TFXUuID8JQ2-t2A';
 
-function replaceChooser(chooser, callback){
-  if ($(chooser).hasClass('button-filter')) {
-    replaceFilter(chooser, callback);
-  } else if ($(chooser).hasClass('display-selector')) {
-    replaceSelector(chooser, callback);
-  } else if ($(chooser).hasClass('button-weight')) {
-    replaceWeight(chooser, callback);
-  };
-};
-
 function replaceFilter(filter, callback){
   if (filter.id != "age-filter") {
     $('#age-range').children().css({"display":"none"});
