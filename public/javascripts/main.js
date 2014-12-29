@@ -1,6 +1,16 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd3ZZIn0.VNcoUZ2TFXUuID8JQ2-t2A';
 
-function replaceFilter(filter){
+function replaceChooser(chooser, callback){
+  if ($(chooser).hasClass('button-filter')) {
+    replaceFilter(chooser, callback);
+  } else if ($(chooser).hasClass('display-selector')) {
+    replaceSelector(chooser, callback);
+  } else if ($(chooser).hasClass('button-weight')) {
+    replaceWeight(chooser, callback);
+  };
+};
+
+function replaceFilter(filter, callback){
   if (filter.id != "age-filter") {
     $('#age-range').children().css({"display":"none"});
   };
@@ -9,23 +19,26 @@ function replaceFilter(filter){
   };
   $('.button-filter').removeClass('filter-type');
   $(filter).addClass('filter-type');
+  callback();
 };
 
-function replaceSelector(selector){
+function replaceSelector(selector, callback){
   if (selector.id != "heatmaps-selector"){
     $('#age-range').children().css({"display":"none"});
   };
   $('.display-selector').removeClass('display-type');
   $(selector).addClass('display-type');
+  callback();
 };
 
-function replaceWeight(weight){
+function replaceWeight(weight, callback){
   if ($(weight).hasClass('weight-type')) {
     $(weight).removeClass('weight-type');
   } else {
     $('.button-weight').removeClass('weight-type');
     $(weight).addClass('weight-type');
   };  
+  callback();
 };
 
 var defaultLat = 37.78808138412046;
@@ -33,18 +46,23 @@ var defaultLon = -94.39453125;
 var defaultZoom = 4;
 
 $(function(){
+
   map = L.mapbox.map('map-one', 'marpborxmarrrpborrrrrx.kg7bjg5l', {
     scrollWheelZoom: true,
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
-	$('.chooser').on('click', function(){
-		if ($(this).hasClass('button-filter')) {
-			replaceFilter(this);
-		} else if ($(this).hasClass('display-selector')) {
-			replaceSelector(this);
-		} else if ($(this).hasClass('button-weight')) {
-			replaceWeight(this);
-		};
-	});
+  $('.chooser').on('click', function(){
+    replaceChooser(this, function(){
+    //   detectChoosers().then(function(){
+    //     replaceDisplay().then(function(){
+    //       replaceProgram();
+    //     })
+    //   })
+    alert('callback!');
+    })
+  });
+
+  var killingList = new KillingList();
+  killingList.fetch();
 })
