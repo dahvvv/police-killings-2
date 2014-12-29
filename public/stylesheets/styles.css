@@ -6,45 +6,73 @@ body {
   font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
 
+button {
+  color: #101535;
+  font-family: 'Oswald';
+}
+
 #container {
   position: relative;
-  height: 43em;
-  width: 100%;
+/*  height: 43em;
+*/  width: 100%;
   margin: 0px;
   padding: 0px;
+  height: 100%;
 }
 
 #filters-container {
-	position: relative;
-  height: 35em;
+	position: absolute;
+  height: 98%;
   width: 15%;
-  top: 8em;
+  top: 22%;
+  background: red;
+}
+
+#display-and-selectors {
+  background: green;
+  position: relative;
+  height: 31em;
+  width: 70%;
+  left: 15%;
 }
 
 #display-container {
-	position: absolute;
-  height: 65%; /* for main view */
-/*  height: 73%; */ /* for state view */
-  width: 69%;
-  top: 0%;
-  left: 15.5%;
+  height: 87%;
+  width: 100%;
   background: black;
+}
+
+#selectors-container {
+/*  display: inline;
+  position: absolute;
+  border: none;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  height: 8%;
+  width: 23%;
+  top: 65%;
+  background-color: rgba(136,123,107,0.4);
+  cursor: pointer;
+  z-index: 2;*/
 }
 
 #weights-container {
 	position: absolute;
-  height: 35em;
+  height: 98%;
   width: 15%;
-  top: 8em;
+  top: 22%;
   right: 0;
+  background: red;
 }
 
 #program {
-	position: absolute;
-  height: 27%;
-  width: 100%;
+	position: fixed;
+  height: 17%;
+  width: 70%;
   bottom: 0;
-  left: 0;
+  left: 15%;
+  background: blue;
 }
 
 .program-text {
@@ -54,7 +82,7 @@ body {
   color: #101535;
   opacity: 0.8;
   letter-spacing: 1.5px;
-  padding: 0 5em;
+  margin: 1.5em;
 }
 
 .popup-container {
