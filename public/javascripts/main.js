@@ -24,6 +24,8 @@ $(function(){
     replaceChooser(this, function(){
       var choosers = detectChoosers();
       var data = filterData(choosers);
+      updateChooserListviews(choosers);
+      updateWeightVisibility(choosers);
       updateDisplay(data, choosers);
       replaceProgram(choosers);
     })

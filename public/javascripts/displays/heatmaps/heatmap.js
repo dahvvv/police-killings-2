@@ -27,5 +27,5 @@ function makeHeatmap(data, choosers){
 		alert('see commented out stuff and learn to replace graph with map');
   } else {
     heatLayer.addTo(map);
-  }
+  };
 };

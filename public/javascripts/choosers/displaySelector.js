@@ -3,3 +3,4 @@ function replaceSelector(selector, callback){
   $(selector).addClass('display-type');
   callback();
 };
+

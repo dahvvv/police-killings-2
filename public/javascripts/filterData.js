@@ -24,7 +24,14 @@ function filterByAge(){
   var min = $('#age-min').val();
   var max = $('#age-max').val();
   arr = allKillings.filter(function(el){
-    return el.victim_age>=min && el.victim_age<=max;
+    return el.victim_age >= min && el.victim_age <= max;
+  });
+  return arr;
+};
+
+function filterAgeNotNil(){
+  arr = allKillings.filter(function(el){
+    return el.victim_age != null;
   });
   return arr;
 };
@@ -35,6 +42,14 @@ function filterWeightNone(choosers){
   } else if (choosers.filter === "race"){
     return filterByRace();
   } else if (choosers.filter === "age"){
+    return filterAgeWeightNone(choosers);
+  }
+};
+
+function filterAgeWeightNone(choosers){
+  if (choosers.displaySelector === "heatmap"){
     return filterByAge();
+  } else if (choosers.displaySelector === "marker"){
+    return filterAgeNotNil();
   }
 };

@@ -87,6 +87,14 @@ function addGeoLayer(geoData){
         if (feature.properties.weight === "none"){
           return styleMarkerFilterPopWeightNone(feature);
         }
+      } else if (feature.properties.filter === "race"){
+        if (feature.properties.weight === "none"){
+          return styleMarkerFilterRaceWeightNone(feature);
+        }
+      } else if (feature.properties.filter === "age"){
+        if (feature.properties.weight === "none"){
+          return styleMarkerFilterAgeWeightNone(feature);
+        };
       }
     },
     onEachFeature: function(feature,layer){
