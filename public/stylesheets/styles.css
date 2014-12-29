@@ -51,7 +51,16 @@ body {
 select.button-filter {
   color: #101535;
   font-family: 'Oswald';
-  height: 2.2em;
+  display: block;
+  height: 42px;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(136,123,107,0.2);
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
 .button-filter.filter-type {
