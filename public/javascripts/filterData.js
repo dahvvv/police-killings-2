@@ -24,6 +24,15 @@ function filterByRace(){
   return arr;
 };
 
+function filterByAge(){
+  var min = $('#age-min').val();
+  var max = $('#age-max').val();
+  arr = allKillings.filter(function(el){
+    return el.victim_age>=min && el.victim_age<=max;
+  });
+  return arr;
+};
+
 function filterHeatmap(choosers){
   if (choosers.weight === "none"){
     return filterHeatmapWeightNone(choosers);
@@ -35,6 +44,8 @@ function filterHeatmapWeightNone(choosers){
     return allKillings;
   } else if (choosers.filter === "race"){
     return filterByRace();
+  } else if (choosers.filter === "age"){
+    return filterByAge();
   }
 };
 
