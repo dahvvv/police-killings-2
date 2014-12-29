@@ -83,6 +83,15 @@ select.button-filter {
   background: black;
 }
 
+.map {
+  position: absolute;
+  height: 89%; /* for main view */
+/*  height: 73%; */ /* for state view */
+  width: 100%;
+  top: 0;
+  background: black;
+}
+
 #selectors-container {
   height: 11%;
   position: absolute;

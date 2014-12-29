@@ -1,4 +1,4 @@
-console.log('connected');
+L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd3ZZIn0.VNcoUZ2TFXUuID8JQ2-t2A';
 
 function replaceFilter(filter){
   if (filter.id != "age-filter") {
@@ -29,6 +29,11 @@ function replaceWeight(weight){
 };
 
 $(function(){
+  map = L.mapbox.map('map-one', 'marpborxmarrrpborrrrrx.kg7bjg5l', {
+    scrollWheelZoom: true,
+    draggable: true
+  }).setView([defaultLat,defaultLon],defaultZoom);
+  
 	$('.chooser').on('click', function(){
 		if ($(this).hasClass('button-filter')) {
 			replaceFilter(this);
