@@ -101,7 +101,7 @@ select.button-filter {
   color: black;
 }
 
-#race-selection {
+.filter-checkbox-form {
   margin: 0.5em 1em;
   display: none;
 }
