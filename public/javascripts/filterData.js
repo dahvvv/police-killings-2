@@ -62,4 +62,4 @@ function filterWeightUspop(choosers){
   } else if (choosers.filter === "race"){
     return filterByRace();
   }
-}
+};
