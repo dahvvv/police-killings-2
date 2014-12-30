@@ -58,7 +58,7 @@ function filterAgeWeightNone(choosers){
 
 function filterWeightUspop(choosers){
   if (choosers.filter === "usPop"){
-    alert('u must have picked a graph??  check filterData');
+    return allKillings;
   } else if (choosers.filter === "race"){
     return filterByRace();
   }

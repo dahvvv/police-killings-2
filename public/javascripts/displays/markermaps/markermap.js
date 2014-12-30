@@ -110,11 +110,10 @@ function addGeoLayer(geoData){
     }
   });
   if ($('#map-one').css('display') === "none") {
-    // $('#infovis-canvaswidget').remove();
-    // $('#map-one').slideToggle(750, function(e){
-    //   geoLayer.addTo(map);
-    // });
-		alert('see commented out stuff and learn to replace graph with map');
+    $('#display-container-canvaswidget').remove();
+    $('#map-one').slideToggle(750, function(e){
+      geoLayer.addTo(map);
+    });
   } else {
     geoLayer.addTo(map);
   }
