@@ -228,7 +228,7 @@ function styleGraphFilterGenderWeightNone(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = elem.label + ":  " + elem.value + " deaths by police.";
+        tip.innerHTML =  elem.value + " victims of police shootings are " + elem.label;
       }
     },
   };
