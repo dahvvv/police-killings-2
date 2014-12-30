@@ -15,6 +15,8 @@ function updateWeightVisibility(choosers){
 			$('.button-weight').css({'display':'none'});
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
+		} else {
+			removeAllWeights();
 		}
 	} else if (choosers['displaySelector'] === "graph"){
 		if (choosers['filter'] === "usPop"){
@@ -26,14 +28,15 @@ function updateWeightVisibility(choosers){
 			$('.button-weight').css({'display':'none'});
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
-		} else if (choosers['filter'] === "age"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
-			$('#usPop-weight').css({'display':'block'});
-			$('#arrests-weight').css({'display':'block'});
+		} else {
+			removeAllWeights();
 		}
 	} else {
-		$('.button-header').css({'display':'none'});
-		$('.button-weight').css({'display':'none'});
+		removeAllWeights();
 	}
+};
+
+function removeAllWeights(){
+	$('.button-header').css({'display':'none'});
+	$('.button-weight').css({'display':'none'});
 };

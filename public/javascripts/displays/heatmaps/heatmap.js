@@ -1,7 +1,3 @@
-function setMapToStateView(state){
-	alert('make setMapToStateView');
-};
-
 function makeHeatmap(data, choosers){
 	var coords = [];
 	var numDatapoints = data.length;

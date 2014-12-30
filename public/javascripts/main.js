@@ -31,6 +31,13 @@ $(function(){
     })
   });
 
+  $('#state-selector').on('change', function(e){
+    e.preventDefault();
+    var choosers = detectChoosers();
+    var data = filterData(choosers);
+    updateDisplay(data, choosers);
+  });
+
   $.ajax({
     url: '/api',
     dataType: 'JSON',

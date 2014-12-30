@@ -16,7 +16,7 @@ var programs = {
       none: "<p class='program-text'>Click on a dot or zoom in for more information.</p>"
     },
     age: {
-      none: "<p class='program-text' style='top:-0.8em'>A point's size and brightness represent its distance from the standard deviation.<br>An unusual amount of very young or very old people have been killed in Texas and Arkansas.</p>"
+      none: "<p class='program-text' style='top:-0.8em'>A point's size and brightness represent its distance from the standard deviation.<br>An unusual amount of very young or very old people have been killed in Texas, Oklahoma, and Arkansas.</p>"
     },
     race: {
       none: "<p class='program-text' style='top:-0.8em'>The racial distribution of people killed by police<br>in the United States.</p>",
