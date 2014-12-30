@@ -29,7 +29,9 @@ function detectFilter(){
     return "age";
   } else if (filter==="state-filter") {
     return "state";
-  };
+  } else if (filter==="gender-filter") {
+    return "gender";
+  }
 };
 
 function detectDisplaySelector(){

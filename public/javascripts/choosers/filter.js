@@ -9,6 +9,11 @@ function replaceFilter(filter, callback){
   } else {
     $('#age-range').css({"display":"none"});
   };
+  if ($(filter).hasClass('gender-selection-submit')) {
+    var filter = $('#gender-filter');
+  } else {
+    $('#gender-selection').css({"display":"none"});
+  };
   $('.button-filter').removeClass('filter-type');
   $(filter).addClass('filter-type');
   callback();

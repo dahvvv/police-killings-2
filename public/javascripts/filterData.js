@@ -31,6 +31,22 @@ function filterByAge(){
   return arr;
 };
 
+function filterByGender(){
+  var checkedBoxes = $('#gender-selection').children('input:checked');
+  var genders = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(genders, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      return el.victim_gender === val;
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
+
 function filterAgeNotNil(){
   arr = allKillings.filter(function(el){
     return el.victim_age != null;
@@ -45,6 +61,8 @@ function filterWeightNone(choosers){
     return filterByRace();
   } else if (choosers.filter === "age"){
     return filterAgeWeightNone(choosers);
+  } else if (choosers.filter === "gender"){
+    return filterByGender();
   }
 };
 

@@ -9,6 +9,9 @@ var programs = {
     race: {
       none: "<p class='program-text' style='top:-0.8em'>This heatmap is scaled to present a constant population size,<br>in order to emphasize differences in location.</p>",
       usPop: "This heatmap is scaled to present a constant population size,<br>in order to emphasize differences in location.</p>"
+    },
+    gender: {
+      none: "<p class='program-text'>Gender Heatmap</p>"
     }
   },
   marker: {
