@@ -4,7 +4,7 @@ function emptyGraph(choosers){
       makeGraph(choosers);
     });
   } else {
-    $('#infovis-canvaswidget').remove();
+    $('#display-container-canvaswidget').remove();
     makeGraph(choosers);
   }
 };
