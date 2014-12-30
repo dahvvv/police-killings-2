@@ -33,7 +33,7 @@ function styleGraphFilterPopWeightNone(){
 
 function styleGraphFilterPopWeightUspop(){
   var style = {
-    injectInto: 'infovis',
+    injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
     barsOffset: 10,
@@ -66,7 +66,7 @@ function styleGraphFilterPopWeightUspop(){
 
 function styleGraphFilterRaceWeightNone(){
   var style = {
-    injectInto: 'infovis',
+    injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
     barsOffset: 10,
@@ -99,7 +99,7 @@ function styleGraphFilterRaceWeightNone(){
 
 function styleGraphFilterRaceWeightUspop(){
   var style = {
-    injectInto: 'infovis',
+    injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
     barsOffset: 10,
@@ -132,7 +132,7 @@ function styleGraphFilterRaceWeightUspop(){
 
 function styleGraphFilterRaceWeightArrests(){
   var style = {
-    injectInto: 'infovis',
+    injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
     barsOffset: 10,
@@ -165,7 +165,7 @@ function styleGraphFilterRaceWeightArrests(){
 
 function styleGraphFilterAgeWeightNone(){
   var style = {
-    injectInto: 'infovis',
+    injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
     barsOffset: 0,
