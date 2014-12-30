@@ -3,7 +3,7 @@
 		<div id="filters-container">
 			<button class="chooser button-filter filter-type" id="usPop-filter">Population</button>
 			<%= erb :'_fifty_states_dropdown' %>
-			<button class="chooser-listview button-filter" id="race-filter">Race</button>
+			<button class="chooser chooser-listview button-filter" id="race-filter">Race</button>
 			<form id="race-selection">
         <input type="checkbox" id="select-alaskan" name="alaskan and/or pacific islander" value="alaskan" checked />Alaskan / <br>Pacific Islander<br>
         <input type="checkbox" id="select-asian" name="asian" value="asian" checked />Asian<br>
@@ -13,12 +13,12 @@
         <input type="checkbox" id="select-other" name="other" value="other" checked />Other<br>
         <input class="race-selection-submit chooser button-filter" type="submit" value="Enter" />
       </form>
-			<button class="chooser-listview button-filter" id="age-filter">Age</button>
+			<button class="chooser chooser-listview button-filter" id="age-filter">Age</button>
 			<form id="age-range">
         <label for="age-min">Age Min:</label>
-        <input type="text" id="age-min" name="age-min" />
+        <input type="text" id="age-min" name="age-min" value="0" />
         <label for="age-max">Age Max:</label>
-        <input type="text" id="age-max" name="age-max" />
+        <input type="text" id="age-max" name="age-max" value="107" />
         <input class="age-range-submit chooser button-filter" type="submit" value="Enter" />
       </form>
 			<button class="chooser button-filter" id="unarmed">Armed</button>
