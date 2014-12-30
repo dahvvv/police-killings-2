@@ -4,7 +4,7 @@ function updateDisplay(data, choosers){
 	} else if (choosers.displaySelector === "marker") {
 		makeMarkermap(data, choosers);
 	} else if (choosers.displaySelector === "graph") {
-		makeGraph(data, choosers);
+		emptyGraph(choosers);
 	};
 };
 

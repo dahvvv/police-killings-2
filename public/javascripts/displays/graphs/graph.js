@@ -1,8 +1,66 @@
-var labelType, useGradients, nativeTextSupport, animate;
-
-function makeGraph(data, choosers){
-	
+function emptyGraph(choosers){
+  if ($('#map-one').css('display') != "none") {
+    $('#map-one').slideToggle(750, function(e){
+      makeGraph(choosers);
+    });
+  } else {
+    $('#infovis-canvaswidget').remove();
+    makeGraph(choosers);
+  }
 };
+
+function makeGraph(choosers){
+	var graphData = selectGraphData(choosers);
+  var graphStyle = selectGraphStyle(choosers);
+  var graph = new $jit.BarChart(graphStyle);
+  graph.loadJSON(graphData);
+};
+
+function selectGraphData(choosers){
+	if (choosers['filter'] === "usPop"){
+		if (choosers['weight'] === "none"){
+			return dataGraphFilterPopWeightNone();
+		} else if (choosers['weight'] === "usPop"){
+			return dataGraphFilterPopWeightUspop();
+		}
+	} else if (choosers['filter'] === "race"){
+		if (choosers['weight'] === "none"){
+			return dataGraphFilterRaceWeightNone();
+		} else if (choosers['weight'] === "usPop"){
+			return dataGraphFilterRaceWeightUspop();
+		} else if (choosers['weight'] === "arrests"){
+			return dataGraphFilterRaceWeightArrests();
+		}
+	} else if (choosers['filter'] === "age"){
+		if (choosers['weight'] === "none"){
+			return dataGraphFilterAgeWeightNone();
+		}
+	}
+};
+
+function selectGraphStyle(choosers){
+	if (choosers['filter'] === "usPop"){
+		if (choosers['weight'] === "none"){
+			return styleGraphFilterPopWeightNone();
+		} else if (choosers['weight'] === "usPop"){
+			return styleGraphFilterPopWeightUspop();
+		}
+	} else if (choosers['filter'] === "race"){
+		if (choosers['weight'] === "none"){
+			return styleGraphFilterRaceWeightNone();
+		} else if (choosers['weight'] === "usPop"){
+			return styleGraphFilterRaceWeightUspop();
+		} else if (choosers['weight'] === "arrests"){
+			return styleGraphFilterRaceWeightArrests();
+		}
+	} else if (choosers['filter'] === "age"){
+		if (choosers['weight'] === "none"){
+			return styleGraphFilterAgeWeightNone();
+		}
+	}
+};
+
+var labelType, useGradients, nativeTextSupport, animate;
 
 $(function(){
 
