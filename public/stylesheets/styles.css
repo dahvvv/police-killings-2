@@ -19,7 +19,7 @@ body {
 	position: absolute;
   height: 95%;
   width: 15%;
-  top: 25%;
+  top: 10%;
 }
 
 input[type=submit] {
@@ -179,7 +179,7 @@ select.button-filter {
 	position: absolute;
   height: 98%;
   width: 15%;
-  top: 22%;
+  top: 10%;
   right: 0;
 }
 
