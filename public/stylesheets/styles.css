@@ -213,7 +213,7 @@ select.button-filter {
   color: #101535;
   opacity: 0.8;
   letter-spacing: 1.5px;
-  margin: 1.5em;
+  margin: 1.5em 0;
 }
 
 .popup-container {
