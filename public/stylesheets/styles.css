@@ -106,7 +106,7 @@ select.button-filter {
   display: none;
 }
 
-.filter-checkbox-form input[type=submit] {
+#race-selection input[type=submit] {
   position: absolute;
   top: 64%;
   right: 10%;
@@ -125,7 +125,12 @@ select.button-filter {
   margin-left: 0;
 }
 
-#age-range .age-range-submit {
+#age-range input[type=submit] {
+  width: 80px;
+  margin: 4% 10% 8%;
+}
+
+#gender-selection input[type=submit] {
   width: 80px;
   margin: 4% 10% 8%;
 }
