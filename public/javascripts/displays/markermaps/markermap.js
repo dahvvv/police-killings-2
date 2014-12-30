@@ -97,6 +97,10 @@ function addGeoLayer(geoData){
         if (feature.properties.weight === "none"){
           return styleMarkerFilterAgeWeightNone(feature);
         };
+      } else if (feature.properties.filter === "gender"){
+        if (feature.properties.weight === "none"){
+          return styleMarkerFilterGenderWeightNone(feature);
+        };
       }
     },
     onEachFeature: function(feature,layer){

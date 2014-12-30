@@ -69,6 +69,16 @@ function styleMarkerFilterAgeWeightNone(feature){
   }
 };
 
+function styleMarkerFilterGenderWeightNone(feature){
+  return {
+    fillColor: genderToFillColor(feature.properties.gender),
+    color: 'black',
+    radius: 7,
+    fillOpacity: 1,
+    opacity: 1,
+  }
+}
+
 function raceToFillColor(race){
   switch (race) {
     case "alaskan and/or pacific islander": return "crimson";
@@ -88,6 +98,13 @@ function raceToFillOpacity(race){
     case "hispanic and/or latin": return 0.8;
     case "white": return 0.4;
     case "other": return 1;
+  }
+};
+
+function genderToFillColor(gender){
+  switch (gender) {
+    case "male": return "lightblue";
+    case "female": return "pink";
   }
 };
 
