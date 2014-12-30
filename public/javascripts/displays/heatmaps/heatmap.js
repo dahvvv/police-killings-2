@@ -20,11 +20,10 @@ function makeHeatmap(data, choosers){
     max: 1
   });
   if ($('#map-one').css('display') === "none") {
-    // $('#infovis-canvaswidget').remove();
-    // $('#map-one').slideToggle(750, function(e){
-    //   heatLayer.addTo(map);
-    // });
-		alert('see commented out stuff and learn to replace graph with map');
+    $('#display-container-canvaswidget').remove();
+    $('#map-one').slideToggle(750, function(e){
+      heatLayer.addTo(map);
+    });
   } else {
     heatLayer.addTo(map);
   };
