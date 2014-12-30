@@ -106,6 +106,12 @@ select.button-filter {
   display: none;
 }
 
+.filter-checkbox-form input[type=submit] {
+  position: absolute;
+  top: 64%;
+  right: 10%;
+}
+
 #age-range {
   display: none;
 }
@@ -117,12 +123,6 @@ select.button-filter {
 #age-range input {
   width: 17%;
   margin-left: 0;
-}
-
-.race-selection-submit {
-  position: absolute;
-  top: 64%;
-  right: 10%;
 }
 
 #age-range .age-range-submit {
