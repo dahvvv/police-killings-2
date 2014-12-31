@@ -68,11 +68,13 @@ var programs = {
       none: "<p class='program-text'>Victims of police shootings were unarmed in over 20% of recorded cases.</p>"
     },
     illness: {
-      none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>"
+      none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>",
+      age: "<p class='program-text' style='top:-3em'>People killed by police while showing clear signs of mental illness<br>tend to be older than people with no signs of mental illness.<br>The average age of a victim with no signs of illness is 33.4 years old.<br>For those victims with mental illness, the average age is 38.5 years old.</p>"
     },
     shots: {
-      none: "<p class='program-text'>Shots Graph</p>",
-      race: "<p class='program-text' style='top:-0.8em'>There appears to be no significant relationship<br>between victim race and number of shots fired.</p>",
+      none: "<p class='program-text' style='top:-0.8em'>Police fired at a victim 20 times or more<br>in over 30 recorded cases.</p>",
+      race: "<p class='program-text' style='top:-0.8em'>There does not appear to be a significant relationship<br>between the number of shots fired by police and the victim's race.</p>",
+      unarmed: "<p class='program-text' style='top:-0.8em'>Whether the victim was armed or not, the average number of shots fired<br>by police remains about the same:  between 5.5 and 6.2 shots.</p>",
     }
   }
 };

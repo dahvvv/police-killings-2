@@ -46,12 +46,16 @@ function selectGraphData(choosers){
 	} else if (choosers['filter'] === "illness"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterIllnessWeightNone();
+		} else if (choosers['weight'] === "age"){
+			return dataGraphFilterIllnessWeightAge();
 		}
 	} else if (choosers['filter'] === "shots"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterShotsWeightNone();
 		} else if (choosers['weight'] === "race"){
 			return dataGraphFilterShotsWeightRace();
+		} else if (choosers['weight'] === "unarmed"){
+			return dataGraphFilterShotsWeightUnarmed();
 		}
 	}
 };
@@ -86,12 +90,16 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "illness"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterIllnessWeightNone();
+		} else if (choosers['weight'] === "age"){
+			return styleGraphFilterIllnessWeightAge();
 		}
 	} else if (choosers['filter'] === "shots"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterShotsWeightNone();
 		} else if (choosers['weight'] === "race"){
 			return styleGraphFilterShotsWeightRace();
+		} else if (choosers['weight'] === "unarmed"){
+			return styleGraphFilterShotsWeightUnarmed();
 		}
 	}
 };
