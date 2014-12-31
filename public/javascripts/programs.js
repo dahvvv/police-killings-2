@@ -53,7 +53,7 @@ var programs = {
       none: "<p class='program-text' style='top:-0.8em'>92.5% of people killed by police are male.<br>7.5% of people killed by police are female.</p>"
     },
     unarmed: {
-      none: "<p class='program-text'>Victims of police shootings are unarmed in over 20% of recorded cases.</p>"
+      none: "<p class='program-text'>Victims of police shootings were unarmed in over 20% of recorded cases.</p>"
     }
   }
 };
