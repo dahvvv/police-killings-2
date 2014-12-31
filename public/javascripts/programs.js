@@ -15,6 +15,9 @@ var programs = {
     },
     unarmed: {
       none: "<p class='program-text'>Unarmed Heatmap</p>"
+    },
+    illness: {
+      none: "<p class='program-text'>Illness Heatmap</p>"
     }
   },
   marker: {
@@ -34,6 +37,9 @@ var programs = {
     },
     unarmed: {
       none: "<p class='program-text' style='top:-0.8em'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>"
+    },
+    illness: {
+      none: "<p class='program-text' style='top:-0.8em'>People killed by the police while exhibiting clear signs of mental illness.<br>(select boxes on the left to see no signs, or both).</p>"
     }
   },
   graph: {
@@ -54,10 +60,9 @@ var programs = {
     },
     unarmed: {
       none: "<p class='program-text'>Victims of police shootings were unarmed in over 20% of recorded cases.</p>"
+    },
+    illness: {
+      none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>"
     }
   }
 };
-
-
-
-// state "View any individual state."

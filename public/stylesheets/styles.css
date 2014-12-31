@@ -140,6 +140,11 @@ select.button-filter {
   margin: 4% 10% 8%;
 }
 
+#illness-selection input[type=submit] {
+  width: 80px;
+  margin: 4% 10% 8%;
+}
+
 #display-and-selectors {
   position: relative;
   height: 31em;

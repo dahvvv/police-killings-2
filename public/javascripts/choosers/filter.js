@@ -19,6 +19,11 @@ function replaceFilter(filter, callback){
   } else {
     $('#unarmed-selection').css({"display":"none"});
   };
+  if ($(filter).hasClass('illness-selection-submit')) {
+    var filter = $('#illness-filter');
+  } else {
+    $('#illness-selection').css({"display":"none"});
+  };
   $('.button-filter').removeClass('filter-type');
   $(filter).addClass('filter-type');
   callback();

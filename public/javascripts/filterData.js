@@ -57,9 +57,29 @@ function filterByUnarmed(){
   $.each(unarmedSelected, function(i,val){
     var filtered = allKillings.filter(function(el){
       if (val === "armed"){
-        return el.victim_unarmed === false
+        return el.victim_unarmed === false;
       } else if (val === "unarmed"){
-        return el.victim_unarmed === true
+        return el.victim_unarmed === true;
+      }
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
+
+function filterByIllness(){
+  var checkedBoxes = $('#illness-selection').children('input:checked');
+  var illnessSelected = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(illnessSelected, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      if (val === "ill"){
+        return el.symptoms_of_mental_illness === "yes";
+      } else if (val === "not-ill"){
+        return el.symptoms_of_mental_illness === "no";
       }
     });
     arr = arr.concat(filtered);
@@ -85,6 +105,8 @@ function filterWeightNone(choosers){
     return filterByGender();
   } else if (choosers.filter === "unarmed"){
     return filterByUnarmed();
+  } else if (choosers.filter === "illness"){
+    return filterByIllness();
   }
 };
 

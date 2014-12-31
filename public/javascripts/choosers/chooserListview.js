@@ -3,6 +3,7 @@ function updateChooserListviews(choosers){
 	var ageDisplay = $('#age-range').css('display');
 	var genderDisplay = $('#gender-selection').css('display');
 	var unarmedDisplay = $('#unarmed-selection').css('display');
+	var illnessDisplay = $('#illness-selection').css('display');
 
 	// if you can't see the racedisplay, and the filter is on race, and the display is not on graph, then show the racedisplay
 	if (raceDisplay === "none"){
@@ -45,6 +46,15 @@ function updateChooserListviews(choosers){
 		}
 	};
 
+	// if you can't see the illnessdisplay, and the filter is on illness, and the display is not on graph, then show the illnessdisplay
+	if (illnessDisplay === "none"){
+		if (choosers['filter'] === "illness"){
+			if (choosers['displaySelector'] != "graph"){
+				$('#illness-selection').css({"display":"block"});
+			}
+		}
+	};
+
 	// if the selector is on graph, hide all displays
 	if (choosers['displaySelector'] === "graph"){
 		$('.filter-checkbox-form, #age-range').css({"display":"none"});
@@ -60,6 +70,8 @@ $(function(){
 			$('#race-selection').css({"display":"block"});
 			$('#age-range').css({"display":"none"});
 			$('#gender-selection').css({"display":"none"});
+			$('#unarmed-selection').css({"display":"none"});
+			$('#illness-selection').css({"display":"none"});
 		};
 	});
 
@@ -70,6 +82,8 @@ $(function(){
 			$('#age-range').css({"display":"block"});
 			$('#race-selection').css({"display":"none"});
 			$('#gender-selection').css({"display":"none"});
+			$('#unarmed-selection').css({"display":"none"});
+			$('#illness-selection').css({"display":"none"});
 		};
 	});
 
@@ -80,6 +94,32 @@ $(function(){
 			$('#gender-selection').css({"display":"block"});
 			$('#race-selection').css({"display":"none"});
 			$('#age-range').css({"display":"none"});
+			$('#unarmed-selection').css({"display":"none"});
+			$('#illness-selection').css({"display":"none"});
+		};
+	});
+
+	$('#unarmed-filter').on('click', function(e){
+		e.preventDefault();
+		var choosers = detectChoosers();
+		if (choosers['displaySelector'] != 'graph'){
+			$('#unarmed-selection').css({"display":"block"});
+			$('#race-selection').css({"display":"none"});
+			$('#age-range').css({"display":"none"});
+			$('#gender-selection').css({"display":"none"});
+			$('#illness-selection').css({"display":"none"});
+		};
+	});
+
+	$('#illness-filter').on('click', function(e){
+		e.preventDefault();
+		var choosers = detectChoosers();
+		if (choosers['displaySelector'] != 'graph'){
+			$('#illness-selection').css({"display":"block"});
+			$('#race-selection').css({"display":"none"});
+			$('#age-range').css({"display":"none"});
+			$('#gender-selection').css({"display":"none"});
+			$('#unarmed-selection').css({"display":"none"});
 		};
 	});
 });

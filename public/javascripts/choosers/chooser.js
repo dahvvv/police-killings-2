@@ -33,6 +33,8 @@ function detectFilter(){
     return "gender";
   } else if (filter==="unarmed-filter") {
     return "unarmed";
+  } else if (filter==="illness-filter") {
+    return "illness";
   }
 };
 

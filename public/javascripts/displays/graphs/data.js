@@ -288,3 +288,27 @@ function dataGraphFilterUnarmedWeightNone(){
   };
   return data;
 };
+
+function dataGraphFilterIllnessWeightNone(){
+  var ill = allKillings.filter(function(el){
+    return el.symptoms_of_mental_illness === "yes";
+  });
+  var notIll = allKillings.filter(function(el){
+    return el.symptoms_of_mental_illness === "no";
+  });
+  var data = {
+    'color': [baseColor],
+    'label': ['symptoms of mental illness'],
+    'values': [
+      {
+        'label': 'no symptoms',
+        'values': [notIll.length]
+      },
+      {
+        'label': 'symptoms',
+        'values': [ill.length]
+      },
+    ]
+  };
+  return data;
+};

@@ -105,6 +105,10 @@ function addGeoLayer(geoData){
         if (feature.properties.weight === "none"){
           return styleMarkerFilterUnarmedWeightNone(feature);
         };
+      } else if (feature.properties.filter === "illness"){
+        if (feature.properties.weight === "none"){
+          return styleMarkerFilterIllnessWeightNone(feature);
+        };
       }
     },
     onEachFeature: function(feature,layer){
