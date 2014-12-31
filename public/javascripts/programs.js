@@ -71,7 +71,8 @@ var programs = {
       none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>"
     },
     shots: {
-      none: "<p class='program-text'>Shots Graph</p>"
+      none: "<p class='program-text'>Shots Graph</p>",
+      race: "<p class='program-text' style='top:-0.8em'>There appears to be no significant relationship<br>between victim race and number of shots fired.</p>",
     }
   }
 };

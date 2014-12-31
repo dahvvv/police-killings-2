@@ -32,9 +32,6 @@ function updateWeightVisibility(choosers){
 			$('.button-header').css({'display':'block'});
 			$('.button-weight').css({'display':'none'});
 			$('#race-weight').css({'display':'block'});
-			if (choosers['weight'] === "race"){
-				$('#race-percentage-weight').css({'display':'block'});
-			};
 		} else {
 			removeAllWeights();
 		}

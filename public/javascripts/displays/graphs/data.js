@@ -353,6 +353,7 @@ function dataGraphFilterShotsWeightRace(){
     var instances = allKillings.filter(function(el){
       return el.shots_fired === shots;
     });
+    var weight = 133/instances.length;
     $.each(instances, function(i,obj){
       switch(obj.victim_race){
         case "white": whiteInstances.push(obj);
@@ -371,7 +372,7 @@ function dataGraphFilterShotsWeightRace(){
     var value = {
       'label': [shots],
       'values': [whiteInstances.length, blackInstances.length, hispanicInstances.length, asianInstances.length, alaskanInstances.length, otherInstances.length]
-    };
+    };    
     values.push(value);
   };
 
