@@ -31,6 +31,7 @@ function updateWeightVisibility(choosers){
 		} else if (choosers['filter'] === "illness"){
 			$('.button-header').css({'display':'block'});
 			$('.button-weight').css({'display':'none'});
+			$('#race-weight').css({'display':'block'});
 			$('#age-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "shots"){
 			$('.button-header').css({'display':'block'});

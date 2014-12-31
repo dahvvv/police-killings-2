@@ -46,6 +46,8 @@ function selectGraphData(choosers){
 	} else if (choosers['filter'] === "illness"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterIllnessWeightNone();
+		} else if (choosers['weight'] === "race"){
+			return dataGraphFilterIllnessWeightRace();
 		} else if (choosers['weight'] === "age"){
 			return dataGraphFilterIllnessWeightAge();
 		}
@@ -90,6 +92,8 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "illness"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterIllnessWeightNone();
+		} else if (choosers['weight'] === "race"){
+			return styleGraphFilterIllnessWeightRace();
 		} else if (choosers['weight'] === "age"){
 			return styleGraphFilterIllnessWeightAge();
 		}
