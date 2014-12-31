@@ -56,10 +56,15 @@ function updateChooserListviews(choosers){
 		}
 	};
 
-	// if you can't see the shotsdisplay, and the filter is on shots, and the display is not on graph, then show the shotsdisplay
-	if (shotsDisplay === "none"){
+	// if you can see the shotsdisplay, and the selector is on markermap, then hide the shotsdisplay
+	if (shotsDisplay != "none"){
+		if (choosers['displaySelector'] === "marker"){
+			$('#shots-range').css({"display":"none"});
+		}
+	} else {
+		// if you can't see the shotsdisplay, and the filter is on shots, and the display is on heatmap, then show the shotsdisplay
 		if (choosers['filter'] === "shots"){
-			if (choosers['displaySelector'] != "graph"){
+			if (choosers['displaySelector'] === "heatmap"){
 				$('#shots-range').css({"display":"block"});
 			}
 		}
