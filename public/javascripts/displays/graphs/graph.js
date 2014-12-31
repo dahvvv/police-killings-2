@@ -42,6 +42,8 @@ function selectGraphData(choosers){
 	} else if (choosers['filter'] === "unarmed"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterUnarmedWeightNone();
+		} else if (choosers['weight'] === "shots"){
+			return dataGraphFilterUnarmedWeightShots();
 		}
 	} else if (choosers['filter'] === "illness"){
 		if (choosers['weight'] === "none"){
@@ -88,6 +90,8 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "unarmed"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterUnarmedWeightNone();
+		} else if (choosers['weight'] === "shots"){
+			return styleGraphFilterUnarmedWeightShots();
 		}
 	} else if (choosers['filter'] === "illness"){
 		if (choosers['weight'] === "none"){

@@ -28,6 +28,10 @@ function updateWeightVisibility(choosers){
 			$('.button-weight').css({'display':'none'});
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
+		} else if (choosers['filter'] === "unarmed"){
+			$('.button-header').css({'display':'block'});
+			$('.button-weight').css({'display':'none'});
+			$('#shots-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "illness"){
 			$('.button-header').css({'display':'block'});
 			$('.button-weight').css({'display':'none'});
