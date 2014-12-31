@@ -20,15 +20,7 @@ function filterWeightNone(choosers){
   } else if (choosers.filter === "illness"){
     return filterByIllness();
   } else if (choosers.filter === "shots"){
-    return filterByShots();
-  }
-};
-
-function filterAgeWeightNone(choosers){
-  if (choosers.displaySelector === "heatmap"){
-    return filterByAge();
-  } else if (choosers.displaySelector === "marker"){
-    return filterAgeNotNil();
+    return filterShotsWeightNone(choosers);
   }
 };
 
@@ -54,6 +46,14 @@ function filterByRace(){
     arr = arr.concat(filtered);
   });
   return arr;
+};
+
+function filterAgeWeightNone(choosers){
+  if (choosers.displaySelector === "heatmap"){
+    return filterByAge();
+  } else if (choosers.displaySelector === "marker"){
+    return filterAgeNotNil();
+  }
 };
 
 function filterByAge(){
@@ -128,11 +128,26 @@ function filterByIllness(){
   return arr;
 };
 
+function filterShotsWeightNone(choosers){
+  if (choosers.displaySelector === "heatmap"){
+    return filterByShots();
+  } else if (choosers.displaySelector === "marker"){
+    return filterShots20Plus();
+  }
+};
+
 function filterByShots(){
   var min = $('#shots-min').val();
   var max = $('#shots-max').val();
   arr = allKillings.filter(function(el){
     return el.shots_fired >= min && el.shots_fired <= max;
+  });
+  return arr;
+};
+
+function filterShots20Plus(){
+  arr = allKillings.filter(function(el){
+    return el.shots_fired >= 20;
   });
   return arr;
 };

@@ -109,11 +109,19 @@ function addGeoLayer(geoData){
         if (feature.properties.weight === "none"){
           return styleMarkerFilterIllnessWeightNone(feature);
         };
+      } else if (feature.properties.filter === "shots"){
+        if (feature.properties.weight === "none"){
+          return styleMarkerFilterShotsWeightNone(feature);
+        };
       }
     },
     onEachFeature: function(feature,layer){
       // var popupContent = feature.properties.popupContent;
-      var template = _.template($('#popup-template').html());
+      if (feature.properties.filter === "shots"){
+        var template = _.template($('#shots-template').html());
+      } else {
+        var template = _.template($('#popup-template').html());
+      };
       var popupContent = template(feature.properties);
       layer.bindPopup(popupContent, {
         maxHeight: 400,

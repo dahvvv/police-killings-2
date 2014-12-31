@@ -99,6 +99,16 @@ function styleMarkerFilterIllnessWeightNone(feature){
   }
 };
 
+function styleMarkerFilterShotsWeightNone(feature){
+  return {
+    fillColor: 'red',
+    color: 'black',
+    radius: 7,
+    fillOpacity: 1,
+    opacity: 1,
+  }
+};
+
 function raceToFillColor(race){
   switch (race) {
     case "alaskan and/or pacific islander": return "crimson";
