@@ -39,6 +39,10 @@ function selectGraphData(choosers){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterGenderWeightNone();
 		}
+	} else if (choosers['filter'] === "unarmed"){
+		if (choosers['weight'] === "none"){
+			return dataGraphFilterUnarmedWeightNone();
+		}
 	}
 };
 
@@ -64,6 +68,10 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "gender"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterGenderWeightNone();
+		}
+	} else if (choosers['filter'] === "unarmed"){
+		if (choosers['weight'] === "none"){
+			return styleGraphFilterUnarmedWeightNone();
 		}
 	}
 };

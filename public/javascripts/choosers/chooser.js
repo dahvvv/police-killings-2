@@ -31,6 +31,8 @@ function detectFilter(){
     return "state";
   } else if (filter==="gender-filter") {
     return "gender";
+  } else if (filter==="unarmed-filter") {
+    return "unarmed";
   }
 };
 

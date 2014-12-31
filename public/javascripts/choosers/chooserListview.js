@@ -2,6 +2,7 @@ function updateChooserListviews(choosers){
 	var raceDisplay = $('#race-selection').css('display');
 	var ageDisplay = $('#age-range').css('display');
 	var genderDisplay = $('#gender-selection').css('display');
+	var unarmedDisplay = $('#unarmed-selection').css('display');
 
 	// if you can't see the racedisplay, and the filter is on race, and the display is not on graph, then show the racedisplay
 	if (raceDisplay === "none"){
@@ -31,6 +32,15 @@ function updateChooserListviews(choosers){
 		if (choosers['filter'] === "gender"){
 			if (choosers['displaySelector'] != "graph"){
 				$('#gender-selection').css({"display":"block"});
+			}
+		}
+	};
+
+	// if you can't see the unarmeddisplay, and the filter is on unarmed, and the display is not on graph, then show the unarmeddisplay
+	if (unarmedDisplay === "none"){
+		if (choosers['filter'] === "unarmed"){
+			if (choosers['displaySelector'] != "graph"){
+				$('#unarmed-selection').css({"display":"block"});
 			}
 		}
 	};

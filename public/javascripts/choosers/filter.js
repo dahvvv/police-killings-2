@@ -14,6 +14,11 @@ function replaceFilter(filter, callback){
   } else {
     $('#gender-selection').css({"display":"none"});
   };
+  if ($(filter).hasClass('unarmed-selection-submit')) {
+    var filter = $('#unarmed-filter');
+  } else {
+    $('#unarmed-selection').css({"display":"none"});
+  };
   $('.button-filter').removeClass('filter-type');
   $(filter).addClass('filter-type');
   callback();

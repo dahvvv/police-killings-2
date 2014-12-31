@@ -47,6 +47,26 @@ function filterByGender(){
   return arr;
 };
 
+function filterByUnarmed(){
+  var checkedBoxes = $('#unarmed-selection').children('input:checked');
+  var unarmedSelected = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(unarmedSelected, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      if (val === "armed"){
+        return el.victim_unarmed === false
+      } else if (val === "unarmed"){
+        return el.victim_unarmed === true
+      }
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
+
 function filterAgeNotNil(){
   arr = allKillings.filter(function(el){
     return el.victim_age != null;
@@ -63,6 +83,8 @@ function filterWeightNone(choosers){
     return filterAgeWeightNone(choosers);
   } else if (choosers.filter === "gender"){
     return filterByGender();
+  } else if (choosers.filter === "unarmed"){
+    return filterByUnarmed();
   }
 };
 

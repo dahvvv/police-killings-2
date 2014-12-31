@@ -12,6 +12,9 @@ var programs = {
     },
     gender: {
       none: "<p class='program-text'>Gender Heatmap</p>"
+    },
+    unarmed: {
+      none: "<p class='program-text'>Unarmed Heatmap</p>"
     }
   },
   marker: {
@@ -28,6 +31,9 @@ var programs = {
     },
     gender: {
       none: "<p class='program-text'>Gender markermap</p>"
+    },
+    unarmed: {
+      none: "<p class='program-text'>Unarmed Markermap</p>"
     }
   },
   graph: {
@@ -45,6 +51,9 @@ var programs = {
     },
     gender: {
       none: "<p class='program-text' style='top:-0.8em'>92.5% of people killed by police are male.<br>7.5% of people killed by police are female.</p>"
+    },
+    unarmed: {
+      none: "<p class='program-text'>Victims of police shootings are unarmed in over 20% of recorded cases.</p>"
     }
   }
 };
