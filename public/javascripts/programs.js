@@ -33,7 +33,7 @@ var programs = {
       none: "<p class='program-text'>Gender markermap</p>"
     },
     unarmed: {
-      none: "<p class='program-text'>Unarmed Markermap</p>"
+      none: "<p class='program-text' style='top:-0.8em'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>"
     }
   },
   graph: {
