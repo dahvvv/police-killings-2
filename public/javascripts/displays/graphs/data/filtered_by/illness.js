@@ -1,5 +1,4 @@
 function dataGraphFilterIllnessWeightNone(){
-  var
   var ill = allKillings.filter(function(el){
     return el.symptoms_of_mental_illness === "yes";
   });

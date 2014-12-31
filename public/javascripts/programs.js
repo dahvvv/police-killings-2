@@ -69,7 +69,7 @@ var programs = {
     },
     illness: {
       none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>",
-      race: "<p class='program-text' style='top:-2.5em'>When white people and asian people are killed by police,<br>it is considerably more likely that the victim is mentally ill,<br>compared to cases when the victim is black or hispanic.</p>"
+      race: "<p class='program-text' style='top:-2.5em'>When white people and asian people are killed by police,<br>it is considerably more likely that the victim is mentally ill,<br>compared to cases when the victim is black or hispanic.</p>",
       age: "<p class='program-text' style='top:-3em'>People killed by police while showing clear signs of mental illness<br>tend to be older than people with no signs of mental illness.<br>The average age of a victim with no signs of illness is 33.4 years old.<br>For those victims with mental illness, the average age is 38.5 years old.</p>"
     },
     shots: {
