@@ -47,9 +47,11 @@ function selectGraphData(choosers){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterIllnessWeightNone();
 		}
-	}else if (choosers['filter'] === "shots"){
+	} else if (choosers['filter'] === "shots"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterShotsWeightNone();
+		} else if (choosers['weight'] === "race"){
+			return dataGraphFilterShotsWeightRace();
 		}
 	}
 };
@@ -88,6 +90,8 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "shots"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterShotsWeightNone();
+		} else if (choosers['weight'] === "race"){
+			return styleGraphFilterShotsWeightRace();
 		}
 	}
 };

@@ -3,6 +3,8 @@ function filterData(choosers){
     return filterWeightNone(choosers);
   } else if (choosers.weight === "usPop"){
     return filterWeightUspop(choosers);
+  } else if (choosers.weight === "race"){
+    return filterWeightRace(choosers);
   }
 };
 
@@ -29,6 +31,12 @@ function filterWeightUspop(choosers){
     return allKillings;
   } else if (choosers.filter === "race"){
     return filterByRace();
+  }
+};
+
+function filterWeightRace(choosers){
+  if (choosers.filter === "shots"){
+    filterShotsWeightRace(choosers);
   }
 };
 
@@ -150,4 +158,12 @@ function filterShots20Plus(){
     return el.shots_fired >= 20;
   });
   return arr;
+};
+
+function filterShotsWeightRace(choosers){
+  if (choosers.displaySelector === "heatmap"){
+    return filterByShots();
+  } else if (choosers.displaySelector === "marker"){
+    return filterShots20Plus();
+  }
 };

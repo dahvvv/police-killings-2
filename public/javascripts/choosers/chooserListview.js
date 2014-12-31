@@ -72,7 +72,7 @@ function updateChooserListviews(choosers){
 
 	// if the selector is on graph, hide all displays
 	if (choosers['displaySelector'] === "graph"){
-		$('.filter-checkbox-form, #age-range').css({"display":"none"});
+		$('.filter-checkbox-form, #age-range, #shots-range').css({"display":"none"});
 	};
 
 };

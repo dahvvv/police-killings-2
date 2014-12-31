@@ -59,5 +59,11 @@ function detectWeight(){
     return "usPop";
   } else if (weight==="arrests-weight") {
     return "arrests";
-  };
+  } else if (weight==="race-weight") {
+    return "race";
+  } else if (weight==="race-weight") {
+    return "race";
+  } else if (weight==="race-percentage-weight") {
+    return "race-percentage";
+  }
 };

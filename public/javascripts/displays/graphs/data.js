@@ -335,7 +335,79 @@ function dataGraphFilterShotsWeightNone(){
   values.push(value);
   var data = {
     'color': [baseColor],
-    'label': ['symptoms of mental illness'],
+    'label': ['shots fired'],
+    'values': values
+  };
+  return data;
+};
+
+function dataGraphFilterShotsWeightRace(){
+  var values = [];
+  for (var shots = 1; shots < 20; shots++){
+    var whiteInstances = [];
+    var blackInstances = [];
+    var hispanicInstances = [];
+    var asianInstances = [];
+    var alaskanInstances = [];
+    var otherInstances = [];
+    var instances = allKillings.filter(function(el){
+      return el.shots_fired === shots;
+    });
+    $.each(instances, function(i,obj){
+      switch(obj.victim_race){
+        case "white": whiteInstances.push(obj);
+        break;
+        case "black": blackInstances.push(obj);
+        break;
+        case "hispanic and/or latin": hispanicInstances.push(obj);
+        break;
+        case "asian": asianInstances.push(obj);
+        break;
+        case "alaskan and/or pacific islander": alaskanInstances.push(obj);
+        break;
+        case "other": otherInstances.push(obj);
+      }
+    });
+    var value = {
+      'label': [shots],
+      'values': [whiteInstances.length, blackInstances.length, hispanicInstances.length, asianInstances.length, alaskanInstances.length, otherInstances.length]
+    };
+    values.push(value);
+  };
+
+  var instances20PlusShots = allKillings.filter(function(el){
+    return el.shots_fired >= 20;
+  });
+  var whiteInstances = [];
+  var blackInstances = [];
+  var hispanicInstances = [];
+  var asianInstances = [];
+  var alaskanInstances = [];
+  var otherInstances = [];
+  $.each(instances20PlusShots, function(i,obj){
+    switch(obj.victim_race){
+      case "white": whiteInstances.push(obj);
+      break;
+      case "black": blackInstances.push(obj);
+      break;
+      case "hispanic and/or latin": hispanicInstances.push(obj);
+      break;
+      case "asian": asianInstances.push(obj);
+      break;
+      case "alaskan and/or pacific islander": alaskanInstances.push(obj);
+      break;
+      case "other": otherInstances.push(obj);
+    }
+  });
+  var value = {
+    'label': '20+',
+    'values': [whiteInstances.length, blackInstances.length, hispanicInstances.length, asianInstances.length, alaskanInstances.length, otherInstances.length]
+  };
+  values.push(value);
+
+  var data = {
+    // 'color': [baseColor],
+    'label': ['white','black','hispanic and/or latin','asian','alaskan and/or pacific islander','other'],
     'values': values
   };
   return data;
