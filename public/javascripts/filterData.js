@@ -6,6 +6,40 @@ function filterData(choosers){
   }
 };
 
+function filterWeightNone(choosers){
+  if (choosers.filter === "usPop"){
+    return allKillings;
+  } else if (choosers.filter === "race"){
+    return filterByRace();
+  } else if (choosers.filter === "age"){
+    return filterAgeWeightNone(choosers);
+  } else if (choosers.filter === "gender"){
+    return filterByGender();
+  } else if (choosers.filter === "unarmed"){
+    return filterByUnarmed();
+  } else if (choosers.filter === "illness"){
+    return filterByIllness();
+  } else if (choosers.filter === "shots"){
+    return filterByShots();
+  }
+};
+
+function filterAgeWeightNone(choosers){
+  if (choosers.displaySelector === "heatmap"){
+    return filterByAge();
+  } else if (choosers.displaySelector === "marker"){
+    return filterAgeNotNil();
+  }
+};
+
+function filterWeightUspop(choosers){
+  if (choosers.filter === "usPop"){
+    return allKillings;
+  } else if (choosers.filter === "race"){
+    return filterByRace();
+  }
+};
+
 function filterByRace(){
   var checkedBoxes = $('#race-selection').children('input:checked');
   var races = $(checkedBoxes).map(function(){
@@ -27,6 +61,13 @@ function filterByAge(){
   var max = $('#age-max').val();
   arr = allKillings.filter(function(el){
     return el.victim_age >= min && el.victim_age <= max;
+  });
+  return arr;
+};
+
+function filterAgeNotNil(){
+  arr = allKillings.filter(function(el){
+    return el.victim_age != null;
   });
   return arr;
 };
@@ -87,41 +128,11 @@ function filterByIllness(){
   return arr;
 };
 
-function filterAgeNotNil(){
+function filterByShots(){
+  var min = $('#shots-min').val();
+  var max = $('#shots-max').val();
   arr = allKillings.filter(function(el){
-    return el.victim_age != null;
+    return el.shots_fired >= min && el.shots_fired <= max;
   });
   return arr;
-};
-
-function filterWeightNone(choosers){
-  if (choosers.filter === "usPop"){
-    return allKillings;
-  } else if (choosers.filter === "race"){
-    return filterByRace();
-  } else if (choosers.filter === "age"){
-    return filterAgeWeightNone(choosers);
-  } else if (choosers.filter === "gender"){
-    return filterByGender();
-  } else if (choosers.filter === "unarmed"){
-    return filterByUnarmed();
-  } else if (choosers.filter === "illness"){
-    return filterByIllness();
-  }
-};
-
-function filterAgeWeightNone(choosers){
-  if (choosers.displaySelector === "heatmap"){
-    return filterByAge();
-  } else if (choosers.displaySelector === "marker"){
-    return filterAgeNotNil();
-  }
-};
-
-function filterWeightUspop(choosers){
-  if (choosers.filter === "usPop"){
-    return allKillings;
-  } else if (choosers.filter === "race"){
-    return filterByRace();
-  }
 };

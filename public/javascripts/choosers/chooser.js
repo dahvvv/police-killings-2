@@ -35,6 +35,8 @@ function detectFilter(){
     return "unarmed";
   } else if (filter==="illness-filter") {
     return "illness";
+  } else if (filter==="shots-filter") {
+    return "shots";
   }
 };
 

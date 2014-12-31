@@ -312,3 +312,31 @@ function dataGraphFilterIllnessWeightNone(){
   };
   return data;
 };
+
+function dataGraphFilterShotsWeightNone(){
+  var values = [];
+  for (var shots = 1; shots < 20; shots++){
+    var instances = allKillings.filter(function(el){
+      return el.shots_fired === shots;
+    });
+    var value = {
+      'label': [shots],
+      'values': [instances.length]
+    };
+    values.push(value);
+  };
+  var instances20PlusShots = allKillings.filter(function(el){
+    return el.shots_fired >= 20;
+  });
+  var value = {
+    'label': '20+',
+    'values': [instances20PlusShots.length]
+  };
+  values.push(value);
+  var data = {
+    'color': [baseColor],
+    'label': ['symptoms of mental illness'],
+    'values': values
+  };
+  return data;
+};

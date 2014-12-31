@@ -18,6 +18,9 @@ var programs = {
     },
     illness: {
       none: "<p class='program-text'>Illness Heatmap</p>"
+    },
+    shots: {
+      none: "<p class='program-text'>Shots Heatmap</p>"
     }
   },
   marker: {
@@ -40,6 +43,9 @@ var programs = {
     },
     illness: {
       none: "<p class='program-text' style='top:-0.8em'>People killed by the police while exhibiting clear signs of mental illness.<br>(select boxes on the left to see no signs, or both).</p>"
+    },
+    shots: {
+      none: "<p class='program-text'>Shots Markermap</p>"
     }
   },
   graph: {
@@ -63,6 +69,9 @@ var programs = {
     },
     illness: {
       none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>"
+    },
+    shots: {
+      none: "<p class='program-text'>Shots Graph</p>"
     }
   }
 };

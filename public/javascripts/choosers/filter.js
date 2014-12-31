@@ -24,6 +24,11 @@ function replaceFilter(filter, callback){
   } else {
     $('#illness-selection').css({"display":"none"});
   };
+  if ($(filter).hasClass('shots-range-submit')) {
+    var filter = $('#shots-filter');
+  } else {
+    $('#shots-range').css({"display":"none"});
+  };
   $('.button-filter').removeClass('filter-type');
   $(filter).addClass('filter-type');
   callback();
