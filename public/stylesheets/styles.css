@@ -145,6 +145,24 @@ select.button-filter {
   margin: 4% 10% 8%;
 }
 
+#shots-range {
+  display: none;
+}
+
+#shots-range input, label {
+  margin: 0.5em 1em;
+}
+
+#shots-range input {
+  width: 17%;
+  margin-left: 0;
+}
+
+#shots-range input[type=submit] {
+  width: 80px;
+  margin: 4% 10% 8%;
+}
+
 #display-and-selectors {
   position: relative;
   height: 31em;
