@@ -151,9 +151,10 @@ function dataGraphFilterUnarmedWeightShots(){
     }
   });
   var data = {
-    'color': hexScaler("#FF0000","#0000FF",11)
-      .slice(0,10)
-      .concat(hexScaler("#0000FF","#99FF99",10)),
+    'color': hexScaler("#0000B2","#7F0059",5)
+    .slice(0,4)
+    .concat(hexScaler("#7F0059","#FF0000",16)),
+    // 'color': hexScaler("#0000B2","#FF0000",20),
     'label': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,"20+"],
     'values': [
       {

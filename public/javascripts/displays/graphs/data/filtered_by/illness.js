@@ -68,12 +68,12 @@ function dataGraphFilterIllnessWeightRace(){
   });
   var data = {
     'color': [
-      "#FF0000",
-      "#CC0033",
-      "#990066",
-      "#660099",
-      "#3300CC",
-      "#0000FF"
+      "#3366FF",
+      "#5200A3",
+      "#FF5050",
+      "#FF6600",
+      "#FFFF00",
+      "#33CC33"
     ],
     'label': [
       "white",
@@ -258,30 +258,9 @@ function dataGraphFilterIllnessWeightAge(){
     return el.symptoms_of_mental_illness === "no";
   });
   var data = {
-    'color': [
-      "#FF0000",
-      "#E70018",
-      "#DB0024",
-      "#CF0030",
-      "#C3003C",
-      "#B70048",
-      "#AB0054",
-      "#9F0060",
-      "#93006C",
-      "#870078",
-      "#7B0084",
-      "#6F0090",
-      "#63009C",
-      "#5700A8",
-      "#4B00B4",
-      "#3F00C0",
-      "#3300CC",
-      "#2700D8",
-      "#1B00E4",
-      "#0F00F0",
-      "#0800F7",
-      "#0000FF"
-    ],
+    'color': hexScaler("#FF3300","#7B0084",13)
+    .slice(0,12)
+    .concat(hexScaler("#7B0084","#0000FF",10)),
     'label': [
       'ages 0 through 4',
       'ages 5 through 9',

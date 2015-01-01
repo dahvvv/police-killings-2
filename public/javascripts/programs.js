@@ -66,7 +66,7 @@ var programs = {
     },
     unarmed: {
       none: "<p class='program-text'>Victims of police shootings were unarmed in over 20% of recorded cases.</p>",
-      shots: "<p class='program-text'>shots graph</p>"
+      shots: "<p class='program-text' style='top:-2.7em'>Twenty times,<br>the police have killed someone by firing at least ten shots,<br>and the victim was unarmed.</p>"
     },
     illness: {
       none: "<p class='program-text' style='top:-0.8em'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>",
