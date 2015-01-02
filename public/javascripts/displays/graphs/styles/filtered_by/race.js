@@ -24,8 +24,7 @@ function styleGraphFilterRaceWeightNone(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        elem.label = expandRace(elem.label, "vertical");
-        tip.innerHTML = "elem.label:  " + elem.label + "<br>elem.name:  " + elem.name + "<br>elem.value:  " + elem.value;
+        tip.innerHTML = elem.value + " " + elem.label + " people<br>have been killed by police.";
       }
     },
   };
@@ -46,7 +45,7 @@ function styleGraphFilterRaceWeightUspop(){
     },
     labelOffest:5,
     type: 'stacked:gradient',
-    showAggregates: false,
+    showAggregates: true,
     showLabels: true,
     Label: {
       type: 'HTML',
@@ -58,11 +57,28 @@ function styleGraphFilterRaceWeightUspop(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = elem.name;
+        var race = expandRace(elem.label,"vertical");
+        tip.innerHTML = "For every ten million " + race + " people,<br>" + elem.value + " " + race + " people<br>have been killed by the police.";
       }
     },
+    Events: {
+      enable: true,
+      type: 'Native',
+      onClick: function(node, eventInfo, e){
+        graphFilterRaceWeightUspopTipSample(node);
+      }
+    }
   };
   return style;
+};
+
+function graphFilterRaceWeightUspopTipSample(elem){
+  var race = expandRace(elem.label,"vertical");
+  var collection = allKillings.filter(function(el){
+    return el.victim_race === race;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
 
 function styleGraphFilterRaceWeightArrests(){

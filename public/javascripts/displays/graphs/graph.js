@@ -11,7 +11,6 @@ function emptyGraph(choosers){
 
 function makeGraph(choosers){
 	var graphData = selectGraphData(choosers);
-
   var graphStyle = selectGraphStyle(choosers);
   var graph = new $jit.BarChart(graphStyle);
   graph.loadJSON(graphData);
