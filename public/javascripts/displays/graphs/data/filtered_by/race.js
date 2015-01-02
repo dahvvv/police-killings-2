@@ -8,6 +8,14 @@ var populationByRace = {
   "alaskan and/or pacific islander":  1447321
 };
 
+var arrestsByRace = {
+  "white":                            6502919,
+  "black":                            2640067,
+  // "hispanic and/or latin":            54634554,
+  "asian":                            135165,
+  "alaskan and/or pacific islander":  112322
+};
+
 function dataGraphFilterRaceWeightNone(){
   var data = {
     'color': [baseColor],
@@ -59,40 +67,6 @@ function graphFilterRaceWeightUspopValues(){
   });
   return values;
 };
-
-// function dataGraphFilterRaceWeightUspop(){
-//   var data = {
-//     'color': [baseColor,addColor,subColor],
-//     'label': ['unweighted portion','additional portion gained by weighting against us population','portion lost by weighting against us population'],
-//     'values': [
-//       {
-//         'label': 'white', //1252, total weight 10.6, -38.7
-//         'values': [10.6,0,38.7], // add extra 38.7 to all
-//       },
-//       {
-//         'label': 'black', //889, total weight 44.2
-//         'values': [35.0,9.2],
-//       },
-//       {
-//         'label': 'hispanic/latin', //302, total weight 11.6
-//         'values': [11.6,0,0.3],
-//       },
-//       {
-//         'label': 'asian',
-//         'values': [1.7,3.6], //44, total weight 5.3%
-//       },
-//       {
-//         'label': 'alaskan/p.i.', //29, total weight 15.3%
-//         'values': [1.1,14.2],
-//       },
-//       {
-//         'label': 'other',
-//         'values': [0.9,5.4], //24, total weighted percent 6.3
-//       },
-//     ]
-//   };
-//   return data;
-// };
 
 function dataGraphFilterRaceWeightArrests(){
   var data = {

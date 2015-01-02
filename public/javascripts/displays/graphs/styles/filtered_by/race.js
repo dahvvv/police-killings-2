@@ -58,7 +58,7 @@ function styleGraphFilterRaceWeightUspop(){
       enable: true,
       onShow: function(tip, elem) {
         var race = expandRace(elem.label,"vertical");
-        tip.innerHTML = "For every ten million " + race + " people,<br>" + elem.value + " " + race + " people<br>have been killed by the police.";
+        tip.innerHTML = "For every ten million<br>" + race + " people<br>in the United States,<br>" + elem.value + " " + race + " people<br>have been killed by the police.";
       }
     },
     Events: {
