@@ -102,5 +102,31 @@ function graphFilterAgeWeightRaceValues(){
 };
 
 function dataGraphFilterAgeWeightIllness(){
+  var data = {
+    'color': [secondColor, baseColor],
+    'label': ['symptoms', 'no symptoms'],
+    'values': graphFilterAgeWeightIllnessValues()
+  };
+  return data;
+};
 
+function graphFilterAgeWeightIllnessValues(){
+  var values = [];
+  for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
+    var totalKilledNotIll = allKillings.filter(function(el){
+      return el.victim_age === age && el.symptoms_of_mental_illness === "no";
+    });
+    var totalKilledIll = allKillings.filter(function(el){
+      return el.victim_age === age && el.symptoms_of_mental_illness === "yes";
+    });
+    var value = {
+      'label': age,
+      'values': [
+        totalKilledIll.length,
+        totalKilledNotIll.length
+      ]
+    };
+    values.push(value);
+  };
+  return values;
 };

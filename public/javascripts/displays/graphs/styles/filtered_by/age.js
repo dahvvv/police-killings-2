@@ -147,7 +147,7 @@ function styleGraphFilterAgeWeightRace(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = elem.name + " " + elem.label + "-year-olds killed by the police:  " + elem.value;
+        tip.innerHTML = elem.name + " " + elem.label + "-year-olds<br>who were killed by the police:<br>" + elem.value;
       }
     },
     Events: {
@@ -203,9 +203,30 @@ function styleGraphFilterAgeWeightIllness(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = "<p>Age: " + elem.label + "</p><p>Total: " + elem.value;
+        tip.innerHTML = elem.label + "-year-olds<br>with " + elem.name + " of mental illness<br>who were killed by the police:<br>" + elem.value;
       }
     },
+    Events: {
+      enable: true,
+      type: 'Native',
+      onClick: function(node, eventInfo, e){
+        GraphFilterAgeWeightIllnessTipSample(node);
+      }
+    }
   };
   return style;
+};
+
+function GraphFilterAgeWeightIllnessTipSample(elem){
+  if (elem.name === "symptoms"){
+    var illness = "yes";
+  } else if (elem.name === "no symptoms"){
+    var illness = "no";
+  };
+  var age = elem.label;
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age && el.symptoms_of_mental_illness === illness;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

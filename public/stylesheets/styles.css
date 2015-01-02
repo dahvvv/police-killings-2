@@ -265,12 +265,13 @@ select.button-filter {
 
 .tip {
     color: #111;
-    width: 250px;
+    width: 275px;
     background-color: white;
     border:1px solid #ccc;
     opacity:0.8;
     filter:alpha(opacity=80);
     padding:17px;
     border-radius: 5px;
+    text-align: center;
     font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
