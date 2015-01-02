@@ -124,7 +124,16 @@ function styleGraphFilterRaceWeightAge(){
       enable: true,
       onShow: function(tip, elem) {
         elem.label = expandRace(elem.label);
-        tip.innerHTML = elem.label + " " + elem.name + "-year-olds<br>who were killed by police";
+        var age = elem.name;
+        var race = elem.label;
+        var totalRace = allKillings.filter(function(el){
+          return el.victim_race === race;
+        });
+        var totalAgeRace = allKillings.filter(function(el){
+          return el.victim_age === age && el.victim_race === race;
+        });
+        var percent = ((totalAgeRace.length/totalRace.length) * 100).toFixed(1);
+        tip.innerHTML = elem.label + " " + elem.name + "-year-olds<br>make up " + percent + " percent<br>of " + elem.label + " people who were killed by police";
       }
     },
     Events: {
