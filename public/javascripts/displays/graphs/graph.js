@@ -137,6 +137,10 @@ function selectGraphStyle(choosers){
 	}
 };
 
+function graphNodeLink(){
+	debugger;
+};
+
 var labelType, useGradients, nativeTextSupport, animate;
 
 $(function(){

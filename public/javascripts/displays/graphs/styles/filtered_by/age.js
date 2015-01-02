@@ -147,11 +147,28 @@ function styleGraphFilterAgeWeightRace(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = "<p>Age: " + elem.label + "</p><p>Total: " + elem.value;
+        tip.innerHTML = elem.name + " " + elem.label + "-year-olds killed by the police:  " + elem.value;
       }
     },
+    Events: {
+      enable: true,
+      type: 'Native',
+      onClick: function(node, eventInfo, e){
+        GraphFilterAgeWeightRaceTipSample(node);
+      }
+    }
   };
   return style;
+};
+
+function GraphFilterAgeWeightRaceTipSample(elem){
+  var race = elem.name;
+  var age = elem.label;
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age && el.victim_race === race;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
 
 function styleGraphFilterAgeWeightIllness(){
