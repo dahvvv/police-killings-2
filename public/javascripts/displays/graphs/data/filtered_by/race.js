@@ -130,7 +130,6 @@ function graphFilterRaceWeightAgeValues(){
     };
     percentKilledForEachAge = $.map(totalKilledLengthForEachAge, function(val,i){
       var percentTimesHun = Math.ceil((val / totalKilled) * 10000);
-      // var percent = percent < 0 ? 0 : percent;
       return percentTimesHun;
     });
     race = abbreviateRace(race,"horizontal");
@@ -161,10 +160,13 @@ function graphFilterRaceWeightIllnessValues(){
     var raceNotIll = allKillings.filter(function(el){
       return el.symptoms_of_mental_illness === "no" && el.victim_race === race;
     });
-    race = abbreviateRace(race,"vertical");
+    var totalKilled = raceIll.length + raceNotIll.length;
+    var percentRaceIll = ((raceIll.length / totalKilled) * 100).toFixed(1);
+    var percentRaceNotIll = 100 - percentRaceIll;
+    race = abbreviateRace(race,"horizontal");
     var value = {
       'label': race,
-      'values': [raceIll.length, raceNotIll.length]
+      'values': [percentRaceIll, percentRaceNotIll]
     };
     values.push(value);
   });
