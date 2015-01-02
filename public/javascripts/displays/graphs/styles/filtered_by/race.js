@@ -24,7 +24,7 @@ function styleGraphFilterRaceWeightNone(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = elem.value + " " + elem.label + " people<br>have been killed by police.";
+        tip.innerHTML = "In the United States,<br>" + elem.value + " " + elem.label + " people<br>have been killed by police.";
       }
     },
   };
@@ -86,16 +86,16 @@ function styleGraphFilterRaceWeightArrests(){
     injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
-    barsOffset: 10,
+    barsOffset: 50,
     Margin: {
-      top:5,
-      left: 0,
-      right: 15,
-      bottom:5
+      top:25,
+      left: 50,
+      right: 50,
+      bottom:10
     },
     labelOffest:5,
     type: 'stacked:gradient',
-    showAggregates: false,
+    showAggregates: true,
     showLabels: true,
     Label: {
       type: 'HTML',
@@ -107,11 +107,28 @@ function styleGraphFilterRaceWeightArrests(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = elem.name;
+        var race = expandRace(elem.label,"vertical");
+        tip.innerHTML = "For every hundred thousand arrests<br>made on " + race + " people<br>in the United States,<br>" + elem.value + " " + race + " people<br>have been killed by the police.";
       }
     },
+    Events: {
+      enable: true,
+      type: 'Native',
+      onClick: function(node, eventInfo, e){
+        graphFilterRaceWeightArrestsTipSample(node);
+      }
+    }
   };
   return style;
+};
+
+function graphFilterRaceWeightArrestsTipSample(elem){
+  var race = expandRace(elem.label,"vertical");
+  var collection = allKillings.filter(function(el){
+    return el.victim_race === race;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
 
 function styleGraphFilterRaceWeightAge(){

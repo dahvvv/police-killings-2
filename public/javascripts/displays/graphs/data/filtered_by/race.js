@@ -19,7 +19,7 @@ var arrestsByRace = {
 function dataGraphFilterRaceWeightNone(){
   var data = {
     'color': [baseColor],
-    'label': ['race'],
+    'label': ['deaths'],
     'values': graphFilterRaceWeightNoneValues()
   };
   return data;
@@ -44,7 +44,7 @@ function graphFilterRaceWeightNoneValues(){
 function dataGraphFilterRaceWeightUspop(){
   var data = {
     'color': [baseColor],
-    'label': ['race'],
+    'label': ['deaths per ten million'],
     'values': graphFilterRaceWeightUspopValues()
   };
   return data;
@@ -68,30 +68,58 @@ function graphFilterRaceWeightUspopValues(){
   return values;
 };
 
+// function dataGraphFilterRaceWeightArrests(){
+//   var data = {
+//     'color': [baseColor,addColor,subColor],
+//     'label': ['unweighted portion','additional portion gained by weighting against us population','portion lost by weighting against us population'],
+//     'values': [
+//       {
+//         'label': 'white', //arrest rate 68.9%, cop kill rate 49.3%, total weight 11.9, 
+//         'values': [10.6,1.3], // add extra 38.7 to all
+//       },
+//       {
+//         'label': 'black', //arrest rate 28.3%, cop kill rate 35%, total weight 44.2
+//         'values': [35.0,9.2],
+//       },
+//       {
+//         'label': 'asian',
+//         'values': [1.7,21.9], //arrest rate 1.2%, cop kill rate 1.7%, total weight 23.6%
+//       },
+//       {
+//         'label': 'alaskan/p.i.', //arrest rate 1.7%, cop kill rate 1.1%, total weight 10.8%
+//         'values': [1.1,9.7],
+//       },
+//     ]
+//   };
+//   return data;
+// };
+
 function dataGraphFilterRaceWeightArrests(){
   var data = {
-    'color': [baseColor,addColor,subColor],
-    'label': ['unweighted portion','additional portion gained by weighting against us population','portion lost by weighting against us population'],
-    'values': [
-      {
-        'label': 'white', //arrest rate 68.9%, cop kill rate 49.3%, total weight 11.9, 
-        'values': [10.6,1.3], // add extra 38.7 to all
-      },
-      {
-        'label': 'black', //arrest rate 28.3%, cop kill rate 35%, total weight 44.2
-        'values': [35.0,9.2],
-      },
-      {
-        'label': 'asian',
-        'values': [1.7,21.9], //arrest rate 1.2%, cop kill rate 1.7%, total weight 23.6%
-      },
-      {
-        'label': 'alaskan/p.i.', //arrest rate 1.7%, cop kill rate 1.1%, total weight 10.8%
-        'values': [1.1,9.7],
-      },
-    ]
+    'color': [baseColor],
+    'label': ['race'],
+    'values': graphFilterRaceWeightArrestsValues()
   };
   return data;
+};
+
+function graphFilterRaceWeightArrestsValues(){
+  var values = [];
+  var races = ["white","black","asian","alaskan and/or pacific islander"]
+  $.each(races, function(i,race){
+    var totalKilled = allKillings.filter(function(el){
+      return el.victim_race === race;
+    });
+    var totalKilledPerArrests = totalKilled.length / arrestsByRace[race];
+    var adjustedPerArrests = Math.ceil(totalKilledPerArrests * 100000);
+    race = abbreviateRace(race,"vertical");
+    var value = {
+      'label': race,
+      'values': adjustedPerArrests
+    };
+    values.push(value);
+  });
+  return values;
 };
 
 function dataGraphFilterRaceWeightAge(){
