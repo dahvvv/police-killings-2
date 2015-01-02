@@ -38,6 +38,7 @@ function styleGraphFilterAgeWeightNone(){
 };
 
 function styleGraphFilterAgeWeightUspop(){
+  debugger;
   var style = {
     injectInto: 'display-container',
     animate: true,
