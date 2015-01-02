@@ -31,6 +31,10 @@ function selectGraphData(choosers){
 			return dataGraphFilterRaceWeightUspop();
 		} else if (choosers['weight'] === "arrests"){
 			return dataGraphFilterRaceWeightArrests();
+		} else if (choosers['weight'] === "age"){
+			return dataGraphFilterRaceWeightAge();
+		} else if (choosers['weight'] === "illness"){
+			return dataGraphFilterRaceWeightIllness();
 		}
 	} else if (choosers['filter'] === "age"){
 		if (choosers['weight'] === "none"){
@@ -91,6 +95,10 @@ function selectGraphStyle(choosers){
 			return styleGraphFilterRaceWeightUspop();
 		} else if (choosers['weight'] === "arrests"){
 			return styleGraphFilterRaceWeightArrests();
+		} else if (choosers['weight'] === "age"){
+			return styleGraphFilterRaceWeightAge();
+		} else if (choosers['weight'] === "illness"){
+			return styleGraphFilterRaceWeightIllness();
 		}
 	} else if (choosers['filter'] === "age"){
 		if (choosers['weight'] === "none"){
@@ -135,10 +143,6 @@ function selectGraphStyle(choosers){
 			return styleGraphFilterShotsWeightUnarmed();
 		}
 	}
-};
-
-function graphNodeLink(){
-	debugger;
 };
 
 var labelType, useGradients, nativeTextSupport, animate;

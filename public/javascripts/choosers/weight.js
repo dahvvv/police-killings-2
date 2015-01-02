@@ -29,6 +29,8 @@ function updateWeightVisibility(choosers){
 			readyWeightsToBeShown();
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
+			$('#age-weight').css({'display':'block'});
+			$('#illness-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "age"){
 			readyWeightsToBeShown();
 			$('#usPop-weight').css({'display':'block'});

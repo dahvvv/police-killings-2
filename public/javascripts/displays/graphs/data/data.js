@@ -1,4 +1,4 @@
-function hexScaler(initHex,endHex,hexCount){
+function hexScaler(initHex,endHex,hexCount,center){
 	if (initHex[0] != "#" || endHex[0] != "#"){
 		alert('please include hashes in the hex colors that you send to hexScaler!');
 	} else {
