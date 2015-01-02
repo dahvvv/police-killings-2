@@ -29,9 +29,16 @@ function updateWeightVisibility(choosers){
 			readyWeightsToBeShown();
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
+		} else if (choosers['filter'] === "age"){
+			readyWeightsToBeShown();
+			$('#usPop-weight').css({'display':'block'});
+			$('#arrests-weight').css({'display':'block'});
+			$('#race-weight').css({'display':'block'});
+			$('#illness-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "gender"){
 			readyWeightsToBeShown();
 			$('#unarmed-weight').css({'display':'block'});
+			$('#illness-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "unarmed"){
 			readyWeightsToBeShown();
 			$('#shots-weight').css({'display':'block'});

@@ -35,12 +35,22 @@ function selectGraphData(choosers){
 	} else if (choosers['filter'] === "age"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterAgeWeightNone();
+		} else if (choosers['weight'] === "usPop"){
+			return dataGraphFilterAgeWeightUspop();
+		} else if (choosers['weight'] === "arrests"){
+			return dataGraphFilterAgeWeightArrests();
+		} else if (choosers['weight'] === "race"){
+			return dataGraphFilterAgeWeightRace();
+		} else if (choosers['weight'] === "illness"){
+			return dataGraphFilterAgeWeightIllness();
 		}
 	} else if (choosers['filter'] === "gender"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterGenderWeightNone();
 		} else if (choosers['weight'] === "unarmed"){
 			return dataGraphFilterGenderWeightUnarmed();
+		} else if (choosers['weight'] === "illness"){
+			return dataGraphFilterGenderWeightIllness();
 		}
 	} else if (choosers['filter'] === "unarmed"){
 		if (choosers['weight'] === "none"){
@@ -85,12 +95,22 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "age"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterAgeWeightNone();
+		} else if (choosers['weight'] === "usPop"){
+			return styleGraphFilterAgeWeightUspop();
+		} else if (choosers['weight'] === "arrests"){
+			return styleGraphFilterAgeWeightArrests();
+		} else if (choosers['weight'] === "race"){
+			return styleGraphFilterAgeWeightRace();
+		} else if (choosers['weight'] === "illness"){
+			return styleGraphFilterAgeWeightIllness();
 		}
 	} else if (choosers['filter'] === "gender"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterGenderWeightNone();
 		} else if (choosers['weight'] === "unarmed"){
 			return styleGraphFilterGenderWeightUnarmed();
+		} else if (choosers['weight'] === "illness"){
+			return styleGraphFilterGenderWeightIllness();
 		}
 	} else if (choosers['filter'] === "unarmed"){
 		if (choosers['weight'] === "none"){
