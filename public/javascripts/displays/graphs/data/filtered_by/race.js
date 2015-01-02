@@ -1,35 +1,28 @@
+var races = ["white","black","hispanic and/or latin","asian","alaskan and/or pacific islander","other"];
+
 function dataGraphFilterRaceWeightNone(){
   var data = {
     'color': [baseColor],
     'label': ['race'],
-    'values': [
-      {
-        'label': 'white',
-        'values': [49.3], //1252
-      },
-      {
-        'label': 'black',
-        'values': [35.0], //889
-      },
-      {
-        'label': 'hispanic/latin',
-        'values': [11.9], //302
-      },
-      {
-        'label': 'asian',
-        'values': [1.7], //44
-      },
-      {
-        'label': 'alaskan/p.i.',
-        'values': [1.1], //29
-      },
-      {
-        'label': 'other',
-        'values': [0.9], //24
-      },
-    ]
+    'values': graphFilterRaceWeightNoneValues()
   };
   return data;
+};
+
+function graphFilterRaceWeightNoneValues(){
+  var values = [];
+  $.each(races, function(i,race){
+    var totalKilled = allKillings.filter(function(el){
+      return el.victim_race === race;
+    });
+    race = abbreviateRace(race,"vertical");
+    var value = {
+      'label': race,
+      'values': totalKilled.length
+    };
+    values.push(value);
+  });
+  return values;
 };
 
 function dataGraphFilterRaceWeightUspop(){
@@ -140,7 +133,7 @@ function graphFilterRaceWeightAgeValues(){
       // var percent = percent < 0 ? 0 : percent;
       return percentTimesHun;
     });
-    race = abbreviateRace(race);
+    race = abbreviateRace(race,"horizontal");
     var value = {
       'label': race,
       'values': percentKilledForEachAge
@@ -151,4 +144,30 @@ function graphFilterRaceWeightAgeValues(){
 };
 
 function dataGraphFilterRaceWeightIllness(){
+  var data = {
+    'color': [secondColor, baseColor],
+    'label': ["symptoms", "no symptoms"],
+    'values': graphFilterRaceWeightIllnessValues()
+  };
+  return data;
 };
+
+function graphFilterRaceWeightIllnessValues(){
+  var values = [];
+  $.each(races, function(i,race){
+    var raceIll = allKillings.filter(function(el){
+      return el.symptoms_of_mental_illness === "yes" && el.victim_race === race;
+    });
+    var raceNotIll = allKillings.filter(function(el){
+      return el.symptoms_of_mental_illness === "no" && el.victim_race === race;
+    });
+    race = abbreviateRace(race,"vertical");
+    var value = {
+      'label': race,
+      'values': [raceIll.length, raceNotIll.length]
+    };
+    values.push(value);
+  });
+  return values;
+};
+

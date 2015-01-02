@@ -59,7 +59,7 @@ var programs = {
       none: "<p class='program-text'>Police deaths by race, measured in percentage.</p>",
       usPop: "<p class='program-text' style='top:-0.8em'>When races are compared in terms of deaths per capita,<br>as opposed to deaths total, the portion of white victims drops from 49% to 10%.</p>",
       arrests: "<p class='program-text'>The broad likelihood of a single arrest resulting in death, by race.</p>",
-      age: "<p class='program-text' style='top:-3em'>The dark purple areas represent victims who were of near-average age.<br>The bright colors on the left represent younger victims.<br>The bright colors on the right represent older victims.<br>You can see that black victims skew much younger than white victims.</p>",
+      age: "<p class='program-text' style='top:-3em'>Dark purple represents victims of near-average age.<br>The bright colors on the left represent younger victims.<br>Older victims are represented by bright colors on the right.<br>You can see that black victims skew much younger than white victims.</p>",
       illness: "<p class='program-text'>Over 35% of asian people killed by police were exhibiting clear signs of mental illness.</p>",
     },
     age: {

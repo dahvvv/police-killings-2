@@ -24,7 +24,8 @@ function styleGraphFilterRaceWeightNone(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = elem.label + ": " + elem.value + "%";
+        elem.label = expandRace(elem.label, "vertical");
+        tip.innerHTML = "elem.label:  " + elem.label + "<br>elem.name:  " + elem.name + "<br>elem.value:  " + elem.value;
       }
     },
   };
@@ -123,7 +124,7 @@ function styleGraphFilterRaceWeightAge(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        elem.label = expandRace(elem.label);
+        elem.label = expandRace(elem.label,"horizontal");
         var age = elem.name;
         var race = elem.label;
         var totalRace = allKillings.filter(function(el){
@@ -149,7 +150,7 @@ function styleGraphFilterRaceWeightAge(){
 
 function GraphFilterRaceWeightAgeTipSample(elem){
   var age = elem.name;
-  var race = expandRace(elem.label);
+  var race = expandRace(elem.label,"horizontal");
   var collection = allKillings.filter(function(el){
     return el.victim_age === age && el.victim_race === race;
   });
