@@ -65,6 +65,8 @@ function detectWeight(){
     return "age";
   } else if (weight==="unarmed-weight") {
     return "unarmed";
+  } else if (weight==="illness-weight") {
+    return "illness";
   } else if (weight==="shots-weight") {
     return "shots";
   }

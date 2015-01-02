@@ -11,6 +11,7 @@ function emptyGraph(choosers){
 
 function makeGraph(choosers){
 	var graphData = selectGraphData(choosers);
+
   var graphStyle = selectGraphStyle(choosers);
   var graph = new $jit.BarChart(graphStyle);
   graph.loadJSON(graphData);
@@ -38,6 +39,8 @@ function selectGraphData(choosers){
 	} else if (choosers['filter'] === "gender"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterGenderWeightNone();
+		} else if (choosers['weight'] === "unarmed"){
+			return dataGraphFilterGenderWeightUnarmed();
 		}
 	} else if (choosers['filter'] === "unarmed"){
 		if (choosers['weight'] === "none"){
@@ -86,6 +89,8 @@ function selectGraphStyle(choosers){
 	} else if (choosers['filter'] === "gender"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterGenderWeightNone();
+		} else if (choosers['weight'] === "unarmed"){
+			return styleGraphFilterGenderWeightUnarmed();
 		}
 	} else if (choosers['filter'] === "unarmed"){
 		if (choosers['weight'] === "none"){

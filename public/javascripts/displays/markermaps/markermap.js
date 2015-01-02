@@ -100,6 +100,10 @@ function addGeoLayer(geoData){
       } else if (feature.properties.filter === "gender"){
         if (feature.properties.weight === "none"){
           return styleMarkerFilterGenderWeightNone(feature);
+        } else if (feature.properties.weight === "unarmed"){
+          return styleMarkerFilterGenderWeightUnarmed(feature);
+        } else if (feature.properties.weight === "illness"){
+          return styleMarkerFilterGenderWeightIllness(feature);
         };
       } else if (feature.properties.filter === "unarmed"){
         if (feature.properties.weight === "none"){

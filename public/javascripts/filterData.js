@@ -5,6 +5,10 @@ function filterData(choosers){
     return filterWeightUspop(choosers);
   } else if (choosers.weight === "race"){
     return filterWeightRace(choosers);
+  } else if (choosers.weight === "unarmed"){
+    return filterWeightUnarmed(choosers);
+  } else if (choosers.weight === "illness"){
+    return filterWeightIllness(choosers);
   }
 };
 
@@ -36,7 +40,19 @@ function filterWeightUspop(choosers){
 
 function filterWeightRace(choosers){
   if (choosers.filter === "shots"){
-    filterShotsWeightRace(choosers);
+    return filterShotsWeightRace(choosers);
+  }
+};
+
+function filterWeightUnarmed(choosers){
+  if (choosers.filter === "gender"){
+    return filterByGenderWeightUnarmed();
+  }
+};
+
+function filterWeightIllness(choosers){
+  if (choosers.filter === "gender"){
+    return filterByGenderWeightIllness();
   }
 };
 
@@ -90,6 +106,38 @@ function filterByGender(){
   $.each(genders, function(i,val){
     var filtered = allKillings.filter(function(el){
       return el.victim_gender === val;
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
+
+function filterByGenderWeightUnarmed(){
+  var checkedBoxes = $('#gender-selection').children('input:checked');
+  var genders = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(genders, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      return el.victim_gender === val && el.victim_unarmed != null;
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
+
+function filterByGenderWeightIllness(){
+  var checkedBoxes = $('#gender-selection').children('input:checked');
+  var genders = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(genders, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      return el.victim_gender === val && el.symptoms_of_mental_illness != null;
     });
     arr = arr.concat(filtered);
   });

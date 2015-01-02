@@ -11,35 +11,36 @@ function replaceWeight(weight, callback){
 function updateWeightVisibility(choosers){
 	if (choosers['displaySelector'] === "marker"){
 		if (choosers['filter'] === "race"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
+			readyWeightsToBeShown();
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
+		} else if (choosers['filter'] === "gender") {
+			readyWeightsToBeShown();
+			$('#unarmed-weight').css({'display':'block'});
+			$('#illness-weight').css({'display':'block'});
 		} else {
 			removeAllWeights();
 		}
 	} else if (choosers['displaySelector'] === "graph"){
 		if (choosers['filter'] === "usPop"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
+			readyWeightsToBeShown();
 			$('#usPop-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "race"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
+			readyWeightsToBeShown();
 			$('#usPop-weight').css({'display':'block'});
 			$('#arrests-weight').css({'display':'block'});
+		} else if (choosers['filter'] === "gender"){
+			readyWeightsToBeShown();
+			$('#unarmed-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "unarmed"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
+			readyWeightsToBeShown();
 			$('#shots-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "illness"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
+			readyWeightsToBeShown();
 			$('#race-weight').css({'display':'block'});
 			$('#age-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "shots"){
-			$('.button-header').css({'display':'block'});
-			$('.button-weight').css({'display':'none'});
+			readyWeightsToBeShown();
 			$('#race-weight').css({'display':'block'});
 			$('#unarmed-weight').css({'display':'block'});
 		} else {
@@ -52,5 +53,10 @@ function updateWeightVisibility(choosers){
 
 function removeAllWeights(){
 	$('.button-header').css({'display':'none'});
+	$('.button-weight').css({'display':'none'});
+};
+
+function readyWeightsToBeShown(){
+	$('.button-header').css({'display':'block'});
 	$('.button-weight').css({'display':'none'});
 };

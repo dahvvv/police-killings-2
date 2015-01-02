@@ -70,7 +70,7 @@ function dataGraphFilterIllnessWeightRace(){
     'color': [
       "#3366FF",
       "#5200A3",
-      "#FF5050",
+      "#FF0000",
       "#FF6600",
       "#FFFF00",
       "#33CC33"

@@ -21,3 +21,40 @@ function dataGraphFilterGenderWeightNone(){
   };
   return data;
 };
+
+function dataGraphFilterGenderWeightUnarmed(){
+  var maleUnarmed = [];
+  var maleArmed = [];
+  var femaleUnarmed = [];
+  var femaleArmed = [];
+  $.each(allKillings, function(i,obj){
+    if (obj.victim_gender === "male"){
+      if (obj.victim_unarmed === true){
+        maleUnarmed.push(obj);
+      } else if (obj.victim_unarmed === false){
+        maleArmed.push(obj);
+      }
+    } else if (obj.victim_gender === "female"){
+      if (obj.victim_unarmed === true){
+        femaleUnarmed.push(obj);
+      } else if (obj.victim_unarmed === false){
+        femaleArmed.push(obj);
+      }
+    }
+  });
+  var data = {
+    'color': [baseColor,"#FF0000"],
+    'label': ["armed","unarmed"],
+    'values': [
+      {
+        'label': 'male',
+        'values': [maleArmed.length, maleUnarmed.length]
+      },
+      {
+        'label': 'female',
+        'values': [femaleArmed.length, femaleUnarmed.length]
+      },
+    ]
+  };
+  return data;
+};

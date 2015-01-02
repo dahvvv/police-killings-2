@@ -36,7 +36,9 @@ var programs = {
       arrests: "<p class='program-text' style='top:-0.8em'>A map of police shooting by race,<br>scaled by rate of annual arrests.</p>"
     },
     gender: {
-      none: "<p class='program-text'>Gender markermap</p>"
+      none: "<p class='program-text'>Gender markermap</p>",
+      unarmed: "<p class='program-text'>Gender/unarmed markermap</p>",
+      illness: "<p class='program-text'>Gender/illness markermap</p>"
     },
     unarmed: {
       none: "<p class='program-text' style='top:-0.8em'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>"
@@ -62,7 +64,9 @@ var programs = {
       none: "<p class='program-text' style='top:-0.8em'>The oldest recorded person killed by a police officer was <a href='http://www.huffingtonpost.com/2013/09/08/monroe-isadore-shootout_n_3889826.html' target='_blank'>107</a> years old.<br>The youngest <a href='http://newyork.cbslocal.com/2013/04/15/police-3-dead-in-brooklyn-shooting/' target='_blank'>have</a> <a href='http://articles.latimes.com/2005/jul/15/local/me-shooting15' target='_blank'>been</a> <a href='https://www.oxnardpd.org/pressreleases/1537/' target='_blank'>1</a>.</p>",
     },
     gender: {
-      none: "<p class='program-text' style='top:-0.8em'>92.5% of people killed by police are male.<br>7.5% of people killed by police are female.</p>"
+      none: "<p class='program-text' style='top:-0.8em'>92.5% of people killed by police are male.<br>7.5% of people killed by police are female.</p>",
+      unarmed: "<p class='program-text' style='top:-2em'>21% of men killed by police were unarmed.<br>37% of women killed by police were unarmed.</p>",
+      illness: "<p class='program-text' style='top:-2em'>21% of men killed by police were exhibiting signs of mental illness.<br>28% of women killed by police were exhibiting signs of mental illness.</p>"
     },
     unarmed: {
       none: "<p class='program-text'>Victims of police shootings were unarmed in over 20% of recorded cases.</p>",
