@@ -93,7 +93,12 @@ function dataGraphFilterRaceWeightArrests(){
 };
 
 function dataGraphFilterRaceWeightAge(){
-  'label': Array.apply(null, Array(ageRange()[1])).map(function (_, i) {return i;}),
+  // var data = {
+  //   'color': 
+  //   'label': Array.apply(null, Array(ageRange()[1])).map(function (_, i) {return i;}),
+
+  // };
+  // return data;
 };
 
 function dataGraphFilterRaceWeightIllness(){

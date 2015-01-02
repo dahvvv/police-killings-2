@@ -1,4 +1,4 @@
-function hexScaler(initHex,endHex,hexCount,center){
+function hexScaler(initHex,endHex,hexCount,centerCount){
 	if (initHex[0] != "#" || endHex[0] != "#"){
 		alert('please include hashes in the hex colors that you send to hexScaler!');
 	} else {
@@ -35,6 +35,12 @@ function hexScaler(initHex,endHex,hexCount,center){
 		});
 		for (i = 0; i < hexCount; i++){
 			hexArr.push("#" + rHexArr[i] + gHexArr[i] + bHexArr[i]);
+		};
+		if (centerCount){
+			var centerHex = hexArr[Math.ceil(hexCount / 2)];
+			var firstHalf = hexScaler(initHex,centerHex,centerCount);
+			var secondHalf = hexScaler(centerHex,endHex,hexCount - centerCount + 1);
+			var hexArr = firstHalf.slice(0,centerCount - 1).concat(secondHalf);
 		};
 		return hexArr;
 	}
