@@ -102,12 +102,12 @@ function styleGraphFilterRaceWeightAge(){
     injectInto: 'display-container',
     animate: true,
     orientation: 'horizontal',
-    barsOffset: 10,
+    barsOffset: 15,
     Margin: {
-      top:5,
+      top:10,
       left: 25,
-      right: 75,
-      bottom:5
+      right: 25,
+      bottom:10
     },
     labelOffest:5,
     type: 'stacked:gradient',
@@ -123,7 +123,8 @@ function styleGraphFilterRaceWeightAge(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = "elem.name:  " + elem.name + "<br>elem.label:  " + elem.label + "<br>elem.value:  " + elem.value;
+        elem.label = expandRace(elem.label);
+        tip.innerHTML = elem.label + " " + elem.name + "-year-olds<br>who were killed by police";
       }
     },
     Events: {
@@ -138,7 +139,13 @@ function styleGraphFilterRaceWeightAge(){
 };
 
 function GraphFilterRaceWeightAgeTipSample(elem){
-  alert('hi');
+  var age = elem.name;
+  var race = expandRace(elem.label);
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age && el.victim_race === race;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
 
 function styleGraphFilterRaceWeightIllness(){

@@ -5,6 +5,18 @@ function replaceProgram(choosers){
   $('#program').html(program);
 };
 
+function abbreviateRace(race){
+  race = race === "hispanic and/or latin" ? "hispanic" : race;
+  race = race === "alaskan and/or pacific islander" ? "ak / p.i." : race;
+  return race;
+};
+
+function expandRace(race){
+  race = race === "hispanic" ? "hispanic and/or latin" : race;
+  race = race === "ak / p.i." ? "alaskan and/or pacific islander" : race;
+  return race;
+};
+
 var defaultLat = 37.78808138412046;
 var defaultLon = -94.39453125;
 var defaultZoom = 4;

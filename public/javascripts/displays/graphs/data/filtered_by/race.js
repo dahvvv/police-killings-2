@@ -94,7 +94,21 @@ function dataGraphFilterRaceWeightArrests(){
 
 function dataGraphFilterRaceWeightAge(){
   var data = {
-    'color': hexScaler("#FF0000","#0000FF",108),
+    'color': hexScaler("#FFFFFF","#FFFF00",9)
+    .slice(0,8)
+    .concat(hexScaler("#FFFF00","#FF6600",7))
+    .slice(0,14)
+    .concat(hexScaler("#FF6600","#FF0000",7))
+    .slice(0,20)
+    .concat(hexScaler("#FF0000","#551A8B",7))
+    .concat(hexScaler("#551A8B","#551A8B",14))
+    .concat(hexScaler("#551A8B","#FF0000",8))
+    .slice(0,48)
+    .concat(hexScaler("#FF0000","#FF6600",7))
+    .slice(0,54)
+    .concat(hexScaler("#FF6600","#FFFF00",8))
+    .slice(0,61)
+    .concat(hexScaler("#FFFF00","#FFFFFF",47)),
     'label': Array.apply(null, Array(ageRange()[1])).map(function (_, i) {return i;}),
     'values': graphFilterRaceWeightAgeValues()
   };
@@ -112,16 +126,24 @@ function graphFilterRaceWeightAgeValues(){
     "other"
   ];
   $.each(races, function(i,race){
+    var totalKilled = 0;
     var totalKilledLengthForEachAge = [];
     for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
-      var totalKilled = allKillings.filter(function(el){
+      var killedAtAge = allKillings.filter(function(el){
         return el.victim_race === race && el.victim_age === age;
       });
-      totalKilledLengthForEachAge.push(totalKilled.length);
+      totalKilled += killedAtAge.length;
+      totalKilledLengthForEachAge.push(killedAtAge.length);
     };
+    percentKilledForEachAge = $.map(totalKilledLengthForEachAge, function(val,i){
+      var percentTimesHun = Math.ceil((val / totalKilled) * 10000);
+      // var percent = percent < 0 ? 0 : percent;
+      return percentTimesHun;
+    });
+    race = abbreviateRace(race);
     var value = {
       'label': race,
-      'values': totalKilledLengthForEachAge
+      'values': percentKilledForEachAge
     };
     values.push(value);
   });
