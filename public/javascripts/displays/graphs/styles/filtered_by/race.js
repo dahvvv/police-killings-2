@@ -102,12 +102,12 @@ function styleGraphFilterRaceWeightAge(){
     injectInto: 'display-container',
     animate: true,
     orientation: 'horizontal',
-    barsOffset: 15,
+    barsOffset: 10,
     Margin: {
-      top:10,
+      top:15,
       left: 25,
       right: 25,
-      bottom:10
+      bottom:15
     },
     labelOffest:5,
     type: 'stacked:gradient',
