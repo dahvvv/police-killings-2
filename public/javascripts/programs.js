@@ -59,6 +59,8 @@ var programs = {
       none: "<p class='program-text'>Police deaths by race, measured in percentage.</p>",
       usPop: "<p class='program-text' style='top:-0.8em'>When races are compared in terms of deaths per capita,<br>as opposed to deaths total, the portion of white victims drops from 49% to 10%.</p>",
       arrests: "<p class='program-text'>The broad likelihood of a single arrest resulting in death, by race.</p>",
+      age: "<p class='program-text' style='top:-3em'>The dark purple areas represent victims who were of near-average age.<br>The bright colors on the left represent younger victims.<br>The bright colors on the right represent older victims.<br>You can see that black victims skew much younger than white victims.</p>",
+      illness: "<p class='program-text'>Over 35% of asian people killed by police were exhibiting clear signs of mental illness.</p>",
     },
     age: {
       none: "<p class='program-text' style='top:-0.8em'>The oldest recorded person killed by a police officer was <a href='http://www.huffingtonpost.com/2013/09/08/monroe-isadore-shootout_n_3889826.html' target='_blank'>107</a> years old.<br>The youngest <a href='http://newyork.cbslocal.com/2013/04/15/police-3-dead-in-brooklyn-shooting/' target='_blank'>have</a> <a href='http://articles.latimes.com/2005/jul/15/local/me-shooting15' target='_blank'>been</a> <a href='https://www.oxnardpd.org/pressreleases/1537/' target='_blank'>1</a>.</p>",
