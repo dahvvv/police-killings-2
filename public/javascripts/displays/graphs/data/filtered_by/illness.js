@@ -258,9 +258,7 @@ function dataGraphFilterIllnessWeightAge(){
     return el.symptoms_of_mental_illness === "no";
   });
   var data = {
-    'color': hexScaler("#FF3300","#7B0084",13)
-    .slice(0,12)
-    .concat(hexScaler("#7B0084","#0000FF",10)),
+    'color': hexScaler("#FF3300","#0000FF",22,13),
     'label': [
       'ages 0 through 4',
       'ages 5 through 9',

@@ -93,12 +93,39 @@ function dataGraphFilterRaceWeightArrests(){
 };
 
 function dataGraphFilterRaceWeightAge(){
-  // var data = {
-  //   'color': 
-  //   'label': Array.apply(null, Array(ageRange()[1])).map(function (_, i) {return i;}),
+  var data = {
+    'color': hexScaler("#FF0000","#0000FF",108),
+    'label': Array.apply(null, Array(ageRange()[1])).map(function (_, i) {return i;}),
+    'values': graphFilterRaceWeightAgeValues()
+  };
+  return data;
+};
 
-  // };
-  // return data;
+function graphFilterRaceWeightAgeValues(){
+  var values = [];
+  var races = [
+    "white",
+    "black",
+    "hispanic and/or latin",
+    "asian",
+    "alaskan and/or pacific islander",
+    "other"
+  ];
+  $.each(races, function(i,race){
+    var totalKilledLengthForEachAge = [];
+    for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
+      var totalKilled = allKillings.filter(function(el){
+        return el.victim_race === race && el.victim_age === age;
+      });
+      totalKilledLengthForEachAge.push(totalKilled.length);
+    };
+    var value = {
+      'label': race,
+      'values': totalKilledLengthForEachAge
+    };
+    values.push(value);
+  });
+  return values;
 };
 
 function dataGraphFilterRaceWeightIllness(){

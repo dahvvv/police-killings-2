@@ -47,7 +47,9 @@ function hexScaler(initHex,endHex,hexCount,centerCount){
 };
 
 function hexScale(init,end,i,count){
-	return init + Math.floor(i * ((end - init) / (count - 1)));
+	value = init + Math.floor(i * ((end - init) / (count - 1)));
+	value = value < 0 ? 0 : value;
+	return value;
 };
 
 function convertTwoDigitHexToNum(hex){
