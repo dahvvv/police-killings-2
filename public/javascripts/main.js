@@ -1,6 +1,6 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd3ZZIn0.VNcoUZ2TFXUuID8JQ2-t2A';
 
-function replaceProgram(choosers){
+function replaceProgram(data, choosers){
   var program = programs[choosers.displaySelector][choosers.filter][choosers.weight];
   $('#program').html(program);
 };
@@ -51,7 +51,7 @@ $(function(){
       updateChooserListviews(choosers);
       updateWeightVisibility(choosers);
       updateDisplay(data, choosers);
-      replaceProgram(choosers);
+      replaceProgram(data, choosers);
     })
   });
 

@@ -362,6 +362,10 @@ select.button-filter {
   top: -2em;
 }
 
+.program-text.one-line {
+  top: -2em;
+}
+
 .popup-container {
   background-color: #c8cdcf;
   border-radius: 15px;

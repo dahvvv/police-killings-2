@@ -7,12 +7,8 @@ function dataFilterShots(choosers){
 };
 
 function dataFilterShotsWeightNone(){
-  var min = $('#shots-min').val();
-  min = min === "" ? 0 : min;
-  var max = $('#shots-max').val();
-  max = max === "" ? 999 : max;
   arr = allKillings.filter(function(el){
-    return el.shots_fired >= min && el.shots_fired <= max;
+    return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
   });
   return arr;
 };
@@ -23,4 +19,12 @@ function dataFilterShotsWeightRace(choosers){
   } else if (choosers.displaySelector === "marker"){
     return filterShots20Plus();
   }
+};
+
+function shotsRange(){
+  var min = $('#shots-min').val();
+  min = min === "" ? 0 : min;
+  var max = $('#shots-max').val();
+  max = max === "" ? 999 : max;
+  return {min: min, max: max};
 };
