@@ -1,7 +1,7 @@
 var programs = {
   heatmap: {
     usPop: {
-      none: "<p class='program-text'>People killed by police officers in the united states.</p>"
+      none: "<p class='program-text' style='top:-2em'>People killed by police officers in the united states.</p>"
     },
     age: {
       none: "<p class='program-text' style='top:-0.8em'>This heatmap is scaled to show similar total heat for any age range,<br>in order to emphasize changes in locations.</p>"

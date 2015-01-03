@@ -62,6 +62,21 @@ $(function(){
     updateDisplay(data, choosers);
   });
 
+  $('#about-link').on('click', function(e){
+    e.preventDefault();
+    $('#about').slideToggle(800);
+  });
+
+  $('#forward-button').on('click', function(e){
+    e.preventDefault();
+    nextPage();
+  });
+
+  $('#back-button').on('click', function(e){
+    e.preventDefault();
+    prevPage();
+  });
+
   $.ajax({
     url: '/api',
     dataType: 'JSON',
