@@ -206,7 +206,9 @@ function filterShotsWeightNone(choosers){
 
 function filterByShots(){
   var min = $('#shots-min').val();
+  min = min === "" ? 0 : min;
   var max = $('#shots-max').val();
+  max = max === "" ? 999 : max;
   arr = allKillings.filter(function(el){
     return el.shots_fired >= min && el.shots_fired <= max;
   });

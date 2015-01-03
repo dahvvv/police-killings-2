@@ -10,7 +10,6 @@ function updateChooserListviews(choosers){
 		$('.legend').css({"display":"none"});
 	} else if (choosers['displaySelector'] === "marker"){
 		$('.legend').css({"display":"inline-block"});
-		
 	};
 
 	// if you can't see the racedisplay, and the filter is on race, and the display is not on graph, then show the racedisplay
@@ -63,15 +62,10 @@ function updateChooserListviews(choosers){
 		}
 	};
 
-	// if you can see the shotsdisplay, and the selector is on markermap, then hide the shotsdisplay
-	if (shotsDisplay != "none"){
-		if (choosers['displaySelector'] === "marker"){
-			$('#shots-range').css({"display":"none"});
-		}
-	} else {
-		// if you can't see the shotsdisplay, and the filter is on shots, and the display is on heatmap, then show the shotsdisplay
+	// if you can't see the shotsdisplay, and the filter is on shots, and the display is not on graph, then show the shotsdisplay
+	if (shotsDisplay === "none"){
 		if (choosers['filter'] === "shots"){
-			if (choosers['displaySelector'] === "heatmap"){
+			if (choosers['displaySelector'] != "graph"){
 				$('#shots-range').css({"display":"block"});
 			}
 		}

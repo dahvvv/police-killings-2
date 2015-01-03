@@ -6,6 +6,14 @@ body {
   font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
 
+a:link {
+  color: #101535;
+}
+
+a:visited {
+  color: #101535;
+}
+
 #container {
   position: relative;
   height: 43em;
