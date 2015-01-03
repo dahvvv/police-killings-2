@@ -61,7 +61,30 @@ function graphFilterAgeWeightUspopValues(){
 };
 
 function dataGraphFilterAgeWeightArrests(){
+  var data = {
+    'color': [baseColor],
+    'label': ['deaths per 100,000 arrests'],
+    'values': graphFilterAgeWeightArrestsValues()
+  };
+  return data;
+};
 
+function graphFilterAgeWeightArrestsValues(){
+  var values = [];
+  // age min is 10 and age max is 64 because those are the limits of reliable data, see arrestsByAge at the bottom
+  for (var age = 10; age <= 64; age++){
+    var totalKilled = allKillings.filter(function(el){
+      return el.victim_age === age;
+    });
+    var totalKilledPerCap = totalKilled.length / arrestsByAge[age];
+    var adjustedPerCap = Math.ceil(totalKilledPerCap * 100000);
+    var value = {
+      'label': age,
+      'values': adjustedPerCap
+    };
+    values.push(value);
+  };
+  return values;
 };
 
 function dataGraphFilterAgeWeightRace(){
@@ -266,3 +289,112 @@ var populationByAge = {
 };
 
 // population for all ages 100+ = 70951
+var arrestsByAge = {
+  1:    0, // total arrests all ages <10 = 7,099
+  2:    0,
+  3:    0,
+  4:    0,
+  5:    0,
+  6:    0,
+  7:    0,
+  8:    0,
+  9:    0,
+  10:   20208, // total arrests 10-12 60,624
+  11:   20208,
+  12:   20208,
+  13:   107921, // total arrests 13-14 215,842
+  14:   107921,
+  15:   190906,
+  16:   247028,
+  17:   298835,
+  18:   384488,
+  19:   419201,
+  20:   419158,
+  21:   405847,
+  22:   387024,
+  23:   359529,
+  24:   337233,
+  25:   288939, // total arrests 25-29 1,444,699
+  26:   288939,
+  27:   288939,
+  28:   288939,
+  29:   288938,
+  30:   227587, // total arrests 30-34 1,137,938
+  31:   227587,
+  32:   227587,
+  33:   227586,
+  34:   227586,
+  35:   160652, // total arrests 35-39 803,258
+  36:   160652,
+  37:   160652,
+  38:   160651,
+  39:   160651,
+  40:   145978, // total arrests 40-44 729,886
+  41:   145977,
+  42:   145977,
+  43:   145977,
+  44:   145977,
+  45:   128373, // total arrests 45-49 641,864
+  46:   128373,
+  47:   128373,
+  48:   128373,
+  49:   128372,
+  50:   98225, // total arrests 50-54 491,121 
+  51:   98224,
+  52:   98224,
+  53:   98224,
+  54:   98224,
+  55:   52910, // total arrests 55-59 264,550 
+  56:   52910,
+  57:   52910,
+  58:   52910,
+  59:   52910,
+  60:   40000, // total arrests 60-64 118,772 
+  61:   40000,
+  62:   30000,
+  63:   27000,
+  64:   23000,
+  65:   0, // total arrests 65+ 81,758
+  66:   0,
+  67:   0,
+  68:   0,
+  69:   0,
+  70:   0,
+  71:   0,
+  72:   0,
+  73:   0,
+  74:   0,
+  75:   0,
+  76:   0,
+  77:   0,
+  78:   0,
+  79:   0,
+  80:   0,
+  81:   0,
+  82:   0,
+  83:   0,
+  84:   0,
+  85:   0,
+  86:   0,
+  87:   0,
+  88:   0,
+  89:   0,
+  90:   0,
+  91:   0,
+  92:   0,
+  93:   0,
+  94:   0,
+  95:   0,
+  96:   0,
+  97:   0,
+  98:   0,
+  99:   0,
+  100:  0,
+  101:  0,
+  102:  0,
+  103:  0,
+  104:  0,
+  105:  0,
+  106:  0,
+  107:  0,
+};

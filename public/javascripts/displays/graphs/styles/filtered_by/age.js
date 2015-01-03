@@ -38,7 +38,6 @@ function styleGraphFilterAgeWeightNone(){
 };
 
 function styleGraphFilterAgeWeightUspop(){
-  debugger;
   var style = {
     injectInto: 'display-container',
     animate: true,
@@ -73,8 +72,24 @@ function styleGraphFilterAgeWeightUspop(){
         tip.innerHTML = "<p>Age: " + elem.label + "</p><p>Total: " + elem.value;
       }
     },
+    Events: {
+      enable: true,
+      type: 'Native',
+      onClick: function(node, eventInfo, e){
+        graphFilterAgeWeightUspopTipSample(node);
+      }
+    }
   };
   return style;
+};
+
+function graphFilterAgeWeightUspopTipSample(elem){
+  var age = elem.label;
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
 
 function styleGraphFilterAgeWeightArrests(){
@@ -82,18 +97,18 @@ function styleGraphFilterAgeWeightArrests(){
     injectInto: 'display-container',
     animate: true,
     orientation: 'vertical',
-    barsOffset: 0,
+    barsOffset: 5,
     Margin: {
       top:2,
-      left: 0,
-      right: 0,
+      left: 5,
+      right: 5,
       bottom:2
     },
     labelOffest: 0,
     type: 'stacked:gradient',
     showAggregates: false,
     showLabels: function(i){
-      if (i%10===0) {
+      if (i%2===0) {
         return true
       } else {
         return false
@@ -109,11 +124,27 @@ function styleGraphFilterAgeWeightArrests(){
     Tips: {
       enable: true,
       onShow: function(tip, elem) {
-        tip.innerHTML = "<p>Age: " + elem.label + "</p><p>Total: " + elem.value;
+        tip.innerHTML = "For every hundred thousand arrests<br>made on a " + elem.label + "-year-old person<br>in the United States,<br>" + elem.value + " of them have resulted in death.";
       }
     },
+    Events: {
+      enable: true,
+      type: 'Native',
+      onClick: function(node, eventInfo, e){
+        graphFilterAgeWeightArrestsTipSample(node);
+      }
+    }
   };
   return style;
+};
+
+function graphFilterAgeWeightArrestsTipSample(elem){
+  var age = elem.label;
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
 
 function styleGraphFilterAgeWeightRace(){
@@ -155,14 +186,14 @@ function styleGraphFilterAgeWeightRace(){
       enable: true,
       type: 'Native',
       onClick: function(node, eventInfo, e){
-        GraphFilterAgeWeightRaceTipSample(node);
+        graphFilterAgeWeightRaceTipSample(node);
       }
     }
   };
   return style;
 };
 
-function GraphFilterAgeWeightRaceTipSample(elem){
+function graphFilterAgeWeightRaceTipSample(elem){
   var race = elem.name;
   var age = elem.label;
   var collection = allKillings.filter(function(el){
@@ -211,14 +242,14 @@ function styleGraphFilterAgeWeightIllness(){
       enable: true,
       type: 'Native',
       onClick: function(node, eventInfo, e){
-        GraphFilterAgeWeightIllnessTipSample(node);
+        graphFilterAgeWeightIllnessTipSample(node);
       }
     }
   };
   return style;
 };
 
-function GraphFilterAgeWeightIllnessTipSample(elem){
+function graphFilterAgeWeightIllnessTipSample(elem){
   if (elem.name === "symptoms"){
     var illness = "yes";
   } else if (elem.name === "no symptoms"){

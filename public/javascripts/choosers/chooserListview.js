@@ -6,6 +6,13 @@ function updateChooserListviews(choosers){
 	var illnessDisplay = $('#illness-selection').css('display');
 	var shotsDisplay = $('#shots-range').css('display');
 
+	if (choosers['displaySelector'] === "heatmap"){
+		$('.legend').css({"display":"none"});
+	} else if (choosers['displaySelector'] === "marker"){
+		$('.legend').css({"display":"inline-block"});
+		
+	};
+
 	// if you can't see the racedisplay, and the filter is on race, and the display is not on graph, then show the racedisplay
 	if (raceDisplay === "none"){
 		if (choosers['filter'] === "race"){

@@ -163,6 +163,18 @@ select.button-filter {
   margin: 4% 10% 8%;
 }
 
+.legend {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.legend#alaskan {
+  background-color: crimson;
+}
+
 #display-and-selectors {
   position: relative;
   height: 31em;
