@@ -102,14 +102,13 @@ select.button-filter {
 }
 
 .filter-checkbox-form {
-  margin: 0.5em 1em;
+  margin: -0.8em 1em 0.5em 1em;
   display: none;
 }
 
 #race-selection input[type=submit] {
-  position: absolute;
-  top: 64%;
-  right: 10%;
+  width: 80px;
+  margin: 4% 10% 8%;
 }
 
 #age-range {
