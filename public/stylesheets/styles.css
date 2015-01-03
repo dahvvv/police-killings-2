@@ -164,15 +164,38 @@ select.button-filter {
 }
 
 .legend {
-  position: absolute;
+  position: relative;
   width: 12px;
   height: 12px;
   border-radius: 100%;
   border: 1px solid black;
+  top: 3px;
+  left: 1px;
+}
+
+.legend-text {
+  position: relative;
+  left: 4px;
 }
 
 .legend#alaskan {
   background-color: crimson;
+}
+
+.legend#asian {
+  background-color: darkorange;
+}
+
+.legend#black {
+  background-color: yellow;
+}
+
+.legend#hispanic {
+  background-color: limegreen;
+}
+
+.legend#white {
+  background-color: royalblue;
 }
 
 #display-and-selectors {

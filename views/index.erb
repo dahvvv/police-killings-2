@@ -5,11 +5,21 @@
 			<%= erb :'_fifty_states_dropdown' %>
 			<button class="chooser chooser-listview button-filter" id="race-filter">Race</button>
 			<form class="filter-checkbox-form" id="race-selection">
-        <input type="checkbox" id="select-alaskan" name="alaskan and/or pacific islander" value="alaskan" checked /><span class="legend" id="alaskan"></span><span>Alaskan / </span><br>Pacific Islander<br>
-        <input type="checkbox" id="select-asian" name="asian" value="asian" checked />Asian<br>
-        <input type="checkbox" id="select-black" name="black" value="black" checked />Black<br>
-        <input type="checkbox" id="select-hispanic" name="hispanic and/or latin" value="hispanic" checked />Hispanic / Latin<br>
-        <input type="checkbox" id="select-white" name="white" value="white" checked />White<br>
+        <input type="checkbox" id="select-alaskan" name="alaskan and/or pacific islander" value="alaskan" checked />
+        <span class="legend" id="alaskan"></span>
+        <span class="legend-text" id="alaskan">Alaskan / </span><br>Pacific Islander<br>
+        <input type="checkbox" id="select-asian" name="asian" value="asian" checked />
+        <span class="legend" id="asian"></span>
+        <span class="legend-text" id="asian">Asian</span><br>
+        <input type="checkbox" id="select-black" name="black" value="black" checked />
+        <span class="legend" id="black"></span>
+        <span class="legend-text" id="black">Black</span><br>
+        <input type="checkbox" id="select-hispanic" name="hispanic and/or latin" value="hispanic" checked />
+        <span class="legend" id="hispanic"></span>
+        <span class="legend-text" id="hispanic">Hispanic / Latin</span><br>
+        <input type="checkbox" id="select-white" name="white" value="white" checked />
+        <span class="legend" id="white"></span>
+        <span class="legend-text" id="white">White</span><br>
         <input type="checkbox" id="select-other" name="other" value="other" checked />Other<br>
         <input class="race-selection-submit chooser button-filter" type="submit" value="Enter" />
       </form>
