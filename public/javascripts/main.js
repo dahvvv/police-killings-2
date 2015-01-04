@@ -19,12 +19,15 @@ $(function(){
     replaceChooser(this, function(){
       var choosers = detectChoosers();
       updateView(choosers);
-      // updateChooserListviews(choosers);
-      // updateWeightVisibility(choosers);
-      // var data = filterData(choosers);
-      // updateDisplay(data, choosers);
-      // replaceProgram(data, choosers);
     })
+  });
+
+  $(".button-filter").on('click', function(e){
+    e.preventDefault();
+    if (this.tagName != "INPUT" && this.id != "usPop-filter"){
+      removeAllListviews();
+      $(this).next("form").css({"display":"block"});
+    };
   });
 
   $('#state-selector').on('change', function(e){

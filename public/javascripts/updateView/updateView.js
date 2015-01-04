@@ -1,12 +1,3 @@
-function readyWeightsToBeShown(){
-	$(".button-header").css({"display":"block"});
-	$(".button-weight").css({"display":"none"});
-};
-
-function removeAllWeights(){
-	$('.button-header, .button-weight').css({'display':'none'});
-};
-
 function updateView(choosers){
 	if (choosers.displaySelector === "heatmap"){
 		updateHeatmap(choosers);
@@ -14,5 +5,26 @@ function updateView(choosers){
 		updateMarkermap(choosers);
 	} else if (choosers.displaySelector === "graph"){
 		updateGraph(choosers);
+	};
+};
+
+function replaceChooser(chooser, callback){
+  if ($(chooser).hasClass('button-filter')) {
+    replaceFilter(chooser, callback);
+  } else if ($(chooser).hasClass('display-selector')) {
+    replaceSelector(chooser, callback);
+  } else if ($(chooser).hasClass('button-weight')) {
+    replaceWeight(chooser, callback);
+  };
+};
+
+function detectChoosers(){
+	var filter = detectFilter();
+	var displaySelector = detectDisplaySelector();
+	var weight = detectWeight();
+	return {
+		filter: filter,
+		displaySelector: displaySelector,
+		weight: weight
 	};
 };
