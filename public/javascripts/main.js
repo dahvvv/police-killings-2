@@ -1,10 +1,5 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFycGJvcnhtYXJycnBib3JycnJyeCIsImEiOiJ3Y0hUd3ZZIn0.VNcoUZ2TFXUuID8JQ2-t2A';
 
-function replaceProgram(data, choosers){
-  var program = programs[choosers.displaySelector][choosers.filter][choosers.weight];
-  $('#program').html(program);
-};
-
 function abbreviateRace(race,graphBarDirection){
   if (graphBarDirection === "horizontal"){
     race = race === "hispanic and/or latin" ? "hispanic" : race;
@@ -47,11 +42,12 @@ $(function(){
     e.preventDefault();
     replaceChooser(this, function(){
       var choosers = detectChoosers();
-      var data = filterData(choosers);
-      updateChooserListviews(choosers);
-      updateWeightVisibility(choosers);
-      updateDisplay(data, choosers);
-      replaceProgram(data, choosers);
+      updateView(choosers);
+      // updateChooserListviews(choosers);
+      // updateWeightVisibility(choosers);
+      // var data = filterData(choosers);
+      // updateDisplay(data, choosers);
+      // replaceProgram(data, choosers);
     })
   });
 
