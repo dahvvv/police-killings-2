@@ -63,10 +63,10 @@ function updateWeightVisibility(choosers){
 	}
 };
 
-function removeAllWeights(){
-	$('.button-header, .button-weight').css({'display':'none'});
-	// $('.button-weight').css({'display':'none'});
-};
+// function removeAllWeights(){
+// 	$('.button-header').css({'display':'none'});
+// 	$('.button-weight').css({'display':'none'});
+// };
 
 // function readyWeightsToBeShown(){
 // 	$(".button-header").css({"display":"block"});

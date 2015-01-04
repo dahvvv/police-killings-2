@@ -31,3 +31,8 @@ function selectGraphFilter(choosers){
 		updateGraphFilterShots(choosers);
 	};
 };
+
+function makeGraph(data, style){
+	var graph = new $jit.BarChart(style);
+	graph.loadJSON(data);
+};
