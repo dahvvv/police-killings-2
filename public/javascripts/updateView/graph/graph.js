@@ -37,6 +37,12 @@ function makeGraph(data, style){
 	graph.loadJSON(data);
 };
 
+
+
+function createGraph(data){};
+
+
+
 var labelType, useGradients, nativeTextSupport, animate;
 
 $(function(){
