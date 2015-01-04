@@ -1,15 +1,16 @@
 function updateGraphFilterUnarmed(choosers){
 	readyWeightsToBeShown();
 	$('#shots-weight').css({'display':'block'});
+	var checkedUnarmed = checkUnarmed();
 	if (choosers.weight === "none"){
-		updateGraphFilterUnarmedWeightNone();
+		updateGraphFilterUnarmedWeightNone(checkedUnarmed);
 	} else if (choosers.weight === "shots"){
-		updateGraphFilterUnarmedWeightShots();
+		updateGraphFilterUnarmedWeightShots(checkedUnarmed);
 	}
 };
 
-function updateGraphFilterUnarmedWeightNone(){
-	var data = dataFilterUnarmedWeightNone();
+function updateGraphFilterUnarmedWeightNone(checkedUnarmed){
+	var data = dataFilterUnarmedWeightNone(checkedUnarmed);
 	var graphInfo = infoGraphFilterUnarmedWeightNone();
 	var graphStyle = styleGraphFilterUnarmedWeightNone();
 	makeGraph(graphInfo, graphStyle);
@@ -17,8 +18,8 @@ function updateGraphFilterUnarmedWeightNone(){
 	$('#program').html(program);
 };
 
-function updateGraphFilterUnarmedWeightShots(){
-	var data = dataFilterUnarmedWeightNone();
+function updateGraphFilterUnarmedWeightShots(checkedUnarmed){
+	var data = dataFilterUnarmedWeightNone(checkedUnarmed);
 	var graphInfo = infoGraphFilterUnarmedWeightShots();
 	var graphStyle = styleGraphFilterUnarmedWeightShots();
 	makeGraph(graphInfo, graphStyle);

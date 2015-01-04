@@ -1,9 +1,13 @@
-function dataFilterIllnessWeightNone(){
+function checkIllness(){
   var checkedBoxes = $('#illness-selection').children('input:checked');
   var checkedIllness = $(checkedBoxes).map(function(){
     return this.name;
   })
   .get();
+  return checkedIllness;
+};
+
+function dataFilterIllnessWeightNone(checkedIllness){
   var arr = [];
   $.each(checkedIllness, function(i,val){
     var filtered = allKillings.filter(function(el){
@@ -16,4 +20,9 @@ function dataFilterIllnessWeightNone(){
     arr = arr.concat(filtered);
   });
   return arr;
+};
+
+var illnessColors = {
+  "yes" : "paleturquoise",
+  "no"  : "red", 
 };

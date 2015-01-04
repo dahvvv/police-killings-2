@@ -1,9 +1,13 @@
-function dataFilterUnarmedWeightNone(){
+function checkUnarmed(){
   var checkedBoxes = $('#unarmed-selection').children('input:checked');
   var checkedUnarmed = $(checkedBoxes).map(function(){
     return this.name;
   })
   .get();
+  return checkedUnarmed;
+};
+
+function dataFilterUnarmedWeightNone(checkedUnarmed){
   var arr = [];
   $.each(checkedUnarmed, function(i,val){
     var filtered = allKillings.filter(function(el){
@@ -16,4 +20,9 @@ function dataFilterUnarmedWeightNone(){
     arr = arr.concat(filtered);
   });
   return arr;
+};
+
+var unarmedColors = {
+  false : "red",
+  true  : "white", 
 };

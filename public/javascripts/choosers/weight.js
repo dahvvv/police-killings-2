@@ -10,17 +10,17 @@ function replaceWeight(weight, callback){
 
 function updateWeightVisibility(choosers){
 	if (choosers['displaySelector'] === "marker"){
-		if (choosers['filter'] === "race"){
+	// 	if (choosers['filter'] === "race"){
 			// readyWeightsToBeShown();
 			// $('#usPop-weight').css({'display':'block'});
 			// $('#arrests-weight').css({'display':'block'});
-		} else if (choosers['filter'] === "gender") {
-			readyWeightsToBeShown();
-			$('#unarmed-weight').css({'display':'block'});
-			$('#illness-weight').css({'display':'block'});
-		} else {
-			removeAllWeights();
-		}
+		// } else if (choosers['filter'] === "gender") {
+		// 	readyWeightsToBeShown();
+		// 	$('#unarmed-weight').css({'display':'block'});
+		// 	$('#illness-weight').css({'display':'block'});
+		// } else {
+		// 	removeAllWeights();
+		// }
 	// } else if (choosers['displaySelector'] === "graph"){
 	// 	if (choosers['filter'] === "usPop"){
 	// 		readyWeightsToBeShown();

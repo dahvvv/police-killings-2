@@ -1,12 +1,12 @@
-function styleMarkerFilterGenderWeightNone(feature){
-  return {
-    fillColor: genderToFillColor(feature.properties.gender),
-    color: 'black',
-    radius: 7,
-    fillOpacity: 1,
-    opacity: 1,
-  }
-};
+// function styleMarkerFilterGenderWeightNone(feature){
+//   return {
+//     fillColor: genderToFillColor(feature.properties.gender),
+//     color: 'black',
+//     radius: 7,
+//     fillOpacity: 1,
+//     opacity: 1,
+//   }
+// };
 
 function styleMarkerFilterGenderWeightUnarmed(feature){
   var gender = feature.properties.gender;
@@ -32,12 +32,12 @@ function styleMarkerFilterGenderWeightIllness(feature){
   }
 };
 
-function genderToFillColor(gender){
-  switch (gender) {
-    case "male": return "lightblue";
-    case "female": return "pink";
-  }
-};
+// function genderToFillColor(gender){
+//   switch (gender) {
+//     case "male": return "lightblue";
+//     case "female": return "pink";
+//   }
+// };
 
 function genderWeightUnarmedToFillColor(gender,unarmed){
   if (gender === "male"){

@@ -1,17 +1,18 @@
 function updateGraphFilterIllness(choosers){
 	readyWeightsToBeShown();
 	$('#race-weight, #age-weight').css({'display':'block'});
+	var checkedIllness = checkIllness();
 	if (choosers.weight === "none"){
-		updateGraphFilterIllnessWeightNone();
+		updateGraphFilterIllnessWeightNone(checkedIllness);
 	} else if (choosers.weight === "race"){
-		updateGraphFilterIllnessWeightRace();
+		updateGraphFilterIllnessWeightRace(checkedIllness);
 	} else if (choosers.weight === "age"){
-		updateGraphFilterIllnessWeightAge();
+		updateGraphFilterIllnessWeightAge(checkedIllness);
 	}
 };
 
-function updateGraphFilterIllnessWeightNone(){
-	var data = dataFilterIllnessWeightNone();
+function updateGraphFilterIllnessWeightNone(checkedIllness){
+	var data = dataFilterIllnessWeightNone(checkedIllness);
 	var graphInfo = infoGraphFilterIllnessWeightNone();
 	var graphStyle = styleGraphFilterIllnessWeightNone();
 	makeGraph(graphInfo, graphStyle);
@@ -19,8 +20,8 @@ function updateGraphFilterIllnessWeightNone(){
 	$('#program').html(program);
 };
 
-function updateGraphFilterIllnessWeightRace(){
-	var data = dataFilterIllnessWeightNone();
+function updateGraphFilterIllnessWeightRace(checkedIllness){
+	var data = dataFilterIllnessWeightNone(checkedIllness);
 	var graphInfo = infoGraphFilterIllnessWeightRace();
 	var graphStyle = styleGraphFilterIllnessWeightRace();
 	makeGraph(graphInfo, graphStyle);
@@ -28,8 +29,8 @@ function updateGraphFilterIllnessWeightRace(){
 	$('#program').html(program);
 };
 
-function updateGraphFilterIllnessWeightAge(){
-	var data = dataFilterIllnessWeightNone();
+function updateGraphFilterIllnessWeightAge(checkedIllness){
+	var data = dataFilterIllnessWeightNone(checkedIllness);
 	var graphInfo = infoGraphFilterIllnessWeightAge();
 	var graphStyle = styleGraphFilterIllnessWeightAge();
 	makeGraph(graphInfo, graphStyle);

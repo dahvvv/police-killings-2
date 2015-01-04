@@ -1,3 +1,12 @@
+function checkGenders(){
+  var checkedBoxes = $('#gender-selection').children('input:checked');
+  var checkedGenders = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  return checkedGenders;
+};
+
 function dataFilterGenderWeightNone(checkedGenders){
   var arr = [];
   $.each(checkedGenders, function(i,val){
@@ -29,4 +38,9 @@ function dataFilterGenderWeightIllness(checkedGenders){
     arr = arr.concat(filtered);
   });
   return arr;
+};
+
+var genderColors = {
+  "male"   : "lightblue",
+  "female" : "pink",
 };

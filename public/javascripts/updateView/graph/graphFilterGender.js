@@ -1,11 +1,7 @@
 function updateGraphFilterGender(choosers){
 	readyWeightsToBeShown();
 	$('#unarmed-weight, #illness-weight').css({'display':'block'});
-	var checkedBoxes = $('#gender-selection').children('input:checked');
-  var checkedGenders = $(checkedBoxes).map(function(){
-    return this.name;
-  })
-  .get();
+  var checkedGenders = checkGenders();
 	if (choosers.weight === "none"){
 		updateGraphFilterGenderWeightNone(checkedGenders);
 	} else if (choosers.weight === "unarmed"){
