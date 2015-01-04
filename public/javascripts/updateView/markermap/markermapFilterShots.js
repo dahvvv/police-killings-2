@@ -22,6 +22,22 @@ function updateMarkermapFilterShotsWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMarkermap(geoData);
-	var program = "<p class='program-text one-line'>People who were shot at by the police twenty times or more.</p>";
+	var program = function(){
+		var min = shotsRange().min;
+		var max = shotsRange().max;
+		if (min === 0){
+			if (max === 999){
+				return "<p class='program-text one-line'>All cases in which the number of shots fired by police was recorded.</p>";
+			} else {
+				return "<p class='program-text two-line'>Police fired at a victim " + max + " times or fewer<br>in " + data.length + " recorded cases.</p>";
+			};
+		} else {
+			if (max === 999){
+				return "<p class='program-text two-line'>Police fired at a victim " + min + " times or more<br>in " + data.length + " recorded cases.</p>";
+			} else {
+				return "<p class='program-text two-line'>Police fired at a victim between " + min + " and " + max + " times<br>in " + data.length + " recorded cases.</p>";
+			};
+		};
+	};
 	$('#program').html(program);
 };

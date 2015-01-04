@@ -16,16 +16,3 @@ function updateView(choosers){
 		updateGraph(choosers);
 	};
 };
-
-
-function updateHeatmap(choosers){};
-
-
-// function dataFilterAgeWeightNone(choosers){
-//   if (choosers.displaySelector === "heatmap"){
-//     return filterByAge();
-//   } else {
-//     return filterAgeNotNil();
-//   }
-// };
-
