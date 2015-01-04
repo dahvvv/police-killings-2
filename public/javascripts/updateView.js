@@ -20,15 +20,17 @@ function updateMarkermap(choosers){};
 
 function updateGraph(choosers){
 	$(".filter-checkbox-form, #age-range, #shots-range").css({"display":"none"});
-	emptyGraph(selectGraphFilter(choosers));
+	emptyGraph(selectGraphFilter, choosers);
 };
 
-function emptyGraph(callback){
+function emptyGraph(callback, choosers){
   if ($("#map-one").css("display") != "none") {
-    $("#map-one").slideToggle(750, callback);
+    $("#map-one").slideToggle(750, function(){
+    	callback(choosers);
+    });
   } else {
     $("#display-container-canvaswidget").remove();
-    callback();
+    callback(choosers);
   }
 };
 
@@ -54,8 +56,7 @@ function selectGraphFilter(choosers){
 function updateGraphFilterUspop(choosers){};
 function updateGraphFilterAge(choosers){};
 function updateGraphFilterGender(choosers){};
-function updateGraphFilterUnarmed(choosers){};
-function updateGraphFilterIllness(choosers){};
+
 
 
 
@@ -76,6 +77,29 @@ function updateGraphFilterRace(choosers){
 	} else if (choosers.weight === "illness"){
 		updateGraphFilterRaceWeightIllness();
 	};
+};
+
+function updateGraphFilterUnarmed(choosers){
+	readyWeightsToBeShown();
+	$('#shots-weight').css({'display':'block'});
+	if (choosers.weight === "none"){
+		updateGraphFilterUnarmedWeightNone();
+	} else if (choosers.weight === "shots"){
+		updateGraphFilterUnarmedWeightShots();
+	}
+};
+
+
+function updateGraphFilterIllness(choosers){
+	readyWeightsToBeShown();
+	$('#race-weight, #age-weight').css({'display':'block'});
+	if (choosers.weight === "none"){
+		updateGraphFilterIllnessWeightNone();
+	} else if (choosers.weight === "race"){
+		updateGraphFilterIllnessWeightRace();
+	} else if (choosers.weight === "age"){
+		updateGraphFilterIllnessWeightAge();
+	}
 };
 
 function updateGraphFilterShots(choosers){
@@ -100,6 +124,33 @@ function updateGraphFilterRaceWeightNone(){
 	$('#program').html(program);
 };
 
+function updateGraphFilterUnarmedWeightNone(){
+	var data = dataFilterUnarmedWeightNone();
+	var graphData = dataGraphFilterUnarmedWeightNone();
+	var graphStyle = styleGraphFilterUnarmedWeightNone();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text one-line'>Victims of police shootings were unarmed in over 20% of recorded cases.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterUnarmedWeightShots(){
+	var data = dataFilterUnarmedWeightNone();
+	var graphData = dataGraphFilterUnarmedWeightShots();
+	var graphStyle = styleGraphFilterUnarmedWeightShots();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text three-line'>Twenty times,<br>the police have killed someone by firing at least ten shots,<br>and the victim was unarmed.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterIllnessWeightNone(){
+	var data = dataFilterIllnessWeightNone();
+	var graphData = dataGraphFilterIllnessWeightNone();
+	var graphStyle = styleGraphFilterIllnessWeightNone();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text two-line'>Victims of police shootings exhibited signs of mental illness<br>in over 20% of recorded cases.</p>";
+	$('#program').html(program);
+};
+
 function updateGraphFilterShotsWeightNone(){
 	var data = dataFilterShotsWeightNone();
 	var graphData = dataGraphFilterShotsWeightNone();
@@ -109,12 +160,30 @@ function updateGraphFilterShotsWeightNone(){
 	$('#program').html(program);
 };
 
+function updateGraphFilterIllnessWeightRace(){
+	var data = dataFilterIllnessWeightNone();
+	var graphData = dataGraphFilterIllnessWeightRace();
+	var graphStyle = styleGraphFilterIllnessWeightRace();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text four-line'>White and asian people who are killed by the police<br>are the victims most likely to have been mentally ill.<br>Over 30% of white and asian people killed by police<br>were exhibiting clear signs of mental illness.</p>";
+	$('#program').html(program);
+};
+
 function updateGraphFilterShotsWeightRace(){
 	var data = dataFilterShotsWeightNone();
 	var graphData = dataGraphFilterShotsWeightRace();
 	var graphStyle = styleGraphFilterShotsWeightRace();
 	makeGraph(graphData, graphStyle);
 	var program = "<p class='program-text one-line'>There does not appear to be a significant relationship<br>between the number of shots fired by police and the victim's race.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterIllnessWeightAge(){
+	var data = dataFilterIllnessWeightNone();
+	var graphData = dataGraphFilterIllnessWeightAge();
+	var graphStyle = styleGraphFilterIllnessWeightAge();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text four-line'>People killed by police while showing clear signs of mental illness<br>tend to be older than people with no signs of mental illness.<br>The average age of a victim with no signs of illness is 33.4 years old.<br>For those victims with mental illness, the average age is 38.5 years old.</p>";
 	$('#program').html(program);
 };
 
@@ -192,6 +261,46 @@ function reorderRaces(raceArr){
   return reordered;
 };
 
+
+function dataFilterUnarmedWeightNone(){
+  var checkedBoxes = $('#unarmed-selection').children('input:checked');
+  var checkedUnarmed = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(checkedUnarmed, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      if (val === "armed"){
+        return el.victim_unarmed === false;
+      } else if (val === "unarmed"){
+        return el.victim_unarmed === true;
+      }
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
+
+function dataFilterIllnessWeightNone(){
+  var checkedBoxes = $('#illness-selection').children('input:checked');
+  var checkedIllness = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  var arr = [];
+  $.each(checkedIllness, function(i,val){
+    var filtered = allKillings.filter(function(el){
+      if (val === "ill"){
+        return el.symptoms_of_mental_illness === "yes";
+      } else if (val === "not-ill"){
+        return el.symptoms_of_mental_illness === "no";
+      }
+    });
+    arr = arr.concat(filtered);
+  });
+  return arr;
+};
 
 function dataFilterShotsWeightNone(){
   arr = allKillings.filter(function(el){

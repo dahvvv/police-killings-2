@@ -44,13 +44,13 @@ function updateWeightVisibility(choosers){
 			readyWeightsToBeShown();
 			$('#unarmed-weight').css({'display':'block'});
 			$('#illness-weight').css({'display':'block'});
-		} else if (choosers['filter'] === "unarmed"){
-			readyWeightsToBeShown();
-			$('#shots-weight').css({'display':'block'});
-		} else if (choosers['filter'] === "illness"){
-			readyWeightsToBeShown();
-			$('#race-weight').css({'display':'block'});
-			$('#age-weight').css({'display':'block'});
+		// } else if (choosers['filter'] === "unarmed"){
+		// 	readyWeightsToBeShown();
+		// 	$('#shots-weight').css({'display':'block'});
+		// } else if (choosers['filter'] === "illness"){
+		// 	readyWeightsToBeShown();
+		// 	$('#race-weight').css({'display':'block'});
+		// 	$('#age-weight').css({'display':'block'});
 		// } else if (choosers['filter'] === "shots"){
 		// 	readyWeightsToBeShown();
 		// 	$('#race-weight').css({'display':'block'});
