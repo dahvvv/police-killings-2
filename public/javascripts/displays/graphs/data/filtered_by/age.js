@@ -10,7 +10,7 @@ function ageRange(){
   return [ageMin, ageMax];
 };
 
-function dataGraphFilterAgeWeightNone(){
+function infoGraphFilterAgeWeightNone(){
   var data = {
     'color': [baseColor],
     'label': ['age'],
@@ -34,7 +34,7 @@ function graphFilterAgeWeightNoneValues(){
   return values;
 };
 
-function dataGraphFilterAgeWeightUspop(){
+function infoGraphFilterAgeWeightUspop(){
   var data = {
     'color': [baseColor],
     'label': ['deaths per xxxxxx???'],
@@ -60,7 +60,7 @@ function graphFilterAgeWeightUspopValues(){
   return values;
 };
 
-function dataGraphFilterAgeWeightArrests(){
+function infoGraphFilterAgeWeightArrests(){
   var data = {
     'color': [baseColor],
     'label': ['deaths per 100,000 arrests'],
@@ -87,7 +87,7 @@ function graphFilterAgeWeightArrestsValues(){
   return values;
 };
 
-function dataGraphFilterAgeWeightRace(){
+function infoGraphFilterAgeWeightRace(){
   var races = [
     "white",
     "black",
@@ -148,7 +148,7 @@ function graphFilterAgeWeightRaceValues(){
   return values;
 };
 
-function dataGraphFilterAgeWeightIllness(){
+function infoGraphFilterAgeWeightIllness(){
   var data = {
     'color': [secondColor, baseColor],
     'label': ['symptoms', 'no symptoms'],

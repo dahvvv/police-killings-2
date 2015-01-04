@@ -1,4 +1,4 @@
-function dataGraphFilterIllnessWeightNone(){
+function infoGraphFilterIllnessWeightNone(){
   var ill = allKillings.filter(function(el){
     return el.symptoms_of_mental_illness === "yes";
   });
@@ -22,7 +22,7 @@ function dataGraphFilterIllnessWeightNone(){
   return data;
 };
 
-function dataGraphFilterIllnessWeightRace(){
+function infoGraphFilterIllnessWeightRace(){
   var notIllWhite = [];
   var notIllBlack = [];
   var notIllHispanic = [];
@@ -111,7 +111,7 @@ function dataGraphFilterIllnessWeightRace(){
   return data;
 };
 
-function dataGraphFilterIllnessWeightAge(){
+function infoGraphFilterIllnessWeightAge(){
   var notIllTo4 = [];
   var notIllTo9 = [];
   var notIllTo14 = [];

@@ -1,4 +1,4 @@
-function dataGraphFilterPopWeightNone(){
+function infoGraphFilterUspopWeightNone(){
   var data = {
     'color': [baseColor],
     'label': [''],
@@ -48,7 +48,7 @@ function dataGraphFilterPopWeightNone(){
   return data;
 };
 
-function dataGraphFilterPopWeightUspop(){
+function infoGraphFilterUspopWeightUspop(){
   var data = {
     'color': [baseColor],
     'label': ['Deaths Per Ten Thousand'],

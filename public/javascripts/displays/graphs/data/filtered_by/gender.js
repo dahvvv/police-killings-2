@@ -1,4 +1,4 @@
-function dataGraphFilterGenderWeightNone(){
+function infoGraphFilterGenderWeightNone(){
   var males = allKillings.filter(function(el){
     return el.victim_gender === "male";
   });
@@ -22,7 +22,7 @@ function dataGraphFilterGenderWeightNone(){
   return data;
 };
 
-function dataGraphFilterGenderWeightUnarmed(){
+function infoGraphFilterGenderWeightUnarmed(){
   var maleUnarmed = [];
   var maleArmed = [];
   var femaleUnarmed = [];
@@ -59,7 +59,7 @@ function dataGraphFilterGenderWeightUnarmed(){
   return data;
 };
 
-function dataGraphFilterGenderWeightIllness(){
+function infoGraphFilterGenderWeightIllness(){
   var maleIll = [];
   var maleNotIll = [];
   var femaleIll = [];

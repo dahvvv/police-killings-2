@@ -1,4 +1,4 @@
-function dataGraphFilterShotsWeightNone(){
+function infoGraphFilterShotsWeightNone(){
   var values = [];
   for (var shots = 1; shots < 20; shots++){
     var instances = allKillings.filter(function(el){
@@ -26,7 +26,7 @@ function dataGraphFilterShotsWeightNone(){
   return data;
 };
 
-function dataGraphFilterShotsWeightRace(){
+function infoGraphFilterShotsWeightRace(){
   var values = [];
   for (var shots = 1; shots < 20; shots++){
     var whiteInstances = [];
@@ -98,7 +98,7 @@ function dataGraphFilterShotsWeightRace(){
   return data;
 };
 
-function dataGraphFilterShotsWeightUnarmed(){
+function infoGraphFilterShotsWeightUnarmed(){
   var values = [];
   for (var shots = 1; shots < 20; shots++){
     var armed = [];

@@ -16,7 +16,7 @@ var arrestsByRace = {
   "alaskan and/or pacific islander":  112322
 };
 
-function dataGraphFilterRaceWeightNone(){
+function infoGraphFilterRaceWeightNone(){
   var data = {
     'color': [baseColor],
     'label': ['deaths'],
@@ -41,7 +41,7 @@ function graphFilterRaceWeightNoneValues(){
   return values;
 };
 
-function dataGraphFilterRaceWeightUspop(){
+function infoGraphFilterRaceWeightUspop(){
   var data = {
     'color': [baseColor],
     'label': ['deaths per ten million'],
@@ -68,7 +68,7 @@ function graphFilterRaceWeightUspopValues(){
   return values;
 };
 
-function dataGraphFilterRaceWeightArrests(){
+function infoGraphFilterRaceWeightArrests(){
   var data = {
     'color': [baseColor],
     'label': ['race'],
@@ -96,7 +96,7 @@ function graphFilterRaceWeightArrestsValues(){
   return values;
 };
 
-function dataGraphFilterRaceWeightAge(){
+function infoGraphFilterRaceWeightAge(){
   var data = {
     'color': hexScaler("#FFFFFF","#FFFF00",9)
     .slice(0,8)
@@ -145,7 +145,7 @@ function graphFilterRaceWeightAgeValues(){
   return values;
 };
 
-function dataGraphFilterRaceWeightIllness(){
+function infoGraphFilterRaceWeightIllness(){
   var data = {
     'color': [secondColor, baseColor],
     'label': ["symptoms", "no symptoms"],

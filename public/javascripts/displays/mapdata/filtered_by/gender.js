@@ -8,50 +8,50 @@ function dataFilterGender(choosers){
 	}
 };
 
-function dataFilterGenderWeightNone(){
-  var checkedBoxes = $('#gender-selection').children('input:checked');
-  var genders = $(checkedBoxes).map(function(){
-    return this.name;
-  })
-  .get();
-  var arr = [];
-  $.each(genders, function(i,val){
-    var filtered = allKillings.filter(function(el){
-      return el.victim_gender === val;
-    });
-    arr = arr.concat(filtered);
-  });
-  return arr;
-};
+// function dataFilterGenderWeightNone(){
+//   var checkedBoxes = $('#gender-selection').children('input:checked');
+//   var genders = $(checkedBoxes).map(function(){
+//     return this.name;
+//   })
+//   .get();
+//   var arr = [];
+//   $.each(genders, function(i,val){
+//     var filtered = allKillings.filter(function(el){
+//       return el.victim_gender === val;
+//     });
+//     arr = arr.concat(filtered);
+//   });
+//   return arr;
+// };
 
-function dataFilterGenderWeightUnarmed(){
-  var checkedBoxes = $('#gender-selection').children('input:checked');
-  var genders = $(checkedBoxes).map(function(){
-    return this.name;
-  })
-  .get();
-  var arr = [];
-  $.each(genders, function(i,val){
-    var filtered = allKillings.filter(function(el){
-      return el.victim_gender === val && el.victim_unarmed != null;
-    });
-    arr = arr.concat(filtered);
-  });
-  return arr;
-};
+// function dataFilterGenderWeightUnarmed(){
+//   var checkedBoxes = $('#gender-selection').children('input:checked');
+//   var genders = $(checkedBoxes).map(function(){
+//     return this.name;
+//   })
+//   .get();
+//   var arr = [];
+//   $.each(genders, function(i,val){
+//     var filtered = allKillings.filter(function(el){
+//       return el.victim_gender === val && el.victim_unarmed != null;
+//     });
+//     arr = arr.concat(filtered);
+//   });
+//   return arr;
+// };
 
-function dataFilterGenderWeightIllness(){
-  var checkedBoxes = $('#gender-selection').children('input:checked');
-  var genders = $(checkedBoxes).map(function(){
-    return this.name;
-  })
-  .get();
-  var arr = [];
-  $.each(genders, function(i,val){
-    var filtered = allKillings.filter(function(el){
-      return el.victim_gender === val && el.symptoms_of_mental_illness != null;
-    });
-    arr = arr.concat(filtered);
-  });
-  return arr;
-};
+// function dataFilterGenderWeightIllness(){
+//   var checkedBoxes = $('#gender-selection').children('input:checked');
+//   var genders = $(checkedBoxes).map(function(){
+//     return this.name;
+//   })
+//   .get();
+//   var arr = [];
+//   $.each(genders, function(i,val){
+//     var filtered = allKillings.filter(function(el){
+//       return el.victim_gender === val && el.symptoms_of_mental_illness != null;
+//     });
+//     arr = arr.concat(filtered);
+//   });
+//   return arr;
+// };

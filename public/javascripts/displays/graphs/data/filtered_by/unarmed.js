@@ -1,4 +1,4 @@
-function dataGraphFilterUnarmedWeightNone(){
+function infoGraphFilterUnarmedWeightNone(){
   var armed = allKillings.filter(function(el){
     return el.victim_unarmed === false;
   });
@@ -22,7 +22,7 @@ function dataGraphFilterUnarmedWeightNone(){
   return data;
 };
 
-function dataGraphFilterUnarmedWeightShots(){
+function infoGraphFilterUnarmedWeightShots(){
   var armed1 = [];
   var armed2 = [];
   var armed3 = [];

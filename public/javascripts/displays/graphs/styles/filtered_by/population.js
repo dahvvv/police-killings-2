@@ -1,4 +1,4 @@
-function styleGraphFilterPopWeightNone(){
+function styleGraphFilterUspopWeightNone(){
 	var style = {
     injectInto: 'display-container',
     animate: true,
@@ -31,7 +31,7 @@ function styleGraphFilterPopWeightNone(){
   return style;
 };
 
-function styleGraphFilterPopWeightUspop(){
+function styleGraphFilterUspopWeightUspop(){
   var style = {
     injectInto: 'display-container',
     animate: true,

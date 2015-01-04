@@ -90,7 +90,7 @@
 //       usPop:  "<p class='program-text' style='top:-0.8em'>Age Population Graph</p>",
 //       arrests:  "<p class='program-text' style='top:-0.8em'>Age arrests Graph</p>",
 //       race:  "<p class='program-text' style='top:-0.8em'>Age race Graph</p>",
-//       illness:  "<p class='program-text' style='top:-0.8em'>Age illness Graph</p>",
+//       illness:  "<p class='program-text' style='top:-0.8em'></p>",
 //     },
 //     gender: {
 //       none: "<p class='program-text' style='top:-0.8em'>92.5% of people killed by police are male.<br>7.5% of people killed by police are female.</p>",
