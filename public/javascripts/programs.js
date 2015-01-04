@@ -129,7 +129,9 @@ function replaceProgram(data, choosers){
 function chooseHeatmapProgram(data, choosers){
   if (choosers.filter === "usPop"){
     chooseHeatmapProgramFilterUspop(data, choosers);
-  };
+  } else if (choosers.filter === "age"){
+    chooseHeatmapProgramFilterUspop(data, choosers);
+  } else 
 };
 
 
@@ -137,12 +139,12 @@ function chooseHeatmapProgram(data, choosers){
 
 function chooseHeatmapProgramFilterUspop(data, choosers){
   if (choosers.weight === "none"){
-    var program = "<p class='program-text one-line' style=" + programStyleOneLine + ">People killed by police officers in the united states.</p>"
+    var program = "<p class='program-text one-line' style=" + programStyleOneLine + ">People killed by police officers in the united states.</p>";
+    $('#program').html(program);
   }
 };
 
-  var program = programs[choosers.displaySelector][choosers.filter][choosers.weight];
-  $('#program').html(program);
+  
 
 var programs = {
   heatmap: {

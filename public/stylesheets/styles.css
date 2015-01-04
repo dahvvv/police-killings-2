@@ -366,6 +366,18 @@ select.button-filter {
   top: -2em;
 }
 
+.program-text.two-line {
+  top: -2.5em;
+}
+
+.program-text.three-line {
+  top: -3em;
+}
+
+.program-text.four-line {
+  top: -3.2em;
+}
+
 .popup-container {
   background-color: #c8cdcf;
   border-radius: 15px;

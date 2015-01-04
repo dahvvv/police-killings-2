@@ -70,30 +70,49 @@ function updateGraphFilterRace(choosers){
 		updateGraphFilterRaceWeightUspop();
 	} else if (choosers.weight === "arrests"){
 		updateGraphFilterRaceWeightArrests();
-	} else if (choosers.weight === "poverty"){
-		updateGraphFilterRaceWeightPoverty();
-	} else if (choosers.weight === "race"){
-		updateGraphFilterRaceWeightRace();
 	} else if (choosers.weight === "age"){
 		updateGraphFilterRaceWeightAge();
-	} else if (choosers.weight === "unarmed"){
-		updateGraphFilterRaceWeightUnarmed();
 	} else if (choosers.weight === "illness"){
 		updateGraphFilterRaceWeightIllness();
-	} else if (choosers.weight === "shots"){
-		updateGraphFilterRaceWeightShots();
 	};
 };
 
 
-function updateGraphFilterRaceWeightUspop(){};
-function updateGraphFilterRaceWeightArrests(){};
-function updateGraphFilterRaceWeightPoverty(){};
-function updateGraphFilterRaceWeightRace(){};
-function updateGraphFilterRaceWeightAge(){};
-function updateGraphFilterRaceWeightUnarmed(){};
-function updateGraphFilterRaceWeightIllness(){};
-function updateGraphFilterRaceWeightShots(){};
+function updateGraphFilterRaceWeightUspop(){
+	var data = dataFilterRaceWeightNone();
+	var graphData = dataGraphFilterRaceWeightUspop();
+	var graphStyle = styleGraphFilterRaceWeightUspop();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text two-line'>When races are compared in terms of deaths per capita,<br>as opposed to deaths total, the portion of white victims drops from 49% to 10%.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterRaceWeightArrests(){
+	var data = dataFilterRaceWeightNone();
+	var graphData = dataGraphFilterRaceWeightArrests();
+	var graphStyle = styleGraphFilterRaceWeightArrests();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text one-line'>The broad likelihood of a single arrest resulting in death, by race.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterRaceWeightAge(){
+	var data = dataFilterRaceWeightNone();
+	var graphData = dataGraphFilterRaceWeightAge();
+	var graphStyle = styleGraphFilterRaceWeightAge();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text four-line'>Dark purple represents victims of near-average age.<br>Bright colors to the left represent younger victims.<br>Older victims are represented by bright colors to the right.<br>You can see that black victims skew much younger than white victims.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterRaceWeightIllness(){
+	var data = dataFilterRaceWeightNone();
+	var graphData = dataGraphFilterRaceWeightIllness();
+	var graphStyle = styleGraphFilterRaceWeightIllness();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text two-line'>Over 35% of asian people killed by police<br>were exhibiting clear signs of mental illness.</p>";
+	$('#program').html(program);
+};
 
 
 function updateGraphFilterRaceWeightNone(){

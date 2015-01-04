@@ -23,18 +23,18 @@ function selectGraphData(choosers){
 		} else if (choosers['weight'] === "usPop"){
 			return dataGraphFilterPopWeightUspop();
 		}
-	} else if (choosers['filter'] === "race"){
+	// } else if (choosers['filter'] === "race"){
 		// if (choosers['weight'] === "none"){
 		// 	return dataGraphFilterRaceWeightNone();
-		} else if (choosers['weight'] === "usPop"){
-			return dataGraphFilterRaceWeightUspop();
-		} else if (choosers['weight'] === "arrests"){
-			return dataGraphFilterRaceWeightArrests();
-		} else if (choosers['weight'] === "age"){
-			return dataGraphFilterRaceWeightAge();
-		} else if (choosers['weight'] === "illness"){
-			return dataGraphFilterRaceWeightIllness();
-		}
+		// } else if (choosers['weight'] === "usPop"){
+		// 	return dataGraphFilterRaceWeightUspop();
+		// } else if (choosers['weight'] === "arrests"){
+		// 	return dataGraphFilterRaceWeightArrests();
+		// } else if (choosers['weight'] === "age"){
+		// 	return dataGraphFilterRaceWeightAge();
+		// } else if (choosers['weight'] === "illness"){
+		// 	return dataGraphFilterRaceWeightIllness();
+		// }
 	} else if (choosers['filter'] === "age"){
 		if (choosers['weight'] === "none"){
 			return dataGraphFilterAgeWeightNone();
@@ -87,18 +87,18 @@ function selectGraphStyle(choosers){
 		} else if (choosers['weight'] === "usPop"){
 			return styleGraphFilterPopWeightUspop();
 		}
-	} else if (choosers['filter'] === "race"){
+	// } else if (choosers['filter'] === "race"){
 		// if (choosers['weight'] === "none"){
 		// 	return styleGraphFilterRaceWeightNone();
-		} else if (choosers['weight'] === "usPop"){
-			return styleGraphFilterRaceWeightUspop();
-		} else if (choosers['weight'] === "arrests"){
-			return styleGraphFilterRaceWeightArrests();
-		} else if (choosers['weight'] === "age"){
-			return styleGraphFilterRaceWeightAge();
-		} else if (choosers['weight'] === "illness"){
-			return styleGraphFilterRaceWeightIllness();
-		}
+		// } else if (choosers['weight'] === "usPop"){
+		// 	return styleGraphFilterRaceWeightUspop();
+		// } else if (choosers['weight'] === "arrests"){
+		// 	return styleGraphFilterRaceWeightArrests();
+		// } else if (choosers['weight'] === "age"){
+		// 	return styleGraphFilterRaceWeightAge();
+		// } else if (choosers['weight'] === "illness"){
+		// 	return styleGraphFilterRaceWeightIllness();
+		// }
 	} else if (choosers['filter'] === "age"){
 		if (choosers['weight'] === "none"){
 			return styleGraphFilterAgeWeightNone();

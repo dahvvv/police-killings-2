@@ -1,8 +1,8 @@
-function dataFilterRace(choosers){
-	if (choosers.weight === "none" || choosers.weight === "usPop"){
-		return dataFilterRaceWeightNone();
-	}
-};
+// function dataFilterRace(choosers){
+// 	if (choosers.weight === "none" || choosers.weight === "usPop"){
+// 		return dataFilterRaceWeightNone();
+// 	}
+// };
 
 // function dataFilterRaceWeightNone(){
 //   var checkedBoxes = $('#race-selection').children('input:checked');
