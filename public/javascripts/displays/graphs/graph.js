@@ -16,13 +16,13 @@
 //   graph.loadJSON(graphData);
 // };
 
-function selectGraphData(choosers){
-	if (choosers['filter'] === "usPop"){
-		if (choosers['weight'] === "none"){
-			return dataGraphFilterPopWeightNone();
-		} else if (choosers['weight'] === "usPop"){
-			return dataGraphFilterPopWeightUspop();
-		}
+// function selectGraphData(choosers){
+// 	if (choosers['filter'] === "usPop"){
+// 		if (choosers['weight'] === "none"){
+// 			return dataGraphFilterPopWeightNone();
+// 		} else if (choosers['weight'] === "usPop"){
+// 			return dataGraphFilterPopWeightUspop();
+// 		}
 	// } else if (choosers['filter'] === "race"){
 		// if (choosers['weight'] === "none"){
 		// 	return dataGraphFilterRaceWeightNone();
@@ -35,18 +35,18 @@ function selectGraphData(choosers){
 		// } else if (choosers['weight'] === "illness"){
 		// 	return dataGraphFilterRaceWeightIllness();
 		// }
-	} else if (choosers['filter'] === "age"){
-		if (choosers['weight'] === "none"){
-			return dataGraphFilterAgeWeightNone();
-		} else if (choosers['weight'] === "usPop"){
-			return dataGraphFilterAgeWeightUspop();
-		} else if (choosers['weight'] === "arrests"){
-			return dataGraphFilterAgeWeightArrests();
-		} else if (choosers['weight'] === "race"){
-			return dataGraphFilterAgeWeightRace();
-		} else if (choosers['weight'] === "illness"){
-			return dataGraphFilterAgeWeightIllness();
-		}
+	// } else if (choosers['filter'] === "age"){
+	// 	if (choosers['weight'] === "none"){
+	// 		return dataGraphFilterAgeWeightNone();
+	// 	} else if (choosers['weight'] === "usPop"){
+	// 		return dataGraphFilterAgeWeightUspop();
+	// 	} else if (choosers['weight'] === "arrests"){
+	// 		return dataGraphFilterAgeWeightArrests();
+	// 	} else if (choosers['weight'] === "race"){
+	// 		return dataGraphFilterAgeWeightRace();
+	// 	} else if (choosers['weight'] === "illness"){
+	// 		return dataGraphFilterAgeWeightIllness();
+	// 	}
 	// } else if (choosers['filter'] === "gender"){
 	// 	if (choosers['weight'] === "none"){
 	// 		return dataGraphFilterGenderWeightNone();
@@ -77,16 +77,16 @@ function selectGraphData(choosers){
 	// 	} else if (choosers['weight'] === "unarmed"){
 	// 		return dataGraphFilterShotsWeightUnarmed();
 	// 	}
-	}
-};
+// 	}
+// };
 
-function selectGraphStyle(choosers){
-	if (choosers['filter'] === "usPop"){
-		if (choosers['weight'] === "none"){
-			return styleGraphFilterPopWeightNone();
-		} else if (choosers['weight'] === "usPop"){
-			return styleGraphFilterPopWeightUspop();
-		}
+// function selectGraphStyle(choosers){
+// 	if (choosers['filter'] === "usPop"){
+// 		if (choosers['weight'] === "none"){
+// 			return styleGraphFilterPopWeightNone();
+// 		} else if (choosers['weight'] === "usPop"){
+// 			return styleGraphFilterPopWeightUspop();
+// 		}
 	// } else if (choosers['filter'] === "race"){
 		// if (choosers['weight'] === "none"){
 		// 	return styleGraphFilterRaceWeightNone();
@@ -99,18 +99,18 @@ function selectGraphStyle(choosers){
 		// } else if (choosers['weight'] === "illness"){
 		// 	return styleGraphFilterRaceWeightIllness();
 		// }
-	} else if (choosers['filter'] === "age"){
-		if (choosers['weight'] === "none"){
-			return styleGraphFilterAgeWeightNone();
-		} else if (choosers['weight'] === "usPop"){
-			return styleGraphFilterAgeWeightUspop();
-		} else if (choosers['weight'] === "arrests"){
-			return styleGraphFilterAgeWeightArrests();
-		} else if (choosers['weight'] === "race"){
-			return styleGraphFilterAgeWeightRace();
-		} else if (choosers['weight'] === "illness"){
-			return styleGraphFilterAgeWeightIllness();
-		}
+	// } else if (choosers['filter'] === "age"){
+	// 	if (choosers['weight'] === "none"){
+	// 		return styleGraphFilterAgeWeightNone();
+	// 	} else if (choosers['weight'] === "usPop"){
+	// 		return styleGraphFilterAgeWeightUspop();
+	// 	} else if (choosers['weight'] === "arrests"){
+	// 		return styleGraphFilterAgeWeightArrests();
+	// 	} else if (choosers['weight'] === "race"){
+	// 		return styleGraphFilterAgeWeightRace();
+	// 	} else if (choosers['weight'] === "illness"){
+	// 		return styleGraphFilterAgeWeightIllness();
+	// 	}
 	// } else if (choosers['filter'] === "gender"){
 	// 	if (choosers['weight'] === "none"){
 	// 		return styleGraphFilterGenderWeightNone();
@@ -141,8 +141,8 @@ function selectGraphStyle(choosers){
 	// 	} else if (choosers['weight'] === "unarmed"){
 	// 		return styleGraphFilterShotsWeightUnarmed();
 	// 	}
-	}
-};
+// 	}
+// };
 
 var labelType, useGradients, nativeTextSupport, animate;
 

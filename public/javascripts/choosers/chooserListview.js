@@ -9,7 +9,7 @@ function updateChooserListviews(choosers){
 	if (choosers['displaySelector'] === "heatmap"){
 		$('.legend').css({"display":"none"});
 	} else if (choosers['displaySelector'] === "marker"){
-		$('.legend').css({"display":"inline-block"});
+		// $('.legend').css({"display":"inline-block"});
 	};
 
 	// if you can't see the racedisplay, and the filter is on race, and the display is not on graph, then show the racedisplay
@@ -23,9 +23,9 @@ function updateChooserListviews(choosers){
 
 	// if you can see the agedisplay, and the selector is on markermap, then hide the agedisplay
 	if (ageDisplay != "none"){
-		if (choosers['displaySelector'] === "marker"){
-			$('#age-range').css({"display":"none"});
-		}
+		// if (choosers['displaySelector'] === "marker"){
+		// 	$('#age-range').css({"display":"none"});
+		// }
 	} else {
 		// if you can't see the agedisplay, and the filter is on age, and the display is on heatmap, then show the agedisplay
 		if (choosers['filter'] === "age"){
@@ -72,9 +72,9 @@ function updateChooserListviews(choosers){
 	};
 
 	// if the selector is on graph, hide all displays
-	if (choosers['displaySelector'] === "graph"){
-		$('.filter-checkbox-form, #age-range, #shots-range').css({"display":"none"});
-	};
+	// if (choosers['displaySelector'] === "graph"){
+	// 	$('.filter-checkbox-form, #age-range, #shots-range').css({"display":"none"});
+	// };
 
 };
 

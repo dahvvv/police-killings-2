@@ -11,9 +11,9 @@ function replaceWeight(weight, callback){
 function updateWeightVisibility(choosers){
 	if (choosers['displaySelector'] === "marker"){
 		if (choosers['filter'] === "race"){
-			readyWeightsToBeShown();
-			$('#usPop-weight').css({'display':'block'});
-			$('#arrests-weight').css({'display':'block'});
+			// readyWeightsToBeShown();
+			// $('#usPop-weight').css({'display':'block'});
+			// $('#arrests-weight').css({'display':'block'});
 		} else if (choosers['filter'] === "gender") {
 			readyWeightsToBeShown();
 			$('#unarmed-weight').css({'display':'block'});

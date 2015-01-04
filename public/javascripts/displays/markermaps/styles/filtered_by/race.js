@@ -1,20 +1,20 @@
-var raceColors = {
-  "alaskan and/or pacific islander" : "crimson",
-  "asian"                           : "darkorange",
-  "black"                           : "yellow",
-  "hispanic and/or latin"           : "limegreen",
-  "white"                           : "royalblue",
-};
+// var raceColors = {
+//   "alaskan and/or pacific islander" : "crimson",
+//   "asian"                           : "darkorange",
+//   "black"                           : "yellow",
+//   "hispanic and/or latin"           : "limegreen",
+//   "white"                           : "royalblue",
+// };
 
-function styleMarkerFilterRaceWeightNone(feature){
-	return {
-    fillColor: raceColors[feature.properties.race],
-    color: 'black',
-    radius: 7,
-    fillOpacity: 1,
-    opacity: 1,
-  }
-};
+// function styleMarkerFilterRaceWeightNone(feature){
+// 	return {
+//     fillColor: raceColors[feature.properties.race],
+//     color: 'black',
+//     radius: 7,
+//     fillOpacity: 1,
+//     opacity: 1,
+//   }
+// };
 
 function styleMarkerFilterRaceWeightUspop(feature){
   return {
