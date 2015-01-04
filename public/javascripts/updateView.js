@@ -56,7 +56,8 @@ function updateGraphFilterAge(choosers){};
 function updateGraphFilterGender(choosers){};
 function updateGraphFilterUnarmed(choosers){};
 function updateGraphFilterIllness(choosers){};
-function updateGraphFilterShots(choosers){};
+
+
 
 
 
@@ -77,6 +78,54 @@ function updateGraphFilterRace(choosers){
 	};
 };
 
+function updateGraphFilterShots(choosers){
+	readyWeightsToBeShown();
+	$('#race-weight, #unarmed-weight').css({'display':'block'});
+	if (choosers.weight === "none"){
+		updateGraphFilterShotsWeightNone();
+	} else if (choosers.weight === "race"){
+		updateGraphFilterShotsWeightRace();
+	} else if (choosers.weight === "unarmed"){
+		updateGraphFilterShotsWeightUnarmed();
+	}
+};
+
+
+function updateGraphFilterRaceWeightNone(){
+	var data = dataFilterRaceWeightNone();
+	var graphData = dataGraphFilterRaceWeightNone();
+	var graphStyle = styleGraphFilterRaceWeightNone();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text one-line'>Police deaths by race, measured in percentage.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterShotsWeightNone(){
+	var data = dataFilterShotsWeightNone();
+	var graphData = dataGraphFilterShotsWeightNone();
+	var graphStyle = styleGraphFilterShotsWeightNone();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text two-line'>Police fired at a victim 20 times or more<br>in over 30 recorded cases.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterShotsWeightRace(){
+	var data = dataFilterShotsWeightNone();
+	var graphData = dataGraphFilterShotsWeightRace();
+	var graphStyle = styleGraphFilterShotsWeightRace();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text one-line'>There does not appear to be a significant relationship<br>between the number of shots fired by police and the victim's race.</p>";
+	$('#program').html(program);
+};
+
+function updateGraphFilterShotsWeightUnarmed(){
+	var data = dataFilterShotsWeightNone();
+	var graphData = dataGraphFilterShotsWeightUnarmed();
+	var graphStyle = styleGraphFilterShotsWeightUnarmed();
+	makeGraph(graphData, graphStyle);
+	var program = "<p class='program-text two-line'>Whether the victim was armed or not, the average number of shots fired<br>by police remains about the same:  between 5.5 and 6.2 shots.</p>";
+	$('#program').html(program);
+};
 
 function updateGraphFilterRaceWeightUspop(){
 	var data = dataFilterRaceWeightNone();
@@ -115,15 +164,6 @@ function updateGraphFilterRaceWeightIllness(){
 };
 
 
-function updateGraphFilterRaceWeightNone(){
-	var data = dataFilterRaceWeightNone();
-	var graphData = dataGraphFilterRaceWeightNone();
-	var graphStyle = styleGraphFilterRaceWeightNone();
-	makeGraph(graphData, graphStyle);
-	var program = "<p class='program-text one-line'>Police deaths by race, measured in percentage.</p>";
-	$('#program').html(program);
-};
-
 function dataFilterRaceWeightNone(){
   var checkedBoxes = $('#race-selection').children('input:checked');
   var checkedRaces = $(checkedBoxes).map(function(){
@@ -151,6 +191,24 @@ function reorderRaces(raceArr){
   });
   return reordered;
 };
+
+
+function dataFilterShotsWeightNone(){
+  arr = allKillings.filter(function(el){
+    return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
+  });
+  return arr;
+};
+
+function shotsRange(){
+  var min = $('#shots-min').val();
+  min = min === "" ? 0 : min;
+  var max = $('#shots-max').val();
+  max = max === "" ? 999 : max;
+  return {min: min, max: max};
+};
+
+
 
 function makeGraph(data, style){
 	var graph = new $jit.BarChart(style);

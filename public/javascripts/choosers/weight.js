@@ -51,10 +51,10 @@ function updateWeightVisibility(choosers){
 			readyWeightsToBeShown();
 			$('#race-weight').css({'display':'block'});
 			$('#age-weight').css({'display':'block'});
-		} else if (choosers['filter'] === "shots"){
-			readyWeightsToBeShown();
-			$('#race-weight').css({'display':'block'});
-			$('#unarmed-weight').css({'display':'block'});
+		// } else if (choosers['filter'] === "shots"){
+		// 	readyWeightsToBeShown();
+		// 	$('#race-weight').css({'display':'block'});
+		// 	$('#unarmed-weight').css({'display':'block'});
 		} else {
 			removeAllWeights();
 		}
