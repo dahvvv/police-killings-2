@@ -1,12 +1,12 @@
-function updateDisplay(data, choosers){
-	if (choosers.displaySelector === "heatmap") {
-		makeHeatmap(data, choosers);
-	} else if (choosers.displaySelector === "marker") {
-		makeMarkermap(data, choosers);
+// function updateDisplay(data, choosers){
+// 	if (choosers.displaySelector === "heatmap") {
+// 		makeHeatmap(data, choosers);
+	// } else if (choosers.displaySelector === "marker") {
+	// 	makeMarkermap(data, choosers);
 	// } else if (choosers.displaySelector === "graph") {
 	// 	emptyGraph(choosers);
-	};
-};
+// 	};
+// };
 
 function setMaxZoom(numDatapoints, stateView){
   if (stateView === null || stateView === "USA") {

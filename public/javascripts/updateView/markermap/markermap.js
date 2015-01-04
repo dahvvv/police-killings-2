@@ -1,7 +1,4 @@
 function updateMarkermap(choosers){
-	if ($('#age-range').css('display') != "none"){
-		$('#age-range').css({"display":"none"});
-	};
 	$('.legend').css({"display":"inline-block"});
 	selectMarkermapFilter(choosers);
 };

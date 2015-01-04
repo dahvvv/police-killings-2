@@ -54,9 +54,7 @@ $(function(){
     dataType: 'JSON',
     success: function(data){
       allKillings = data;
-      var choosers = detectChoosers();
-      updateDisplay(allKillings, choosers);
+      updateHeatmapFilterUspopWeightNone();
     }
   });
-
 });

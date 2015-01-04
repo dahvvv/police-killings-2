@@ -8,8 +8,8 @@ function replaceWeight(weight, callback){
   callback();
 };
 
-function updateWeightVisibility(choosers){
-	if (choosers['displaySelector'] === "marker"){
+// function updateWeightVisibility(choosers){
+// 	if (choosers['displaySelector'] === "marker"){
 	// 	if (choosers['filter'] === "race"){
 			// readyWeightsToBeShown();
 			// $('#usPop-weight').css({'display':'block'});
@@ -58,10 +58,10 @@ function updateWeightVisibility(choosers){
 		// } else {
 		// 	removeAllWeights();
 		// }
-	} else {
-		removeAllWeights();
-	}
-};
+// 	} else {
+// 		removeAllWeights();
+// 	}
+// };
 
 // function removeAllWeights(){
 // 	$('.button-header').css({'display':'none'});

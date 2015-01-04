@@ -1,8 +1,8 @@
 function updateMarkermapFilterUspop(choosers){
+	removeAllWeights();
 	if (choosers.weight === "none"){
 		updateMarkermapFilterUspopWeightNone();
 	};
-	removeAllWeights();
 };
 
 function updateMarkermapFilterUspopWeightNone(){

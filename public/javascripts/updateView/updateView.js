@@ -21,25 +21,6 @@ function updateView(choosers){
 function updateHeatmap(choosers){};
 
 
-
-function updateMarkermapFilterUspop(choosers){
-	if (choosers.weight === "none"){
-		updateMarkermapFilterUspopWeightNone();
-	};
-};
-
-
-
-function updateMarkermapFilterUspopWeightNone(){
-	var data = allKillings;
-	var geoData = dataToGeoData(data);
-	// var geoStyle = geoStyleFilterUspopWeightNone()
-	removeExistingMaps();
-	setMapView($('#state-filter').val());
-	addGeoLayer(geoData);
-};
-
-
 // function dataFilterAgeWeightNone(choosers){
 //   if (choosers.displaySelector === "heatmap"){
 //     return filterByAge();
