@@ -220,26 +220,26 @@ function dataGraphFilterRaceWeightArrests(){
   return data;
 };
 
-function dataGraphFilterAgeWeightNone(){
-  var data = {
-    'color': [baseColor],
-    'label': ['age'],
-    'values': ageGraphValues()
-  };
-  return data;
-};
+// function dataGraphFilterAgeWeightNone(){
+//   var data = {
+//     'color': [baseColor],
+//     'label': ['age'],
+//     'values': ageGraphValues()
+//   };
+//   return data;
+// };
 
-function ageGraphValues(){
-  var values = [];
-  for (var age = 0; age < 110; age++) {
-    var value = {
-      'label': [age],
-      'values': deathsByAge[age]
-    };
-    values.push(value);
-  };
-  return values;
-};
+// function ageGraphValues(){
+//   var values = [];
+//   for (var age = 0; age < 110; age++) {
+//     var value = {
+//       'label': [age],
+//       'values': deathsByAge[age]
+//     };
+//     values.push(value);
+//   };
+//   return values;
+// };
 
 // function dataGraphFilterGenderWeightNone(){
 //   var males = allKillings.filter(function(el){
