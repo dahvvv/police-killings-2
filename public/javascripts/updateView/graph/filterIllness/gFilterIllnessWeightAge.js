@@ -9,7 +9,6 @@ function updateGraphFilterIllnessWeightAge(){
       "symptoms" : arrIllnessWeightAge()
     }
   };
-  debugger;
   labels = dataGraphFilterIllnessWeightAge(labels);
   var data = labelsToData(labels);
   var style = styleGraphFilterIllnessWeightAge;
@@ -40,15 +39,6 @@ function arrIllnessWeightAge(){
   };
   return arr;
 };
-
-// var labelsGraphFilterIllnessWeightAge = {
-//   colorArr : hexScaler("#FF3300","#0000FF",(enteredAgeRange().max - enteredAgeRange().min)),
-//   labelArrUpGraph : _.range(enteredAgeRange().min,enteredAgeRange().max),
-//   labelObjCrossGraph : {
-//     "no symptoms" : arrIllnessWeightAge(),
-//     "symptoms" : arrIllnessWeightAge()
-//   }
-// };
 
 var styleGraphFilterIllnessWeightAge = {
   injectInto: 'display-container',
