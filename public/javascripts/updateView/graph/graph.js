@@ -55,7 +55,6 @@ function labelsToData(labels){
 };
 
 function createGraph(data, style){
-  var graphStyle = style
   var graph = new $jit.BarChart(style);
   graph.loadJSON(data);
 };
