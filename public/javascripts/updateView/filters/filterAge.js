@@ -7,7 +7,7 @@ function filterByAge(){
 
 function enteredAgeRange(){
   var min = $('#age-min').val();
-  min = min === "" ? 1 : min;
+  min = (min === "" || min === "0") ? 1 : min;
   var max = $('#age-max').val();
   max = max === "" ? 999 : max;
   return {min: min, max: max};

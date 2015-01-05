@@ -32,12 +32,11 @@ function selectGraphFilter(choosers){
 	};
 };
 
+//kill this one!!!
 function makeGraph(data, style){
 	var graph = new $jit.BarChart(style);
 	graph.loadJSON(data);
 };
-
-
 
 function labelsToData(labels){
   var values = $.map(labels["labelObjCrossGraph"], function(val, key){
@@ -59,7 +58,9 @@ function createGraph(data, style){
   graph.loadJSON(data);
 };
 
-
+var baseColor = '#0066CC';
+var addColor = '#2f82d5';
+var subColor = '#001F3D';
 
 var labelType, useGradients, nativeTextSupport, animate;
 

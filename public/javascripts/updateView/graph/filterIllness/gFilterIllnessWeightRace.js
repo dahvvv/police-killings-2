@@ -1,16 +1,14 @@
 function updateGraphFilterIllnessWeightRace(){
-	// var gLabels = graphLabels["illness"]["race"];
 	var labels = labelsGraphFilterIllnessWeightRace;
 	labels = dataGraphFilterIllnessWeightRace(labels);
 	var data = labelsToData(labels);
-	// var style = graphStyles["illness"]["race"];
 	var style = styleGraphFilterIllnessWeightRace;
 	createGraph(data, style);
 	var program = "<p class='program-text four-line'>White and asian people who are killed by the police<br>are the victims most likely to have been mentally ill.<br>Over 30% of white and asian people killed by police<br>were exhibiting clear signs of mental illness.</p>";
 	$('#program').html(program);
 };
 
-function dataGraphFilterIllnessWeightRace(graphLabels){
+function dataGraphFilterIllnessWeightRace(labels){
 	$.each(allKillings, function(i,obj){
 		if (obj.symptoms_of_mental_illness === null || obj.victim_race === null){
 			return true;
@@ -20,9 +18,9 @@ function dataGraphFilterIllnessWeightRace(graphLabels){
 			var illness = "symptoms";
 		};
 		var race = obj.victim_race;
-		graphLabels["labelObjCrossGraph"][illness][graphLabels["labelArrUpGraph"].indexOf(race)]++;
+		labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(race)]++;
 	});
-	return graphLabels;
+	return labels;
 };
 
 var labelsGraphFilterIllnessWeightRace = {
