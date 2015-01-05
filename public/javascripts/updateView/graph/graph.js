@@ -39,7 +39,26 @@ function makeGraph(data, style){
 
 
 
-function createGraph(data){};
+function labelsToData(labels){
+  var values = $.map(labels["labelObjCrossGraph"], function(val, key){
+    return {
+      "label": key,
+      "values": val
+    };
+  });
+  var data = {
+    "color": labels["colorArr"],
+    "label": labels["labelArrUpGraph"],
+    "values": values
+  };
+  return data;
+};
+
+function createGraph(data, style){
+  var graphStyle = style
+  var graph = new $jit.BarChart(style);
+  graph.loadJSON(data);
+};
 
 
 

@@ -20,13 +20,29 @@ function updateGraphFilterIllnessWeightNone(checkedIllness){
 	$('#program').html(program);
 };
 
-function updateGraphFilterIllnessWeightRace(checkedIllness){
-	var data = dataFilterIllnessWeightNone(checkedIllness);
-	var graphInfo = infoGraphFilterIllnessWeightRace();
-	var graphStyle = styleGraphFilterIllnessWeightRace();
-	makeGraph(graphInfo, graphStyle);
+function updateGraphFilterIllnessWeightRace(){
+	var gLabels = graphLabels["illness"]["race"];
+	gLabels = dataGraphFilterIllnessWeightRace(gLabels);
+	var data = labelsToData(gLabels);
+	var style = graphStyles["illness"]["race"];
+	createGraph(data, style);
 	var program = "<p class='program-text four-line'>White and asian people who are killed by the police<br>are the victims most likely to have been mentally ill.<br>Over 30% of white and asian people killed by police<br>were exhibiting clear signs of mental illness.</p>";
 	$('#program').html(program);
+};
+
+function dataGraphFilterIllnessWeightRace(graphLabels){
+	$.each(allKillings, function(i,obj){
+		if (obj.symptoms_of_mental_illness === null || obj.victim_race === null){
+			return true;
+		} else if (obj.symptoms_of_mental_illness === "no"){
+			var illness = "no symptoms";
+		} else if (obj.symptoms_of_mental_illness === "yes"){
+			var illness = "symptoms";
+		};
+		var race = obj.victim_race;
+		graphLabels["labelObjCrossGraph"][illness][graphLabels["labelArrUpGraph"].indexOf(race)]++;
+	});
+	return graphLabels;
 };
 
 function updateGraphFilterIllnessWeightAge(checkedIllness){

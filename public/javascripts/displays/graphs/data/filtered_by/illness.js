@@ -22,94 +22,94 @@ function infoGraphFilterIllnessWeightNone(){
   return data;
 };
 
-function infoGraphFilterIllnessWeightRace(){
-  var notIllWhite = [];
-  var notIllBlack = [];
-  var notIllHispanic = [];
-  var notIllAsian = [];
-  var notIllAlaskan = [];
-  var notIllOther = [];
-  var illWhite = [];
-  var illBlack = [];
-  var illHispanic = [];
-  var illAsian = [];
-  var illAlaskan = [];
-  var illOther = [];
-  $.each(allKillings, function(i,obj){
-    if (obj.symptoms_of_mental_illness === "yes"){
-      if (obj.victim_race === "white"){
-        illWhite.push(obj);
-      } else if (obj.victim_race === "black"){
-        illBlack.push(obj);
-      } else if (obj.victim_race === "hispanic and/or latin"){
-        illHispanic.push(obj);
-      } else if (obj.victim_race === "asian"){
-        illAsian.push(obj);
-      } else if (obj.victim_race === "alaskan and/or pacific islander"){
-        illAlaskan.push(obj);
-      } else if (obj.victim_race === "other"){
-        illOther.push(obj);
-      }
-    } else if (obj.symptoms_of_mental_illness === "no"){
-      if (obj.victim_race === "white"){
-        notIllWhite.push(obj);
-      } else if (obj.victim_race === "black"){
-        notIllBlack.push(obj);
-      } else if (obj.victim_race === "hispanic and/or latin"){
-        notIllHispanic.push(obj);
-      } else if (obj.victim_race === "asian"){
-        notIllAsian.push(obj);
-      } else if (obj.victim_race === "alaskan and/or pacific islander"){
-        notIllAlaskan.push(obj);
-      } else if (obj.victim_race === "other"){
-        notIllOther.push(obj);
-      }
-    }
-  });
-  var data = {
-    'color': [
-      "#3366FF",
-      "#5200A3",
-      "#FF0000",
-      "#FF6600",
-      "#FFFF00",
-      "#33CC33"
-    ],
-    'label': [
-      "white",
-      "black",
-      "hispanic and/or latin",
-      "asian",
-      "alaskan and/or pacific islander",
-      "other"
-    ],
-    'values': [
-      {
-        'label': 'no symptoms',
-        'values': [
-          notIllWhite.length,
-          notIllBlack.length,
-          notIllHispanic.length,
-          notIllAsian.length,
-          notIllAlaskan.length,
-          notIllOther.length
-        ]
-      },
-      {
-        'label': 'symptoms',
-        'values': [
-          illWhite.length,
-          illBlack.length,
-          illHispanic.length,
-          illAsian.length,
-          illAlaskan.length,
-          illOther.length
-        ]
-      },
-    ]
-  };
-  return data;
-};
+// function infoGraphFilterIllnessWeightRace(){
+//   var notIllWhite = [];
+//   var notIllBlack = [];
+//   var notIllHispanic = [];
+//   var notIllAsian = [];
+//   var notIllAlaskan = [];
+//   var notIllOther = [];
+//   var illWhite = [];
+//   var illBlack = [];
+//   var illHispanic = [];
+//   var illAsian = [];
+//   var illAlaskan = [];
+//   var illOther = [];
+//   $.each(allKillings, function(i,obj){
+//     if (obj.symptoms_of_mental_illness === "yes"){
+//       if (obj.victim_race === "white"){
+//         illWhite.push(obj);
+//       } else if (obj.victim_race === "black"){
+//         illBlack.push(obj);
+//       } else if (obj.victim_race === "hispanic and/or latin"){
+//         illHispanic.push(obj);
+//       } else if (obj.victim_race === "asian"){
+//         illAsian.push(obj);
+//       } else if (obj.victim_race === "alaskan and/or pacific islander"){
+//         illAlaskan.push(obj);
+//       } else if (obj.victim_race === "other"){
+//         illOther.push(obj);
+//       }
+//     } else if (obj.symptoms_of_mental_illness === "no"){
+//       if (obj.victim_race === "white"){
+//         notIllWhite.push(obj);
+//       } else if (obj.victim_race === "black"){
+//         notIllBlack.push(obj);
+//       } else if (obj.victim_race === "hispanic and/or latin"){
+//         notIllHispanic.push(obj);
+//       } else if (obj.victim_race === "asian"){
+//         notIllAsian.push(obj);
+//       } else if (obj.victim_race === "alaskan and/or pacific islander"){
+//         notIllAlaskan.push(obj);
+//       } else if (obj.victim_race === "other"){
+//         notIllOther.push(obj);
+//       }
+//     }
+//   });
+//   var data = {
+//     'color': [
+//       "#3366FF",
+//       "#5200A3",
+//       "#FF0000",
+//       "#FF6600",
+//       "#FFFF00",
+//       "#33CC33"
+//     ],
+//     'label': [
+//       "white",
+//       "black",
+//       "hispanic and/or latin",
+//       "asian",
+//       "alaskan and/or pacific islander",
+//       "other"
+//     ],
+//     'values': [
+//       {
+//         'label': 'no symptoms',
+//         'values': [
+//           notIllWhite.length,
+//           notIllBlack.length,
+//           notIllHispanic.length,
+//           notIllAsian.length,
+//           notIllAlaskan.length,
+//           notIllOther.length
+//         ]
+//       },
+//       {
+//         'label': 'symptoms',
+//         'values': [
+//           illWhite.length,
+//           illBlack.length,
+//           illHispanic.length,
+//           illAsian.length,
+//           illAlaskan.length,
+//           illOther.length
+//         ]
+//       },
+//     ]
+//   };
+//   return data;
+// };
 
 function infoGraphFilterIllnessWeightAge(){
   var notIllTo4 = [];
