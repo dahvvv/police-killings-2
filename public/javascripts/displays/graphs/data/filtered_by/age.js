@@ -87,96 +87,96 @@
 //   return values;
 // };
 
-function infoGraphFilterAgeWeightRace(){
-  var races = [
-    "white",
-    "black",
-    "hispanic and/or latin",
-    "asian",
-    "alaskan and/or pacific islander",
-    "other"
-  ];
-  var data = {
-    'color': [
-      "#3366FF",
-      "#5200A3",
-      "#FF0000",
-      "#FF6600",
-      "#FFFF00",
-      "#33CC33"
-    ],
-    'label': races,
-    'values': graphFilterAgeWeightRaceValues()
-  };
-  return data;
-};
+// function infoGraphFilterAgeWeightRace(){
+  // var races = [
+  //   "white",
+  //   "black",
+  //   "hispanic and/or latin",
+  //   "asian",
+  //   "alaskan and/or pacific islander",
+  //   "other"
+  // ];
+//   var data = {
+//     'color': [
+//       "#3366FF",
+//       "#5200A3",
+//       "#FF0000",
+//       "#FF6600",
+//       "#FFFF00",
+//       "#33CC33"
+//     ],
+//     'label': races,
+//     'values': graphFilterAgeWeightRaceValues()
+//   };
+//   return data;
+// };
 
-function graphFilterAgeWeightRaceValues(){
-  var values = [];
-  for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
-    var totalKilledWhite = allKillings.filter(function(el){
-      return el.victim_age === age && el.victim_race === "white";
-    });
-    var totalKilledBlack = allKillings.filter(function(el){
-      return el.victim_age === age && el.victim_race === "black";
-    });
-    var totalKilledHispanic = allKillings.filter(function(el){
-      return el.victim_age === age && el.victim_race === "hispanic and/or latin";
-    });
-    var totalKilledAsian = allKillings.filter(function(el){
-      return el.victim_age === age && el.victim_race === "asian";
-    });
-    var totalKilledAlaskan = allKillings.filter(function(el){
-      return el.victim_age === age && el.victim_race === "alaskan and/or pacific islander";
-    });
-    var totalKilledOther = allKillings.filter(function(el){
-      return el.victim_age === age && el.victim_race === "other";
-    });
-    var value = {
-      'label': age,
-      'values': [
-        totalKilledWhite.length,
-        totalKilledBlack.length,
-        totalKilledHispanic.length,
-        totalKilledAsian.length,
-        totalKilledAlaskan.length,
-        totalKilledOther.length
-      ]
-    };
-    values.push(value);
-  };
-  return values;
-};
+// function graphFilterAgeWeightRaceValues(){
+//   var values = [];
+//   for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
+//     var totalKilledWhite = allKillings.filter(function(el){
+//       return el.victim_age === age && el.victim_race === "white";
+//     });
+//     var totalKilledBlack = allKillings.filter(function(el){
+//       return el.victim_age === age && el.victim_race === "black";
+//     });
+//     var totalKilledHispanic = allKillings.filter(function(el){
+//       return el.victim_age === age && el.victim_race === "hispanic and/or latin";
+//     });
+//     var totalKilledAsian = allKillings.filter(function(el){
+//       return el.victim_age === age && el.victim_race === "asian";
+//     });
+//     var totalKilledAlaskan = allKillings.filter(function(el){
+//       return el.victim_age === age && el.victim_race === "alaskan and/or pacific islander";
+//     });
+//     var totalKilledOther = allKillings.filter(function(el){
+//       return el.victim_age === age && el.victim_race === "other";
+//     });
+//     var value = {
+//       'label': age,
+//       'values': [
+//         totalKilledWhite.length,
+//         totalKilledBlack.length,
+//         totalKilledHispanic.length,
+//         totalKilledAsian.length,
+//         totalKilledAlaskan.length,
+//         totalKilledOther.length
+//       ]
+//     };
+//     values.push(value);
+//   };
+//   return values;
+// };
 
-function infoGraphFilterAgeWeightIllness(){
-  var data = {
-    'color': [secondColor, baseColor],
-    'label': ['symptoms', 'no symptoms'],
-    'values': graphFilterAgeWeightIllnessValues()
-  };
-  return data;
-};
+// function infoGraphFilterAgeWeightIllness(){
+//   var data = {
+//     'color': [secondColor, baseColor],
+//     'label': ['symptoms', 'no symptoms'],
+//     'values': graphFilterAgeWeightIllnessValues()
+//   };
+//   return data;
+// };
 
-function graphFilterAgeWeightIllnessValues(){
-  var values = [];
-  for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
-    var totalKilledNotIll = allKillings.filter(function(el){
-      return el.victim_age === age && el.symptoms_of_mental_illness === "no";
-    });
-    var totalKilledIll = allKillings.filter(function(el){
-      return el.victim_age === age && el.symptoms_of_mental_illness === "yes";
-    });
-    var value = {
-      'label': age,
-      'values': [
-        totalKilledIll.length,
-        totalKilledNotIll.length
-      ]
-    };
-    values.push(value);
-  };
-  return values;
-};
+// function graphFilterAgeWeightIllnessValues(){
+//   var values = [];
+//   for (var age = ageRange()[0]; age <= ageRange()[1]; age++){
+//     var totalKilledNotIll = allKillings.filter(function(el){
+//       return el.victim_age === age && el.symptoms_of_mental_illness === "no";
+//     });
+//     var totalKilledIll = allKillings.filter(function(el){
+//       return el.victim_age === age && el.symptoms_of_mental_illness === "yes";
+//     });
+//     var value = {
+//       'label': age,
+//       'values': [
+//         totalKilledIll.length,
+//         totalKilledNotIll.length
+//       ]
+//     };
+//     values.push(value);
+//   };
+//   return values;
+// };
 
 // var populationByAge = {
 //   1:    3955905,

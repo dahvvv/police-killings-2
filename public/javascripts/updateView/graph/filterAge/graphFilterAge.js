@@ -13,21 +13,3 @@ function updateGraphFilterAge(choosers){
 		updateGraphFilterAgeWeightIllness();
 	}
 };
-
-function updateGraphFilterAgeWeightRace(){
-	var data = filterAgeNotNil();
-	var graphInfo = infoGraphFilterAgeWeightRace();
-	var graphStyle = styleGraphFilterAgeWeightRace();
-	makeGraph(graphInfo, graphStyle);
-	var program = "<p class='program-text one-line'>Age race Graph</p>";
-	$('#program').html(program);
-};
-
-function updateGraphFilterAgeWeightIllness(){
-	var data = filterAgeNotNil();
-	var graphInfo = infoGraphFilterAgeWeightIllness();
-	var graphStyle = styleGraphFilterAgeWeightIllness();
-	makeGraph(graphInfo, graphStyle);
-	var program = "<p class='program-text one-line'>Age illness Graph</p>";
-	$('#program').html(program);
-};

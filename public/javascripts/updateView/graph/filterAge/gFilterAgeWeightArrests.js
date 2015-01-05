@@ -5,6 +5,7 @@ function updateGraphFilterAgeWeightArrests(){
 		labels["labelObjCrossGraph"][age] = [0];
 	};
 	labels = dataGraphFilterAgeWeightArrests(labels);
+  debugger;
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightArrests;
 	createGraph(data, style);

@@ -70,3 +70,11 @@ function racePopweightToRadius(race){
     case "other": return Math.floor(regR * (6.9 - ((6.9-1)*scaler)));
   }
 };
+
+var races = [
+  "white",
+  "black",
+  "hispanic and/or latin",
+  "asian",
+  "alaskan and/or pacific islander"
+];
