@@ -1,20 +1,29 @@
 function updateGraphFilterIllnessWeightAge(){
-  var ageMin = parseInt(enteredAgeRange().min);
-  var ageMax = parseInt(enteredAgeRange().max);
-  var labels = {
-    colorArr : hexScaler("#FF3300","#0000FF",(ageMax + 1 - ageMin)),
-    labelArrUpGraph : _.range(ageMin,ageMax + 1),
-    labelObjCrossGraph : {
-      "no symptoms" : arrIllnessWeightAge(),
-      "symptoms" : arrIllnessWeightAge()
-    }
-  };
+  var labels = labelsGraphFilterIllnessWeightAge();
   labels = dataGraphFilterIllnessWeightAge(labels);
   var data = labelsToData(labels);
   var style = styleGraphFilterIllnessWeightAge;
   createGraph(data, style);
   var program = "<p class='program-text four-line'>People killed by police while showing clear signs of mental illness<br>tend to be older than people with no signs of mental illness.<br>The average age of a victim with no signs of illness is 33.4 years old.<br>For those victims with mental illness, the average age is 38.5 years old.</p>";
   $('#program').html(program);
+};
+
+function labelsGraphFilterIllnessWeightAge(){
+  var ageRangeArr = Array.apply(null, Array(ageRange()[1])).map(function (_, i) {
+    return i+1;
+  });
+  var agesAllZero = [];
+  for (i = 0; i < ageRangeArr.length; i++){
+    agesAllZero.push(0);
+  };
+  return {
+    colorArr : hexScaler("#FF3300","#0000FF",(ageRangeArr.length)),
+    labelArrUpGraph : ageRangeArr,
+    labelObjCrossGraph : {
+      "no symptoms" : agesAllZero,
+      "symptoms" : agesAllZero
+    }
+  };
 };
 
 function dataGraphFilterIllnessWeightAge(labels){
@@ -30,14 +39,6 @@ function dataGraphFilterIllnessWeightAge(labels){
     labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(age)]++;
   });
   return labels;
-};
-
-function arrIllnessWeightAge(){
-  var arr = [];
-  for (i = enteredAgeRange().min; i <= enteredAgeRange().max; i++){
-    arr.push(0);
-  };
-  return arr;
 };
 
 var styleGraphFilterIllnessWeightAge = {
