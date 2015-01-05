@@ -241,53 +241,53 @@ function ageGraphValues(){
   return values;
 };
 
-function dataGraphFilterGenderWeightNone(){
-  var males = allKillings.filter(function(el){
-    return el.victim_gender === "male";
-  });
-  var females = allKillings.filter(function(el){
-    return el.victim_gender === "female";
-  });
-  var data = {
-    'color': [baseColor],
-    'label': ['gender'],
-    'values': [
-      {
-        'label': 'male',
-        'values': [males.length]
-      },
-      {
-        'label': 'female',
-        'values': [females.length]
-      },
-    ]
-  };
-  return data;
-};
+// function dataGraphFilterGenderWeightNone(){
+//   var males = allKillings.filter(function(el){
+//     return el.victim_gender === "male";
+//   });
+//   var females = allKillings.filter(function(el){
+//     return el.victim_gender === "female";
+//   });
+//   var data = {
+//     'color': [baseColor],
+//     'label': ['gender'],
+//     'values': [
+//       {
+//         'label': 'male',
+//         'values': [males.length]
+//       },
+//       {
+//         'label': 'female',
+//         'values': [females.length]
+//       },
+//     ]
+//   };
+//   return data;
+// };
 
-function dataGraphFilterUnarmedWeightNone(){
-  var armed = allKillings.filter(function(el){
-    return el.victim_unarmed === false;
-  });
-  var unarmed = allKillings.filter(function(el){
-    return el.victim_unarmed === true;
-  });
-  var data = {
-    'color': [baseColor],
-    'label': ['unarmed'],
-    'values': [
-      {
-        'label': 'armed',
-        'values': [armed.length]
-      },
-      {
-        'label': 'unarmed',
-        'values': [unarmed.length]
-      },
-    ]
-  };
-  return data;
-};
+// function dataGraphFilterUnarmedWeightNone(){
+//   var armed = allKillings.filter(function(el){
+//     return el.victim_unarmed === false;
+//   });
+//   var unarmed = allKillings.filter(function(el){
+//     return el.victim_unarmed === true;
+//   });
+//   var data = {
+//     'color': [baseColor],
+//     'label': ['unarmed'],
+//     'values': [
+//       {
+//         'label': 'armed',
+//         'values': [armed.length]
+//       },
+//       {
+//         'label': 'unarmed',
+//         'values': [unarmed.length]
+//       },
+//     ]
+//   };
+//   return data;
+// };
 
 // function dataGraphFilterIllnessWeightNone(){
 //   var ill = allKillings.filter(function(el){
