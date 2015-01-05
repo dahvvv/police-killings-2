@@ -145,36 +145,36 @@
 //   return values;
 // };
 
-function infoGraphFilterRaceWeightIllness(){
-  var data = {
-    'color': [secondColor, baseColor],
-    'label': ["symptoms", "no symptoms"],
-    'values': graphFilterRaceWeightIllnessValues()
-  };
-  return data;
-};
+// function infoGraphFilterRaceWeightIllness(){
+//   var data = {
+//     'color': [secondColor, baseColor],
+//     'label': ["symptoms", "no symptoms"],
+//     'values': graphFilterRaceWeightIllnessValues()
+//   };
+//   return data;
+// };
 
-function graphFilterRaceWeightIllnessValues(){
-  var values = [];
-  $.each(races, function(i,race){
-    var raceIll = allKillings.filter(function(el){
-      return el.symptoms_of_mental_illness === "yes" && el.victim_race === race;
-    });
-    var raceNotIll = allKillings.filter(function(el){
-      return el.symptoms_of_mental_illness === "no" && el.victim_race === race;
-    });
-    var totalKilled = raceIll.length + raceNotIll.length;
-    var percentRaceIll = ((raceIll.length / totalKilled) * 100).toFixed(1);
-    var percentRaceNotIll = 100 - percentRaceIll;
-    race = abbreviateRace(race,"horizontal");
-    var value = {
-      'label': race,
-      'values': [percentRaceIll, percentRaceNotIll]
-    };
-    values.push(value);
-  });
-  return values;
-};
+// function graphFilterRaceWeightIllnessValues(){
+//   var values = [];
+//   $.each(races, function(i,race){
+//     var raceIll = allKillings.filter(function(el){
+//       return el.symptoms_of_mental_illness === "yes" && el.victim_race === race;
+//     });
+//     var raceNotIll = allKillings.filter(function(el){
+//       return el.symptoms_of_mental_illness === "no" && el.victim_race === race;
+//     });
+//     var totalKilled = raceIll.length + raceNotIll.length;
+//     var percentRaceIll = ((raceIll.length / totalKilled) * 100).toFixed(1);
+//     var percentRaceNotIll = 100 - percentRaceIll;
+//     race = abbreviateRace(race,"horizontal");
+//     var value = {
+//       'label': race,
+//       'values': [percentRaceIll, percentRaceNotIll]
+//     };
+//     values.push(value);
+//   });
+//   return values;
+// };
 
 
 function graphFilterRaceWeightAgeTipSample(elem){

@@ -13,12 +13,3 @@ function updateGraphFilterRace(choosers){
 		updateGraphFilterRaceWeightIllness();
 	};
 };
-
-function updateGraphFilterRaceWeightIllness(){
-	var data = dataFilterRaceWeightNone();
-	var graphInfo = infoGraphFilterRaceWeightIllness();
-	var graphStyle = styleGraphFilterRaceWeightIllness();
-	makeGraph(graphInfo, graphStyle);
-	var program = "<p class='program-text two-line'>Over 35% of asian people killed by police<br>were exhibiting clear signs of mental illness.</p>";
-	$('#program').html(program);
-};
