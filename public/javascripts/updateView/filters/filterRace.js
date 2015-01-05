@@ -78,3 +78,19 @@ var races = [
   "asian",
   "alaskan and/or pacific islander"
 ];
+
+var populationByRace = {
+  "white":                            253005657,
+  "black":                            45288730,
+  "hispanic and/or latin":            54634554,
+  "asian":                            19718930,
+  "alaskan and/or pacific islander":  1447321
+};
+
+var arrestsByRace = {
+  "white":                            6502919,
+  "black":                            2640067,
+  // "hispanic and/or latin":            54634554,
+  "asian":                            135165,
+  "alaskan and/or pacific islander":  112322
+};

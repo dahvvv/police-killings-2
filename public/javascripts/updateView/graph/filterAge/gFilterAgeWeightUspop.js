@@ -26,7 +26,7 @@ function dataGraphFilterAgeWeightUspop(labels){
 		var totalKilledPerCap = deaths[0] / populationByAge[age];
 		var adjustedPerCap = Math.ceil(totalKilledPerCap * 100000000);
 		labels["labelObjCrossGraph"][age] = [adjustedPerCap];
-	})
+	});
 	return labels;
 };
 
