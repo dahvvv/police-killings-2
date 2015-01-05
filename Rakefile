@@ -262,6 +262,26 @@ namespace :db do
     end
   end
 
+  desc "fix missing hispanic/latino bug"
+  task :bugfix_hispanic do
+    path = "lib/U.S._Police_Shootings_Scraped.csv"
+    hispanic = []
+    killings = Killing.all
+    CSV.foreach(path) do |row|
+      if row[10]
+        if row[10].downcase == "hispanic or latino origin"
+          hispanic.push(row[6])
+        end
+      end
+    end
+    killings.each do |obj|
+      if hispanic.include?(obj.victim_name)
+        obj.update(victim_race: "hispanic and/or latin")
+        obj.save!
+      end
+    end
+  end
+
 end
 
 # def us_pop_by_age(i)
