@@ -12,6 +12,10 @@ function removeAllListviews(){
 	$('.filter-checkbox-form, .filter-range-form').css({"display":"none"});
 };
 
+function removeAllWeightListviews(){
+	$('.weight-checkbox-form, .weight-range-form').css({"display":"none"});
+};
+
 function replaceChooser(chooser, callback){
   if ($(chooser).hasClass('button-filter')) {
     replaceFilter(chooser, callback);
