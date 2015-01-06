@@ -184,6 +184,11 @@ select.button-filter {
   display: none;
 }
 
+.weight-checkbox-form {
+  margin: -0.8em 1em 0.5em 1em;
+  display: none;
+}
+
 #race-selection input[type=submit] {
   width: 80px;
   margin: 4% 10% 8%;
