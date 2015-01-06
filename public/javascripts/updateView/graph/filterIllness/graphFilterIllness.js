@@ -9,3 +9,16 @@ function updateGraphFilterIllness(choosers){
 		updateGraphFilterIllnessWeightAge();
 	}
 };
+
+var citiesByIllness = [
+	"Seattle",
+	"Albuquerque",
+	"Reno",
+	"Spokane",
+	"Riverside",
+	"Henderson",
+	"LA",
+	"Portland",
+	"Las Vegas",
+	"NYC"
+];

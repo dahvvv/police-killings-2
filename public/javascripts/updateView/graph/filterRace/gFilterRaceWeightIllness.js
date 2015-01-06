@@ -44,14 +44,6 @@ function labelsGraphFilterRaceWeightIllness(){
 	};
 };
 
-// function zeroFillArr(length){
-// 	var arr = [];
-// 	for (i = 0; i < length; i++){
-// 		arr.push(0);
-// 	};
-// 	return arr;
-// };
-
 var styleGraphFilterRaceWeightIllness = {
 	injectInto: 'display-container',
   animate: true,

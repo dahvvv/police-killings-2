@@ -49,3 +49,16 @@ function ageFilterColorArr2(){
   .slice(0,61)
   .concat(hexScaler("#FF0000","#551A8B",46));
 };
+
+var citiesByAge = [
+  "N Orleans",
+  "Orlando",
+  "Oakland",
+  "Houston",
+  "DC",
+  "Memphis",
+  "Albuquerque",
+  "Riverside",
+  "Miami",
+  "Henderson"
+];
