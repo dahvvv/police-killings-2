@@ -60,10 +60,16 @@ function removeAllListviews(){
   $('.filter-checkbox-form, .filter-range-form').css({"display":"none"});
 };
 
+function removeAllFilterForms(){};
+
+function showThisFilterForm(){};
+
 $(function(){
 
   $(".button-filter").on("click", function(e){
     e.preventDefault();
+    removeAllFilterForms();
+    showThisFilterForm();
     if (this.tagName != "INPUT" && this.id != "usPop-filter"){
       removeAllListviews();
       $(this).next("form").css({"display":"block"});
