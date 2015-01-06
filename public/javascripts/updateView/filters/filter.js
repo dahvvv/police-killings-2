@@ -55,3 +55,7 @@ function detectFilter(){
     return "shots";
   }
 };
+
+function removeAllListviews(){
+  $('.filter-checkbox-form, .filter-range-form').css({"display":"none"});
+};

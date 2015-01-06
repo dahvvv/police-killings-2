@@ -37,3 +37,7 @@ function detectWeight(){
     return "shots";
   }
 };
+
+function removeAllWeightListviews(){
+  $('.weight-checkbox-form, .weight-range-form').css({"display":"none"});
+};
