@@ -12,3 +12,11 @@ function dataFilterShotsWeightNone(){
   });
   return arr;
 };
+
+function dataFilterShotsWeightRace(){
+	alert('data filter shots weight race');
+  arr = allKillings.filter(function(el){
+    return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
+  });
+  return arr;
+};

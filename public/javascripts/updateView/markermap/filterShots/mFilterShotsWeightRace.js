@@ -1,5 +1,5 @@
 function updateMarkermapFilterShotsWeightRace(){
-	var data = dataFilterShotsWeightNone();
+	var data = dataFilterShotsWeightRace();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
 			fillColor: 'red',
