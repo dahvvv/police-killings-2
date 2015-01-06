@@ -59,3 +59,15 @@ function detectFilter(){
 function removeAllListviews(){
   $('.filter-checkbox-form, .filter-range-form').css({"display":"none"});
 };
+
+$(function(){
+
+  $(".button-filter").on("click", function(e){
+    e.preventDefault();
+    if (this.tagName != "INPUT" && this.id != "usPop-filter"){
+      removeAllListviews();
+      $(this).next("form").css({"display":"block"});
+    };
+  });
+
+});

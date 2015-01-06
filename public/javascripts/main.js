@@ -9,12 +9,12 @@ var graph;
 
 $(function(){
 
-  map = L.mapbox.map('map-one', 'marpborxmarrrpborrrrrx.kg7bjg5l', {
+  map = L.mapbox.map("map-one", "marpborxmarrrpborrrrrx.kg7bjg5l", {
     scrollWheelZoom: true,
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
-  $('.chooser').on('click', function(e){
+  $(".chooser").on("click", function(e){
     e.preventDefault();
     replaceChooser(this, function(){
       var choosers = detectChoosers();
@@ -22,20 +22,11 @@ $(function(){
     })
   });
 
-  $(".button-filter").on('click', function(e){
-    e.preventDefault();
-    if (this.tagName != "INPUT" && this.id != "usPop-filter"){
-      removeAllListviews();
-      $(this).next("form").css({"display":"block"});
-    };
-  });
-
-  $(".button-weight").on('click', function(e){
+  $(".button-weight").on("click", function(e){
     e.preventDefault();
     if (this.tagName != "INPUT" && this.id != "usPop-weight"){
       removeAllWeightListviews();
-      if ($(this).hasClass('weight-type')){
-        debugger;
+      if ($(this).hasClass("weight-type")){
         $(this).next("form").css({"display":"block"})
         .find("input[type=submit]")
         .css({"display":"block"});
@@ -43,31 +34,31 @@ $(function(){
     };
   });
 
-  $('#state-selector').on('change', function(e){
+  $("#state-selector").on("change", function(e){
     e.preventDefault();
     var choosers = detectChoosers();
     var data = filterData(choosers);
     updateDisplay(data, choosers);
   });
 
-  $('#about-link').on('click', function(e){
+  $("#about-link").on("click", function(e){
     e.preventDefault();
-    $('#about').slideToggle(800);
+    $("#about").slideToggle(800);
   });
 
-  $('#forward-button').on('click', function(e){
+  $("#forward-button").on("click", function(e){
     e.preventDefault();
     nextPage();
   });
 
-  $('#back-button').on('click', function(e){
+  $("#back-button").on("click", function(e){
     e.preventDefault();
     prevPage();
   });
 
   $.ajax({
-    url: '/api',
-    dataType: 'JSON',
+    url: "/api",
+    dataType: "JSON",
     success: function(data){
       allKillings = data;
       updateHeatmapFilterUspopWeightNone();
