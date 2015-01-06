@@ -31,27 +31,11 @@ function dataGraphFilterRaceWeightAge(labels){
 };
 
 function labelsGraphFilterRaceWeightAge(){
-	var ageRangeArr = Array.apply(null, Array(ageRange()[1])).map(function (_, i) {
-		return i+1;
-	});
-	var length = ageRangeArr.length;
+	var ageArr = allAgesArr();
+	var length = ageArr.length;
 	return {
-		colorArr : hexScaler("#FFFFFF","#FFFF00",9)
-	  .slice(0,8)
-	  .concat(hexScaler("#FFFF00","#FF6600",7))
-	  .slice(0,14)
-	  .concat(hexScaler("#FF6600","#FF0000",7))
-	  .slice(0,20)
-	  .concat(hexScaler("#FF0000","#551A8B",7))
-	  .concat(hexScaler("#551A8B","#551A8B",14))
-	  .concat(hexScaler("#551A8B","#FF0000",8))
-	  .slice(0,48)
-	  .concat(hexScaler("#FF0000","#FF6600",7))
-	  .slice(0,54)
-	  .concat(hexScaler("#FF6600","#FFFF00",8))
-	  .slice(0,61)
-	  .concat(hexScaler("#FFFF00","#FFFFFF",46)),
-	  labelArrUpGraph : ageRangeArr,
+	  colorArr: ageFilterColorArr(),
+	  labelArrUpGraph : ageArr,
 	  labelObjCrossGraph : {
 	  	"white": zeroFillArr(length),
 	  	"black": zeroFillArr(length),
@@ -60,14 +44,6 @@ function labelsGraphFilterRaceWeightAge(){
 	  	"ak / p.i.": zeroFillArr(length)
 	  }
 	};
-};
-
-function zeroFillArr(length){
-	var arr = [];
-	for (i = 0; i < length; i++){
-		arr.push(0);
-	};
-	return arr;
 };
 
 var styleGraphFilterRaceWeightAge = {

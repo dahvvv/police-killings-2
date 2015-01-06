@@ -1,25 +1,3 @@
-function filterByAge(){
-  arr = allKillings.filter(function(el){
-    return el.victim_age >= enteredAgeRange().min && el.victim_age <= enteredAgeRange().max && el.victim_age != null;
-  });
-  return arr;
-};
-
-function enteredAgeRange(){
-  var min = $('#age-min').val();
-  min = (min === "" || min === "0") ? 1 : min;
-  var max = $('#age-max').val();
-  max = max === "" ? 999 : max;
-  return {min: min, max: max};
-};
-
-function filterAgeNotNil(){
-  arr = allKillings.filter(function(el){
-    return el.victim_age != null;
-  });
-  return arr;
-};
-
 function ageRange(){
   var ages = [];
   $.each(allKillings, function(i,obj){
@@ -30,6 +8,79 @@ function ageRange(){
   var ageMin = Math.min.apply(Math, ages);
   var ageMax = Math.max.apply(Math, ages);
   return [ageMin, ageMax];
+};
+
+function enteredAgeRange(){
+  var min = $('#age-min').val();
+  min = (min === "" || min === "0") ? 1 : min;
+  var max = $('#age-max').val();
+  max = max === "" ? 999 : max;
+  return {min: min, max: max};
+};
+
+function filterByAge(){
+  arr = allKillings.filter(function(el){
+    return el.victim_age >= enteredAgeRange().min && el.victim_age <= enteredAgeRange().max && el.victim_age != null;
+  });
+  return arr;
+};
+
+function filterAgeNotNil(){
+  arr = allKillings.filter(function(el){
+    return el.victim_age != null;
+  });
+  return arr;
+};
+
+function ageFilterColorArr(){
+  return hexScaler("#FFFFFF","#FFFF00",9)
+  .slice(0,8)
+  .concat(hexScaler("#FFFF00","#FF6600",7))
+  .slice(0,14)
+  .concat(hexScaler("#FF6600","#FF0000",7))
+  .slice(0,20)
+  .concat(hexScaler("#FF0000","#551A8B",7))
+  .concat(hexScaler("#551A8B","#551A8B",14))
+  .concat(hexScaler("#551A8B","#FF0000",8))
+  .slice(0,48)
+  .concat(hexScaler("#FF0000","#FF6600",7))
+  .slice(0,54)
+  .concat(hexScaler("#FF6600","#FFFF00",8))
+  .slice(0,61)
+  .concat(hexScaler("#FFFF00","#FFFFFF",46));
+};
+
+function ageFilterColorArr2(){
+  return hexScaler("#551A8B","#FF0000",9)
+  .slice(0,8)
+  .concat(hexScaler("#FF0000","#FF6600",7))
+  .slice(0,14)
+  .concat(hexScaler("#FF6600","#FFFF00",7))
+  .slice(0,20)
+  .concat(hexScaler("#FFFF00","#FFFFFF",7))
+  .concat(hexScaler("#FFFFFF","#FFFFFF",14))
+  .concat(hexScaler("#FFFFFF","#FFFF00",8))
+  .slice(0,48)
+  .concat(hexScaler("#FFFF00","#FF6600",7))
+  .slice(0,54)
+  .concat(hexScaler("#FF6600","#FF0000",8))
+  .slice(0,61)
+  .concat(hexScaler("#FF0000","#551A8B",46));
+};
+
+function allAgesArr(){
+  return Array.apply(null, Array(ageRange()[1]))
+  .map(function (_, i) {
+    return i+1;
+  });
+};
+
+function zeroFillArr(length){
+  var arr = [];
+  for (i = 0; i < length; i++){
+    arr.push(0);
+  };
+  return arr;
 };
 
 

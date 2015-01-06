@@ -3,6 +3,10 @@ function capitaliseCity(city){
 		return "NYC";
 	} else if (city === "los angeles"){
 		return "LA";
+	} else if (city === "washington"){
+		return "DC";
+	} else if (city === "new orleans"){
+		return "N Orleans";
 	} else {
 		return city.split(" ")
 	  .map(function(string){
@@ -18,6 +22,10 @@ function lowercaseCity(city){
 		return "new york city";
 	} else if (city === "LA"){
 		return "los angeles";
+	} else if (city === "DC"){
+		return "washington";
+	} else if (city === "N Orleans"){
+		return "new orleans";
 	} else {
 		return city.toLowerCase();
 	};
@@ -48,3 +56,16 @@ var populationByCity = {
 	"Las Vegas" 	: 603488,
 	"NYC" 				: 8406000
 };
+
+var citiesByAge = [
+	"N Orleans",
+	"Orlando",
+	"Oakland",
+	"Houston",
+	"DC",
+	"Memphis",
+	"Albuquerque",
+	"Riverside",
+	"Miami",
+	"Henderson"
+];

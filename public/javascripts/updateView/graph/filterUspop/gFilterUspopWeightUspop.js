@@ -45,7 +45,7 @@ var styleGraphFilterUspopWeightUspop = {
   barsOffset: 10,
   Margin: {
     top:5,
-    left: 0,
+    left: 15,
     right: 15,
     bottom:5
   },
