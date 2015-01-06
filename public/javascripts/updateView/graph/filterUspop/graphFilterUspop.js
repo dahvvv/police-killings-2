@@ -72,16 +72,3 @@ var populationByCity = {
 	"Las Vegas" 	: 603488,
 	"NYC" 				: 8406000
 };
-
-var citiesByAge = [
-	"N Orleans",
-	"Orlando",
-	"Oakland",
-	"Houston",
-	"DC",
-	"Memphis",
-	"Albuquerque",
-	"Riverside",
-	"Miami",
-	"Henderson"
-];
