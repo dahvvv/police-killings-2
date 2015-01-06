@@ -189,6 +189,11 @@ select.button-filter {
   margin: 4% 10% 8%;
 }
 
+#race-weight-selection input[type=submit] {
+  width: 80px;
+  margin: 4% 10% 8%;
+}
+
 #age-range {
   display: none;
 }

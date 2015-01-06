@@ -30,6 +30,14 @@ $(function(){
     };
   });
 
+  $(".button-weight").on('click', function(e){
+    e.preventDefault();
+    if (this.tagName != "INPUT" && this.id != "usPop-weight"){
+      removeAllWeightListviews();
+      $(this).next("form").css({"display":"block"});
+    };
+  });
+
   $('#state-selector').on('change', function(e){
     e.preventDefault();
     var choosers = detectChoosers();
