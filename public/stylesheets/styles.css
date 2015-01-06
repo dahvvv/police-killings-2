@@ -189,11 +189,6 @@ select.button-filter {
   margin: 4% 10% 8%;
 }
 
-#race-weight-selection input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8%;
-}
-
 #age-range {
   display: none;
 }
@@ -351,6 +346,11 @@ select.button-filter {
 .weight-checkbox-form {
   margin: -0.8em 1em 0.5em 1em;
   display: none;
+}
+
+#race-weight-selection input[type=submit] {
+  width: 80px;
+  margin: 4% 10% 8%;
 }
 
 #program {

@@ -14,9 +14,25 @@ function dataFilterShotsWeightNone(){
 };
 
 function dataFilterShotsWeightRace(){
-	alert('data filter shots weight race');
-  arr = allKillings.filter(function(el){
-    return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
+	var checkedBoxes = $('#race-weight-selection').children('input:checked');
+  var checkedRaces = $(checkedBoxes).map(function(){
+    return this.name;
+  })
+  .get();
+  checkedRaces = reorderRaces(checkedRaces);
+  var arr = [];
+  $.each(checkedRaces, function(i,val){
+    var filtered = allKillings.filter(function(el){
+    	if (el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max){
+    		return el.victim_race === val;
+    	};
+    });
+    arr = arr.concat(filtered);
   });
+
+
+  // arr = allKillings.filter(function(el){
+  //   return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
+  // });
   return arr;
 };

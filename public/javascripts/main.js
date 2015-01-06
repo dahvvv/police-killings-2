@@ -35,7 +35,10 @@ $(function(){
     if (this.tagName != "INPUT" && this.id != "usPop-weight"){
       removeAllWeightListviews();
       if ($(this).hasClass('weight-type')){
-        $(this).next("form").css({"display":"block"});
+        debugger;
+        $(this).next("form").css({"display":"block"})
+        .find("input[type=submit]")
+        .css({"display":"block"});
       };
     };
   });
