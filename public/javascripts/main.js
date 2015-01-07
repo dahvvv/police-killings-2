@@ -38,11 +38,13 @@ $(function(){
     if (this.id != scene.filter + "-filter"){
       $("button").removeClass("filter-type");
       $(this).addClass("filter-type");
+      scene.filter = this.id.split("-")[0];
     };
     $(".filter-form").hide();
     if (scene.display != "graph" && this.id != "usPop-filter"){
       $(this).next("form").show();
     };
+    debugger;
   });
 
   // $(".chooser").on("click", function(e){
