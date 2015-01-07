@@ -1,9 +1,14 @@
-function dataFilterRaceWeightNone(){
-  var checkedBoxes = $("#race-filter-form").children("input:checked");
+function checkRaces(form){
+  var checkedBoxes = form.children("input:checked");
   var checkedRaces = $(checkedBoxes).map(function(){
     return this.name;
   })
   .get();
+  return checkedRaces;
+};
+
+function dataFilterRaceWeightNone(){
+  var checkedRaces = checkRaces($("#race-filter-form"));
   checkedRaces = reorderRaces(checkedRaces);
   var arr = [];
   $.each(checkedRaces, function(i,val){

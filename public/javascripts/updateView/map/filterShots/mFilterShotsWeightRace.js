@@ -33,17 +33,13 @@ function updateMapFilterShotsWeightRace(){
 };
 
 function dataFilterShotsWeightRace(){
-	var checkedBoxes = $("#race-weight-form").children("input:checked");
-  var checkedRaces = $(checkedBoxes).map(function(){
-    return this.name;
-  })
-  .get();
+ 	var checkedRaces = checkRaces($("#race-weight-form"));
   checkedRaces = reorderRaces(checkedRaces);
   var arr = [];
-  $.each(checkedRaces, function(i,val){
+  $.each(checkedRaces, function(i,race){
     var filtered = allKillings.filter(function(el){
     	if (el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max){
-    		return el.victim_race === val;
+    		return el.victim_race === race;
     	};
     });
     arr = arr.concat(filtered);

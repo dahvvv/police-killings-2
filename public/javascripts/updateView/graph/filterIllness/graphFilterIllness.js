@@ -3,14 +3,6 @@ function updateGraphFilterIllness(){
   $("#race-weight, #age-weight").show();
   var weight = detectWeight();
   selectGraphFilterIllnessWeight[weight]();
-
-	if (choosers.weight === "none"){
-		updateGraphFilterIllnessWeightNone();
-	} else if (choosers.weight === "race"){
-		updateGraphFilterIllnessWeightRace();
-	} else if (choosers.weight === "age"){
-		updateGraphFilterIllnessWeightAge();
-	}
 };
 
 var selectGraphFilterIllnessWeight = {

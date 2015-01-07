@@ -1,10 +1,3 @@
-function updateMapFilterIllness(){
-	$("#illness-filter-form").show();
-	$(".weight, #weight-header").hide();
-	var weight = detectWeight();
-	selectMapFilterIllnessWeight[weight]();
-};
-
 function updateMapFilterIllnessWeightNone(){
 	var data = dataFilterIllnessWeightNone();
 	$.each(data, function(i,obj){
@@ -23,8 +16,3 @@ function updateMapFilterIllnessWeightNone(){
 	$("#program").html(program);
 };
 
-var selectMapFilterIllnessWeight = {
-	"none" : function(){
-		updateMapFilterIllnessWeightNone();
-	},
-};
