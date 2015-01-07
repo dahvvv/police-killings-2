@@ -41,10 +41,11 @@ $(function(){
       scene.filter = this.id.split("-")[0];
     };
     $(".filter-form").hide();
-    if (scene.display != "graph" && this.id != "usPop-filter"){
+    if (scene.display != "graph" && 
+      this.id != "usPop-filter"){
       $(this).next("form").show();
     };
-    debugger;
+    updateView(scene);
   });
 
   // $(".chooser").on("click", function(e){

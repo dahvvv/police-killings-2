@@ -1,10 +1,25 @@
-function updateView(choosers){
-	if (choosers.displaySelector === "heatmap"){
-		updateHeatmap(choosers);
-	} else if (choosers.displaySelector === "marker"){
-		updateMarkermap(choosers);
-	} else if (choosers.displaySelector === "graph"){
-		updateGraph(choosers);
+// function updateView(choosers){
+// 	if (choosers.displaySelector === "heatmap"){
+// 		updateHeatmap(choosers);
+// 	} else if (choosers.displaySelector === "marker"){
+// 		updateMarkermap(choosers);
+// 	} else if (choosers.displaySelector === "graph"){
+// 		updateGraph(choosers);
+// 	};
+// };
+
+
+function updateView(scene){
+	switch (scene.display){
+		case "heatmap":
+			updateHeatmap(scene);
+			break;
+		case "map":
+			updateMap(scene);
+			break;
+		case "graph":
+			updateGraph(scene);
+			break;
 	};
 };
 

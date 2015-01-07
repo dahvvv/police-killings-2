@@ -360,7 +360,7 @@ form {
   letter-spacing: 2px;
 }
 
-#selectors-container .display-selector.display-type {
+.display-type {
   background-color: rgba(136,123,107,0.8);
   font-size: 1.6em;
   color: black;
