@@ -1,31 +1,32 @@
-// function updateHeatmap(choosers){
-// 	$('.legend').css({"display":"none"});
-// 	removeAllWeights();
-// 	selectHeatmapFilter(choosers);
-// };
-
-function updateHeatmap(scene){
+function updateHeatmap(){
   $(".legend").hide();
   $(".weight, .weight-form").hide();
-  selectHeatmapFilter(scene);
+  var filter = $(".filter-type").attr("id");
+  selectHeatmapFilter[filter]();
 };
 
-function selectHeatmapFilter(choosers){
-	if (choosers.filter === "usPop"){
-		updateHeatmapFilterUspop(choosers);
-	} else if (choosers.filter === "race"){
-		updateHeatmapFilterRace(choosers);
-	} else if (choosers.filter === "age"){
-		updateHeatmapFilterAge(choosers);
-	} else if (choosers.filter === "gender"){
-		updateHeatmapFilterGender(choosers);
-	} else if (choosers.filter === "unarmed"){
-		updateHeatmapFilterUnarmed(choosers);
-	} else if (choosers.filter === "illness"){
-		updateHeatmapFilterIllness(choosers);
-	} else if (choosers.filter === "shots"){
-		updateHeatmapFilterShots(choosers);
-	};
+var selectHeatmapFilter = {
+  "usPop-filter" : function(){
+    updateHeatmapFilterUspop();
+  },
+  "race-filter" : function(){
+    updateHeatmapFilterRace();
+  },
+  "age-filter" : function(){
+    updateHeatmapFilterAge();
+  },
+  "gender-filter" : function(){
+    updateHeatmapFilterGender();
+  },
+  "unarmed-filter" : function(){
+    updateHeatmapFilterUnarmed();
+  },
+  "illness-filter" : function(){
+    updateHeatmapFilterIllness();
+  },
+  "shots-filter" : function(){
+    updateHeatmapFilterShots();
+  },
 };
 
 function makeHeatmap(data){

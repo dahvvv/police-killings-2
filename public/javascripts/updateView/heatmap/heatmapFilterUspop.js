@@ -1,4 +1,11 @@
-function updateHeatmapFilterUspop(choosers){
+// function updateHeatmapFilterUspop(choosers){
+// 	removeAllWeights();
+// 	if (choosers.weight === "none"){
+// 		updateHeatmapFilterUspopWeightNone();
+// 	};
+// };
+
+function updateHeatmapFilterUspop(){
 	removeAllWeights();
 	if (choosers.weight === "none"){
 		updateHeatmapFilterUspopWeightNone();
