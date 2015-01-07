@@ -27,11 +27,6 @@ $(function(){
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
-  // $("button").on("click", function(e){
-  //   e.preventDefault();
-  //   detectTypeOfButton();
-  // })
-
   $(".filter").on("click", function(e){
     e.preventDefault();
     var filter = detectFilter();
@@ -46,12 +41,6 @@ $(function(){
       this.id != "usPop-filter"){
       $(this).next("form").show();
     };
-    updateDisplay[display]();
-  });
-
-  $(".filter-form").find("input[type=submit]").on("click", function(e){
-    e.preventDefault();
-    var display = detectDisplay();
     updateDisplay[display]();
   });
 
@@ -84,25 +73,11 @@ $(function(){
     updateDisplay[display]();
   });
 
-  // $(".chooser").on("click", function(e){
-  //   e.preventDefault();
-  //   replaceChooser(this, function(){
-  //     var choosers = detectChoosers();
-  //     updateView(choosers);
-  //   })
-  // });
-
-  // $(".button-weight").on("click", function(e){
-  //   e.preventDefault();
-  //   if (this.tagName != "INPUT" && this.id != "usPop-weight"){
-  //     removeAllWeightListviews();
-  //     if ($(this).hasClass("weight-type")){
-  //       $(this).next("form").css({"display":"block"})
-  //       .find("input[type=submit]")
-  //       .css({"display":"block"});
-  //     };
-  //   };
-  // });
+  $(".filter-form, .weight-form").find("input[type=submit]").on("click", function(e){
+    e.preventDefault();
+    var display = detectDisplay();
+    updateDisplay[display]();
+  });
 
   $("#state-selector").on("change", function(e){
     e.preventDefault();

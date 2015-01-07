@@ -1,6 +1,6 @@
 function updateGraphFilterUspop(){
 	readyWeightsToBeShown();
-	$("#usPop-weight, #arrests-weight, #age-weight, #illness-weight").show();
+	$("#usPop-weight, #age-weight, #illness-weight").show();
 	var weight = detectWeight();
 	selectGraphFilterUspopWeight[weight]();
 };
@@ -9,16 +9,13 @@ var selectGraphFilterUspopWeight = {
 	"none" : function(){
 		updateGraphFilterUspopWeightNone();
 	},
-	"usPop" : function(){
+	"usPop-weight" : function(){
 		updateGraphFilterUspopWeightUspop();
 	},
-	"arrests" : function(){
-		updateGraphFilterUspopWeightArrests();
-	},
-	"age" : function(){
+	"age-weight" : function(){
 		updateGraphFilterUspopWeightAge();
 	},
-	"illness" : function(){
+	"illness-weight" : function(){
 		updateGraphFilterUspopWeightIllness();
 	},
 };
