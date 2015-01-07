@@ -1,3 +1,4 @@
+
 body {
   background-color: #c8cdcf;
   margin: 0;
@@ -100,9 +101,8 @@ a:visited {
   top: 10%;
 }
 
-.button-header {
-/*  display: none;
-*/  display: block;
+.header {
+  display: none;
   text-align: center;
   height: 8%;
   width: 80%;
@@ -372,10 +372,6 @@ form {
   width: 15%;
   top: 10%;
   right: 0;
-}
-
-.button-header {
-  display: none;
 }
 
 .weight {

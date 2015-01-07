@@ -1,6 +1,6 @@
 function readyWeightsToBeShown(){
-	$(".button-header").css({"display":"block"});
-	$(".button-weight").css({"display":"none"});
+  $(".weight").hide();
+	$("#weight-header").show();
 };
 
 function removeAllWeights(){

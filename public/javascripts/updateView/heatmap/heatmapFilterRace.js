@@ -14,12 +14,10 @@
 // };
 
 function updateHeatmapFilterRace(){
-	alert('race!');
-	if ($('#race-selection').css('display') === "none"){
-		$('#race-selection').css({"display":"block"});
-	};
+	debugger;
+	$("#race-filter-form").show();
 	readyWeightsToBeShown();
-	$('#usPop-weight, #arrests-weight').css({'display':'block'});
+	$('#usPop-weight, #arrests-weight').show();
 	if (choosers.weight === "none"){
 		updateHeatmapFilterRaceWeightNone();
 	} else if (choosers.weight === "usPop"){
