@@ -32,6 +32,8 @@ $(function(){
     var filter = detectFilter();
     var display = detectDisplay();
     var weight = detectWeight();
+    $("button").removeClass("weight-type");
+    $(".weight-form").hide();
     if (this.id != filter){
       $("button").removeClass("filter-type");
       $(this).addClass("filter-type");

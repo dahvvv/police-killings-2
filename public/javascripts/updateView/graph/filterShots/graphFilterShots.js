@@ -1,11 +1,18 @@
-function updateGraphFilterShots(choosers){
+function updateGraphFilterShots(){
 	readyWeightsToBeShown();
-	$('#race-weight, #unarmed-weight').css({'display':'block'});
-	if (choosers.weight === "none"){
-		updateGraphFilterShotsWeightNone();
-	} else if (choosers.weight === "race"){
-		updateGraphFilterShotsWeightRace();
-	} else if (choosers.weight === "unarmed"){
-		updateGraphFilterShotsWeightUnarmed();
-	}
+  $("#race-weight, #unarmed-weight").show();
+  var weight = detectWeight();
+  selectGraphFilterShotsWeight[weight]();
+};
+
+var selectGraphFilterShotsWeight = {
+  "none" : function(){
+    updateGraphFilterShotsWeightNone();
+  },
+  "race-weight" : function(){
+    updateGraphFilterShotsWeightRace();
+  },
+  "unarmed-weight" : function(){
+    updateGraphFilterShotsWeightUnarmed();
+  },
 };

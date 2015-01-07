@@ -1,6 +1,9 @@
-function updateGraphFilterAge(choosers){
-	readyWeightsToBeShown();
-	$('#usPop-weight, #arrests-weight, #race-weight, #illness-weight').css({'display':'block'});
+function updateGraphFilterAge(){
+  readyWeightsToBeShown();
+  $("#usPop-weight, #arrests-weight, #race-weight, #illness-weight").show();
+  var weight = detectWeight();
+  selectGraphFilterAgeWeight[weight]();
+
 	if (choosers.weight === "none"){
 		updateGraphFilterAgeWeightNone();
 	} else if (choosers.weight === "usPop"){
@@ -12,6 +15,24 @@ function updateGraphFilterAge(choosers){
 	} else if (choosers.weight === "illness"){
 		updateGraphFilterAgeWeightIllness();
 	}
+};
+
+var selectGraphFilterAgeWeight = {
+  "none" : function(){
+    updateGraphFilterAgeWeightNone();
+  },
+  "usPop-weight" : function(){
+    updateGraphFilterAgeWeightUspop();
+  },
+  "arrests-weight" : function(){
+    updateGraphFilterAgeWeightArrests();
+  },
+  "race-weight" : function(){
+    updateGraphFilterAgeWeightRace();
+  },
+  "illness-weight" : function(){
+    updateGraphFilterAgeWeightIllness();
+  },
 };
 
 function ageFilterColorArr(){
