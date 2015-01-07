@@ -27,6 +27,11 @@ $(function(){
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
+  // $("button").on("click", function(e){
+  //   e.preventDefault();
+  //   detectTypeOfButton();
+  // })
+
   $(".filter").on("click", function(e){
     e.preventDefault();
     var filter = detectFilter();
@@ -60,6 +65,11 @@ $(function(){
       updateDisplay[this.id]();
     };
   });
+
+  $(".weight").on("click", function(e){
+    e.preventDefault();
+    alert('hi');
+  })
 
   // $(".chooser").on("click", function(e){
   //   e.preventDefault();

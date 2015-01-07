@@ -3,19 +3,6 @@ function updateGraphFilterUspop(){
 	$("#usPop-weight, #arrests-weight, #age-weight, #illness-weight").show();
 	var weight = detectWeight();
 	selectGraphFilterUspopWeight[weight]();
-
-
-	// if (choosers.weight === "none"){
-	// 	updateGraphFilterUspopWeightNone();
-	// } else if (choosers.weight === "usPop"){
-	// 	updateGraphFilterUspopWeightUspop();
-	// } else if (choosers.weight === "arrests"){
-	// 	updateGraphFilterUspopWeightArrests();
-	// } else if (choosers.weight === "age"){
-	// 	updateGraphFilterUspopWeightAge();
-	// } else if (choosers.weight === "illness"){
-	// 	updateGraphFilterUspopWeightIllness();
-	// };
 };
 
 var selectGraphFilterUspopWeight = {
