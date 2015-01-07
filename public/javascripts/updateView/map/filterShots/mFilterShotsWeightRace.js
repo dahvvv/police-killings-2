@@ -8,7 +8,7 @@ function updateMapFilterShotsWeightRace(){
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($("#shots-template").html());
+		obj["template"] = _.template($("#shots-race-template").html());
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
