@@ -34,7 +34,11 @@ $(function(){
 
   $(".filter").on("click", function(e){
     e.preventDefault();
-    detectScene();
+    var scene = detectScene();
+    if (this.id != scene.filter + "-filter"){
+      $("button").removeClass("filter-type");
+      $(this).addClass("filter-type");
+    };
   });
 
   // $(".chooser").on("click", function(e){
