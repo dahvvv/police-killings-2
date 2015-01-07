@@ -217,8 +217,8 @@ input[type=submit] {
 
 form {
   margin: -0.8em 1em 0.5em 1em;
-/*  display: none;
-*/}
+  display: none;
+}
 
 #race-filter-form input[type=submit] {
   width: 80px;

@@ -39,6 +39,10 @@ $(function(){
       $("button").removeClass("filter-type");
       $(this).addClass("filter-type");
     };
+    $(".filter-form").hide();
+    if (scene.display != "graph" && this.id != "usPop-filter"){
+      $(this).next("form").show();
+    };
   });
 
   // $(".chooser").on("click", function(e){
