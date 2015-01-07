@@ -8,7 +8,21 @@ var heatLayer;
 var graph;
 
 function detectScene(){
-  debugger;
+  var filter = $(".filter-type").attr("id")
+  .split("-filter")[0];
+  var display = $(".display-type").attr("id")
+  .split("-display")[0];
+  if ($(".weight-type").length === 0){
+    var weight = "none";
+  } else {
+    var weight = $(".weight-type").attr("id")
+    .split("-weight")[0];
+  };
+  return {
+    filter: filter,
+    display: display,
+    weight: weight
+  };
 };
 
 $(function(){
