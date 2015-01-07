@@ -50,6 +50,17 @@ $(function(){
     updateDisplay[display]();
   });
 
+  $(".display").on("click", function(e){
+    e.preventDefault();
+    var display = detectDisplay();
+    if (this.id != display){
+      $("button").removeClass("display-type weight-type");
+      $(".filter-form,.weight-form").hide();
+      $(this).addClass("display-type");
+      updateDisplay[this.id]();
+    };
+  });
+
   // $(".chooser").on("click", function(e){
   //   e.preventDefault();
   //   replaceChooser(this, function(){

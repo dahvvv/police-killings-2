@@ -1,6 +1,31 @@
-function updateMarkermap(choosers){
-	$('.legend').css({"display":"inline-block"});
-	selectMarkermapFilter(choosers);
+function updateMap(){
+	debugger;
+	$(".legend").show();
+	selectMapFilter();
+};
+
+var selectMapFilter = {
+  "usPop-filter" : function(){
+    updateMapFilterUspop();
+  },
+  "race-filter" : function(){
+    updateMapFilterRace();
+  },
+  "age-filter" : function(){
+    updateMapFilterAge();
+  },
+  "gender-filter" : function(){
+    updateMapFilterGender();
+  },
+  "unarmed-filter" : function(){
+    updateMapFilterUnarmed();
+  },
+  "illness-filter" : function(){
+    updateMapFilterIllness();
+  },
+  "shots-filter" : function(){
+    updateMapFilterShots();
+  },
 };
 
 function selectMarkermapFilter(choosers){
@@ -56,7 +81,7 @@ function dataToGeoData(data){
 
 function makeMarkermap(geoData){
 	removeExistingMaps();
-	setMapView($('#state-filter').val());
+	setMapView($("#state-filter").val());
 	addGeoLayer(geoData);
 };
 
@@ -77,9 +102,9 @@ function addGeoLayer(geoData){
       });
 		}
 	});
-	if ($('#map-one').css('display') === "none") {
-    $('#display-container-canvaswidget').remove();
-    $('#map-one').slideToggle(750, function(e){
+	if ($("#map-one").css("display") === "none") {
+    $("#display-container-canvaswidget").remove();
+    $("#map-one").slideToggle(750, function(e){
       geoLayer.addTo(map);
     });
   } else {
