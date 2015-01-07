@@ -127,7 +127,22 @@ input[type=submit] {
   font-size: 1.2em;
 }
 
-.chooser {
+/*.chooser {
+  color: #101535;
+  font-family: 'Oswald';
+  display: block;
+  height: 9%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(136,123,107,0.2);
+  font-size: 1.2em;
+  cursor: pointer;
+}*/
+
+.filter {
   color: #101535;
   font-family: 'Oswald';
   display: block;
@@ -172,7 +187,14 @@ select.button-filter {
   cursor: pointer;
 }
 
-.button-filter.filter-type {
+/*.button-filter.filter-type {
+  background-color: rgba(136,123,107,0.6);
+  font-size: 1.3em;
+  height: 11%;
+  color: black;
+}*/
+
+.filter-type {
   background-color: rgba(136,123,107,0.6);
   font-size: 1.3em;
   height: 11%;
