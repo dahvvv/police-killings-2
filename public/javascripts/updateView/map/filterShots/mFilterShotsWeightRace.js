@@ -2,7 +2,7 @@ function updateMapFilterShotsWeightRace(){
 	var data = dataFilterShotsWeightRace();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
-			fillColor: "red",
+			fillColor: raceColors[obj.victim_race],
 	    color: "black",
 	    radius: 9,
 	    fillOpacity: 1,

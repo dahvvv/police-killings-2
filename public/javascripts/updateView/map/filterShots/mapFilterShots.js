@@ -10,10 +10,10 @@ var selectMapFilterShotsWeight = {
 	"none" : function(){
 		updateMapFilterShotsWeightNone();
 	},
-	"race" : function(){
+	"race-weight" : function(){
 		updateMapFilterShotsWeightRace();
 	},
-	"unarmed" : function(){
+	"unarmed-weight" : function(){
 		updateMapFilterShotsWeightUnarmed();
 	},
 };

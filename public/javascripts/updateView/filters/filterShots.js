@@ -14,7 +14,7 @@ function dataFilterShotsWeightNone(){
 };
 
 function dataFilterShotsWeightRace(){
-	var checkedBoxes = $("#race-filter-form").children("input:checked");
+	var checkedBoxes = $("#race-weight-form").children("input:checked");
   var checkedRaces = $(checkedBoxes).map(function(){
     return this.name;
   })
@@ -29,10 +29,5 @@ function dataFilterShotsWeightRace(){
     });
     arr = arr.concat(filtered);
   });
-
-
-  // arr = allKillings.filter(function(el){
-  //   return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
-  // });
   return arr;
 };
