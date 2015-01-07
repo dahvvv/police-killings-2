@@ -126,13 +126,10 @@ a:visited {
   cursor: pointer;
 }*/
 
-button {
+button, select {
   color: #101535;
   font-family: 'Oswald';
   display: block;
-  height: 9%;
-  width: 80%;
-  margin-left: 10%;
   margin-bottom: 1em;
   border: none;
   border-radius: 6px;
@@ -141,20 +138,32 @@ button {
   cursor: pointer;
 }
 
+button {
+  height: 9%;
+  width: 80%;
+  margin-left: 10%;
+}
+
+select {
+  height: 42px;
+  width: 100%;
+  margin-top: 2em;
+}
+
 input[type=submit] {
-    border-radius: 5px;
-    border: 0;
-    width: 80px;
-    height:30px;
-    font-size: 1em;
-    font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
-    background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
-    background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
+  border-radius: 5px;
+  border: 0;
+  width: 80px;
+  height:30px;
+  font-size: 1em;
+  font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
+  background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
+  background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
 }
 
 /*.chooser-listview {
@@ -172,7 +181,7 @@ input[type=submit] {
   cursor: pointer;
 }*/
 
-select.button-filter {
+/*select.button-filter {
   color: #101535;
   font-family: 'Oswald';
   display: block;
@@ -185,7 +194,7 @@ select.button-filter {
   background-color: rgba(136,123,107,0.2);
   font-size: 1.2em;
   cursor: pointer;
-}
+}*/
 
 /*.button-filter.filter-type {
   background-color: rgba(136,123,107,0.6);
