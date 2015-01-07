@@ -1,14 +1,14 @@
-function updateMarkermapFilterAge(choosers){
+function updateMapFilterAge(choosers){
 	if ($('#age-range').css('display') === "none"){
 		$('#age-range').css({"display":"block"});
 	};
 	removeAllWeights();
 	if (choosers.weight === "none"){
-		updateMarkermapFilterAgeWeightNone();
+		updateMapFilterAgeWeightNone();
 	};
 };
 
-function updateMarkermapFilterAgeWeightNone(){
+function updateMapFilterAgeWeightNone(){
 	var data = filterByAge();
   var lowerBound = 0;
   var upperBound = 107;
@@ -38,7 +38,7 @@ function updateMarkermapFilterAgeWeightNone(){
 		obj["template"] = _.template($('#popup-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
+	makeMap(geoData);
 	var program = "<p class='program-text four-line'>Large, yellow dots represent younger victims.<br>Large, red dots represent older victims.<br>An unusual amount of elderly people have been<br>killed by police in the south and southeast.</p>";
 	$('#program').html(program);
 };

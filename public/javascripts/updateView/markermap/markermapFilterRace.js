@@ -1,19 +1,19 @@
-function updateMarkermapFilterRace(choosers){
+function updateMapFilterRace(choosers){
 	if ($('#race-selection').css('display') === "none"){
 		$('#race-selection').css({"display":"block"});
 	};
 	readyWeightsToBeShown();
 	$('#usPop-weight, #arrests-weight').css({'display':'block'});
 	if (choosers.weight === "none"){
-		updateMarkermapFilterRaceWeightNone();
+		updateMapFilterRaceWeightNone();
 	} else if (choosers.weight === "usPop"){
-		updateMarkermapFilterRaceWeightUspop();
+		updateMapFilterRaceWeightUspop();
 	} else if (choosers.weight === "arrests"){
-		updateMarkermapFilterRaceWeightArrests();
+		updateMapFilterRaceWeightArrests();
 	}
 };
 
-function updateMarkermapFilterRaceWeightNone(){
+function updateMapFilterRaceWeightNone(){
 	var data = dataFilterRaceWeightNone();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
@@ -26,12 +26,12 @@ function updateMarkermapFilterRaceWeightNone(){
 		obj["template"] = _.template($('#popup-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
+	makeMap(geoData);
 	var program = "<p class='program-text two-line'>The racial distribution of people killed by police<br>in the United States.</p>";
 	$('#program').html(program);
 };
 
-function updateMarkermapFilterRaceWeightUspop(){
+function updateMapFilterRaceWeightUspop(){
 	var data = dataFilterRaceWeightNone();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
@@ -44,11 +44,11 @@ function updateMarkermapFilterRaceWeightUspop(){
 		obj["template"] = _.template($('#popup-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
+	makeMap(geoData);
 	var program = "<p class='program-text two-line'>A map of police shootings by race,<br>scaled by US population.</p>";
 	$('#program').html(program);
 };
 
-function updateMarkermapFilterRaceWeightArrests(){
+function updateMapFilterRaceWeightArrests(){
 	alert('where the fuck did this method go?');
 };

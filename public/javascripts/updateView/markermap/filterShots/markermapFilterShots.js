@@ -1,14 +1,14 @@
-function updateMarkermapFilterShots(choosers){
+function updateMapFilterShots(choosers){
 	if ($('#shots-range').css('display') === "none"){
 		$('#shots-range').css({"display":"block"});
 	};
 	readyWeightsToBeShown();
 	$('#race-weight, #unarmed-weight').css({'display':'block'});
 	if (choosers.weight === "none"){
-		updateMarkermapFilterShotsWeightNone();
+		updateMapFilterShotsWeightNone();
 	} else if (choosers.weight === "race"){
-		updateMarkermapFilterShotsWeightRace();
+		updateMapFilterShotsWeightRace();
 	} else if (choosers.weight === "unarmed"){
-		updateMarkermapFilterShotsWeightUnarmed();
+		updateMapFilterShotsWeightUnarmed();
 	};
 };

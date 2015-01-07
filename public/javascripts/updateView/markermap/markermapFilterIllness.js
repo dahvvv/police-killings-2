@@ -1,15 +1,15 @@
-function updateMarkermapFilterIllness(choosers){
+function updateMapFilterIllness(choosers){
 	if ($('#illness-selection').css('display') === "none"){
 		$('#illness-selection').css({"display":"block"});
 	};
 	removeAllWeights();
 	var checkedIllness = checkIllness();
 	if (choosers.weight === "none"){
-		updateMarkermapFilterIllnessWeightNone(checkedIllness);
+		updateMapFilterIllnessWeightNone(checkedIllness);
 	}
 };
 
-function updateMarkermapFilterIllnessWeightNone(checkedIllness){
+function updateMapFilterIllnessWeightNone(checkedIllness){
 	var data = dataFilterIllnessWeightNone(checkedIllness);
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
@@ -22,7 +22,7 @@ function updateMarkermapFilterIllnessWeightNone(checkedIllness){
 		obj["template"] = _.template($('#popup-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
+	makeMap(geoData);
 	var program = "<p class='program-text two-line'>People killed by the police while exhibiting clear signs of mental illness.<br>(select boxes on the left to see no signs, or both).</p>";
 	$('#program').html(program);
 };

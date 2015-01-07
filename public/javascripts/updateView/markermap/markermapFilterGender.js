@@ -1,4 +1,4 @@
-function updateMarkermapFilterGender(choosers){
+function updateMapFilterGender(choosers){
 	if ($('#gender-selection').css('display') === "none"){
 		$('#gender-selection').css({"display":"block"});
 	};
@@ -6,15 +6,15 @@ function updateMarkermapFilterGender(choosers){
 	$('#unarmed-weight, #illness-weight').css({'display':'block'});
 	var checkedGenders = checkGenders();
 	if (choosers.weight === "none"){
-		updateMarkermapFilterGenderWeightNone(checkedGenders);
+		updateMapFilterGenderWeightNone(checkedGenders);
 	} else if (choosers.weight === "unarmed"){
-		updateMarkermapFilterGenderWeightUnarmed(checkedGenders);
+		updateMapFilterGenderWeightUnarmed(checkedGenders);
 	} else if (choosers.weight === "illness"){
-		updateMarkermapFilterGenderWeightIllness(checkedGenders);
+		updateMapFilterGenderWeightIllness(checkedGenders);
 	}	
 };
 
-function updateMarkermapFilterGenderWeightNone(checkedGenders){
+function updateMapFilterGenderWeightNone(checkedGenders){
 	var data = dataFilterGenderWeightNone(checkedGenders);
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
@@ -27,15 +27,15 @@ function updateMarkermapFilterGenderWeightNone(checkedGenders){
 		obj["template"] = _.template($('#popup-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
-	var program = "<p class='program-text one-line'>Gender markermap.</p>";
+	makeMap(geoData);
+	var program = "<p class='program-text one-line'>Gender map.</p>";
 	$('#program').html(program);
 };
 
-function updateMarkermapFilterGenderWeightUnarmed(checkedGenders){
+function updateMapFilterGenderWeightUnarmed(checkedGenders){
 	var data = dataFilterGenderWeightUnarmed(checkedGenders);
 };
 
-function updateMarkermapFilterGenderWeightIllness(checkedGenders){
+function updateMapFilterGenderWeightIllness(checkedGenders){
 	var data = dataFilterGenderWeightIllness(checkedGenders);
 };

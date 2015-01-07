@@ -1,15 +1,15 @@
-function updateMarkermapFilterUnarmed(choosers){
+function updateMapFilterUnarmed(choosers){
 	if ($('#unarmed-selection').css('display') === "none"){
 		$('#unarmed-selection').css({"display":"block"});
 	};
 	removeAllWeights();
 	var checkedUnarmed = checkUnarmed();
 	if (choosers.weight === "none"){
-		updateMarkermapFilterUnarmedWeightNone(checkedUnarmed);
+		updateMapFilterUnarmedWeightNone(checkedUnarmed);
 	}
 };
 
-function updateMarkermapFilterUnarmedWeightNone(checkedUnarmed){
+function updateMapFilterUnarmedWeightNone(checkedUnarmed){
 	var data = dataFilterUnarmedWeightNone(checkedUnarmed);
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
@@ -22,7 +22,7 @@ function updateMarkermapFilterUnarmedWeightNone(checkedUnarmed){
 		obj["template"] = _.template($('#popup-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
+	makeMap(geoData);
 	var program = "<p class='program-text two-line'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>";
 	$('#program').html(program);
 };

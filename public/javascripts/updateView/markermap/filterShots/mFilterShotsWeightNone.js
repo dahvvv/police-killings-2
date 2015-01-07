@@ -1,4 +1,4 @@
-function updateMarkermapFilterShotsWeightNone(){
+function updateMapFilterShotsWeightNone(){
 	var data = dataFilterShotsWeightNone();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
@@ -11,7 +11,7 @@ function updateMarkermapFilterShotsWeightNone(){
 		obj["template"] = _.template($('#shots-template').html());
 	});
 	var geoData = dataToGeoData(data);
-	makeMarkermap(geoData);
+	makeMap(geoData);
 	var program = function(){
 		var min = shotsRange().min;
 		var max = shotsRange().max;
