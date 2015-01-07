@@ -1,12 +1,16 @@
-function updateMapFilterAge(choosers){
-	if ($('#age-range').css('display') === "none"){
-		$('#age-range').css({"display":"block"});
-	};
-	removeAllWeights();
-	if (choosers.weight === "none"){
-		updateMapFilterAgeWeightNone();
-	};
+function updateMapFilterAge(){
+	$("#age-filter-form").show();
+	$(".weight, #weight-header").hide();
+	var weight = detectWeight();
+	selectMapFilterAgeWeight[weight]();
 };
+
+var selectMapFilterAgeWeight = {
+	"none" : function(){
+		updateMapFilterAgeWeightNone();
+	},
+};
+
 
 function updateMapFilterAgeWeightNone(){
 	var data = filterByAge();

@@ -1,7 +1,7 @@
 function updateHeatmapFilterRace(){
 	$("#race-filter-form").show();
 	readyWeightsToBeShown();
-	$('#usPop-weight, #arrests-weight').show();
+	$("#usPop-weight, #arrests-weight").show();
 	var weight = detectWeight();
 	selectHeatmapFilterRaceWeight[weight]();
 };
@@ -22,7 +22,7 @@ function updateHeatmapFilterRaceWeightNone(){
 	var data = dataFilterRaceWeightNone();
 	makeHeatmap(data);
 	var program = "<p class='program-text two-line'>This heatmap is scaled to present a constant population size,<br>in order to emphasize differences in location.</p>";
-	$('#program').html(program);
+	$("#program").html(program);
 };
 
 function updateHeatmapFilterRaceWeightUspop(){

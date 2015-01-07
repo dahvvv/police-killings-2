@@ -2,13 +2,13 @@ function updateMapFilterShotsWeightRace(){
 	var data = dataFilterShotsWeightRace();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
-			fillColor: 'red',
-	    color: 'black',
+			fillColor: "red",
+	    color: "black",
 	    radius: 9,
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($('#shots-template').html());
+		obj["template"] = _.template($("#shots-template").html());
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
@@ -29,5 +29,5 @@ function updateMapFilterShotsWeightRace(){
 			};
 		};
 	};
-	$('#program').html(program);
+	$("#program").html(program);
 };

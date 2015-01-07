@@ -1,41 +1,45 @@
-function updateMapFilterGender(choosers){
-	if ($('#gender-selection').css('display') === "none"){
-		$('#gender-selection').css({"display":"block"});
-	};
+function updateMapFilterGender(){
+	$("#gender-filter-form").show();
 	readyWeightsToBeShown();
-	$('#unarmed-weight, #illness-weight').css({'display':'block'});
-	var checkedGenders = checkGenders();
-	if (choosers.weight === "none"){
-		updateMapFilterGenderWeightNone(checkedGenders);
-	} else if (choosers.weight === "unarmed"){
-		updateMapFilterGenderWeightUnarmed(checkedGenders);
-	} else if (choosers.weight === "illness"){
-		updateMapFilterGenderWeightIllness(checkedGenders);
-	}	
+	$("#unarmed-weight, #illness-weight").show();
+	var weight = detectWeight();
+	selectMapFilterGenderWeight[weight]();
 };
 
-function updateMapFilterGenderWeightNone(checkedGenders){
-	var data = dataFilterGenderWeightNone(checkedGenders);
+function updateMapFilterGenderWeightNone(){
+	var data = dataFilterGenderWeightNone();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
 			fillColor: genderColors[obj.victim_gender],
-	    color: 'black',
+	    color: "black",
 	    radius: 7,
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($('#popup-template').html());
+		obj["template"] = _.template($("#popup-template").html());
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
 	var program = "<p class='program-text one-line'>Gender map.</p>";
-	$('#program').html(program);
+	$("#program").html(program);
 };
 
-function updateMapFilterGenderWeightUnarmed(checkedGenders){
-	var data = dataFilterGenderWeightUnarmed(checkedGenders);
+function updateMapFilterGenderWeightUnarmed(){
+	var data = dataFilterGenderWeightUnarmed();
 };
 
-function updateMapFilterGenderWeightIllness(checkedGenders){
-	var data = dataFilterGenderWeightIllness(checkedGenders);
+function updateMapFilterGenderWeightIllness(){
+	var data = dataFilterGenderWeightIllness();
+};
+
+var selectMapFilterGenderWeight = {
+	"none" : function(){
+		updateMapFilterGenderWeightNone();
+	},
+	"unarmed" : function(){
+		updateMapFilterGenderWeightUnarmed();
+	},
+	"illness" : function(){
+		updateMapFilterGenderWeightIllness();
+	},
 };

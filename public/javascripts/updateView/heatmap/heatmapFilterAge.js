@@ -1,4 +1,4 @@
-function updateHeatmapFilterAge(choosers){
+function updateHeatmapFilterAge(){
 	$("#age-filter-form").show();
 	$(".weight, #weight-header").hide();
 	var weight = detectWeight();

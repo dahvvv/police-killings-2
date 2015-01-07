@@ -1,14 +1,19 @@
-function updateMapFilterShots(choosers){
-	if ($('#shots-range').css('display') === "none"){
-		$('#shots-range').css({"display":"block"});
-	};
+function updateMapFilterShots(){
+	$("#shots-filter-form").show();
 	readyWeightsToBeShown();
-	$('#race-weight, #unarmed-weight').css({'display':'block'});
-	if (choosers.weight === "none"){
+	$('#race-weight, #unarmed-weight').show();
+	var weight = detectWeight();
+	selectMapFilterShotsWeight[weight]();
+};
+
+var selectMapFilterShotsWeight = {
+	"none" : function(){
 		updateMapFilterShotsWeightNone();
-	} else if (choosers.weight === "race"){
+	},
+	"race" : function(){
 		updateMapFilterShotsWeightRace();
-	} else if (choosers.weight === "unarmed"){
+	},
+	"unarmed" : function(){
 		updateMapFilterShotsWeightUnarmed();
-	};
+	},
 };

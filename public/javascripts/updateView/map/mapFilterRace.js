@@ -1,16 +1,9 @@
-function updateMapFilterRace(choosers){
-	if ($('#race-selection').css('display') === "none"){
-		$('#race-selection').css({"display":"block"});
-	};
+function updateMapFilterRace(){
+	$("#race-filter-form").show();
 	readyWeightsToBeShown();
-	$('#usPop-weight, #arrests-weight').css({'display':'block'});
-	if (choosers.weight === "none"){
-		updateMapFilterRaceWeightNone();
-	} else if (choosers.weight === "usPop"){
-		updateMapFilterRaceWeightUspop();
-	} else if (choosers.weight === "arrests"){
-		updateMapFilterRaceWeightArrests();
-	}
+	$("#usPop-weight, #arrests-weight").show();
+	var weight = detectWeight();
+	selectMapFilterRaceWeight[weight]();
 };
 
 function updateMapFilterRaceWeightNone(){
@@ -18,17 +11,17 @@ function updateMapFilterRaceWeightNone(){
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
 			fillColor: raceColors[obj.victim_race],
-	    color: 'black',
+	    color: "black",
 	    radius: 7,
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($('#popup-template').html());
+		obj["template"] = _.template($("#popup-template").html());
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
 	var program = "<p class='program-text two-line'>The racial distribution of people killed by police<br>in the United States.</p>";
-	$('#program').html(program);
+	$("#program").html(program);
 };
 
 function updateMapFilterRaceWeightUspop(){
@@ -51,4 +44,16 @@ function updateMapFilterRaceWeightUspop(){
 
 function updateMapFilterRaceWeightArrests(){
 	alert('where the fuck did this method go?');
+};
+
+var selectMapFilterRaceWeight = {
+	"none" : function(){
+		updateMapFilterRaceWeightNone();
+	},
+	"usPop" : function(){
+		updateMapFilterRaceWeightUspop();
+	},
+	"arrests" : function(){
+		updateMapFilterRaceWeightArrests();
+	},
 };
