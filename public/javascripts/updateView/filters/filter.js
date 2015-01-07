@@ -36,24 +36,7 @@ function replaceFilter(filter, callback){
 };
 
 function detectFilter(){
-  var filter = $('.filter-type').attr('id');
-  if (filter==="usPop-filter") {
-    return "usPop";
-  } else if (filter==="race-filter") {
-    return "race";
-  } else if (filter==="age-filter") {
-    return "age";
-  } else if (filter==="state-filter") {
-    return "state";
-  } else if (filter==="gender-filter") {
-    return "gender";
-  } else if (filter==="unarmed-filter") {
-    return "unarmed";
-  } else if (filter==="illness-filter") {
-    return "illness";
-  } else if (filter==="shots-filter") {
-    return "shots";
-  }
+  return $(".filter-type").attr("id");
 };
 
 function removeAllListviews(){

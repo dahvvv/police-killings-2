@@ -4,15 +4,8 @@ function replaceSelector(selector, callback){
   callback();
 };
 
-function detectDisplaySelector(){
-  var displayStyle = $('.display-type').attr('id');
-  if (displayStyle==="heatmaps-selector") {
-    return "heatmap";
-  } else if (displayStyle==="markers-selector") {
-    return "marker";
-  } else {
-    return "graph";
-  };
+function detectDisplay(){
+  return $(".display-type").attr("id");
 };
 
 function removeExistingMaps(){

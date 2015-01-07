@@ -7,20 +7,6 @@ var geoLayer;
 var heatLayer;
 var graph;
 
-function detectScene(){
-  var filter = $(".filter-type").attr("id");
-  var display = $(".display-type").attr("id");
-  if ($(".weight-type").length === 0){
-    var weight = "none";
-  } else {
-    var weight = $(".weight-type").attr("id");
-  };
-  return {
-    filter: filter,
-    display: display,
-    weight: weight
-  };
-};
 
 var updateDisplay = {
   "heatmap-display" : function(){
@@ -43,23 +29,24 @@ $(function(){
 
   $(".filter").on("click", function(e){
     e.preventDefault();
-    var scene = detectScene();
-    if (this.id != scene.filter){
+    var filter = detectFilter();
+    var display = detectDisplay();
+    var weight = detectWeight();
+    if (this.id != filter){
       $("button").removeClass("filter-type");
       $(this).addClass("filter-type");
-      scene.filter = this.id;
     };
     $(".filter-form").hide();
-    if (scene.display != "graph-display" && 
+    if (display != "graph-display" && 
       this.id != "usPop-filter"){
       $(this).next("form").show();
     };
-    updateDisplay[scene.display]();
+    updateDisplay[display]();
   });
 
   $(".filter-form").find("input[type=submit]").on("click", function(e){
     e.preventDefault();
-    var display = $(".display-type").attr("id");
+    var display = detectDisplay();
     updateDisplay[display]();
   });
 
