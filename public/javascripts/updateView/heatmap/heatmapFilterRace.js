@@ -1,30 +1,21 @@
-// function updateHeatmapFilterRace(choosers){
-// 	if ($('#race-selection').css('display') === "none"){
-// 		$('#race-selection').css({"display":"block"});
-// 	};
-// 	readyWeightsToBeShown();
-// 	$('#usPop-weight, #arrests-weight').css({'display':'block'});
-// 	if (choosers.weight === "none"){
-// 		updateHeatmapFilterRaceWeightNone();
-// 	} else if (choosers.weight === "usPop"){
-// 		updateHeatmapFilterRaceWeightUspop();
-// 	} else if (choosers.weight === "arrests"){
-// 		updateHeatmapFilterRaceWeightArrests();
-// 	}
-// };
-
 function updateHeatmapFilterRace(){
-	debugger;
 	$("#race-filter-form").show();
 	readyWeightsToBeShown();
 	$('#usPop-weight, #arrests-weight').show();
-	if (choosers.weight === "none"){
+	var weight = $(".weight-type").length === 0 ? "none" : $(".weight-type").attr("id");
+	selectHeatmapFilterRaceWeight[weight]();
+};
+
+var selectHeatmapFilterRaceWeight = {
+	"none" : function(){
 		updateHeatmapFilterRaceWeightNone();
-	} else if (choosers.weight === "usPop"){
+	},
+	"usPop" : function(){
 		updateHeatmapFilterRaceWeightUspop();
-	} else if (choosers.weight === "arrests"){
+	},
+	"arrests" : function(){
 		updateHeatmapFilterRaceWeightArrests();
-	}
+	},
 };
 
 function updateHeatmapFilterRaceWeightNone(){
