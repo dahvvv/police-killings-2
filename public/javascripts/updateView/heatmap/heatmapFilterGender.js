@@ -1,29 +1,30 @@
-function updateHeatmapFilterGender(choosers){
-	if ($('#gender-selection').css('display') === "none"){
-		$('#gender-selection').css({"display":"block"});
-	};
+function updateHeatmapFilterGender(){
+	$("#gender-filter-form").show();
 	readyWeightsToBeShown();
-	$('#unarmed-weight, #illness-weight').css({'display':'block'});
-	var checkedGenders = checkGenders();
-	if (choosers.weight === "none"){
-		updateHeatmapFilterAgeWeightNone();
-	};
-	if (choosers.weight === "none"){
-		updateHeatmapFilterGenderWeightNone(checkedGenders);
-	} else if (choosers.weight === "unarmed"){
-		updateHeatmapFilterGenderWeightUnarmed(checkedGenders);
-	} else if (choosers.weight === "illness"){
-		updateHeatmapFilterGenderWeightIllness(checkedGenders);
-	}	
+	$("#unarmed-weight, #illness-weight").show();
+	var weight = detectWeight();
+	selectHeatmapFilterGenderWeight[weight]();
 };
 
-function updateHeatmapFilterGenderWeightNone(checkedGenders){
-	var data = dataFilterGenderWeightNone(checkedGenders);
+function updateHeatmapFilterGenderWeightNone(){
+	var data = dataFilterGenderWeightNone();
 	makeHeatmap(data);
 	var program = "<p class='program-text one-line'>Gender Heatmap</p>";
 	$('#program').html(program);
 };
 
-function updateHeatmapFilterGenderWeightUnarmed(checkedGenders){};
+function updateHeatmapFilterGenderWeightUnarmed(){};
 
-function updateHeatmapFilterGenderWeightIllness(checkedGenders){};
+function updateHeatmapFilterGenderWeightIllness(){};
+
+var selectHeatmapFilterGenderWeight = {
+	"none" : function(){
+		updateHeatmapFilterGenderWeightNone();
+	},
+	"unarmed" : function(){
+		updateHeatmapFilterGenderWeightUnarmed();
+	},
+	"illness" : function(){
+		updateHeatmapFilterGenderWeightIllness();
+	},
+};

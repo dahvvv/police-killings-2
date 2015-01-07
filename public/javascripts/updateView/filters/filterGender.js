@@ -1,5 +1,5 @@
 function checkGenders(){
-  var checkedBoxes = $('#gender-selection').children('input:checked');
+  var checkedBoxes = $("#gender-filter-form").children("input:checked");
   var checkedGenders = $(checkedBoxes).map(function(){
     return this.name;
   })
@@ -7,7 +7,8 @@ function checkGenders(){
   return checkedGenders;
 };
 
-function dataFilterGenderWeightNone(checkedGenders){
+function dataFilterGenderWeightNone(){
+  var checkedGenders = checkGenders();
   var arr = [];
   $.each(checkedGenders, function(i,val){
     var filtered = allKillings.filter(function(el){
@@ -18,7 +19,8 @@ function dataFilterGenderWeightNone(checkedGenders){
   return arr;
 };
 
-function dataFilterGenderWeightUnarmed(checkedGenders){
+function dataFilterGenderWeightUnarmed(){
+  var checkedGenders = checkGenders();
   var arr = [];
   $.each(checkedGenders, function(i,val){
     var filtered = allKillings.filter(function(el){
@@ -29,7 +31,8 @@ function dataFilterGenderWeightUnarmed(checkedGenders){
   return arr;
 };
 
-function dataFilterGenderWeightIllness(checkedGenders){
+function dataFilterGenderWeightIllness(){
+  var checkedGenders = checkGenders();
   var arr = [];
   $.each(checkedGenders, function(i,val){
     var filtered = allKillings.filter(function(el){
