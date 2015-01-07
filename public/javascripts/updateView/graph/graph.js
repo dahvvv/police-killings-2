@@ -1,41 +1,42 @@
-function updateGraph(choosers){
-	$(".filter-checkbox-form, #age-range, #shots-range").css({"display":"none"});
-	emptyGraph(selectGraphFilter, choosers);
+function updateGraph(){
+	$(".filter-form").hide();
+  var filter = $(".filter-type").attr("id");
+	emptyGraph(selectGraphFilter[filter]);
 };
 
-function emptyGraph(callback, choosers){
+function emptyGraph(callback){
   if ($("#map-one").css("display") != "none") {
     $("#map-one").slideToggle(750, function(){
-    	callback(choosers);
+    	callback();
     });
   } else {
     $("#display-container-canvaswidget").remove();
-    callback(choosers);
+    callback();
   }
 };
 
-function selectGraphFilter(choosers){
-	if (choosers.filter === "usPop"){
-		updateGraphFilterUspop(choosers);
-	} else if (choosers.filter === "race"){
-		updateGraphFilterRace(choosers);
-	} else if (choosers.filter === "age"){
-		updateGraphFilterAge(choosers);
-	} else if (choosers.filter === "gender"){
-		updateGraphFilterGender(choosers);
-	} else if (choosers.filter === "unarmed"){
-		updateGraphFilterUnarmed(choosers);
-	} else if (choosers.filter === "illness"){
-		updateGraphFilterIllness(choosers);
-	} else if (choosers.filter === "shots"){
-		updateGraphFilterShots(choosers);
-	};
-};
-
-//kill this one!!!
-function makeGraph(data, style){
-	var graph = new $jit.BarChart(style);
-	graph.loadJSON(data);
+var selectGraphFilter = {
+  "usPop-filter" : function(){
+    updateGraphFilterUspop();
+  },
+  "race-filter" : function(){
+    updateGraphFilterRace();
+  },
+  "age-filter" : function(){
+    updateGraphFilterAge();
+  },
+  "gender-filter" : function(){
+    updateGraphFilterGender();
+  },
+  "unarmed-filter" : function(){
+    updateGraphFilterUnarmed();
+  },
+  "illness-filter" : function(){
+    updateGraphFilterIllness();
+  },
+  "shots-filter" : function(){
+    updateGraphFilterShots();
+  },
 };
 
 function labelsToData(labels){
@@ -58,9 +59,9 @@ function createGraph(data, style){
   graph.loadJSON(data);
 };
 
-var baseColor = '#0066CC';
-var addColor = '#2f82d5';
-var subColor = '#001F3D';
+var baseColor = "#0066CC";
+var addColor = "#2f82d5";
+var subColor = "#001F3D";
 
 var labelType, useGradients, nativeTextSupport, animate;
 

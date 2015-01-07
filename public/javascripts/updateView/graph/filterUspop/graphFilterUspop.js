@@ -1,17 +1,39 @@
-function updateGraphFilterUspop(choosers){
+function updateGraphFilterUspop(){
 	readyWeightsToBeShown();
-	$("#usPop-weight, #arrests-weight, #age-weight, #illness-weight").css({"display":"block"});
-	if (choosers.weight === "none"){
+	$("#usPop-weight, #arrests-weight, #age-weight, #illness-weight").show();
+	var weight = detectWeight();
+	selectGraphFilterUspopWeight[weight]();
+
+
+	// if (choosers.weight === "none"){
+	// 	updateGraphFilterUspopWeightNone();
+	// } else if (choosers.weight === "usPop"){
+	// 	updateGraphFilterUspopWeightUspop();
+	// } else if (choosers.weight === "arrests"){
+	// 	updateGraphFilterUspopWeightArrests();
+	// } else if (choosers.weight === "age"){
+	// 	updateGraphFilterUspopWeightAge();
+	// } else if (choosers.weight === "illness"){
+	// 	updateGraphFilterUspopWeightIllness();
+	// };
+};
+
+var selectGraphFilterUspopWeight = {
+	"none" : function(){
 		updateGraphFilterUspopWeightNone();
-	} else if (choosers.weight === "usPop"){
+	},
+	"usPop" : function(){
 		updateGraphFilterUspopWeightUspop();
-	} else if (choosers.weight === "arrests"){
+	},
+	"arrests" : function(){
 		updateGraphFilterUspopWeightArrests();
-	} else if (choosers.weight === "age"){
+	},
+	"age" : function(){
 		updateGraphFilterUspopWeightAge();
-	} else if (choosers.weight === "illness"){
+	},
+	"illness" : function(){
 		updateGraphFilterUspopWeightIllness();
-	};
+	},
 };
 
 function capitaliseCity(city){
