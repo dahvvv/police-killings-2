@@ -2,7 +2,7 @@ function updateHeatmapFilterRace(){
 	$("#race-filter-form").show();
 	readyWeightsToBeShown();
 	$('#usPop-weight, #arrests-weight').show();
-	var weight = $(".weight-type").length === 0 ? "none" : $(".weight-type").attr("id");
+	var weight = detectWeight();
 	selectHeatmapFilterRaceWeight[weight]();
 };
 

@@ -1,15 +1,7 @@
-// function updateHeatmapFilterUspop(choosers){
-// 	removeAllWeights();
-// 	if (choosers.weight === "none"){
-// 		updateHeatmapFilterUspopWeightNone();
-// 	};
-// };
-
 function updateHeatmapFilterUspop(){
-	removeAllWeights();
-	if (choosers.weight === "none"){
-		updateHeatmapFilterUspopWeightNone();
-	};
+	$(".weight, #weight-header").hide();
+	var weight = detectWeight();
+	selectHeatmapFilterUspopWeight[weight]();
 };
 
 function updateHeatmapFilterUspopWeightNone(){
@@ -17,4 +9,10 @@ function updateHeatmapFilterUspopWeightNone(){
 	makeHeatmap(data);
 	var program = "<p class='program-text one-line'>People killed by police officers in the united states.</p>";
 	$('#program').html(program);
+};
+
+var selectHeatmapFilterUspopWeight = {
+	"none" : function(){
+		updateHeatmapFilterUspopWeightNone();
+	},
 };

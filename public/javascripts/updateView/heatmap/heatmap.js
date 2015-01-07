@@ -1,4 +1,5 @@
 function updateHeatmap(){
+  $(".weight-type").removeClass();
   $(".legend").hide();
   $(".weight, .weight-form").hide();
   var filter = $(".filter-type").attr("id");
