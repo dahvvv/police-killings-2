@@ -1,7 +1,13 @@
-function updateHeatmap(choosers){
-	$('.legend').css({"display":"none"});
-	removeAllWeights();
-	selectHeatmapFilter(choosers);
+// function updateHeatmap(choosers){
+// 	$('.legend').css({"display":"none"});
+// 	removeAllWeights();
+// 	selectHeatmapFilter(choosers);
+// };
+
+function updateHeatmap(scene){
+  $(".legend").hide();
+  $(".weight, .weight-form").hide();
+  selectHeatmapFilter(scene);
 };
 
 function selectHeatmapFilter(choosers){
