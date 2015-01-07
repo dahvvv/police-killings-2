@@ -142,7 +142,7 @@ input[type=submit] {
   cursor: pointer;
 }*/
 
-.filter {
+button {
   color: #101535;
   font-family: 'Oswald';
   display: block;
@@ -326,7 +326,17 @@ select.button-filter {
 /*  z-index: 2;*/
 }
 
-#selectors-container .chooser {
+/*#selectors-container .chooser {
+  display: inline;
+  font-size: 1.3em;
+  height: 100%;
+  width: 33%;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 2px;
+}*/
+
+#selectors-container button {
   display: inline;
   font-size: 1.3em;
   height: 100%;

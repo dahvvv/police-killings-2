@@ -7,6 +7,10 @@ var geoLayer;
 var heatLayer;
 var graph;
 
+function detectScene(){
+  debugger;
+};
+
 $(function(){
 
   map = L.mapbox.map("map-one", "marpborxmarrrpborrrrrx.kg7bjg5l", {
@@ -16,7 +20,7 @@ $(function(){
 
   $(".filter").on("click", function(e){
     e.preventDefault();
-    alert('u clicked the filter');
+    detectScene();
   });
 
   // $(".chooser").on("click", function(e){
