@@ -30,22 +30,43 @@ a:visited {
   float: left;
   background-color: rgba(0,0,50,0.9);
   height: 37em;
-  width: 80%;
-  left: 10%;
+  width: 86%;
+  left: 7%;
   top: 2em;
   border-radius: 10px;
   color: white;
   text-align: center;
 }
 
-#about p {
-  padding: 0.2em 5.5em;
+.about-graf {
+  margin: 0;
+  padding: 0 4.2em;
   font-size: 2em;
   line-height: 2em;
+  position: absolute;
 }
 
-#about a:link {
+#graf1 {
+  top: 10%;
+}
+
+#graf2 {
+  bottom: 15%;
+}
+
+.about-graf a:link,
+.about-graf a:visited {
   color: white;
+  z-index: 100000001;
+}
+
+#back-button {
+  left: 6%;
+  display: none;
+}
+
+#forward-button {
+  right: 6%;
 }
 
 .nav-button {
@@ -56,14 +77,6 @@ a:visited {
   border-radius: 100%;
   border: 2px solid grey;
   cursor: pointer;
-}
-
-#back-button {
-  left: 6%;
-}
-
-#forward-button {
-  right: 6%;
 }
 
 .arrow {
