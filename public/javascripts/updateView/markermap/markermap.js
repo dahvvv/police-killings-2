@@ -1,7 +1,7 @@
 function updateMap(){
-	debugger;
 	$(".legend").show();
-	selectMapFilter();
+	var filter = $(".filter-type").attr("id");
+  selectMapFilter[filter]();
 };
 
 var selectMapFilter = {
@@ -26,24 +26,6 @@ var selectMapFilter = {
   "shots-filter" : function(){
     updateMapFilterShots();
   },
-};
-
-function selectMarkermapFilter(choosers){
-	if (choosers.filter === "usPop"){
-		updateMarkermapFilterUspop(choosers);
-	} else if (choosers.filter === "race"){
-		updateMarkermapFilterRace(choosers);
-	} else if (choosers.filter === "age"){
-		updateMarkermapFilterAge(choosers);
-	} else if (choosers.filter === "gender"){
-		updateMarkermapFilterGender(choosers);
-	} else if (choosers.filter === "unarmed"){
-		updateMarkermapFilterUnarmed(choosers);
-	} else if (choosers.filter === "illness"){
-		updateMarkermapFilterIllness(choosers);
-	} else if (choosers.filter === "shots"){
-		updateMarkermapFilterShots(choosers);
-	};
 };
 
 function dataToGeoData(data){
@@ -79,7 +61,7 @@ function dataToGeoData(data){
 	return geoData;
 };
 
-function makeMarkermap(geoData){
+function makeMap(geoData){
 	removeExistingMaps();
 	setMapView($("#state-filter").val());
 	addGeoLayer(geoData);
