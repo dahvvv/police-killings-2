@@ -1,17 +1,19 @@
-function updateHeatmapFilterUnarmed(choosers){
-	if ($('#unarmed-selection').css('display') === "none"){
-		$('#unarmed-selection').css({"display":"block"});
-	};
-	removeAllWeights();
-	var checkedUnarmed = checkUnarmed();
-	if (choosers.weight === "none"){
-		updateHeatmapFilterUnarmedWeightNone(checkedUnarmed);
-	}
+function updateHeatmapFilterUnarmed(){
+	$("#unarmed-filter-form").show();
+	$(".weight, #weight-header").hide();
+	var weight = detectWeight();
+	selectHeatmapFilterUnarmedWeight[weight]();
 };
 
-function updateHeatmapFilterUnarmedWeightNone(checkedUnarmed){
-	var data = dataFilterUnarmedWeightNone(checkedUnarmed);
+function updateHeatmapFilterUnarmedWeightNone(){
+	var data = dataFilterUnarmedWeightNone();
 	makeHeatmap(data);
 	var program = "<p class='program-text one-line'>Unarmed Heatmap</p>";
 	$('#program').html(program);
+};
+
+var selectHeatmapFilterUnarmedWeight = {
+	"none" : function(){
+		updateHeatmapFilterUnarmedWeightNone();
+	},
 };

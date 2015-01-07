@@ -1,5 +1,5 @@
 function checkIllness(){
-  var checkedBoxes = $('#illness-selection').children('input:checked');
+  var checkedBoxes = $("#illness-filter-form").children("input:checked");
   var checkedIllness = $(checkedBoxes).map(function(){
     return this.name;
   })
@@ -7,7 +7,8 @@ function checkIllness(){
   return checkedIllness;
 };
 
-function dataFilterIllnessWeightNone(checkedIllness){
+function dataFilterIllnessWeightNone(){
+  var checkedIllness = checkIllness();
   var arr = [];
   $.each(checkedIllness, function(i,val){
     var filtered = allKillings.filter(function(el){

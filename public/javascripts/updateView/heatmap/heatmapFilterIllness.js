@@ -1,17 +1,19 @@
-function updateHeatmapFilterIllness(choosers){
-	if ($('#illness-selection').css('display') === "none"){
-		$('#illness-selection').css({"display":"block"});
-	};
-	removeAllWeights();
-	var checkedIllness = checkIllness();
-	if (choosers.weight === "none"){
-		updateHeatmapFilterIllnessWeightNone(checkedIllness);
-	}
+function updateHeatmapFilterIllness(){
+	$("#illness-filter-form").show();
+	$(".weight, #weight-header").hide();
+	var weight = detectWeight();
+	selectHeatmapFilterIllnessWeight[weight]();
 };
 
-function updateHeatmapFilterIllnessWeightNone(checkedIllness){
-	var data = dataFilterIllnessWeightNone(checkedIllness);
+function updateHeatmapFilterIllnessWeightNone(){
+	var data = dataFilterIllnessWeightNone();
 	makeHeatmap(data);
 	var program = "<p class='program-text one-line'>Illness Heatmap</p>";
 	$('#program').html(program);
+};
+
+var selectHeatmapFilterIllnessWeight = {
+	"none" : function(){
+		updateHeatmapFilterIllnessWeightNone();
+	},
 };
