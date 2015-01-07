@@ -100,22 +100,6 @@ a:visited {
   top: 10%;
 }
 
-input[type=submit] {
-    border-radius: 5px;
-    border: 0;
-    width: 80px;
-    height:30px;
-    font-size: 1em;
-    font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
-    background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
-    background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-    background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
-}
-
 .button-header {
 /*  display: none;
 */  display: block;
@@ -157,7 +141,23 @@ button {
   cursor: pointer;
 }
 
-.chooser-listview {
+input[type=submit] {
+    border-radius: 5px;
+    border: 0;
+    width: 80px;
+    height:30px;
+    font-size: 1em;
+    font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
+    background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
+    background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
+}
+
+/*.chooser-listview {
   color: #101535;
   font-family: 'Oswald';
   display: block;
@@ -170,7 +170,7 @@ button {
   background-color: rgba(136,123,107,0.2);
   font-size: 1.2em;
   cursor: pointer;
-}
+}*/
 
 select.button-filter {
   color: #101535;
@@ -201,14 +201,19 @@ select.button-filter {
   color: black;
 }
 
-.filter-checkbox-form {
+/*.filter-checkbox-form {
   margin: -0.8em 1em 0.5em 1em;
   display: none;
-}
+}*/
 
-#race-selection input[type=submit] {
+form {
+  margin: -0.8em 1em 0.5em 1em;
+/*  display: none;
+*/}
+
+#race-filter-form input[type=submit] {
   width: 80px;
-  margin: 4% 10% 8%;
+  margin: 4% 10% 8% 0;
 }
 
 #age-range {
