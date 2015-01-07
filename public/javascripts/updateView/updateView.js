@@ -9,19 +9,19 @@
 // };
 
 
-function updateView(scene){
-	switch (scene.display){
-		case "heatmap":
-			updateHeatmap(scene);
-			break;
-		case "map":
-			updateMap(scene);
-			break;
-		case "graph":
-			updateGraph(scene);
-			break;
-	};
-};
+// function updateView(scene){
+// 	switch (scene.display){
+// 		case "heatmap":
+// 			updateHeatmap();
+// 			break;
+// 		case "map":
+// 			updateMap();
+// 			break;
+// 		case "graph":
+// 			updateGraph();
+// 			break;
+// 	};
+// };
 
 function replaceChooser(chooser, callback){
   if ($(chooser).hasClass('button-filter')) {

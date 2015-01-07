@@ -25,6 +25,18 @@ function detectScene(){
   };
 };
 
+var updateDisplay = {
+  "heatmap" : function(){
+    updateHeatmap();
+  },
+  "map" : function(){
+    updateMap();
+  },
+  "graph" : function(){
+    updateGraph();
+  },
+};
+
 $(function(){
 
   map = L.mapbox.map("map-one", "marpborxmarrrpborrrrrx.kg7bjg5l", {
@@ -45,7 +57,7 @@ $(function(){
       this.id != "usPop-filter"){
       $(this).next("form").show();
     };
-    updateView(scene);
+    updateDisplay[scene.display]();
   });
 
   // $(".chooser").on("click", function(e){
