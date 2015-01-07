@@ -1,5 +1,5 @@
 function dataFilterRaceWeightNone(){
-  var checkedBoxes = $('#race-selection').children('input:checked');
+  var checkedBoxes = $("#race-filter-form").children("input:checked");
   var checkedRaces = $(checkedBoxes).map(function(){
     return this.name;
   })
