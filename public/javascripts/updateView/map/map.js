@@ -1,5 +1,5 @@
 function updateMap(){
-	$(".legend").show();
+	$(".legend, .weight-legend").show();
 	var filter = $(".filter-type").attr("id");
   selectMapFilter[filter]();
 };

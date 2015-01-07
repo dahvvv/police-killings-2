@@ -1,24 +1,15 @@
-function checkUnarmed(filterOrWeight){
-  var form = function(){
-    switch (filterOrWeight){
-      case "filter":
-        return $("#unarmed-filter-form");
-        break;
-      case "weight":
-        return $("#unarmed-weight-form");
-        break;
-    };
-  };
-  var checkedBoxes = form().children("input:checked");
+function checkUnarmed(form){
+  var checkedBoxes = form.children("input:checked");
   var checkedUnarmed = $(checkedBoxes).map(function(){
     return this.name;
   })
-  .get();
+  .get()
+  .reverse();
   return checkedUnarmed;
 };
 
 function dataFilterUnarmedWeightNone(){
-  var checkedUnarmed = checkUnarmed("filter");
+  var checkedUnarmed = checkUnarmed($("#unarmed-filter-form"));
   var arr = [];
   $.each(checkedUnarmed, function(i,val){
     var filtered = allKillings.filter(function(el){

@@ -1,6 +1,6 @@
 function updateHeatmap(){
   $(".weight-type").removeClass();
-  $(".legend").hide();
+  $(".legend, .weight-legend").hide();
   $(".weight, .weight-form").hide();
   var filter = $(".filter-type").attr("id");
   selectHeatmapFilter[filter]();

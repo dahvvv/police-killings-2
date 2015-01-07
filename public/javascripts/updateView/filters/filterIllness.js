@@ -3,7 +3,8 @@ function checkIllness(form){
   var checkedIllness = $(checkedBoxes).map(function(){
     return this.name;
   })
-  .get();
+  .get()
+  .reverse();
   return checkedIllness;
 };
 

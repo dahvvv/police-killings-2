@@ -33,7 +33,7 @@ function updateMapFilterShotsWeightUnarmed(){
 };
 
 function dataFilterShotsWeightUnarmed(){
-  var checkedUnarmed = checkUnarmed("weight");
+  var checkedUnarmed = checkUnarmed($("#unarmed-weight-form"));
   var booleans = $.map(checkedUnarmed, function(val){
   	return val === "unarmed";
   });

@@ -7,6 +7,7 @@ function updateMapFilterIllnessWeightRace(){
 	    radius: 7,
 	    fillOpacity: 1,
 	    opacity: 1,
+	    // weight: 4,
 		};
 		obj["template"] = _.template($("#popup-template").html());
 	});
@@ -37,5 +38,5 @@ function dataFilterIllnessWeightRace(){
 
 var formatCI = {
 	"ill": "yes",
-	"not ill": "no"
+	"not-ill": "no"
 };

@@ -34,8 +34,16 @@ function reorderRaces(raceArr){
 var raceColors = {
   "alaskan and/or pacific islander" : "crimson",
   "asian"                           : "darkorange",
-  "black"                           : "yellow",
+  "black"                           : "gold",
   "hispanic and/or latin"           : "limegreen",
+  "white"                           : "royalblue",
+};
+
+var raceWeightColors = {
+  "alaskan and/or pacific islander" : "maroon",
+  "asian"                           : "darkorange",
+  "black"                           : "forestgreen",
+  "hispanic and/or latin"           : "lightslategray",
   "white"                           : "royalblue",
 };
 
