@@ -1,4 +1,3 @@
-
 body {
   background-color: #c8cdcf;
   margin: 0;
@@ -111,21 +110,6 @@ a:visited {
   font-size: 1.2em;
 }
 
-/*.chooser {
-  color: #101535;
-  font-family: 'Oswald';
-  display: block;
-  height: 9%;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 1em;
-  border: none;
-  border-radius: 6px;
-  background-color: rgba(136,123,107,0.2);
-  font-size: 1.2em;
-  cursor: pointer;
-}*/
-
 button, select {
   color: #101535;
   font-family: 'Oswald';
@@ -150,11 +134,33 @@ select {
   margin-top: 2em;
 }
 
+.filter-type {
+  background-color: rgba(136,123,107,0.6);
+  font-size: 1.3em;
+  height: 11%;
+  color: black;
+}
+
+form {
+  margin: -0.8em 1em 0.5em 1em;
+  display: none;
+}
+
+input[type=text] {
+  width: 16%;
+  margin: 0.5em 1em 0.5em 0;
+}
+
+input[type=label] {
+  margin: 0.5em 1em;
+}
+
 input[type=submit] {
   border-radius: 5px;
   border: 0;
   width: 80px;
   height:30px;
+  margin: 4% 10% 8% 0;
   font-size: 1em;
   font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
   background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
@@ -164,116 +170,6 @@ input[type=submit] {
   background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
   background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
-}
-
-/*.chooser-listview {
-  color: #101535;
-  font-family: 'Oswald';
-  display: block;
-  height: 9%;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 1em;
-  border: none;
-  border-radius: 6px;
-  background-color: rgba(136,123,107,0.2);
-  font-size: 1.2em;
-  cursor: pointer;
-}*/
-
-/*select.button-filter {
-  color: #101535;
-  font-family: 'Oswald';
-  display: block;
-  height: 42px;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 1em;
-  border: none;
-  border-radius: 6px;
-  background-color: rgba(136,123,107,0.2);
-  font-size: 1.2em;
-  cursor: pointer;
-}*/
-
-/*.button-filter.filter-type {
-  background-color: rgba(136,123,107,0.6);
-  font-size: 1.3em;
-  height: 11%;
-  color: black;
-}*/
-
-.filter-type {
-  background-color: rgba(136,123,107,0.6);
-  font-size: 1.3em;
-  height: 11%;
-  color: black;
-}
-
-/*.filter-checkbox-form {
-  margin: -0.8em 1em 0.5em 1em;
-  display: none;
-}*/
-
-form {
-  margin: -0.8em 1em 0.5em 1em;
-  display: none;
-}
-
-#race-filter-form input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8% 0;
-}
-
-#age-range {
-  display: none;
-}
-
-#age-range input, label {
-  margin: 0.5em 1em;
-}
-
-#age-range input {
-  width: 17%;
-  margin-left: 0;
-}
-
-#age-range input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8%;
-}
-
-#gender-selection input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8%;
-}
-
-#unarmed-selection input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8%;
-}
-
-#illness-selection input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8%;
-}
-
-#shots-range {
-  display: none;
-}
-
-#shots-range input, label {
-  margin: 0.5em 1em;
-}
-
-#shots-range input {
-  width: 17%;
-  margin-left: 0;
-}
-
-#shots-range input[type=submit] {
-  width: 80px;
-  margin: 4% 10% 8%;
 }
 
 .legend {
