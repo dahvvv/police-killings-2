@@ -14,25 +14,30 @@ $(function(){
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
-  $(".chooser").on("click", function(e){
+  $(".filter").on("click", function(e){
     e.preventDefault();
-    replaceChooser(this, function(){
-      var choosers = detectChoosers();
-      updateView(choosers);
-    })
+    alert('u clicked the filter');
   });
 
-  $(".button-weight").on("click", function(e){
-    e.preventDefault();
-    if (this.tagName != "INPUT" && this.id != "usPop-weight"){
-      removeAllWeightListviews();
-      if ($(this).hasClass("weight-type")){
-        $(this).next("form").css({"display":"block"})
-        .find("input[type=submit]")
-        .css({"display":"block"});
-      };
-    };
-  });
+  // $(".chooser").on("click", function(e){
+  //   e.preventDefault();
+  //   replaceChooser(this, function(){
+  //     var choosers = detectChoosers();
+  //     updateView(choosers);
+  //   })
+  // });
+
+  // $(".button-weight").on("click", function(e){
+  //   e.preventDefault();
+  //   if (this.tagName != "INPUT" && this.id != "usPop-weight"){
+  //     removeAllWeightListviews();
+  //     if ($(this).hasClass("weight-type")){
+  //       $(this).next("form").css({"display":"block"})
+  //       .find("input[type=submit]")
+  //       .css({"display":"block"});
+  //     };
+  //   };
+  // });
 
   $("#state-selector").on("change", function(e){
     e.preventDefault();
