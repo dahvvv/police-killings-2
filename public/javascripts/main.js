@@ -70,9 +70,11 @@ $(function(){
     e.preventDefault();
     var weight = detectWeight();
     var display = detectDisplay();
-    $("button").removeClass("weight-type");
     $(".weight-form").hide();
-    if (this.id != weight){
+    if (this.id === weight){
+      $("button").removeClass("weight-type");
+    } else {
+      $("button").removeClass("weight-type");
       $(this).addClass("weight-type");
       if (display != "graph-display" && 
       this.id != "usPop-weight"){
