@@ -8,15 +8,12 @@ var heatLayer;
 var graph;
 
 function detectScene(){
-  var filter = $(".filter-type").attr("id")
-  .split("-filter")[0];
-  var display = $(".display-type").attr("id")
-  .split("-display")[0];
+  var filter = $(".filter-type").attr("id");
+  var display = $(".display-type").attr("id");
   if ($(".weight-type").length === 0){
     var weight = "none";
   } else {
-    var weight = $(".weight-type").attr("id")
-    .split("-weight")[0];
+    var weight = $(".weight-type").attr("id");
   };
   return {
     filter: filter,
@@ -26,13 +23,13 @@ function detectScene(){
 };
 
 var updateDisplay = {
-  "heatmap" : function(){
+  "heatmap-display" : function(){
     updateHeatmap();
   },
-  "map" : function(){
+  "map-display" : function(){
     updateMap();
   },
-  "graph" : function(){
+  "graph-display" : function(){
     updateGraph();
   },
 };
@@ -47,13 +44,13 @@ $(function(){
   $(".filter").on("click", function(e){
     e.preventDefault();
     var scene = detectScene();
-    if (this.id != scene.filter + "-filter"){
+    if (this.id != scene.filter){
       $("button").removeClass("filter-type");
       $(this).addClass("filter-type");
-      scene.filter = this.id.split("-")[0];
+      scene.filter = this.id;
     };
     $(".filter-form").hide();
-    if (scene.display != "graph" && 
+    if (scene.display != "graph-display" && 
       this.id != "usPop-filter"){
       $(this).next("form").show();
     };
@@ -62,7 +59,8 @@ $(function(){
 
   $(".filter-form").find("input[type=submit]").on("click", function(e){
     e.preventDefault();
-    alert('u hit enter!');
+    var display = $(".display-type").attr("id");
+    updateDisplay[display]();
   });
 
   // $(".chooser").on("click", function(e){
