@@ -60,6 +60,11 @@ $(function(){
     updateDisplay[scene.display]();
   });
 
+  $(".filter-form").find("input[type=submit]").on("click", function(e){
+    e.preventDefault();
+    alert('u hit enter!');
+  });
+
   // $(".chooser").on("click", function(e){
   //   e.preventDefault();
   //   replaceChooser(this, function(){
