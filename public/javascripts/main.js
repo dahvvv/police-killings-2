@@ -68,8 +68,19 @@ $(function(){
 
   $(".weight").on("click", function(e){
     e.preventDefault();
-    alert('hi');
-  })
+    var weight = detectWeight();
+    var display = detectDisplay();
+    $("button").removeClass("weight-type");
+    $(".weight-form").hide();
+    if (this.id != weight){
+      $(this).addClass("weight-type");
+      if (display != "graph-display" && 
+      this.id != "usPop-weight"){
+        $(this).next("form").show();
+      };
+    };
+    updateDisplay[display]();
+  });
 
   // $(".chooser").on("click", function(e){
   //   e.preventDefault();
