@@ -69,6 +69,20 @@ a:visited {
   right: 6%;
 }
 
+#close-button {
+  position: absolute;
+  padding: 0 1.1% 0.4%;
+  color: grey;
+  border: 2px solid grey;
+  border-radius: 35%;
+  top: 1.8%;
+  left: 1%;
+  font-size: 1.5em;
+  font-weight: 100;
+  font-family: helvetica;
+  cursor: pointer;
+}
+
 .nav-button {
   position: absolute;
   height: 3em;

@@ -88,7 +88,7 @@ $(function(){
     updateDisplay(data, choosers);
   });
 
-  $("#about-link").on("click", function(e){
+  $("#about-link, #close-button").on("click", function(e){
     e.preventDefault();
     $("#about").slideToggle(800);
   });
