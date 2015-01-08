@@ -131,6 +131,14 @@ a:visited {
   bottom: 2%;
 }
 
+.description-container {
+  background-color: white;
+  z-index: 100000000;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
 #filters-container {
 	position: absolute;
   height: 95%;
@@ -411,6 +419,7 @@ input[type=submit] {
   padding: 5px;
   text-align: center;
   font-size: 1.2em;
+  position: relative;
 }
 
 .popup-img {
