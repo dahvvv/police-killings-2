@@ -19,7 +19,6 @@ var selectMapFilterIllnessWeight = {
 };
 
 function filterWeightLegendFromWeightRace(){
-	alert('u did it!');
 	var legend = ($("#illness-filter-form").children(".legend"));
 	$.each(legend, function(i,el){
 		var color = el.id === "ill" ? illnessColors["yes"] : illnessColors["no"];

@@ -66,4 +66,20 @@ var styleGraphFilterUspopWeightUspop = {
       tip.innerHTML = elem.label + ": " + elem.value + " " + elem.name;
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterUspopWeightUspopTipSample(node);
+    }
+  }
+};
+
+function graphFilterUspopWeightUspopTipSample(elem){
+	var city = lowercaseCity(elem.label);
+  var collection = allKillings.filter(function(el){
+    return el.location_of_killing_city === city;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

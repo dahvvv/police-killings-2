@@ -86,7 +86,7 @@ var styleGraphFilterUspopWeightIllness = {
 };
 
 function graphFilterUspopWeightIllnessTipSample(elem){
-  var illness = obj.symptoms_of_mental_illness === "yes" ? "symptoms" : "no symptoms";
+  var illness = elem.name === "symptoms" ? "yes" : "no";
   var city = lowercaseCity(elem.label);
   var collection = allKillings.filter(function(el){
     return el.symptoms_of_mental_illness === illness && el.location_of_killing_city === city;

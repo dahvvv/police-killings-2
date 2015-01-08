@@ -90,7 +90,7 @@ $(function(){
 
   $("#about-link, #close-button").on("click", function(e){
     e.preventDefault();
-    $("#about").slideToggle(800);
+    $("#about").slideToggle(600);
   });
 
   $("#forward-button").on("click", function(e){

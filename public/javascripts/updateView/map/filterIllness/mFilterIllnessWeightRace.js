@@ -50,17 +50,7 @@ var formatCI = {
 	"not-ill": "no"
 };
 
-// var illnessBorderColors = {
-//   "yes" : "black",
-//   "no"  : "black", 
-// };
-
 var illnessRadius = {
   "yes" : 14,
   "no"  : 6, 
 };
-
-// var illnessWeight = {
-//   "yes" : 4,
-//   "no"  : 1, 
-// };
