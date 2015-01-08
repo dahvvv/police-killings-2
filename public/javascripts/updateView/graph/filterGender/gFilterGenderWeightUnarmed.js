@@ -58,4 +58,21 @@ var styleGraphFilterGenderWeightUnarmed = {
       tip.innerHTML =  "elem.value:  " + elem.value + "<br>elem.label:  " + elem.label + "<br>elem.name:  " + elem.name;
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterGenderWeightUnarmedTipSample(node);
+    }
+  }
+};
+
+function graphFilterGenderWeightUnarmedTipSample(elem){
+  var unarmed = elem.name === "unarmed";
+  var gender = elem.label;
+  var collection = allKillings.filter(function(el){
+    return el.victim_unarmed === unarmed && el.victim_gender === gender;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

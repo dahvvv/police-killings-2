@@ -65,4 +65,20 @@ var styleGraphFilterAgeWeightNone = {
       tip.innerHTML = "<p>Age: " + elem.label + "</p><p>Total: " + elem.value;
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterAgeWeightNoneTipSample(node);
+    }
+  }
+};
+
+function graphFilterAgeWeightNoneTipSample(elem){
+  var age = parseInt(elem.label);
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

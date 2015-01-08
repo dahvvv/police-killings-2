@@ -57,4 +57,20 @@ var styleGraphFilterGenderWeightNone = {
       tip.innerHTML =  elem.value + " victims of police shootings are " + elem.label;
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterGenderWeightNoneTipSample(node);
+    }
+  }
+};
+
+function graphFilterGenderWeightNoneTipSample(elem){
+  var gender = elem.label;
+  var collection = allKillings.filter(function(el){
+    return el.victim_gender === gender;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

@@ -60,4 +60,20 @@ var styleGraphFilterRaceWeightNone = {
       tip.innerHTML = "In the United States,<br>" + elem.value + " " + elem.label + " people<br>have been killed by police.";
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterRaceWeightNoneTipSample(node);
+    }
+  }
+};
+
+function graphFilterRaceWeightNoneTipSample(elem){
+  var race = expandRace(elem.label,"vertical");
+  var collection = allKillings.filter(function(el){
+    return el.victim_race === race;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
