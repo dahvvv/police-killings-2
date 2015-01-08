@@ -78,9 +78,12 @@ function addGeoLayer(geoData){
 		onEachFeature: function(feature,layer){
 			var template = feature.properties.template;
 			var popupContent = template(feature.properties);
-			layer.bindPopup(popupContent, {
-        maxHeight: 400,
-        maxWidth: 700
+      var divNode = document.createElement("DIV");
+      divNode.innerHTML = popupContent;
+      layer.bindPopup(divNode, {
+        maxHeight: 500,
+        maxWidth: 700,
+        autoPan: true,
       });
 		}
 	});
