@@ -1,6 +1,5 @@
 body {
   background-color: #c8cdcf;
-  margin: 0;
   padding: 0;
   height: 100%;
   font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
@@ -13,7 +12,7 @@ a:link {
 a:visited {
   color: #101535;
 }
-
+/*
 #container {
   position: relative;
   height: 43em;
@@ -21,14 +20,15 @@ a:visited {
   margin: 0px;
   padding: 0px;
   height: 100%;
-}
+}*/
 
 #about {
-  display: none;
+  background-color: rgba(0,0,50,0.9);
+
+/*  display: none;
   z-index: 100000000;
   position: relative;
   float: left;
-  background-color: rgba(0,0,50,0.9);
   height: 37em;
   width: 86%;
   left: 7%;
@@ -36,7 +36,7 @@ a:visited {
   border-radius: 10px;
   color: white;
   text-align: center;
-}
+}*/
 
 .about-graf {
   margin: 0;
