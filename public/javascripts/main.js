@@ -22,6 +22,8 @@ var updateDisplay = {
 
 $(function(){
 
+  $(".weight, .filter-form, .weight-form").hide();
+
   map = L.mapbox.map("map-one", "marpborxmarrrpborrrrrx.kg7bjg5l", {
     scrollWheelZoom: true,
     draggable: true
@@ -103,14 +105,12 @@ $(function(){
     prevPage();
   });
 
-  if ($(window).width() > 1200){}
-
   $.ajax({
     url: "/api",
     dataType: "JSON",
     success: function(data){
       allKillings = data;
-      updateHeatmapFilterUspopWeightNone();
+      updateHeatmap();
     }
   });
 });
