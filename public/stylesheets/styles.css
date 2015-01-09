@@ -145,19 +145,56 @@ a:visited {
   height: 100%;
 }*/
 
+.mainpage {
+  height: 100vh;
+}
+
 .two {
-  background: red;
+  margin-top: 6vh;
+  height: 94%;
 }
 
 .twelve {
-  background: yellow;
+  height: 100%;
 }
 
 #filters-container {
-	position: absolute;
+/*	position: absolute;
   height: 95%;
   width: 15%;
-  top: 10%;
+  top: 10%;*/
+}
+
+button, select {
+  color: #101535;
+  font-family: 'Oswald';
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(136,123,107,0.2);
+  font-size: 1.2em;
+  cursor: pointer;
+  width: 100%;
+}
+
+button {
+  height: 7%;
+}
+
+select {
+  height: 100%;
+}
+
+#state-filter-form {
+  height: 7%;
+  margin-bottom: 1em;
+}
+
+.filter-type {
+  background-color: rgba(136,123,107,0.6);
+  font-size: 1.3em;
+  height: 9%;
+  color: black;
 }
 
 .header {
@@ -170,76 +207,20 @@ a:visited {
   font-size: 1.2em;
 }
 
-button, select {
-  color: #101535;
-  font-family: 'Oswald';
-  display: block;
-  margin-bottom: 1em;
-  border: none;
-  border-radius: 6px;
-  background-color: rgba(136,123,107,0.2);
-  font-size: 1.2em;
-  cursor: pointer;
-}
-
-button {
-  height: 9%;
-  width: 80%;
-  margin-left: 10%;
-}
-
-select {
-  height: 42px;
-  width: 100%;
-  margin-top: 2em;
-}
-
-.filter-type {
-  background-color: rgba(136,123,107,0.6);
-  font-size: 1.3em;
-  height: 11%;
-  color: black;
-}
-
-form {
+/*form {
   margin: -0.8em 1em 0.5em 1em;
   display: none;
-}
+}*/
 
-input[type=text] {
-  width: 16%;
-  margin: 0.5em 1em 0.5em 0;
-}
-
-input[type=label] {
-  margin: 0.5em 1em;
-}
-
-input[type=submit] {
-  border-radius: 5px;
-  border: 0;
-  width: 80px;
-  height:30px;
-  margin: 4% 10% 8% 0;
-  font-size: 1em;
-  font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
-  background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
-  background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-  background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-  background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
-  background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
-}
-
-.legend, .weight-legend {
+.legend, .weight-legend, {
+  display: none;
   position: relative;
   display: inline-block;
   width: 12px;
   height: 12px;
   border-radius: 100%;
   border: 1px solid black;
-  top: 3px;
+  top: 2px;
   left: 1px;
 }
 
@@ -315,6 +296,35 @@ input[type=submit] {
 
 .legend#not-ill {
   background-color: red;
+}
+
+input[type=text] {
+  width: 20%;
+  height: 1em;
+  float: right;
+  margin-top: 1vh;
+}
+
+label {
+  margin-top: 1vh;
+  display: inline-block;
+}
+
+input[type=submit] {
+  border-radius: 5px;
+  border: 0;
+  width: 80px;
+  height:30px;
+  margin: 4% 10% 8% 0;
+  font-size: 1em;
+  font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;    background: #f4f4f4;
+  background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
+  background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+  background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
 }
 
 #display-and-selectors {

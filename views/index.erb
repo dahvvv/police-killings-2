@@ -26,9 +26,78 @@
 
 <div class="container">
 
-  <div class="row">
+  <div class="row mainpage">
 
-    <div class="two columns">two</div>
+    <div class="two columns" id="filters-container">
+      <button class="filter filter-type" id="usPop-filter">Population</button>
+      <%= erb :'_fifty_states_dropdown' %>
+      <button class="filter" id="race-filter">Race</button>
+      <form class="filter-form race-form" id="race-filter-form">
+        <input type="checkbox" id="select-alaskan" name="alaskan and/or pacific islander" value="alaskan" checked />
+        <span class="legend" id="alaskan"></span>
+        <span class="legend-text" id="alaskan">Alaskan / </span><br>Pacific Islander<br>
+        <input type="checkbox" id="select-asian" name="asian" value="asian" checked />
+        <span class="legend" id="asian"></span>
+        <span class="legend-text" id="asian">Asian</span><br>
+        <input type="checkbox" id="select-black" name="black" value="black" checked />
+        <span class="legend" id="black"></span>
+        <span class="legend-text" id="black">Black</span><br>
+        <input type="checkbox" id="select-hispanic" name="hispanic and/or latin" value="hispanic" checked />
+        <span class="legend" id="hispanic"></span>
+        <span class="legend-text" id="hispanic">Hispanic / Latin</span><br>
+        <input type="checkbox" id="select-white" name="white" value="white" checked />
+        <span class="legend" id="white"></span>
+        <span class="legend-text" id="white">White</span><br>
+        <input type="submit" value="Enter" />
+      </form>
+      <button class="filter" id="age-filter">Age</button>
+      <form class="filter-form age-form" id="age-filter-form">
+        <label for="age-min">Age Min:</label>
+        <input type="text" id="age-min" name="age-min" value="0" /><br>
+        <label for="age-max">Age Max:</label>
+        <input type="text" id="age-max" class="clear" name="age-max" value="107" />
+        <input type="submit" value="Enter" />
+      </form>
+      <button class="filter" id="gender-filter">Gender</button>
+      <form class="filter-form gender-form" id="gender-filter-form">
+        <input type="checkbox" id="select-male" name="male" value="male" checked />
+        <span class="legend" id="male"></span>
+        <span class="legend-text" id="male">Male</span><br>
+        <input type="checkbox" id="select-female" name="female" value="female" checked />
+        <span class="legend" id="female"></span>
+        <span class="legend-text" id="female">Female</span><br>
+        <input type="submit" value="Enter" />
+      </form>
+      <button class="filter" id="unarmed-filter">Unarmed</button>
+      <form class="filter-form unarmed-form" id="unarmed-filter-form">
+        <input type="checkbox" id="select-unarmed" name="unarmed" value="unarmed" checked />
+        <span class="legend" id="unarmed"></span>
+        <span class="legend-text" id="unarmed">Unarmed</span><br>
+        <input type="checkbox" id="select-armed" name="armed" value="armed" />
+        <span class="legend" id="armed"></span>
+        <span class="legend-text" id="armed">Armed</span><br>
+        <input type="submit" value="Enter" />
+      </form>
+      <button class="filter" id="illness-filter">Mental Illness</button>
+      <form class="filter-form illness-form" id="illness-filter-form">
+        <input type="checkbox" id="select-ill" name="ill" value="ill" checked />
+        <span class="legend" id="ill"></span>
+        <span class="legend-text" id="ill">Yes</span><br>
+        <input type="checkbox" id="select-not-ill" name="not-ill" value="not-ill" />
+        <span class="legend" id="not-ill"></span>
+        <span class="legend-text" id="not-ill">No</span><br>
+        <input type="submit" value="Enter" />
+      </form>
+      <button class="filter" id="shots-filter">Number of Shots</button>
+      <form class="filter-form shots-form" id="shots-filter-form">
+        <label for="shots-min">Shots Min:</label>
+        <input type="text" id="shots-min" name="shots-min" value="20" /><br>
+        <label for="shots-max">Shots Max:</label>
+        <input type="text" id="shots-max" name="shots-max" />
+        <input type="submit" value="Enter" />
+      </form>
+    </div>
+
     <div class="twelve columns">12</div>
     <div class="two columns">two</div>
 
