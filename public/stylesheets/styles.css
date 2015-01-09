@@ -1,8 +1,7 @@
 body {
   background-color: #c8cdcf;
   padding: 0;
-/*  height: 100%;
-*/  font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+  font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
 
 a:link {
@@ -135,16 +134,6 @@ a:visited {
   display: none;
 }
 
-/*
-#container {
-  position: relative;
-  height: 43em;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-}*/
-
 .mainpage {
   height: 100vh;
 }
@@ -197,11 +186,6 @@ select {
   height: 9%;
   color: black;
 }
-
-/*form {
-  margin: -0.8em 1em 0.5em 1em;
-  display: none;
-}*/
 
 .legend, .weight-legend, {
   display: none;
@@ -375,17 +359,6 @@ input[type=submit] {
   margin-left: 10%;
   margin-bottom: 7%;
   font-size: 1.2em;
-}
-
-.weight {
-/*  display: none;
-*/}
-
-.weight-type {
-/*  background-color: rgba(136,123,107,0.6);
-  font-size: 1.3em;
-  height: 11%;
-  color: black;*/
 }
 
 .weight-checkbox-form {

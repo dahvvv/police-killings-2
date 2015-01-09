@@ -103,6 +103,8 @@ $(function(){
     prevPage();
   });
 
+  if ($(window).width() > 1200){}
+
   $.ajax({
     url: "/api",
     dataType: "JSON",
