@@ -328,45 +328,48 @@ input[type=submit] {
 }
 
 #display-and-selectors {
-  position: relative;
-  height: 31em;
-  width: 70%;
-  left: 15%;
+  padding: 0 2%;
 }
 
 #display-container {
-  height: 89%;
+  height: 64%;
   width: 100%;
+  margin-left: 0%;
   background: black;
 }
 
 .map {
-  position: absolute;
-  height: 89%; /* for main view */
-/*  height: 73%; */ /* for state view */
-  width: 100%;
-  top: 0;
-  background: black;
+  height: 100%;
 }
 
 #selectors-container {
-  height: 11%;
-  position: absolute;
-  width: 100%;
+  height: 8%;
 /*  z-index: 2;*/
 }
 
 #selectors-container button {
-  display: inline;
-  font-size: 1.3em;
   height: 100%;
-  width: 33%;
-  padding: 0;
   margin: 0;
+  width: 32.8%;
+  font-size: 1.3em;
   letter-spacing: 2px;
 }
 
-.display-type {
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+  #selectors-container button {
+    width: 32.5%;
+  }
+}
+
+#selectors-container button#graph-display {
+  margin-right: 0.3%;
+}
+
+#selectors-container button#heatmap-display {
+  margin-left: 0.3%;
+}
+
+#selectors-container button.display-type {
   background-color: rgba(136,123,107,0.8);
   font-size: 1.6em;
   color: black;
