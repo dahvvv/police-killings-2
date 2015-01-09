@@ -39,7 +39,7 @@ polikin.ca
 
     .container                                  { position: relative; width: 1200px; margin: 0 auto; padding: 0; }
     .container .column,
-    .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .container .columns                         { float: left; display: inline; margin-left: 0px; margin-right: 0px; }
     .row                                        { margin-bottom: 20px; }
 
     /* Nested Column Classes */
@@ -49,22 +49,22 @@ polikin.ca
     /* Base Grid */
 
 	.container .one.column,
-    .container .one.columns                     { width: 55px; }
-    .container .two.columns                     { width: 120px; }
-    .container .three.columns                   { width: 205px; }
-    .container .four.columns                    { width: 280px; }
-    .container .five.columns                    { width: 355px; }
-    .container .six.columns                     { width: 430px; }
-    .container .seven.columns                   { width: 505px; }
-    .container .eight.columns                   { width: 580px; }
-    .container .nine.columns                    { width: 655px; }
-    .container .ten.columns                     { width: 730px; }
-    .container .eleven.columns                  { width: 805px; }
-    .container .twelve.columns                  { width: 880px; }
-    .container .thirteen.columns                { width: 955px; }
-    .container .fourteen.columns                { width: 1030px; }
-    .container .fifteen.columns                 { width: 1105px; }
-    .container .sixteen.columns                 { width: 1180px; }
+    .container .one.columns                     { width: 75px; }
+    .container .two.columns                     { width: 140px; }
+    .container .three.columns                   { width: 225px; }
+    .container .four.columns                    { width: 300px; }
+    .container .five.columns                    { width: 375px; }
+    .container .six.columns                     { width: 450px; }
+    .container .seven.columns                   { width: 525px; }
+    .container .eight.columns                   { width: 600px; }
+    .container .nine.columns                    { width: 675px; }
+    .container .ten.columns                     { width: 750px; }
+    .container .eleven.columns                  { width: 825px; }
+    .container .twelve.columns                  { width: 900px; }
+    .container .thirteen.columns                { width: 975px; }
+    .container .fourteen.columns                { width: 1050px; }
+    .container .fifteen.columns                 { width: 1125px; }
+    .container .sixteen.columns                 { width: 1200px; }
 
     .container .one-third.column                { width: 380px; }
     .container .two-thirds.column               { width: 780px; }
