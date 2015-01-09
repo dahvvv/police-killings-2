@@ -320,6 +320,7 @@ input[type=submit] {
 
 #selectors-container {
   height: 7%;
+  margin-bottom: 7%;
 /*  z-index: 2;*/
 }
 
@@ -371,25 +372,11 @@ input[type=submit] {
   margin: 4% 10% 8%;
 }
 
-#program {
-	position: fixed;
-  height: 17%;
-  width: 70%;
-  bottom: 0;
-  left: 15%;
-}
-
 .program-text {
   text-align: center;
-  position: relative;
   font-size: 1.5em;
-  color: #101535;
-  opacity: 0.8;
-  letter-spacing: 1.5px;
-  margin: 1.5em 0;
-  top: -2em;
 }
-
+/*
 .program-text.one-line {
   top: -2em;
 }
@@ -404,7 +391,7 @@ input[type=submit] {
 
 .program-text.four-line {
   top: -3.2em;
-}
+}*/
 
 .popup-container {
   background-color: #c8cdcf;

@@ -1,9 +1,3 @@
-function updateMapFilterUspop(){
-	$(".weight, #weight-header").hide();
-	var weight = detectWeight();
-	selectMapFilterUspopWeight[weight]();
-};
-
 function updateMapFilterUspopWeightNone(){
 	var data = allKillings;
 	$.each(data, function(i,obj){
@@ -20,10 +14,4 @@ function updateMapFilterUspopWeightNone(){
 	makeMap(geoData);
 	var program = "<p class='program-text one-line'>Click on a dot or zoom in for more information.</p>";
 	$("#program").html(program);
-};
-
-var selectMapFilterUspopWeight = {
-	"none" : function(){
-		updateMapFilterUspopWeightNone();
-	},
 };
