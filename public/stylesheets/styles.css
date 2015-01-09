@@ -149,20 +149,21 @@ a:visited {
   height: 100vh;
 }
 
-.two {
+#filters-container, #weights-container {
   margin-top: 6vh;
   height: 94%;
 }
 
-.twelve {
-  height: 100%;
-}
+@media only screen and (min-width: 1250px) {
+  #filters-container {
+    margin-left: -15px;
+    margin-right: 15px;
+  }
 
-#filters-container {
-/*	position: absolute;
-  height: 95%;
-  width: 15%;
-  top: 10%;*/
+  #weights-container {
+    margin-left: 15px;
+    margin-right: -15px;
+  }
 }
 
 button, select {
@@ -190,21 +191,11 @@ select {
   margin-bottom: 1em;
 }
 
-.filter-type {
+.filter-type, .weight-type {
   background-color: rgba(136,123,107,0.6);
   font-size: 1.3em;
   height: 9%;
   color: black;
-}
-
-.header {
-  display: none;
-  text-align: center;
-  height: 8%;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 1em;
-  font-size: 1.2em;
 }
 
 /*form {
@@ -328,11 +319,12 @@ input[type=submit] {
 }
 
 #display-and-selectors {
-  padding: 0 2%;
+  padding: 0 0.5%;
+  height: 100%;
 }
 
 #display-container {
-  height: 64%;
+  height: 63%;
   width: 100%;
   margin-left: 0%;
   background: black;
@@ -343,7 +335,7 @@ input[type=submit] {
 }
 
 #selectors-container {
-  height: 8%;
+  height: 7%;
 /*  z-index: 2;*/
 }
 
@@ -375,23 +367,25 @@ input[type=submit] {
   color: black;
 }
 
-#weights-container {
-	position: absolute;
-  height: 98%;
-  width: 15%;
-  top: 10%;
-  right: 0;
+.header {
+  display: none;
+  text-align: center;
+  height: 7%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 7%;
+  font-size: 1.2em;
 }
 
 .weight {
-  display: none;
-}
+/*  display: none;
+*/}
 
 .weight-type {
-  background-color: rgba(136,123,107,0.6);
+/*  background-color: rgba(136,123,107,0.6);
   font-size: 1.3em;
   height: 11%;
-  color: black;
+  color: black;*/
 }
 
 .weight-checkbox-form {
