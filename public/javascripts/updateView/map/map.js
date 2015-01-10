@@ -1,5 +1,5 @@
 function updateMap(){
-	$(".legend, .weight-legend").show();
+	$(".legend, .weight-legend").css({"display":"inline-block"});
 	var filter = $(".filter-type").attr("id");
   selectMapFilter[filter]();
 };

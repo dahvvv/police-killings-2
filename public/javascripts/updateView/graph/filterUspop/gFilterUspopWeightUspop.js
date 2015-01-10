@@ -7,7 +7,7 @@ function updateGraphFilterUspopWeightUspop(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightUspop;
 	createGraph(data, style);
-	var program = "<p class='program-text two-line'>When the same cities are scaled by their populations,<br>the degree to which Las Vegas is an outlier becomes clear.</p>";
+	var program = "<p>This graph shows those same top ten cities,<br>but instead of depicting their total people killed by police,<br>it depicts the cities' total people killed per one million residents.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/IA3kTOK.png' /><p>Las Vegas is clearly a massive outlier,<br>with over twice as many deaths per capita by police as any other city.</p><img src='http://i.imgur.com/xs47IJ1.png' /><p>Click on any bar,<br>and you will see an article<br>about someone who falls within that bar's demographic.</p><img src='http://i.imgur.com/b3oYx5D.png' />";
 	$('#program').html(program);
 };
 
@@ -63,7 +63,7 @@ var styleGraphFilterUspopWeightUspop = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = elem.label + ": " + elem.value + " " + elem.name;
+      tip.innerHTML = "In " + elem.label + ",<br>the police have killed " + elem.value + " people<br>for every million residents.";
     }
   },
   Events: {

@@ -1,6 +1,6 @@
 function updateGraphFilterRace(){
   readyWeightsToBeShown();
-  $("#usPop-weight, #arrests-weight, #age-weight, #illness-weight").show();
+  $("#usPop-weight, #age-weight, #illness-weight").show();
   var weight = detectWeight();
   selectGraphFilterRaceWeight[weight]();
 };

@@ -4,7 +4,7 @@ function updateGraphFilterUspopWeightAge(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightAge;
 	createGraph(data, style);
-	var program = "<p class='program-text four-line'>Purple represents victim ages within the national standard deviation.<br>The five cities on the left have exceptionally young victims.<br>The five cities on the right have exceptionally old victims.<br>Hover and click on the graphs for more information.</p>";
+	var program = "<p>This graph shows how, in different cities,<br>the police kill people of different ages.</p><p><div id='down-arrow'></div></p><p>For each city, the dark purple area represents people<br>who fall within one standard deviation<br>of the national average victim age<br>(meaning people who were 27 to 42 years old when killed).</p><p>(image here)</p><p>The farther away you get from the dark purple area,<br>the farther away the victim's age was from the national average.<br>Very light colors on the bottom represent very young victims.<br>Very light colors on the top represent very old victims.</p><p>You can see how this changes from city to city.<br>New Orleans, Orlando, Oakland, Houston, and DC are all nationally unusual,<br>in that their police forces kill mostly young people.</p><p>The cities on the right have police forces<br>who kill an unusual proportion of older people.</p>";
 	$('#program').html(program);
 };
 
@@ -42,7 +42,7 @@ function labelsGraphFilterUspopWeightAge(){
 		labelsAcross[city] = zeroFillArr(length);
 	});
 	return {
-		colorArr : ageFilterColorArr(),
+		colorArr : ageFilterColorArr2(),
 	  labelArrUpGraph : ageArr,
 	  labelObjCrossGraph : labelsAcross
 	};
@@ -84,7 +84,7 @@ var styleGraphFilterUspopWeightAge = {
         return el.victim_age === age && el.location_of_killing_city === city;
       });
       var percent = ((totalAgeCity.length/totalCity.length) * 100).toFixed(1);
-      tip.innerHTML = capCity + " " + elem.name + "-year-olds<br>make up " + percent + " percent<br>of " + capCity + " people who were killed by police";
+      tip.innerHTML = "In " + capCity + ",<br>" + percent + " percent of<br>all people killed by the police<br>were " + elem.name + " years old.";
     }
   },
   Events: {

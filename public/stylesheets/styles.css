@@ -16,7 +16,7 @@ a:visited {
   color: white;
   width: 100%;
   z-index: 100000000;
-  position: relative;
+  position: absolute;
   float: left;
   margin: 0 auto;
   margin-top: 25px;
@@ -34,22 +34,16 @@ a:visited {
 }
 
 #close-button {
-/*  position: absolute;
-  padding: 0 1.1% 0.4%;*/
+  position: absolute;
+  padding: 0 10px 3px;
   color: grey;
   border: 2px solid grey;
   border-radius: 35%;
-/*  top: 1.8%;
-  left: 1%;*/
+  margin: 1%;
   font-size: 1.5em;
   font-weight: 100;
   font-family: helvetica;
   cursor: pointer;
-}
-
-#back-button {
-/*  left: 6%;
-  display: none;*/
 }
 
 .about-graf {
@@ -85,10 +79,6 @@ a:visited {
   position: absolute;
 }
 
-#forward-button {
-  right: 6%;
-}
-
 .nav-button {
   position: absolute;
   height: 3em;
@@ -97,6 +87,11 @@ a:visited {
   border-radius: 100%;
   border: 2px solid grey;
   cursor: pointer;
+  margin: 1%;
+}
+
+#forward-button {
+  right: 10%;
 }
 
 .arrow {
@@ -187,15 +182,14 @@ select {
   color: black;
 }
 
-.legend, .weight-legend, {
-  display: none;
+.legend, .weight-legend {
   position: relative;
   display: inline-block;
   width: 12px;
   height: 12px;
   border-radius: 100%;
   border: 1px solid black;
-  top: 2px;
+  top: 2px; 
   left: 1px;
 }
 
@@ -372,10 +366,31 @@ input[type=submit] {
   margin: 4% 10% 8%;
 }
 
-.program-text {
+#program {
   text-align: center;
   font-size: 1.5em;
 }
+
+#program p {
+  margin-bottom: 5%;
+}
+
+#program img {
+  width: 60%;
+  left: 20%;
+  margin-bottom: 5%;
+}
+
+#program #down-arrow {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid grey;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
 /*
 .program-text.one-line {
   top: -2em;
