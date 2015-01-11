@@ -15,6 +15,7 @@
     <%= erb :_popup_template %>
     <%= erb :_shots_template %>
     <%= erb :_shots_race_template %>
+    <%= erb :_graph_legend_template %>
 
     <title>Police Killings</title>
 
@@ -22,7 +23,6 @@
   <body>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.0/leaflet-heat.js'></script>
     <script src="/javascripts/main.js"></script>
-    <script src="/javascripts/updateView/updateView.js"></script>
     <script src="/javascripts/updateView/weight.js"></script>
     <script src="/javascripts/updateView/displays/displaySelector.js"></script>
     <script src="/javascripts/updateView/displays/heatmap.js"></script>
@@ -94,7 +94,6 @@
     <script src="/javascripts/updateView/heatmap/heatmapFilterShots.js"></script>
     <script src="/javascripts/updateView/heatmap/heatmapFilterUnarmed.js"></script>
     <script src="/javascripts/updateView/heatmap/heatmapFilterUspop.js"></script>
-    <script src="/javascripts/programs.js"></script>
     <script src="/javascripts/about.js"></script>
 
     <%= yield %>

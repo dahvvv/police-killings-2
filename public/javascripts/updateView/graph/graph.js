@@ -1,5 +1,6 @@
 function updateGraph(){
 	$(".filter-form").hide();
+  $(".graph-legend-container").hide();
   var filter = $(".filter-type").attr("id");
 	emptyGraph(selectGraphFilter[filter]);
 };
@@ -57,6 +58,23 @@ function labelsToData(labels){
 function createGraph(data, style){
   var graph = new $jit.BarChart(style);
   graph.loadJSON(data);
+};
+
+function makeGraphLegend(labels){
+  var top = 61;
+  $.each(labels.labelArrUpGraph, function(i,val){
+    top -=3;
+    var text = $(document.createElement("span"));
+    text.addClass("legend-text")
+    .html(capitalize(val) + "<br />")
+    .prependTo($(".graph-legend-container"));
+    var legend = $(document.createElement("span"));
+    legend.addClass("graph-legend")
+    .attr("id", val.replace(" ","-"))
+    .css({"background-color":labels.colorArr[i]})
+    .prependTo($(".graph-legend-container"));
+  });
+  $(".graph-legend-container").css({"top":top + "%"});
 };
 
 var baseColor = "#0066CC";

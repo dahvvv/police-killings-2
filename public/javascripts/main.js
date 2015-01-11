@@ -20,9 +20,16 @@ var updateDisplay = {
   },
 };
 
+function capitalize(str){
+  str = str.replace(/\b[a-z]/g, function(letter){
+    return letter.toUpperCase();
+  });
+  return str;
+};
+
 $(function(){
 
-  $(".weight, .filter-form, .weight-form").hide();
+  $(".weight, .filter-form, .weight-form, .graph-legend-container").hide();
 
   map = L.mapbox.map("map-one", "marpborxmarrrpborrrrrx.kg7bjg5l", {
     scrollWheelZoom: true,

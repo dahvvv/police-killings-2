@@ -6,6 +6,9 @@ function updateGraphFilterAgeWeightIllness(){
 		labels["labelObjCrossGraph"][age] = [0,0];
 	};
 	labels = dataGraphFilterAgeWeightIllness(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightIllness;
 	createGraph(data, style);

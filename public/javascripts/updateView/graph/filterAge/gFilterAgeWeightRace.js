@@ -6,10 +6,20 @@ function updateGraphFilterAgeWeightRace(){
 		labels["labelObjCrossGraph"][age] = [0,0,0,0,0];
 	};
 	labels = dataGraphFilterAgeWeightRace(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
+  $.each($(".graph-legend-container").children(".legend-text"), function(i,span){
+    var race = span.innerHTML
+    .split("<")[0]
+    .toLowerCase();
+    race = capitalize(abbreviateRace(race, "vertical"));
+    this.innerHTML = race + "<br>";
+  });
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightRace;
 	createGraph(data, style);
-	var program = "<p class='program-text one-line'>Age race Graph</p>";
+	var program = "This graph shows how many people of different races were killed by police, for each year of age.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/GkY1nCi.png' /><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/JRaoZ76.png' /><p>Click on a bar to see the source for a randomly selected person of that age and race.  Click again to see a new person of that age and race.</p><a style='cursor:pointer' href='http://www.nytimes.com/2009/11/23/nyregion/23shoot.html?_r=0' target='_blank'><img src='http://i.imgur.com/UlNpidf.png' /></a><p>Even though white people make up over 75% of the US population,<br>more black people than white people have been killed by police<br>for every single year of age between 10 and 25.</p><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/NRemSWt.png' />";
 	$('#program').html(program);
 };
 
@@ -70,7 +80,8 @@ var styleGraphFilterAgeWeightRace = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = elem.name + " " + elem.label + "-year-olds<br>who were killed by the police:<br>" + elem.value;
+      var yearYears = elem.label === "1" ? "year" : "years";
+      tip.innerHTML = "The police have killed " + elem.value + " people<br>who were " + elem.label + " " + yearYears + " old<br>and " + elem.name + "."
     }
   },
   Events: {

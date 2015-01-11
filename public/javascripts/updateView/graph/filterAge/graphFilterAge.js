@@ -1,20 +1,8 @@
 function updateGraphFilterAge(){
   readyWeightsToBeShown();
-  $("#usPop-weight, #arrests-weight, #race-weight, #illness-weight").show();
+  $("#race-weight, #illness-weight").show();
   var weight = detectWeight();
   selectGraphFilterAgeWeight[weight]();
-
-	if (choosers.weight === "none"){
-		updateGraphFilterAgeWeightNone();
-	} else if (choosers.weight === "usPop"){
-		updateGraphFilterAgeWeightUspop();
-	} else if (choosers.weight === "arrests"){
-		updateGraphFilterAgeWeightArrests();
-	} else if (choosers.weight === "race"){
-		updateGraphFilterAgeWeightRace();
-	} else if (choosers.weight === "illness"){
-		updateGraphFilterAgeWeightIllness();
-	}
 };
 
 var selectGraphFilterAgeWeight = {
