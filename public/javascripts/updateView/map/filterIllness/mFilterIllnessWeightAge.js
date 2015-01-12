@@ -19,7 +19,7 @@ function updateMapFilterIllnessWeightAge(){
 };
 
 function dataFilterIllnessWeightAge(){
-	stateView = ($("#state-filter").val());
+	var stateView = ($("#state-filter").val());
 	var checkedIllness = checkIllness($("#illness-filter-form"));
   var formattedIllness = $.map(checkedIllness, function(val){
   	return formatCI[val];

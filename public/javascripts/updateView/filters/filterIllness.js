@@ -8,7 +8,8 @@ function checkIllness(form){
   return checkedIllness;
 };
 
-function dataFilterIllnessWeightNone(){var stateView = ($("#state-filter").val());
+function dataFilterIllnessWeightNone(){
+  var stateView = ($("#state-filter").val());
   var checkedIllness = checkIllness($("#illness-filter-form"));
   var formattedIllness = $.map(checkedIllness, function(val){
     return formatCI[val];
