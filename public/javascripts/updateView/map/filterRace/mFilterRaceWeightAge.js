@@ -4,7 +4,7 @@ function updateMapFilterRaceWeightAge(){
 		obj["geoStyle"] = {
 			fillColor: raceColors[obj.victim_race],
 	    color: 'black',
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
@@ -17,6 +17,7 @@ function updateMapFilterRaceWeightAge(){
 };
 
 function dataFilterRaceWeightAge(){
+	var stateView = $("#state-filter").val();
 	var checkedRaces = checkRaces($("#race-filter-form"));
 	checkedRaces = reorderRaces(checkedRaces);
 	var arr = [];
@@ -24,7 +25,11 @@ function dataFilterRaceWeightAge(){
     var filtered = allKillings.filter(function(el){
     	if (el.victim_age >= enteredAgeWRange().min 
     	&& el.victim_age <= enteredAgeWRange().max){
-    		return el.victim_race === race;
+    		if (stateView === null || stateView === "USA"){
+	        return el.victim_race === race;
+	      } else {
+	        return el.victim_race === race && el.location_of_killing_state === stateView;
+	      };
     	};
     });
     arr = arr.concat(filtered);
