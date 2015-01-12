@@ -12,9 +12,9 @@ function updateMapFilterUnarmedWeightShots(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = "<p class='program-text one-line'>Unarmed weight shots.</p>";
+	var program = programs.map.unarmed.shots;
 	$("#program").html(program);
-	$("#up-arrow").on("click", function(){
+	$(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
 };
