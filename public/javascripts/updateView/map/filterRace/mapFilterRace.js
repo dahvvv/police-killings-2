@@ -6,10 +6,6 @@ function updateMapFilterRace(){
 	selectMapFilterRaceWeight[weight]();
 };
 
-function updateMapFilterRaceWeightArrests(){
-	alert('where the fuck did this method go?');
-};
-
 var selectMapFilterRaceWeight = {
 	"none" : function(){
 		updateMapFilterRaceWeightNone();

@@ -90,11 +90,10 @@ $(function(){
     updateDisplay[display]();
   });
 
-  $("#state-selector").on("change", function(e){
+  $("#state-filter").on("change", function(e){
     e.preventDefault();
-    var choosers = detectChoosers();
-    var data = filterData(choosers);
-    updateDisplay(data, choosers);
+    var display = detectDisplay();
+    updateDisplay[display]();
   });
 
   $("#about-link, #close-button").on("click", function(e){

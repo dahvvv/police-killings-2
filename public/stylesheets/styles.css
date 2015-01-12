@@ -193,11 +193,6 @@ select {
   left: 1px;
 }
 
-/*.weight-legend {
-  width: 10px;
-  height: 10px;
-}*/
-
 .graph-legend-container {
   top: 43%;
   position: absolute;
@@ -216,41 +211,21 @@ select {
   background-color: crimson;
 }
 
-/*.weight-legend#alaskan {
-  border: 4px solid maroon;
-}*/
-
 .legend#asian {
   background-color: darkorange;
 }
-
-/*.weight-legend#asian {
-  border: 4px solid darkorange;
-}*/
 
 .legend#black {
   background-color: yellow;
 }
 
-/*.weight-legend#black {
-  border: 4px solid forestgreen;
-}*/
-
 .legend#hispanic {
   background-color: limegreen;
 }
 
-/*.weight-legend#hispanic {
-  border: 4px solid lightslategray;
-}*/
-
 .legend#white {
   background-color: royalblue;
 }
-
-/*.weight-legend#white {
-  border: 4px solid royalblue;
-}*/
 
 .legend#male {
   background-color: lightblue;
