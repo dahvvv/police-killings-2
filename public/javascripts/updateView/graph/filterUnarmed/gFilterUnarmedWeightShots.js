@@ -14,6 +14,9 @@ function updateGraphFilterUnarmedWeightShots(){
 	createGraph(data, style);
 	var program = programs.graph.unarmed.shots;
 	$('#program').html(program);
+  $(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataGraphFilterUnarmedWeightShots(labels){

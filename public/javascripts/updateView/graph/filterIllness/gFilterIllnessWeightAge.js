@@ -10,6 +10,9 @@ function updateGraphFilterIllnessWeightAge(){
   createGraph(data, style);
   var program = programs.graph.illness.age;
   $('#program').html(program);
+  $(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function labelsGraphFilterIllnessWeightAge(){

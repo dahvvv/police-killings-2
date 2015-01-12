@@ -16,6 +16,9 @@ function updateGraphFilterIllnessWeightRace(){
 	createGraph(data, style);
 	var program = programs.graph.illness.race;
 	$('#program').html(program);
+  $(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataGraphFilterIllnessWeightRace(labels){

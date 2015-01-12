@@ -13,7 +13,7 @@ function updateGraphFilterShotsWeightUnarmed(){
 	createGraph(data, style);
 	var program = programs.graph.shots.unarmed;
 	$('#program').html(program);
-  $("#up-arrow").on("click", function(){
+  $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
 };

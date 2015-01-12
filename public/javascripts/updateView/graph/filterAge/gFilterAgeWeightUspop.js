@@ -11,7 +11,7 @@ function updateGraphFilterAgeWeightUspop(){
 	createGraph(data, style);
 	var program = "<p class='program-text one-line'>Age Population Graph</p>";
 	$('#program').html(program);
-  $("#up-arrow").on("click", function(){
+  $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
 };

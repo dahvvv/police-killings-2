@@ -12,7 +12,7 @@ function updateGraphFilterUspopWeightNone(){
 	createGraph(data, style);
 	var program = programs.graph.usPop.none;
 	$('#program').html(program);
-  $("#up-arrow").on("click", function(){
+  $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
 };
