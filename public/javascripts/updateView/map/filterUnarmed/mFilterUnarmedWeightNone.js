@@ -1,10 +1,3 @@
-function updateMapFilterUnarmed(){
-	$("#unarmed-filter-form").show();
-	$(".weight, #weight-header").hide();
-	var weight = detectWeight();
-	selectMapFilterUnarmedWeight[weight]();
-};
-
 function updateMapFilterUnarmedWeightNone(){
 	var data = dataFilterUnarmedWeightNone();
 	$.each(data, function(i,obj){
@@ -21,10 +14,4 @@ function updateMapFilterUnarmedWeightNone(){
 	makeMap(geoData);
 	var program = "<p class='program-text two-line'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>";
 	$("#program").html(program);
-};
-
-var selectMapFilterUnarmedWeight = {
-	"none" : function(){
-		updateMapFilterUnarmedWeightNone();
-	},
 };
