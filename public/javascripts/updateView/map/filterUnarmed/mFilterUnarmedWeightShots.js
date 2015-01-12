@@ -4,7 +4,7 @@ function updateMapFilterUnarmedWeightShots(){
 		obj["geoStyle"] = {
 			fillColor: unarmedColors[obj.victim_unarmed],
 	    color: "black",
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
@@ -25,8 +25,8 @@ function dataFilterUnarmedWeightShots(){
 	var arr = [];
   $.each(formattedUnarmed, function(i,val){
     var filtered = allKillings.filter(function(el){
-    	if (el.shots_fired >= shotsRange().min 
-    	&& el.shots_fired <= shotsRange().max){
+    	if (el.shots_fired >= shotsWRange().min 
+    	&& el.shots_fired <= shotsWRange().max){
     		if (stateView === null 
     		|| stateView === "USA"){
     			return el.victim_unarmed === val;
@@ -34,25 +34,6 @@ function dataFilterUnarmedWeightShots(){
     			return el.victim_unarmed === val && el.location_of_killing_state === stateView;
     		};
     	};
-
-    	// if (stateView === null || stateView === "USA"){
-    	// 	return el.victim_unarmed === val 
-    	// 	&& el.shots_fired >= shotsRange().min 
-    	// 	&& el.shots_fired <= shotsRange().max;
-    	// }
-
-
-     //  if (val === "armed"){
-     //    if (el.victim_unarmed === false){
-     //    	return el.shots_fired >= shotsRange().min 
-     //    	&& el.shots_fired <= shotsRange().max;
-     //    };
-     //  } else if (val === "unarmed"){
-     //    if (el.victim_unarmed === true){
-     //    	return el.shots_fired >= shotsRange().min 
-     //    	&& el.shots_fired <= shotsRange().max;
-     //    };
-     //  }
     });
     arr = arr.concat(filtered);
   });

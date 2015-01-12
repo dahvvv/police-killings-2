@@ -3,7 +3,15 @@ function shotsRange(){
   min = min === "" ? 0 : min;
   var max = $('#shots-max').val();
   max = max === "" ? 999 : max;
-  return {min: min, max: max};
+  return {min: parseInt(min), max: parseInt(max)};
+};
+
+function shotsWRange(){
+  var min = $('#shots-w-min').val();
+  min = min === "" ? 0 : min;
+  var max = $('#shots-w-max').val();
+  max = max === "" ? 999 : max;
+  return {min: parseInt(min), max: parseInt(max)};
 };
 
 function dataFilterShotsWeightNone(){

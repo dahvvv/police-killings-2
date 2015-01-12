@@ -97,3 +97,11 @@ function addGeoLayer(geoData){
     geoLayer.addTo(map);
   };
 };
+
+function basicRadius(){
+  if ($("#state-filter").val() === null || $("#state-filter").val() === "USA"){
+    return 7;
+  } else {
+    return 10;
+  };
+};
