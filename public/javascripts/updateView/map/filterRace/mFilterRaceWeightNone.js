@@ -4,7 +4,7 @@ function updateMapFilterRaceWeightNone(){
 		obj["geoStyle"] = {
 			fillColor: raceColors[obj.victim_race],
 	    color: "black",
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};

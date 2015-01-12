@@ -8,12 +8,17 @@ function checkRaces(form){
 };
 
 function dataFilterRaceWeightNone(){
+  var stateView = $("#state-filter").val();
   var checkedRaces = checkRaces($("#race-filter-form"));
   checkedRaces = reorderRaces(checkedRaces);
   var arr = [];
-  $.each(checkedRaces, function(i,val){
+  $.each(checkedRaces, function(i,race){
     var filtered = allKillings.filter(function(el){
-      return el.victim_race === val;
+      if (stateView === null || stateView === "USA"){
+        return el.victim_race === race;
+      } else {
+        return el.victim_race === race && el.location_of_killing_state === stateView;
+      };
     });
     arr = arr.concat(filtered);
   });
