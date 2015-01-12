@@ -8,7 +8,7 @@ function updateGraphFilterUspopWeightAge(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightAge;
 	createGraph(data, style);
-	var program = "<p>This graph shows how, in different cities,<br>the police kill people of different ages.</p><p><div id='down-arrow'></div></p><p>For each city, the dark purple area represents people<br>who fall within one standard deviation<br>of the national average victim age<br>(meaning people who were 27 to 42 years old when killed).</p><p>(image here)</p><p>The farther away you get from the dark purple area,<br>the farther away the victim's age was from the national average.<br>Very light colors on the bottom represent very young victims.<br>Very light colors on the top represent very old victims.</p><p>You can see how this changes from city to city.<br>New Orleans, Orlando, Oakland, Houston, and DC are all nationally unusual,<br>in that their police forces kill mostly young people.</p><p>The cities on the right have police forces<br>who kill an unusual proportion of older people.</p>";
+	var program = programs.graph.usPop.age;
 	$('#program').html(program);
 };
 

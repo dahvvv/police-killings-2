@@ -12,7 +12,7 @@ function updateGraphFilterUnarmedWeightShots(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUnarmedWeightShots;
 	createGraph(data, style);
-	var program = "<p>This graph shows how many armed and unarmed people<br>have been killed by police,<br>and how many shots the police fired.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/iG4PtIW.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who fits into the area that you clicked.<br>Click again to see a new, random person who fits in that area.</p><a style='cursor:pointer' href='http://www.myfoxphilly.com/story/25316597/police-involved-shooting' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/ptKnd7A.png' /></a><a style='cursor:pointer' href='http://www.timesunion.com/local/article/Video-relays-deadly-day-4375146.php' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/nY0JqhM.png' /></a><p class='program-text three-line'>Nineteen times on record,<br>the police have killed someone by firing at least ten shots,<br>and the victim was unarmed.</p>";
+	var program = programs.graph.unarmed.shots;
 	$('#program').html(program);
 };
 

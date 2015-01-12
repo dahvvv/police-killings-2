@@ -7,7 +7,7 @@ function updateGraphFilterRaceWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterRaceWeightNone;
 	createGraph(data, style);
-	var program = "<p>This graph shows how many people have been killed by police, by race.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/Vo28qyh.png' /><p>Click on a bar to see the source for a randomly selected person of that race.</p><img src='http://i.imgur.com/KLzted8.png' /><p>Significantly more white people have been killed by police than any other race.  However, white people make up over 75% of the US population.  To see the data scaled by population, click 'population' on the righthand column.</p><img src='http://i.imgur.com/XaK8FrK.png' />";
+	var program = programs.graph.race.none;
 	$('#program').html(program);
 };
 

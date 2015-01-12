@@ -10,7 +10,7 @@ function updateGraphFilterUspopWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightNone;
 	createGraph(data, style);
-	var program = "<p>This graph shows the top ten U.S. cities<br>in order of how many of their residents<br>have been killed by police.</p><p><div id='down-arrow'></div></p><p>Hover over any bar on the graph<br>to see relevant information in sentence form.</p><img src='http://i.imgur.com/r6oCkvt.png' /><p>You can see that New York City and Las Vegas have by far the most deaths.<br>If it were its own city, Brooklyn would be third.</p><img src='http://i.imgur.com/bS0GMGj.png' /><p>Click on any bar on the graph,<br>and you will see an article<br>about someone who falls within that bar's demographic.</p><img src='http://i.imgur.com/rN95PvH.png' /><p>If you click the same bar again, you'll get a new article about a different person.</p><img src='http://i.imgur.com/yMPYPgl.png' />";
+	var program = programs.graph.usPop.none;
 	$('#program').html(program);
 };
 

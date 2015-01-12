@@ -8,7 +8,7 @@ function updateGraphFilterIllnessWeightAge(){
   var data = labelsToData(labels);
   var style = styleGraphFilterIllnessWeightAge;
   createGraph(data, style);
-  var program = "<p class='program-text four-line'>People killed by police while showing clear signs of mental illness<br>tend to be older than people with no signs of mental illness.<br>The average age of a victim with no signs of illness is 33.4 years old.<br>For those victims with mental illness, the average age is 38.5 years old.</p>";
+  var program = programs.graph.illness.age;
   $('#program').html(program);
 };
 

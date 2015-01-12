@@ -19,7 +19,7 @@ function updateGraphFilterAgeWeightRace(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightRace;
 	createGraph(data, style);
-	var program = "<p>This graph shows how many people of different races have been killed by police, for each year of age.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/GkY1nCi.png' /><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/JRaoZ76.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who belongs to the area that you clicked.<br>Click again to see the source article for a new person.</p><a style='cursor:pointer' href='http://www.nytimes.com/2009/11/23/nyregion/23shoot.html?_r=0' target='_blank'><img src='http://i.imgur.com/UlNpidf.png' /></a>";
+	var program = programs.graph.age.race;
 	$('#program').html(program);
 };
 

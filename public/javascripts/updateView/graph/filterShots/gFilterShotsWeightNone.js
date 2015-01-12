@@ -11,7 +11,7 @@ function updateGraphFilterShotsWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterShotsWeightNone;
 	createGraph(data, style);
-	var program = "<p>This graph shows how many people<br>have been killed by police,<br>sorted by how many shots the police fired.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/eRhGiHh.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who belongs to the area that you clicked.<br>Click again to see the source article for a new person.</p><a style='cursor:pointer' href='http://en.wikipedia.org/wiki/Tyisha_Miller' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/oWbc32y.png' /></a><a style='cursor:pointer' href='http://en.wikipedia.org/wiki/Jose_Guerena_shooting' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/3rGAbbO.png' /></a><p>Most reports of people killed by police don't include how many shots were fired.<br>But of the 502 reports that do include that information,<br>74 of them report ten shots or more.<br>That's ten shots or more in 14.7% of all reported cases.</p>";
+	var program = programs.graph.shots.none;
 	$('#program').html(program);
 };
 

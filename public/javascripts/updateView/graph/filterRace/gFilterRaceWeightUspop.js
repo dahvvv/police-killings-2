@@ -7,7 +7,7 @@ function updateGraphFilterRaceWeightUspop(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterRaceWeightUspop;
 	createGraph(data, style);
-	var program = "<p>This graph shows how many people per million have been killed by the police, by race.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/cOrM5E8.png' /><p>Accounting for racial population, black people are four times as likely to be killed by police than white people.</p><p>Click on a bar to see the source for a randomly selected person of that race.</p><a style='cursor:pointer' href='http://www.fbi.gov/neworleans/press-releases/2012/five-new-orleans-police-officers-sentenced-on-civil-rights-and-obstruction-of-justice-violations-in-the-danziger-bridge-shooting-case' target='_blank'><img src='http://i.imgur.com/7Kl5t95.png' /></a>";
+	var program = programs.graph.race.usPop;
 	$('#program').html(program);
 };
 

@@ -10,7 +10,7 @@ function updateGraphFilterUspopWeightUspop(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightUspop;
 	createGraph(data, style);
-	var program = "<p>This graph shows those same top ten cities,<br>but instead of depicting their total people killed by police,<br>it depicts the cities' total people killed per one million residents.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/IA3kTOK.png' /><p>Las Vegas is clearly a massive outlier,<br>with over twice as many deaths per capita by police as any other city.</p><img src='http://i.imgur.com/xs47IJ1.png' /><p>Click on any bar,<br>and you will see an article<br>about someone who falls within that bar's demographic.</p><img src='http://i.imgur.com/b3oYx5D.png' />";
+	var program = programs.graph.usPop.usPop;
 	$('#program').html(program);
 };
 

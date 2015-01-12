@@ -1,10 +1,20 @@
 function updateGraphFilterIllnessWeightRace(){
 	var labels = labelsGraphFilterIllnessWeightRace;
 	labels = dataGraphFilterIllnessWeightRace(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
+  $.each($(".graph-legend-container").children(".legend-text"), function(i,span){
+    var race = span.innerHTML
+    .split("<")[0]
+    .toLowerCase();
+    race = capitalize(abbreviateRace(race, "vertical"));
+    this.innerHTML = race + "<br>";
+  });
 	var data = labelsToData(labels);
 	var style = styleGraphFilterIllnessWeightRace;
 	createGraph(data, style);
-	var program = "<p class='program-text four-line'>White and asian people who are killed by the police<br>are the victims most likely to have been mentally ill.<br>Over 30% of white and asian people killed by police<br>were exhibiting clear signs of mental illness.</p>";
+	var program = programs.graph.illness.race;
 	$('#program').html(program);
 };
 
@@ -28,16 +38,10 @@ var labelsGraphFilterIllnessWeightRace = {
     "#3366FF",
     "#5200A3",
     "#FF0000",
+    "#FF6600",
     "#FFFF00",
-    "#33CC33"
   ],
-  labelArrUpGraph : [
-    "white",
-    "black",
-    "hispanic and/or latin",
-    "asian",
-    "alaskan and/or pacific islander",
-  ],
+  labelArrUpGraph : races,
   labelObjCrossGraph : {
   	"no symptoms" : [0,0,0,0,0],
   	"symptoms" : [0,0,0,0,0]
@@ -69,7 +73,8 @@ var styleGraphFilterIllnessWeightRace = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "from " + elem.name + ",<br>" + elem.value + " people were killed by police while exhibiting " + elem.label + " of mental illness.";
+
+      tip.innerHTML = "On record,<br>the police have killed " + elem.value + " people<br>who were " + elem.name + "<br>and were exhibiting " + elem.label + " of mental illness.";
     }
   }
 };

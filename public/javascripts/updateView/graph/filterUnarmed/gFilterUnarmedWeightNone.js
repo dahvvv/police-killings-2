@@ -7,7 +7,7 @@ function updateGraphFilterUnarmedWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUnarmedWeightNone;
 	createGraph(data, style);
-	var program = "<p>This graph shows how many armed and unarmed people<br>have been killed by police.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/FE4nttB.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who belongs to the area that you clicked.<br>Click again to see the source article for a new person.</p><a style='cursor:pointer' href='http://www.kesq.com/kesq/Police-shoot-and-kill-Indio-man-details-of-shooting-still-a-mystery/18561016' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/K8QX3gT.png' /></a><a style='cursor:pointer' href='http://fingerlakesdailynews.com/news/details.cfm?clientid=16&id=32812#.VLMeBGTF8Ye' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/owCrm4S.png' /></a><p>You can see that in over 20% of all recorded instances,<br>when the police killed somebody,<br>the victim was unarmed.</p>";
+	var program = programs.graph.unarmed.none;
 	$('#program').html(program);
 };
 

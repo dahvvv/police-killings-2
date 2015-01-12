@@ -12,7 +12,7 @@ function updateGraphFilterAgeWeightIllness(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightIllness;
 	createGraph(data, style);
-	var program = "<p class='program-text one-line'>Age illness Graph</p>";
+	var program = program.graph.age.illness;
 	$('#program').html(program);
 };
 
