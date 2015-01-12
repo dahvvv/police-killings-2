@@ -15,7 +15,7 @@ function shotsWRange(){
 };
 
 function dataFilterShotsWeightNone(){
-  var stateView = ($("#state-filter").val());
+  var stateView = $("#state-filter").val();
   arr = allKillings.filter(function(el){
     if (stateView === null || stateView === "USA"){
       return el.shots_fired >= shotsRange().min 
