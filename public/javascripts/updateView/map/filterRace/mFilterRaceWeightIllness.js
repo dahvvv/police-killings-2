@@ -18,6 +18,7 @@ function updateMapFilterRaceWeightIllness(){
 };
 
 function dataFilterRaceWeightIllness(){
+	var stateView = $("#state-filter").val();
 	var checkedRaces = checkRaces($("#race-filter-form"));
 	checkedRaces = reorderRaces(checkedRaces);
 	var checkedIllness = checkIllness($("#illness-weight-form"));
@@ -28,7 +29,11 @@ function dataFilterRaceWeightIllness(){
 	$.each(checkedRaces, function(i,race){
     var filtered = allKillings.filter(function(el){
 			if (_.contains(formattedIllness, el.symptoms_of_mental_illness)){
-    		return el.victim_race === race;
+    		if (stateView === null || stateView === "USA"){
+	        return el.victim_race === race;
+	      } else {
+	        return el.victim_race === race && el.location_of_killing_state === stateView;
+	      };
     	};
     });
     arr = arr.concat(filtered);
