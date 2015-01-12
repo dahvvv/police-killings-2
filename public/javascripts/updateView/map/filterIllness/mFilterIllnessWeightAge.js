@@ -16,6 +16,9 @@ function updateMapFilterIllnessWeightAge(){
 	makeMap(geoData);
 	var program = "<p class='program-text two-line'>Illness!<br>Age!</p>";
 	$("#program").html(program);
+	$("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataFilterIllnessWeightAge(){

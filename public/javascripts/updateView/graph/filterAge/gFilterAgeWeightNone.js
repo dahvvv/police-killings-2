@@ -14,6 +14,9 @@ function updateGraphFilterAgeWeightNone(){
 	createGraph(data, style);
 	var program = programs.graph.age.none;
 	$('#program').html(program);
+  $("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataGraphFilterAgeWeightNone(labels){

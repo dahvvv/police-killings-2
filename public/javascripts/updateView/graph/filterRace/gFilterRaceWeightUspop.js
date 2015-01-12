@@ -9,6 +9,9 @@ function updateGraphFilterRaceWeightUspop(){
 	createGraph(data, style);
 	var program = programs.graph.race.usPop;
 	$('#program').html(program);
+  $("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataGraphFilterRaceWeightUspop(labels){

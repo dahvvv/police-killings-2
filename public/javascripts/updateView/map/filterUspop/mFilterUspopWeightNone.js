@@ -4,7 +4,7 @@ function updateMapFilterUspopWeightNone(){
 		obj["geoStyle"] = {
 			fillColor: "red",
 	    color: "black",
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
@@ -12,6 +12,9 @@ function updateMapFilterUspopWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = "<p>Every dot on this map represents a person who was killed by police.</p><p><div id='down-arrow' style='margin-top:5%'></div></p><p>You can click on a dot to learn more about that person.</p><img src='http://i.imgur.com/A9aRIgN.png' /><p>Once you've clicked a dot,<br>then clicking on the blue 'source' link<br>will lead to an article about that person.<p><img src='http://i.imgur.com/sg6atKn.png' />";
+	var program = programs.map.usPop.none;
 	$("#program").html(program);
+	$("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };

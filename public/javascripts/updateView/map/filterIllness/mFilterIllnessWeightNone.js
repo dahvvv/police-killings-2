@@ -16,5 +16,8 @@ function updateMapFilterIllnessWeightNone(){
 	makeMap(geoData);
 	var program = "<p class='program-text two-line'>People killed by the police while exhibiting clear signs of mental illness.<br>(select boxes on the left to see no signs, or both).</p>";
 	$("#program").html(program);
+	$("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 

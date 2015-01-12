@@ -20,6 +20,9 @@ function updateGraphFilterShotsWeightRace(){
 	createGraph(data, style);
 	var program = programs.graph.shots.race;
 	$('#program').html(program);
+  $("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataGraphFilterShotsWeightRace(labels){

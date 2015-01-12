@@ -12,6 +12,9 @@ function updateGraphFilterUspopWeightUspop(){
 	createGraph(data, style);
 	var program = programs.graph.usPop.usPop;
 	$('#program').html(program);
+  $("#up-arrow").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataGraphFilterUspopWeightUspop(labels){

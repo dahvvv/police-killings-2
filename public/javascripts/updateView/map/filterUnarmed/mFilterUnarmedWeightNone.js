@@ -4,7 +4,7 @@ function updateMapFilterUnarmedWeightNone(){
 		obj["geoStyle"] = {
 			fillColor: unarmedColors[obj.victim_unarmed],
 	    color: "black",
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
@@ -12,7 +12,10 @@ function updateMapFilterUnarmedWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = "<p class='program-text two-line'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>";
+	var program = programs.map.unarmed.none;
 	$("#program").html(program);
+	$(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
