@@ -76,5 +76,26 @@ var styleGraphFilterIllnessWeightRace = {
 
       tip.innerHTML = "On record,<br>the police have killed " + elem.value + " people<br>who were " + elem.name + "<br>and were exhibiting " + elem.label + " of mental illness.";
     }
+  },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterIllnessWeightRaceTipSample(node);
+    }
   }
+};
+
+function graphFilterIllnessWeightRaceTipSample(elem){
+  if (elem.label === "symptoms"){
+    var symptoms = "yes";
+  } else if (elem.label === "no symptoms"){
+    var symptoms = "no";
+  };
+  var race = expandRace(elem.name,"horizontal");
+  var collection = allKillings.filter(function(el){
+    return el.symptoms_of_mental_illness === symptoms && el.victim_race === race;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };
