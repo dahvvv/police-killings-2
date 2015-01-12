@@ -30,5 +30,5 @@ function dataFilterUnarmedWeightNone(){
 
 var unarmedColors = {
   false : "red",
-  true  : "white", 
+  true  : "mistyrose", 
 };
