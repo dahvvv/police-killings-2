@@ -36,8 +36,3 @@ function dataFilterIllnessWeightRace(){
   });
   return arr;
 };
-
-var formatCI = {
-	"ill": "yes",
-	"not-ill": "no"
-};
