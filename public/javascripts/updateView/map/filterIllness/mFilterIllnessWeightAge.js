@@ -1,5 +1,5 @@
 function updateMapFilterIllnessWeightAge(){
-	filterWeightLegendRegStyle();
+	filterIllnessLegendRegStyle();
 	$("#illness-filter-form").show();
 	var data = dataFilterIllnessWeightAge();
 	$.each(data, function(i,obj){

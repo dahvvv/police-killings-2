@@ -17,15 +17,15 @@ var selectMapFilterIllnessWeight = {
 	},
 };
 
-function filterWeightLegendRegStyle(){
-	var legend = ($("#illness-filter-form").children(".legend"));
+function filterIllnessLegendRegStyle(){
+	var legend = $("#illness-filter-form").children(".legend");
 	$.each(legend, function(i,el){
 		var color = el.id === "ill" ? illnessColors["yes"] : illnessColors["no"];
 		$(el).css({"width":"11px","height":"11px","background-color":color});
 	});
 };
 
-function filterWeightLegendAltStyle(legend){
+function filterIllnessLegendAltStyle(legend){
 	var illR = Math.ceil(illnessRadius["yes"]*1.5) + "px";
 	var notIllR = Math.ceil(illnessRadius["no"]*1.5) + "px";
 	legend.css({"background":"transparent"});
