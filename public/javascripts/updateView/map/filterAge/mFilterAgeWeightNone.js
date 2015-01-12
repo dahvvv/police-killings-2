@@ -1,26 +1,12 @@
-function updateMapFilterAge(){
-	$("#age-filter-form").show();
-	$(".weight, #weight-header").hide();
-	var weight = detectWeight();
-	selectMapFilterAgeWeight[weight]();
-};
-
-var selectMapFilterAgeWeight = {
-	"none" : function(){
-		updateMapFilterAgeWeightNone();
-	},
-};
-
-
 function updateMapFilterAgeWeightNone(){
-	var data = filterByAge();
+	var data = dataFilterAgeWeightNone();
   var lowerBound = 0;
   var upperBound = 107;
   var lowStandDev = 21;
   var highStandDev = 48;
   var regR = 3;
   var maxR = 25;
-  var regRGBArr = [0,76,153];
+  var regRGBArr = [85,26,139];
   var youngRGBArr = [255,255,0];
   var oldRGBArr = [255,0,0];
 	$.each(data, function(i,obj){

@@ -1,5 +1,5 @@
 function updateMapFilterUspopWeightNone(){
-	var data = allKillings;
+	var data = dataFilterUspopWeightNone();
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
 			fillColor: "red",

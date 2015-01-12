@@ -15,7 +15,7 @@ function enteredAgeRange(){
   min = (min === "" || min === "0") ? 1 : min;
   var max = $('#age-max').val();
   max = max === "" ? 999 : max;
-  return {min: min, max: max};
+  return {min: parseInt(min), max: parseInt(max)};
 };
 
 function enteredAgeWRange(){
@@ -26,15 +26,30 @@ function enteredAgeWRange(){
   return {min: parseInt(min), max: parseInt(max)};
 };
 
-function filterByAge(){
-  arr = allKillings.filter(function(el){
-    return el.victim_age >= enteredAgeRange().min && el.victim_age <= enteredAgeRange().max && el.victim_age != null;
+function dataFilterAgeWeightNone(){
+  var stateView = $("#state-filter").val();
+  var arr = allKillings.filter(function(el){
+    if (stateView === null || stateView === "USA"){
+      return el.victim_age >= enteredAgeRange().min 
+      && el.victim_age <= enteredAgeRange().max;
+    } else {
+      return el.victim_age >= enteredAgeRange().min 
+      && el.victim_age <= enteredAgeRange().max 
+      && el.location_of_killing_state === stateView;
+    };
   });
   return arr;
 };
 
+// function filterByAge(){
+//   var arr = allKillings.filter(function(el){
+//     return el.victim_age >= enteredAgeRange().min && el.victim_age <= enteredAgeRange().max && el.victim_age != null;
+//   });
+//   return arr;
+// };
+
 function filterAgeNotNil(){
-  arr = allKillings.filter(function(el){
+  var arr = allKillings.filter(function(el){
     return el.victim_age != null;
   });
   return arr;
