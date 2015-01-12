@@ -1,5 +1,4 @@
 function updateMapFilterIllness(){
-	$("#illness-filter-form").show();
 	readyWeightsToBeShown();
 	$('#race-weight, #age-weight').show();
 	var weight = detectWeight();
@@ -18,11 +17,28 @@ var selectMapFilterIllnessWeight = {
 	},
 };
 
-function filterWeightLegendFromWeightRace(){
+function filterWeightLegendRegStyle(){
 	var legend = ($("#illness-filter-form").children(".legend"));
 	$.each(legend, function(i,el){
 		var color = el.id === "ill" ? illnessColors["yes"] : illnessColors["no"];
 		$(el).css({"width":"11px","height":"11px","background-color":color});
 	});
-	$("button").off("click", filterWeightLegendFromWeightRace);
+};
+
+function filterWeightLegendAltStyle(legend){
+	var illR = Math.ceil(illnessRadius["yes"]*1.5) + "px";
+	var notIllR = Math.ceil(illnessRadius["no"]*1.5) + "px";
+	legend.css({"background":"transparent"});
+	$(legend[0]).css({"width":illR,"height":illR});
+	$(legend[1]).css({"width":notIllR,"height":notIllR});
+};
+
+var illnessRadius = {
+  "yes" : 14,
+  "no"  : 6, 
+};
+
+var formatCI = {
+	"ill": "yes",
+	"not-ill": "no"
 };

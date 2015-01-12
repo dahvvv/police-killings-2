@@ -8,7 +8,8 @@ function shotsRange(){
 
 function dataFilterShotsWeightNone(){
   arr = allKillings.filter(function(el){
-    return el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max;
+    return el.shots_fired >= shotsRange().min 
+    && el.shots_fired <= shotsRange().max;
   });
   return arr;
 };

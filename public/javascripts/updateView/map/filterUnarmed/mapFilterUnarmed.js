@@ -10,7 +10,7 @@ var selectMapFilterUnarmedWeight = {
 	"none" : function(){
 		updateMapFilterUnarmedWeightNone();
 	},
-	"shots" : function(){
+	"shots-weight" : function(){
 		updateMapFilterUnarmedWeightShots();
 	},
 };

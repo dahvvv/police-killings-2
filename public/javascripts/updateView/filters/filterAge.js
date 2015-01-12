@@ -18,6 +18,14 @@ function enteredAgeRange(){
   return {min: min, max: max};
 };
 
+function enteredAgeWRange(){
+  var min = $('#age-w-min').val();
+  min = (min === "" || min === "0") ? 1 : min;
+  var max = $('#age-w-max').val();
+  max = max === "" ? 999 : max;
+  return {min: parseInt(min), max: parseInt(max)};
+};
+
 function filterByAge(){
   arr = allKillings.filter(function(el){
     return el.victim_age >= enteredAgeRange().min && el.victim_age <= enteredAgeRange().max && el.victim_age != null;

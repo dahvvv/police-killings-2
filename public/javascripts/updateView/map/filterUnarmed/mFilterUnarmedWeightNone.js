@@ -15,3 +15,4 @@ function updateMapFilterUnarmedWeightNone(){
 	var program = "<p class='program-text two-line'>People killed by the police while they were unarmed<br>(select boxes on the left to see armed, or both).</p>";
 	$("#program").html(program);
 };
+
