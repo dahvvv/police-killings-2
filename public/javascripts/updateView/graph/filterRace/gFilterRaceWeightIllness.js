@@ -1,6 +1,9 @@
 function updateGraphFilterRaceWeightIllness(){
 	var labels = labelsGraphFilterRaceWeightIllness();
 	labels = dataGraphFilterRaceWeightIllness(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterRaceWeightIllness;
 	createGraph(data, style);

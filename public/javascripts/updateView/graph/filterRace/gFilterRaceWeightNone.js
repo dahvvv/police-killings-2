@@ -1,6 +1,9 @@
 function updateGraphFilterRaceWeightNone(){
 	var labels = labelsGraphFilterRaceWeightNone;
 	labels = dataGraphFilterRaceWeightNone(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterRaceWeightNone;
 	createGraph(data, style);
@@ -22,7 +25,7 @@ function dataGraphFilterRaceWeightNone(labels){
 
 var labelsGraphFilterRaceWeightNone = {
 	colorArr : [baseColor],
-  labelArrUpGraph : ["deaths per race"],
+  labelArrUpGraph : ["people killed by police"],
   labelObjCrossGraph : {
   	"white" : [0],
   	"black" : [0],

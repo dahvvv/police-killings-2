@@ -5,10 +5,13 @@ function updateGraphFilterShotsWeightUnarmed(){
 	};
 	labels["labelObjCrossGraph"]["20+"] = [0,0];
 	labels = dataGraphFilterShotsWeightUnarmed(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterShotsWeightUnarmed;
 	createGraph(data, style);
-	var program = "<p class='program-text two-line'>Whether the victim was armed or not, the average number of shots fired<br>by police remains about the same:  between 5.5 and 6.2 shots.</p>";
+	var program = "<p>This graph shows how many armed and unarmed people<br>have been killed by police,<br>sorted by how many shots the police fired.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/c0Rg69b.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who belongs to the area that you clicked.<br>Click again to see the source article for a new person.</p><a style='cursor:pointer' href='http://www.dallasnews.com/news/community-news/garland-mesquite/headlines/20120911-garland-police-say-officer-fired-as-many-as-41-shots-at-apparently-unarmed-man-before-he-died.ece' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/PEvNaDr.png' /></a><a style='cursor:pointer' href='http://articles.latimes.com/2013/apr/04/local/la-me--water-nozzle-verdict-20130405' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/zTg0OS0.png' /></a><p>Whether the victim was armed or not, the average number of shots fired<br>by police remains about the same:  between 5.5 and 6.2 shots.</p>";
 	$('#program').html(program);
 };
 
@@ -58,7 +61,31 @@ var styleGraphFilterShotsWeightUnarmed = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "<p>There are " + elem.value + " recorded cases in which the police shot " + elem.label + " times, and the victim victim was " + elem.name + ".";
+      var isAre = elem.value === 1 ? "is" : "are";
+      var caseCases = elem.value === 1 ? "case" : "cases";
+      var timeTimes = elem.label === "1" ? "time" : "times";
+      tip.innerHTML = "<p>There " + isAre + " " + elem.value + " recorded " + caseCases + " in which the police shot " + elem.label + " " + timeTimes + ", and the victim was " + elem.name + ".";
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterShotsWeightUnarmedTipSample(node);
+    }
+  }
+};
+
+function graphFilterShotsWeightUnarmedTipSample(elem){
+  var unarmed = elem.name === "unarmed";
+  var shots = elem.label;
+  var collection = allKillings.filter(function(el){
+    if (shots === "20+"){
+      return el.shots_fired > 20 && el.victim_unarmed === unarmed;
+    } else {
+      return el.shots_fired === parseInt(shots) && el.victim_unarmed === unarmed;
+    };
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

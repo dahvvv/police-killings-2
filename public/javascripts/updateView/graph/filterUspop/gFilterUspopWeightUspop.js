@@ -4,6 +4,9 @@ function updateGraphFilterUspopWeightUspop(){
 		labels["labelObjCrossGraph"][city] = [0];
 	});
 	labels = dataGraphFilterUspopWeightUspop(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightUspop;
 	createGraph(data, style);
@@ -34,7 +37,7 @@ function dataGraphFilterUspopWeightUspop(labels){
 
 var labelsGraphFilterUspopWeightUspop = {
 	colorArr : [baseColor],
-  labelArrUpGraph : ["police deaths per one million residents"],
+  labelArrUpGraph : ["people killed by police per million residents"],
   labelObjCrossGraph : {}
 };
 

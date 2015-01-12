@@ -71,3 +71,5 @@ var citiesByAge = [
   "Miami",
   "Henderson"
 ];
+
+var graphLegendAge = "<span class='graph-legend' style='background-color:#FFFFFF'></span><span class='legend-text'>107 years old</span><br /><span class='graph-legend' style='background-color:#FFFFAA'></span><span class='legend-text'>61 years old</span><br /><span class='graph-legend' style='background-color:#FFFF00'></span><span class='legend-text'>54 years old</span><br /><span class='graph-legend' style='background-color:#FF0000'></span><span class='legend-text'>48 years old</span><br /><span class='graph-legend' style='background-color:#551A8B'></span><span class='legend-text'>27-42 years old</span><br /><span class='graph-legend' style='background-color:#FF0000'></span><span class='legend-text'>20 years old</span><br /><span class='graph-legend' style='background-color:#FFFF00'></span><span class='legend-text'>16 years old</span><br /><span class='graph-legend' style='background-color:#FFFFAA'></span><span class='legend-text'>12 years old</span><br /><span class='graph-legend' style='background-color:#FFFFFF'></span><span class='legend-text'>1 year old</span><br />";

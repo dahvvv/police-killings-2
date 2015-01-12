@@ -5,10 +5,14 @@ function updateGraphFilterUnarmedWeightShots(){
 		labels["labelObjCrossGraph"]["unarmed"].push(0);
 	};
 	labels = dataGraphFilterUnarmedWeightShots(labels);
+  $(".graph-legend-container").empty()
+  .css({"top":"55%"})
+  .show();
+  $(graphLegendShots).appendTo($(".graph-legend-container"));
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUnarmedWeightShots;
 	createGraph(data, style);
-	var program = "<p class='program-text three-line'>Twenty times,<br>the police have killed someone by firing at least ten shots,<br>and the victim was unarmed.</p>";
+	var program = "<p>This graph shows how many armed and unarmed people<br>have been killed by police,<br>and how many shots the police fired.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img src='http://i.imgur.com/iG4PtIW.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who fits into the area that you clicked.<br>Click again to see a new, random person who fits in that area.</p><a style='cursor:pointer' href='http://www.myfoxphilly.com/story/25316597/police-involved-shooting' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/ptKnd7A.png' /></a><a style='cursor:pointer' href='http://www.timesunion.com/local/article/Video-relays-deadly-day-4375146.php' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/nY0JqhM.png' /></a><p class='program-text three-line'>Nineteen times on record,<br>the police have killed someone by firing at least ten shots,<br>and the victim was unarmed.</p>";
 	$('#program').html(program);
 };
 
@@ -22,13 +26,20 @@ function dataGraphFilterUnarmedWeightShots(labels){
 		var shots = obj.shots_fired >= 20 ? "20+" : obj.shots_fired
 		labels["labelObjCrossGraph"][unarmed][labels["labelArrUpGraph"].indexOf(shots)]++;
 	});
+  // $.each(labels["labelObjCrossGraph"], function(armedUnarmed, deathsArr){
+  //   var totalKilledArmedUnarmed = deathsArr.reduce(function(prev,current){
+  //     return prev + current;
+  //   });
+  //   labels["labelObjCrossGraph"][armedUnarmed] = $.map(deathsArr, function(totalKilled){
+  //     var percentKilledTimesHun = Math.ceil((totalKilled/totalKilledArmedUnarmed) * 10000);
+  //     return percentKilledTimesHun;
+  //   });
+  // });
 	return labels;
 };
 
 var labelsGraphFilterUnarmedWeightShots = {
-	colorArr : hexScaler("#0000B2","#7F0059",5)
-  .slice(0,4)
-  .concat(hexScaler("#7F0059","#FF0000",16)),
+  colorArr : hexScaler("#0000B2","#FF0000",20,5),
   labelArrUpGraph : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,"20+"],
   labelObjCrossGraph : {
   	"armed": [],
@@ -61,7 +72,29 @@ var styleGraphFilterUnarmedWeightShots = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML =  elem.value + " people were killed by the police<br>where the victim was " + elem.label + "<br>and the police fired " + elem.name + " times";
+      var shotShots = elem.name === 1 ? "shot" : "shots";
+      tip.innerHTML = elem.value + " times on record,<br>the police have killed someone<br>by firing " + elem.name + " " + shotShots + ",<br>and the victim was " + elem.label + ".";
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterUnarmedWeightShotsTipSample(node);
+    }
+  }
+};
+
+function graphFilterUnarmedWeightShotsTipSample(elem){
+  var shots = elem.name;
+  var unarmed = elem.label === "unarmed" ? true : false;
+  var collection = allKillings.filter(function(el){
+    if (shots === "20+"){
+      return el.shots_fired > 20 && el.victim_unarmed === unarmed;
+    } else {
+      return el.shots_fired === shots && el.victim_unarmed === unarmed;
+    };
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

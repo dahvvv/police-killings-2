@@ -1,5 +1,8 @@
 function updateGraphFilterAgeWeightNone(){
 	var labels = labelsGraphFilterAgeWeightNone;
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var min = ageRange()[0];
 	var max = ageRange()[1];
 	for (var age = min; age <= max; age++){
@@ -27,7 +30,7 @@ function dataGraphFilterAgeWeightNone(labels){
 
 var labelsGraphFilterAgeWeightNone = {
 	colorArr : [baseColor],
-  labelArrUpGraph : ["age"],
+  labelArrUpGraph : ["people killed by police"],
   labelObjCrossGraph : {}
 };
 
@@ -63,7 +66,7 @@ var styleGraphFilterAgeWeightNone = {
     enable: true,
     onShow: function(tip, elem) {
       var yearYears = elem.label === "1" ? "year" : "years";
-      tip.innerHTML = "The police have killed " + elem.value + " people who were " + elem.label + " " + yearYears + " old."
+      tip.innerHTML = "The police have killed " + elem.value + " people<br>who were " + elem.label + " " + yearYears + " old."
     }
   },
   Events: {

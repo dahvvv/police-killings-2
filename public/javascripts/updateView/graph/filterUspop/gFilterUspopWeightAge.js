@@ -1,6 +1,10 @@
 function updateGraphFilterUspopWeightAge(){
 	var labels = labelsGraphFilterUspopWeightAge();
 	labels = dataGraphFilterUspopWeightAge(labels);
+  $(".graph-legend-container").empty()
+  .css({"top":"44%"})
+  .show();
+  $(graphLegendAge).appendTo($(".graph-legend-container"));
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightAge;
 	createGraph(data, style);

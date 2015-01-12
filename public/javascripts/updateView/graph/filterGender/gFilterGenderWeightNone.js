@@ -1,6 +1,9 @@
 function updateGraphFilterGenderWeightNone(){
   var labels = labelsGraphFilterGenderWeightNone;
 	labels = dataGraphFilterGenderWeightNone(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterGenderWeightNone;
 	createGraph(data, style);
@@ -22,7 +25,7 @@ function dataGraphFilterGenderWeightNone(labels){
 
 var labelsGraphFilterGenderWeightNone = {
 	colorArr : [baseColor],
-  labelArrUpGraph : ["gender"],
+  labelArrUpGraph : ["people killed by police"],
   labelObjCrossGraph : {
   	"male" : [0],
   	"female" : [0]

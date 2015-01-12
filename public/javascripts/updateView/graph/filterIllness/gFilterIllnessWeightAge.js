@@ -1,6 +1,10 @@
 function updateGraphFilterIllnessWeightAge(){
   var labels = labelsGraphFilterIllnessWeightAge();
   labels = dataGraphFilterIllnessWeightAge(labels);
+  $(".graph-legend-container").empty()
+  .css({"top":"44%"})
+  .show();
+  $(graphLegendAge).appendTo($(".graph-legend-container"));
   var data = labelsToData(labels);
   var style = styleGraphFilterIllnessWeightAge;
   createGraph(data, style);
@@ -9,34 +13,37 @@ function updateGraphFilterIllnessWeightAge(){
 };
 
 function labelsGraphFilterIllnessWeightAge(){
-  var ageRangeArr = Array.apply(null, Array(ageRange()[1])).map(function (_, i) {
-    return i+1;
-  });
-  var agesAllZero = [];
-  for (i = 0; i < ageRangeArr.length; i++){
-    agesAllZero.push(0);
-  };
+  var ageArr = allAgesArr();
+  var length = ageArr.length;
   return {
-    colorArr : hexScaler("#FF3300","#0000FF",(ageRangeArr.length)),
-    labelArrUpGraph : ageRangeArr,
+    colorArr : ageFilterColorArr(),
+    labelArrUpGraph : ageArr,
     labelObjCrossGraph : {
-      "no symptoms" : agesAllZero,
-      "symptoms" : agesAllZero
+      "no symptoms" : zeroFillArr(length),
+      "symptoms" : zeroFillArr(length)
     }
   };
 };
 
 function dataGraphFilterIllnessWeightAge(labels){
   $.each(allKillings, function(i,obj){
-    if (obj.symptoms_of_mental_illness === null || obj.victim_age === null){
-      return true;
-    } else if (obj.symptoms_of_mental_illness === "no"){
+    var age = obj.victim_age;
+    if (obj.symptoms_of_mental_illness === "no"){
       var illness = "no symptoms";
+      labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(age)]++;
     } else if (obj.symptoms_of_mental_illness === "yes"){
       var illness = "symptoms";
+      labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(age)]++;
     };
-    var age = obj.victim_age;
-    labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(age)]++;
+  });
+  $.each(labels["labelObjCrossGraph"], function(illness, deathsArr){
+    var totalKilledIllness = deathsArr.reduce(function(prev,current){
+      return prev + current;
+    });
+    labels["labelObjCrossGraph"][illness] = $.map(deathsArr, function(totalKilled){
+      var percentKilledTimesHun = Math.ceil((totalKilled/totalKilledIllness) * 10000);
+      return percentKilledTimesHun;
+    });
   });
   return labels;
 };

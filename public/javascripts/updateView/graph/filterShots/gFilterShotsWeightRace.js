@@ -5,10 +5,20 @@ function updateGraphFilterShotsWeightRace(){
 	};
 	labels["labelObjCrossGraph"]["20+"] = [0,0,0,0,0];
 	labels = dataGraphFilterShotsWeightRace(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
+  $.each($(".graph-legend-container").children(".legend-text"), function(i,span){
+    var race = span.innerHTML
+    .split("<")[0]
+    .toLowerCase();
+    race = capitalize(abbreviateRace(race, "vertical"));
+    this.innerHTML = race + "<br>";
+  });
 	var data = labelsToData(labels);
 	var style = styleGraphFilterShotsWeightRace;
 	createGraph(data, style);
-	var program = "<p class='program-text one-line'>There does not appear to be a significant relationship<br>between the number of shots fired by police and the victim's race.</p>";
+	var program = "<p>This graph shows how many people of different races have been killed by police,<br>sorted by how many shots the police fired.</p><p><div id='down-arrow'></div></p><p>Hover over any bar to see relevant information in sentence form.</p><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/vhSMmlW.png' /><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/oZl0w6R.png' /><p>Click anywhere on the graph to see the source article<br>for a randomly selected person who belongs to the area that you clicked.<br>Click again to see the source article for a new person.</p><a style='cursor:pointer' href='http://www.dailynews.com/general-news/20130207/police-confuse-truck-for-christopher-dorners-shoot-at-3-people-in-torrance-in-case-of-mistaken-identity' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/OMrfb6k.png' /></a><a style='cursor:pointer' href='http://en.wikipedia.org/wiki/Shooting_of_Amadou_Diallo' target='_blank'><img style='width:45%;margin-right:2%;display:inline-block' src='http://i.imgur.com/DGbR6zB.png' /></a><p>Most reports of people killed by police don't include how many shots were fired.<br>But of the 502 reports that do include that information,<br>74 of them report ten shots or more.<br>That's ten shots or more in 14.7% of all reported cases.</p>";
 	$('#program').html(program);
 };
 
@@ -32,8 +42,8 @@ var labelsGraphFilterShotsWeightRace = {
     "#3366FF",
     "#5200A3",
     "#FF0000",
+    "#FF6600",
     "#FFFF00",
-    "#33CC33"
   ],
   labelArrUpGraph : [
     "white",
@@ -70,7 +80,31 @@ var styleGraphFilterShotsWeightRace = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "<p>There are " + elem.value + " recorded cases in which the police shot " + elem.label + " times, and the victim victim was " + elem.name + ".";
+      var isAre = elem.value === 1 ? "is" : "are";
+      var caseCases = elem.value === 1 ? "case" : "cases";
+      tip.innerHTML = "<p>There " + isAre + " " + elem.value + " recorded " + caseCases + " in which the police shot " + elem.label + " times, and the victim was " + elem.name + ".";
     }
   },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterShotsWeightRaceTipSample(node);
+    }
+  }
 };
+
+function graphFilterShotsWeightRaceTipSample(elem){
+  var race = elem.name;
+  var shots = elem.label;
+  var collection = allKillings.filter(function(el){
+    if (shots === "20+"){
+      return el.shots_fired > 20 && el.victim_race === race;
+    } else {
+      return el.shots_fired === parseInt(shots) && el.victim_race === race;
+    };
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
+};
+

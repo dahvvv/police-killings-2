@@ -207,22 +207,6 @@ select {
   border-radius: 0;
 }
 
-#fAgewRace .graph-legend#alaskan {
-  background-color: #FFFF00;
-}
-#fAgewRace .graph-legend#asian {
-  background-color: #FF6600;
-}
-#fAgewRace .graph-legend#hispanic {
-  background-color: #FF0000;
-}
-#fAgewRace .graph-legend#black {
-  background-color: #5200A3;
-}
-#fAgewRace .graph-legend#white {
-  background-color: #3366FF;
-}
-
 .legend-text {
   position: relative;
   left: 4px;

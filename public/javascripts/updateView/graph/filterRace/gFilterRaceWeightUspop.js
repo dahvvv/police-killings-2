@@ -1,6 +1,9 @@
 function updateGraphFilterRaceWeightUspop(){
 	var labels = labelsGraphFilterRaceWeightUspop;
 	labels = dataGraphFilterRaceWeightUspop(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterRaceWeightUspop;
 	createGraph(data, style);
@@ -28,7 +31,7 @@ function dataGraphFilterRaceWeightUspop(labels){
 
 var labelsGraphFilterRaceWeightUspop = {
 	colorArr : [baseColor],
-  labelArrUpGraph : ["police deaths per million citizens, by race"],
+  labelArrUpGraph : ["people killed by police per million"],
   labelObjCrossGraph : {
   	"white" : [0],
   	"black" : [0],

@@ -61,24 +61,12 @@
         <span class="legend-text" id="white">White</span><br>
         <input type="submit" value="Enter" />
       </form>
-      <button class="filter" id="unarmed-filter">Unarmed</button>
-      <form class="filter-form unarmed-form" id="unarmed-filter-form">
-        <input type="checkbox" id="select-unarmed" name="unarmed" value="unarmed" checked />
-        <span class="legend" id="unarmed"></span>
-        <span class="legend-text" id="unarmed">Unarmed</span><br>
-        <input type="checkbox" id="select-armed" name="armed" value="armed" />
-        <span class="legend" id="armed"></span>
-        <span class="legend-text" id="armed">Armed</span><br>
-        <input type="submit" value="Enter" />
-      </form>
-      <button class="filter" id="gender-filter">Gender</button>
-      <form class="filter-form gender-form" id="gender-filter-form">
-        <input type="checkbox" id="select-male" name="male" value="male" checked />
-        <span class="legend" id="male"></span>
-        <span class="legend-text" id="male">Male</span><br>
-        <input type="checkbox" id="select-female" name="female" value="female" checked />
-        <span class="legend" id="female"></span>
-        <span class="legend-text" id="female">Female</span><br>
+      <button class="filter" id="shots-filter">Number of Shots</button>
+      <form class="filter-form shots-form" id="shots-filter-form">
+        <label for="shots-min">Shots Min:</label>
+        <input type="text" id="shots-min" name="shots-min" value="20" /><br>
+        <label for="shots-max">Shots Max:</label>
+        <input type="text" id="shots-max" name="shots-max" />
         <input type="submit" value="Enter" />
       </form>
       <button class="filter" id="illness-filter">Mental Illness</button>
@@ -91,12 +79,24 @@
         <span class="legend-text" id="not-ill">No</span><br>
         <input type="submit" value="Enter" />
       </form>
-      <button class="filter" id="shots-filter">Number of Shots</button>
-      <form class="filter-form shots-form" id="shots-filter-form">
-        <label for="shots-min">Shots Min:</label>
-        <input type="text" id="shots-min" name="shots-min" value="20" /><br>
-        <label for="shots-max">Shots Max:</label>
-        <input type="text" id="shots-max" name="shots-max" />
+      <button class="filter" id="gender-filter">Gender</button>
+      <form class="filter-form gender-form" id="gender-filter-form">
+        <input type="checkbox" id="select-male" name="male" value="male" checked />
+        <span class="legend" id="male"></span>
+        <span class="legend-text" id="male">Male</span><br>
+        <input type="checkbox" id="select-female" name="female" value="female" checked />
+        <span class="legend" id="female"></span>
+        <span class="legend-text" id="female">Female</span><br>
+        <input type="submit" value="Enter" />
+      </form>
+      <button class="filter" id="unarmed-filter">Unarmed</button>
+      <form class="filter-form unarmed-form" id="unarmed-filter-form">
+        <input type="checkbox" id="select-unarmed" name="unarmed" value="unarmed" checked />
+        <span class="legend" id="unarmed"></span>
+        <span class="legend-text" id="unarmed">Unarmed</span><br>
+        <input type="checkbox" id="select-armed" name="armed" value="armed" />
+        <span class="legend" id="armed"></span>
+        <span class="legend-text" id="armed">Armed</span><br>
         <input type="submit" value="Enter" />
       </form>
     </div>
@@ -149,15 +149,12 @@
         <span class="legend-text" id="white">White</span><br>
         <input type="submit" value="Enter" />
       </form>
-      <button class="weight" id="unarmed-weight">
-        Unarmed</button>
-      <form class="weight-form unarmed-form" id="unarmed-weight-form">
-        <input type="checkbox" id="select-unarmed" name="unarmed" value="unarmed" checked />
-        <span class="legend" id="unarmed"></span>
-        <span class="legend-text" id="unarmed">Unarmed</span><br>
-        <input type="checkbox" id="select-armed" name="armed" value="armed" />
-        <span class="legend" id="armed"></span>
-        <span class="legend-text" id="armed">Armed</span><br>
+      <button class="weight" id="shots-weight">Shots</button>
+      <form class="weight-form shots-form" id="shots-weight-form">
+        <label for="shots-min">Shots Min:</label>
+        <input type="text" id="shots-min" name="shots-min" value="20" /><br>
+        <label for="shots-max">Shots Max:</label>
+        <input type="text" id="shots-max" name="shots-max" />
         <input type="submit" value="Enter" />
       </form>
       <button class="weight" id="illness-weight">Mental Illness</button>
@@ -170,27 +167,19 @@
         <span class="legend-text" id="not-ill">No</span><br>
         <input type="submit" value="Enter" />
       </form>
-      <button class="weight" id="shots-weight">Shots</button>
-      <form class="weight-form shots-form" id="shots-weight-form">
-        <label for="shots-min">Shots Min:</label>
-        <input type="text" id="shots-min" name="shots-min" value="20" /><br>
-        <label for="shots-max">Shots Max:</label>
-        <input type="text" id="shots-max" name="shots-max" />
+      <button class="weight" id="unarmed-weight">
+        Unarmed</button>
+      <form class="weight-form unarmed-form" id="unarmed-weight-form">
+        <input type="checkbox" id="select-unarmed" name="unarmed" value="unarmed" checked />
+        <span class="legend" id="unarmed"></span>
+        <span class="legend-text" id="unarmed">Unarmed</span><br>
+        <input type="checkbox" id="select-armed" name="armed" value="armed" />
+        <span class="legend" id="armed"></span>
+        <span class="legend-text" id="armed">Armed</span><br>
         <input type="submit" value="Enter" />
       </form>
 
-      <div class="graph-legend-container">
-<!--         <span class="graph-legend" id="alaskan"></span>
-        <span class="legend-text" id="alaskan">Alaskan / PI</span><br>
-        <span class="graph-legend" id="asian"></span>
-        <span class="legend-text" id="asian">Asian</span><br>
-        <span class="graph-legend" id="hispanic"></span>
-        <span class="legend-text" id="hispanic">Hispanic and/or Latin</span><br>
-        <span class="graph-legend" id="black"></span>
-        <span class="legend-text" id="black">Black</span><br>
-        <span class="graph-legend" id="white"></span>
-        <span class="legend-text" id="white">White</span><br> -->
-      </div>
+      <div class="graph-legend-container"></div>
 
     </div>
 
@@ -206,6 +195,3 @@ schiz.push(obj)
 end
 end
 end -->
-
-<!-- <p>The oldest recorded person killed by a police officer was <a href='http://www.huffingtonpost.com/2013/09/08/monroe-isadore-shootout_n_3889826.html' target='_blank'>107</a> years old.<br>The youngest <a href='http://newyork.cbslocal.com/2013/04/15/police-3-dead-in-brooklyn-shooting/' target='_blank'>have</a> <a href='http://articles.latimes.com/2005/jul/15/local/me-shooting15' target='_blank'>been</a> <a href='https://www.oxnardpd.org/pressreleases/1537/' target='_blank'>1</a>.</p><img src='http://i.imgur.com/4cfAech.png' /><p>To see how this graph is divided in terms of race or mental illness, click the buttons on right.</p> -->
-

@@ -4,6 +4,9 @@ function updateGraphFilterUspopWeightNone(){
 		labels["labelObjCrossGraph"][city] = [0];
 	});
 	labels = dataGraphFilterUspopWeightNone(labels);
+  $(".graph-legend-container").empty()
+  .show();
+  makeGraphLegend(labels);
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightNone;
 	createGraph(data, style);
@@ -28,7 +31,7 @@ function dataGraphFilterUspopWeightNone(labels){
 
 var labelsGraphFilterUspopWeightNone = {
 	colorArr : [baseColor],
-  labelArrUpGraph : ["deaths per city"],
+  labelArrUpGraph : ["people killed by police"],
   labelObjCrossGraph : {}
 };
 
