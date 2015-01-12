@@ -370,15 +370,23 @@ input[type=submit] {
   margin-bottom: 5%;
 }
 
-#program #down-arrow {
+#program #down-arrow, #program #up-arrow {
   width: 0;
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid black;
   margin-left: 36%;
   position: absolute;
+}
+
+#program #down-arrow {
+  border-top: 12px solid black;
   bottom: 4%;
+}
+
+#program #up-arrow {
+  border-bottom: 12px solid black;
+  cursor: pointer;
 }
 
 /*
