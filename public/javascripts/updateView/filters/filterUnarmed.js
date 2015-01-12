@@ -9,16 +9,34 @@ function checkUnarmed(form){
 };
 
 function dataFilterUnarmedWeightNone(){
+  var stateView = ($("#state-filter").val());
   var checkedUnarmed = checkUnarmed($("#unarmed-filter-form"));
+  var formattedUnarmed = $.map(checkedUnarmed, function(val){
+    return val === "unarmed";
+  });
   var arr = [];
-  $.each(checkedUnarmed, function(i,val){
+  $.each(formattedUnarmed, function(i,val){
     var filtered = allKillings.filter(function(el){
-      if (val === "armed"){
-        return el.victim_unarmed === false;
-      } else if (val === "unarmed"){
-        return el.victim_unarmed === true;
-      }
-    });
+      return el.victim_unarmed === val;
+    })
+  });
+
+
+  // $.each(checkedUnarmed, function(i,val){
+  //   var filtered = allKillings.filter(function(el){
+  //     if (val === "armed"){
+  //       if (stateView === null 
+  //       || stateView === "USA"){
+  //         return el.victim_unarmed === false;
+  //       } else {
+  //         return el.victim_unarmed === false 
+  //         && el.location_of_killing_state === stateView;
+  //       };
+        
+  //     } else if (val === "unarmed"){
+  //       return el.victim_unarmed === true;
+  //     }
+  //   });
     arr = arr.concat(filtered);
   });
   return arr;
