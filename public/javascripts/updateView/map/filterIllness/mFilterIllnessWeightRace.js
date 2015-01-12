@@ -22,7 +22,7 @@ function dataFilterIllnessWeightRace(){
   var checkedRaces = checkRaces($("#race-weight-form"));
   checkedRaces = reorderRaces(checkedRaces);
   var checkedIllness = checkIllness($("#illness-filter-form"));
-  formattedIllness = $.map(checkedIllness, function(val){
+  var formattedIllness = $.map(checkedIllness, function(val){
   	return formatCI[val];
   });
   var arr = [];

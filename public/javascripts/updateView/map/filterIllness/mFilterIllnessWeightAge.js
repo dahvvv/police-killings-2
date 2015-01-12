@@ -6,7 +6,7 @@ function updateMapFilterIllnessWeightAge(){
 		obj["geoStyle"] = {
 			fillColor: illnessColors[obj.symptoms_of_mental_illness],
 	    color: "black",
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
@@ -19,8 +19,9 @@ function updateMapFilterIllnessWeightAge(){
 };
 
 function dataFilterIllnessWeightAge(){
+	stateView = ($("#state-filter").val());
 	var checkedIllness = checkIllness($("#illness-filter-form"));
-  formattedIllness = $.map(checkedIllness, function(val){
+  var formattedIllness = $.map(checkedIllness, function(val){
   	return formatCI[val];
   });
   var arr = [];
@@ -28,7 +29,11 @@ function dataFilterIllnessWeightAge(){
     var filtered = allKillings.filter(function(el){
     	if (el.victim_age >= enteredAgeWRange().min 
     	&& el.victim_age <= enteredAgeWRange().max){
-    		return el.symptoms_of_mental_illness === illness;
+    		if (stateView === null || stateView === "USA"){
+    			return el.symptoms_of_mental_illness === illness;
+    		} else {
+    			return el.symptoms_of_mental_illness === illness && el.location_of_killing_state === stateView;
+    		};    		
     	};
     });
     arr = arr.concat(filtered);

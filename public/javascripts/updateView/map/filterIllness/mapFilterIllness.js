@@ -37,8 +37,3 @@ var illnessRadius = {
   "yes" : 14,
   "no"  : 6, 
 };
-
-var formatCI = {
-	"ill": "yes",
-	"not-ill": "no"
-};

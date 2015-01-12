@@ -6,7 +6,7 @@ function updateMapFilterIllnessWeightNone(){
 		obj["geoStyle"] = {
 			fillColor: illnessColors[obj.symptoms_of_mental_illness],
 	    color: "black",
-	    radius: 7,
+	    radius: basicRadius(),
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
