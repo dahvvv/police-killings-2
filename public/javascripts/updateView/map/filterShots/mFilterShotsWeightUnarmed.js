@@ -33,15 +33,22 @@ function updateMapFilterShotsWeightUnarmed(){
 };
 
 function dataFilterShotsWeightUnarmed(){
+	var stateView = $("#state-filter").val();
   var checkedUnarmed = checkUnarmed($("#unarmed-weight-form"));
-  var booleans = $.map(checkedUnarmed, function(val){
+  var formattedUnarmed = $.map(checkedUnarmed, function(val){
   	return val === "unarmed";
   });
   var arr = [];
-  $.each(booleans, function(i,val){
+  $.each(formattedUnarmed, function(i,unarmed){
     var filtered = allKillings.filter(function(el){
       if (el.shots_fired >= shotsRange().min && el.shots_fired <= shotsRange().max){
-        return el.victim_unarmed === val;
+      	if (stateView === null 
+    		|| stateView === "USA"){
+    			return el.victim_unarmed === unarmed;
+    		} else {
+	    		return el.victim_unarmed === unarmed 
+	    		&& el.location_of_killing_state === stateView;
+	    	};
       };
     });
     arr = arr.concat(filtered);
