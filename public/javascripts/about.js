@@ -1,3 +1,5 @@
+var timeouts = [];
+
 function nextPage(){
 	var pageNum = parseInt($('.pagenum').attr('id'));
 	var newPage = pages[pageNum + 1];
@@ -5,8 +7,60 @@ function nextPage(){
 	if (pageNum === 1){
 		$("#back-button").show();
 	};
-	rotateImages();
+	if ($(".about-img").length != 0){
+		var length = $(".about-img").length;
+		var i = 0;
+		var timeouts = [];
+		rotateImages(i, length);
+		// var timeOut = setTimeout(function(){
+		// 	rotateImages(i, length);
+		// 	console.log('1000!');
+		// 	$($(".about-img")[i % length]).fadeOut(500, function(){
+		// 		console.log('500!');
+		// 		$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
+		// 			console.log('1500!');
+		// 			i += 1;
+
+		// 		});
+		// 	});
+		// }, 1000);
+	};
 };
+
+function rotateImages(i, length){
+	timeouts.push(setTimeout(function(){
+		console.log('1000!');
+		$($(".about-img")[i % length]).fadeOut(500, function(){
+			console.log('500!');
+			$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
+				console.log('1500!');
+				i += 1;
+				rotateImages(i, length);
+			});
+		});
+	}, 1000))
+};
+
+function stopRotatingImages(){
+	for (var i = 0; i < timeouts.length; i++){
+		clearTimeout(timeouts[i]);
+		timeouts = [];
+	}
+};
+
+// function rotateImages(i, length){
+// 	console.log('1000!');
+// 	$($(".about-img")[i % length]).fadeOut(500, function(){
+// 		console.log('500!');
+// 		$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
+// 			console.log('1500!');
+// 			i += 1;
+// 			setTimeout(function(){
+// 				rotateImages(i, length);
+// 			}, 1000);
+// 		});
+// 	});
+// };
 
 function prevPage(){
 	var pageNum = parseInt($('.pagenum').attr('id'));
@@ -15,24 +69,28 @@ function prevPage(){
 	if (newPage === 1){
 		$("#back-button").hide();
 	};
-	rotateImages();
+	rotateImages(i, length);
 };
 
-function rotateImages(){
-	if ($(".about-img").length != 0){
-		var length = $(".about-img").length;
-		var i = 0;
-		var rotation = setInterval(function(){
-			$($(".about-img")[i % length]).fadeOut(500, function(){
-				$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
-					i += 1;
-				});
-			});
-		}, 2200);
-		$(".nav-button, #close-button").on("click", function(){
-			clearInterval(rotation);
-		});
-	};
+// function rotateImages(){
+// 	if ($(".about-img").length != 0){
+// 		var length = $(".about-img").length;
+// 		var i = 0;
+// 		var rotation = setInterval(function(){
+// 			$($(".about-img")[i % length]).fadeOut(500, function(){
+// 				$($(".about-img")[(i + 1) % length]).fadeIn(500, function(){
+// 					i += 1;
+// 				});
+// 			});
+// 		}, 1800);
+// 		$(".nav-button, #close-button").on("click", function(){
+// 			clearInterval(rotation);
+// 		});
+// 	};
+// };
+
+function stopRotation(){
+	clearTimeout(timeOut);
 };
 
 var pages = {
