@@ -49,7 +49,7 @@ $(function(){
     };
     $(".filter-form").hide();
     if (display != "graph-display" && 
-      this.id != "usPop-filter"){
+    this.id != "usPop-filter"){
       $(this).next("form").show();
     };
     updateDisplay[display]();

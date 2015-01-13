@@ -91,7 +91,10 @@ function addGeoLayer(geoData){
 	if ($("#map-one").css("display") === "none") {
     $("#display-container-canvaswidget").remove();
     $("#map-one").slideToggle(750, function(e){
-      geoLayer.addTo(map);
+      map.invalidateSize();
+      setTimeout(function(){
+        geoLayer.addTo(map);
+      },20);
     });
   } else {
     geoLayer.addTo(map);

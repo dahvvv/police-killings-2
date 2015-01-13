@@ -47,7 +47,10 @@ function makeHeatmap(data, stateView){
   if ($('#map-one').css('display') === "none") {
     $('#display-container-canvaswidget').remove();
     $('#map-one').slideToggle(750, function(e){
-      heatLayer.addTo(map);
+      map.invalidateSize();
+      setTimeout(function(){
+        heatLayer.addTo(map);
+      },20);
     });
   } else {
     heatLayer.addTo(map);

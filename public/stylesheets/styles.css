@@ -57,16 +57,6 @@ a:visited {
   line-height: 1.5em;
 }
 
-/*.about-graf {
-  margin: 0;
-  padding: 0;
-  width: 70%;
-  left: 15%;
-  font-size: 2em;
-  line-height: 2em;
-  position: absolute;
-}*/
-
 #graf1 {
   top: 10%;
 }
@@ -81,12 +71,12 @@ a:visited {
   z-index: 100000001;
 }
 
-.about-photo {
-  width: 700px;
-  height: 325px;
-  top: 50px;
-  left: 200px;
-  display: block;
+.about-img {
+  display: inline-block;
+  width: 50%;
+  left: 25%;
+  top: 33%;
+  border-radius: 6px;
   position: absolute;
 }
 
