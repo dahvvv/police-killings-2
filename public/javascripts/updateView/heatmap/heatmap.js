@@ -10,11 +10,11 @@ var selectHeatmapFilter = {
   "usPop-filter" : function(){
     updateHeatmapFilterUspop();
   },
-  "race-filter" : function(){
-    updateHeatmapFilterRace();
-  },
   "age-filter" : function(){
     updateHeatmapFilterAge();
+  },
+  "race-filter" : function(){
+    updateHeatmapFilterRace();
   },
   "gender-filter" : function(){
     updateHeatmapFilterGender();
@@ -93,29 +93,35 @@ var gradientAgeRange = {
 };
 
 function setMaxZoom(numDatapoints, stateView){
-  if (stateView === null || stateView === "USA") {
-    switch (true) {
-      case (numDatapoints <= 10): return 1;
-      case (numDatapoints > 10 && numDatapoints <= 35): return 4;
-      case (numDatapoints > 35 && numDatapoints <= 130): return 5;
-      case (numDatapoints > 130 && numDatapoints <= 350) : return 6;
-      case (numDatapoints > 350 && numDatapoints <= 750): return 7;
-      case (numDatapoints > 750 && numDatapoints <= 1750): return 8;
-      default: return 10
-    }
-  } else {
-    if (numDatapoints > 25) {
-      return 10;
-    } else if (numDatapoints <= 25 && numDatapoints > 30) {
-      return 9;
-    } else if (numDatapoints <= 30 && numDatapoints > 35) {
-      return 8;
-    } else if (numDatapoints <= 35 && numDatapoints > 40) {
-      return 7;
-    } else if (numDatapoints <= 40 && numDatapoints > 50) {
-      return 5;
+  var zoomLevels = _.contains([null,"USA"], stateView) ? zLevelsCountry : zLevelsState;
+  var targetLevel = 0;
+  $.each(zoomLevels, function(count,zoomLevel){
+    if (numDatapoints > parseInt(count)){
+      return true;
     } else {
-      return 3;
-    }
-  }
+      targetLevel += zoomLevel;
+      return false;
+    };
+  });
+  debugger;
+  return targetLevel;
+};
+
+var zLevelsCountry = {
+  10: 1,
+  35: 4,
+  130: 5,
+  350: 6,
+  750: 7,
+  1750: 8,
+  99999999: 10
+};
+
+var zLevelsState = {
+  25: 10,
+  30: 9,
+  35: 8,
+  40: 7,
+  50: 5,
+  99999999: 3
 };

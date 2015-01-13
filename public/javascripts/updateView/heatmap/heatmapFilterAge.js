@@ -6,7 +6,7 @@ function updateHeatmapFilterAge(){
 };
 
 function updateHeatmapFilterAgeWeightNone(){
-	var data = filterByAge();
+	var data = dataFilterAgeWeightNone();
 	makeHeatmap(data);
 	var program = "<p class='program-text two-line'>This heatmap is scaled to show similar total heat for any age range,<br>in order to emphasize changes in locations.</p>";
 	$('#program').html(program);
