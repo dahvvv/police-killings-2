@@ -13,7 +13,7 @@ function updateHeatmapFilterUspopWeightNone(){
 			return el.location_of_killing_state === stateView;
 		});
 	};
-	makeHeatmap(data);
+	setMapView(data, stateView);
 	var program = "<p class='program-text one-line'>People killed by police officers in the united states.</p><p class='program-text one-line'><a id='about-link' href='/'>About This Project</a></p>";
 	$("#program").html(program);
 	$("#about-link").on("click", function(e){

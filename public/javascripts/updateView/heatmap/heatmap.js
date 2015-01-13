@@ -30,7 +30,7 @@ var selectHeatmapFilter = {
   },
 };
 
-function makeHeatmap(data){
+function makeHeatmap(data, stateView){
 	var coords = [];
 	data.forEach(function(elem, i){
     var lat = elem.lat;
@@ -38,8 +38,6 @@ function makeHeatmap(data){
     coords.push([lat,lng]);
   });
   removeExistingMaps();
-  var stateView = $('#state-filter').val();
-  setMapView(stateView);
   heatLayer = L.heatLayer(coords, {
     radius: 27,
     gradient: selectGradient(stateView),
@@ -60,7 +58,7 @@ function selectGradient(stateView){
   if (stateView === null || stateView === "USA"){
     return gradientMain;
   } else {
-    return gradientStateView;
+    return gradientState;
   }
 };
 
@@ -74,11 +72,13 @@ var gradientMain = {
   1: 'red'
 };
 
-var gradientStateView = {
+var gradientState = {
   0: 'purple',
-  0.1: 'blue',
-  0.2: 'green',
-  0.4: 'yellow',
+  0.15: 'blue',
+  0.25: 'lightblue',
+  0.35: 'green',
+  0.75: 'yellow',
+  0.995: 'orange',
   1: 'red'
 };
 
@@ -102,7 +102,6 @@ function setMaxZoom(numDatapoints, stateView){
       return false;
     };
   });
-  debugger;
   return targetLevel;
 };
 
@@ -118,10 +117,10 @@ var zLevelsCountry = {
 };
 
 var zLevelsState = {
-  25: 5,
-  30: 9,
-  35: 8,
-  40: 7,
-  50: 5,
-  99999999: 3
+  25: 3,
+  30: 4,
+  35: 5,
+  40: 8,
+  50: 8,
+  99999999: 8
 };

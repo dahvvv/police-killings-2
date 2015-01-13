@@ -1,6 +1,6 @@
 var stateViews = {
-  AK: {lat: 63.03503931552975, lon: -153.28125, zoom: 4},
-  AL: {lat: 32.722598604044066, lon: -86.46240234375, zoom: 7},
+  AK: {lat: 67.05030412177986, lon: -147.65625, zoom: 4},
+  AL: {lat: 33.710632271492095, lon: -86.099853515625, zoom: 7},
   AR: {lat: 34.732584206123626, lon: -92.48291015625, zoom: 7},
   AZ: {lat: 34.17999758688084, lon: -112.30224609374999, zoom: 6},
   CA: {lat: 36.932330061503144, lon: -117.1142578125, zoom: 6},
@@ -49,5 +49,7 @@ var stateViews = {
   WA: {lat: 47.253135632244216, lon: -120.80566406250001, zoom: 7},
   WI: {lat: 44.465151013519616, lon: -88.9892578125, zoom: 7},
   WV: {lat: 38.93377552819722, lon: -80.068359375, zoom: 7},
-  WY: {lat: 43.052833917627936, lon: -107.6550292968749, zoom: 7}
+  WY: {lat: 43.052833917627936, lon: -107.6550292968749, zoom: 7},
+  USA: {lat: defaultLat, lon: defaultLon, zoom: defaultZoom},
+  null: {lat: defaultLat, lon: defaultLon, zoom: defaultZoom},
 };

@@ -11,17 +11,34 @@ function removeExistingMaps(){
   };
 };
 
-function setMapView(stateView){
+function setMapView(data, stateView){
   if (stateView === null || stateView === "USA"){
-    $("#display-container").animate({"height":"63%"},100);
-    map.setView([defaultLat,defaultLon],defaultZoom);
+    $("#program").show();
+    map.setView([defaultLat, defaultLon],defaultZoom);
+    $("#display-container").animate({"height":"63%"}, 200, function(){
+      map.invalidateSize();
+      setTimeout(function(){
+        makeHeatmap(data, stateView);
+      }, 100);
+    });
   } else {
-    $("#display-container").animate({"height":"73%"},100);
-    setMapToStateView(stateView);
+    $("#program").hide();
+    var view = stateViews[stateView];
+    map.setView([view.lat, view.lon],view.zoom);
+    $("#display-container").animate({"height":"91%"}, 200, function(){
+      map.invalidateSize();
+      setTimeout(function(){
+        makeHeatmap(data, stateView);
+      }, 100);
+    });
   };
 };
 
-function setMapToStateView(state){
-  var view = stateViews[state];
-  map.setView([view.lat, view.lon],view.zoom);
+function setMapToStateView(data, stateView){
+  var view = stateViews[stateView];
+  
+  map.whenReady(function(){
+    map.invalidateSize();
+    makeHeatmap(data, stateView);
+  });
 };
