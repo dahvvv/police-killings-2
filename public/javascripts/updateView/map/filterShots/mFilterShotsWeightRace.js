@@ -39,14 +39,16 @@ function dataFilterShotsWeightRace(){
   var arr = [];
   $.each(checkedRaces, function(i,race){
     var filtered = allKillings.filter(function(el){
-    	if (el.shots_fired >= shotsRange().min 
-    	&& el.shots_fired <= shotsRange().max){
-    		if (stateView === null 
-    		|| stateView === "USA"){
-    			return el.victim_race === race;
-    		} else {
-	    		return el.victim_race === race 
-	    		&& el.location_of_killing_state === stateView;
+    	if (el.shots_fired){
+    		if (el.shots_fired >= shotsRange().min 
+	    	&& el.shots_fired <= shotsRange().max){
+	    		if (stateView === null 
+	    		|| stateView === "USA"){
+	    			return el.victim_race === race;
+	    		} else {
+		    		return el.victim_race === race 
+		    		&& el.location_of_killing_state === stateView;
+		    	};
 	    	};
     	};
     });

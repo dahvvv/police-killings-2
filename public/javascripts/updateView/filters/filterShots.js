@@ -17,13 +17,15 @@ function shotsWRange(){
 function dataFilterShotsWeightNone(){
   var stateView = $("#state-filter").val();
   var arr = allKillings.filter(function(el){
-    if (stateView === null || stateView === "USA"){
-      return el.shots_fired >= shotsRange().min 
-      && el.shots_fired <= shotsRange().max;
-    } else {
-      return el.shots_fired >= shotsRange().min 
-      && el.shots_fired <= shotsRange().max
-      && el.location_of_killing_state === stateView;
+    if (el.shots_fired){
+      if (stateView === null || stateView === "USA"){
+        return el.shots_fired >= shotsRange().min 
+        && el.shots_fired <= shotsRange().max;
+      } else {
+        return el.shots_fired >= shotsRange().min 
+        && el.shots_fired <= shotsRange().max
+        && el.location_of_killing_state === stateView;
+      };
     };
   });
   return arr;
