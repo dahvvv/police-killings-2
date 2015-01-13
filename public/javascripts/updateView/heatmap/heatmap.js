@@ -102,6 +102,7 @@ function setMaxZoom(numDatapoints, stateView){
       return false;
     };
   });
+  debugger;
   return targetLevel;
 };
 
@@ -117,7 +118,7 @@ var zLevelsCountry = {
 };
 
 var zLevelsState = {
-  25: 10,
+  25: 5,
   30: 9,
   35: 8,
   40: 7,
