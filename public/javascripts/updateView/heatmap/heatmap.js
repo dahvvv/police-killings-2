@@ -32,7 +32,6 @@ var selectHeatmapFilter = {
 
 function makeHeatmap(data){
 	var coords = [];
-	var numDatapoints = data.length;
 	data.forEach(function(elem, i){
     var lat = elem.lat;
     var lng = elem.lng;
@@ -44,7 +43,7 @@ function makeHeatmap(data){
   heatLayer = L.heatLayer(coords, {
     radius: 27,
     gradient: selectGradient(stateView),
-    maxZoom: setMaxZoom(numDatapoints,stateView),
+    maxZoom: setMaxZoom(data.length, stateView),
     max: 1
   });
   if ($('#map-one').css('display') === "none") {
@@ -103,17 +102,17 @@ function setMaxZoom(numDatapoints, stateView){
       return false;
     };
   });
-  debugger;
   return targetLevel;
 };
 
 var zLevelsCountry = {
   10: 1,
-  35: 4,
+  20: 4,
   130: 5,
-  350: 6,
-  750: 7,
-  1750: 8,
+  300: 6,
+  500: 7,
+  1300: 8,
+  2600: 9,
   99999999: 10
 };
 
