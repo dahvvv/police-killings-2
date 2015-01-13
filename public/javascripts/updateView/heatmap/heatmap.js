@@ -75,8 +75,8 @@ var gradientMain = {
 var gradientState = {
   0: 'purple',
   0.15: 'blue',
-  0.25: 'lightblue',
-  0.35: 'green',
+  0.25: 'pink',
+  0.5: 'green',
   0.75: 'yellow',
   0.995: 'orange',
   1: 'red'
@@ -102,6 +102,7 @@ function setMaxZoom(numDatapoints, stateView){
       return false;
     };
   });
+  debugger;
   return targetLevel;
 };
 
@@ -117,10 +118,9 @@ var zLevelsCountry = {
 };
 
 var zLevelsState = {
-  25: 3,
-  30: 4,
-  35: 5,
-  40: 8,
-  50: 8,
-  99999999: 8
+  20: 3,
+  25: 5,
+  95: 8,
+  150: 9,
+  99999999: 10
 };
