@@ -364,6 +364,10 @@ input[type=submit] {
   margin-bottom: 13%;
 }
 
+#program p.three-line-opener {
+  margin-top: -2.5%;
+}
+
 #program img {
   width: 60%;
   left: 20%;
