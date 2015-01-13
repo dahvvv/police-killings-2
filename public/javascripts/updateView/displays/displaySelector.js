@@ -14,22 +14,22 @@ function removeExistingMaps(){
 function setMapView(data, stateView){
   if (stateView === null || stateView === "USA"){
     $("#program").show();
-    map.setView([defaultLat, defaultLon],defaultZoom);
     $("#display-container").animate({"height":"63%"}, 200, function(){
-      map.invalidateSize();
+      map.setView([defaultLat, defaultLon],defaultZoom);
       setTimeout(function(){
+        map.invalidateSize();
         makeHeatmap(data, stateView);
-      }, 100);
+      }, 200);
     });
   } else {
     $("#program").hide();
     var view = stateViews[stateView];
-    map.setView([view.lat, view.lon],view.zoom);
     $("#display-container").animate({"height":"91%"}, 200, function(){
-      map.invalidateSize();
+      map.setView([view.lat, view.lon],view.zoom);
       setTimeout(function(){
+        map.invalidateSize();
         makeHeatmap(data, stateView);
-      }, 100);
+      }, 120);
     });
   };
 };
