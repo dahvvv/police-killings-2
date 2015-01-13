@@ -102,7 +102,6 @@ function setMaxZoom(numDatapoints, stateView){
       return false;
     };
   });
-  debugger;
   return targetLevel;
 };
 

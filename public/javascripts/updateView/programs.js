@@ -56,7 +56,9 @@ var programs = {
 		}
 	},
 	heatmap: {
-		usPop: {},
+		usPop: {
+			none: "<p>People killed by police officers in the united states.</p><p style='margin-top:-10%;'><a id='about-link' href='/'>About This Project</a></p>",
+		},
 		age: {},
 		race: {},
 		shots: {},
