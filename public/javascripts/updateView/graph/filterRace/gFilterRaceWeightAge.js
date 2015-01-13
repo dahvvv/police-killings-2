@@ -88,7 +88,7 @@ var styleGraphFilterRaceWeightAge = {
         return el.victim_age === age && el.victim_race === race;
       });
       var percent = ((totalAgeRace.length/totalRace.length) * 100).toFixed(1);
-      tip.innerHTML = elem.label + " " + elem.name + "-year-olds<br>make up " + percent + " percent<br>of " + elem.label + " people who were killed by police";
+      tip.innerHTML = percent + " percent<br>of " + elem.label + " people<br>killed by the police<br>have been " + elem.name + " years old.";
     }
   },
   Events: {
