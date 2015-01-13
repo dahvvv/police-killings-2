@@ -1,7 +1,7 @@
 function updateMapFilterShots(){
 	$("#shots-filter-form").show();
 	readyWeightsToBeShown();
-	$('#race-weight, #unarmed-weight').show();
+	$('#race-weight').show();
 	var weight = detectWeight();
 	selectMapFilterShotsWeight[weight]();
 };
