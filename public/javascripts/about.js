@@ -48,9 +48,3 @@ var pages = {
 	10: "<p class='about-graf' id='graf1'>Some buttons will display a form when clicked.  Fill out the forms to filter the display.</p><img class='about-img' src='http://i.imgur.com/RD7Do2v.png'><img class='about-img' style='display:none' src='http://i.imgur.com/pPY0n2j.png'><div class='pagenum' id='10'>10/11</div>",
 	11: "<p class='about-graf' id='graf1'>There is a black, downward-pointing triangle at the bottom of most pages.  When you see it, scroll down.</p><p class='about-graf' id='graf2'>If you have any questions or suggestions regarding this project, or would like to use it in some way, please <a href='mailto:davidjosephkoenig@gmail.com' target='_blank'>get in touch</a>.</p><div class='pagenum' id='11'>11/11</div>"
 };
-// CHANGE RACE-AGE TO WERE!
-
-// <img class='about-img' style='display:none' src='http://i.imgur.com/NZUu4Oi.png'><img class='about-img' style='display:none' src='http://i.imgur.com/Mc54H33.png'>
-
-
-

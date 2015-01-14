@@ -13,7 +13,8 @@ function updateMapFilterRaceWeightIllness(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = "<p class='program-text two-line'>A map of police shootings by race,<br>scaled by US population.</p>";
+	var stateView = $("#state-filter").val();
+	var program = _.contains([null, "USA"], stateView) ? programs.map.race.illness : "";
 	$('#program').html(program);
 };
 

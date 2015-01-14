@@ -12,6 +12,7 @@ function updateMapFilterRaceWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = "<p class='program-text two-line'>The racial distribution of people killed by police<br>in the United States.</p>";
+	var stateView = $("#state-filter").val();
+	var program = _.contains([null, "USA"], stateView) ? programs.map.race.none : "";
 	$("#program").html(program);
 };

@@ -13,7 +13,8 @@ function updateMapFilterUspopWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = programs.map.usPop.none;
+	var stateView = $("#state-filter").val();
+	var program = _.contains([null, "USA"], stateView) ? programs.map.usPop.none : "";
 	$("#program").html(program);
 	$("#up-arrow").on("click", function(){
     window.scrollTo(0, 0);

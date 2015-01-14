@@ -29,6 +29,7 @@ function updateMapFilterAgeWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = "<p class='program-text four-line'>Large, yellow dots represent younger victims.<br>Large, red dots represent older victims.<br>An unusual amount of elderly people have been<br>killed by police in the south and southeast.</p>";
+	var stateView = $("#state-filter").val();
+  var program = _.contains([null, "USA"], stateView) ? programs.map.age.none : "";
 	$('#program').html(program);
 };
