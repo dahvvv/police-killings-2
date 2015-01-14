@@ -44,17 +44,11 @@ function makeHeatmap(data, stateView){
     maxZoom: setMaxZoom(data.length, stateView),
     max: 1
   });
-  if ($('#map-one').css('display') === "none") {
-    $('#display-container-canvaswidget').remove();
-    $('#map-one').slideToggle(750, function(e){
-      map.invalidateSize();
-      setTimeout(function(){
-        heatLayer.addTo(map);
-      },20);
-    });
-  } else {
-    heatLayer.addTo(map);
+  if ($("#map-one").css("display") === "none") {
+    $("#display-container-canvaswidget").remove();
+    $("#map-one").show();
   };
+  heatLayer.addTo(map);
 };
 
 function selectGradient(stateView){

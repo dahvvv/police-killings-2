@@ -14,7 +14,8 @@ function updateHeatmapFilterUspopWeightNone(){
 		});
 	};
 	makeHeatmap(data);
-	var program = programs.heatmap.usPop.none;
+	var stateView = $("#state-filter").val();
+  var program = _.contains([null, "USA"], stateView) ? programs.heatmap.usPop.none : "";
 	$("#program").html(program);
 	$("#about-link").on("click", function(e){
     e.preventDefault();

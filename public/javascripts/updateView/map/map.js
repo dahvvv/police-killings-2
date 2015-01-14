@@ -90,15 +90,17 @@ function addGeoLayer(geoData){
 	});
 	if ($("#map-one").css("display") === "none") {
     $("#display-container-canvaswidget").remove();
-    $("#map-one").slideToggle(750, function(e){
-      map.invalidateSize();
-      setTimeout(function(){
-        geoLayer.addTo(map);
-      },20);
-    });
-  } else {
-    geoLayer.addTo(map);
+    $("#map-one").show();
   };
+    // Fix this!!  this is the more attractive slide-to-map view, but it's buggy for some reason
+
+    // $("#map-one").slideToggle(750, function(e){
+    //   map.invalidateSize();
+    //   setTimeout(function(){
+    //     geoLayer.addTo(map);
+    //   },20);
+    // });
+  geoLayer.addTo(map);
 };
 
 function basicRadius(){
