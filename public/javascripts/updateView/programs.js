@@ -70,6 +70,8 @@ var programs = {
 		shots: {},
 		illness: {},
 		gender: {},
-		unarmed: {}
+		unarmed: {
+			none: "<p>This heatmap shows the differences in location between victims who were armed and victims who were unarmed.</p><p><div id='down-arrow'></div></p><p>This heatmap does not show how many victims were armed vs unarmed.<br />The graph and map are better ways to see that.<br />Instead, this heatmap is scaled to always show a similar total concentration<br />in order to emphasize <em>where</em> the people are.</p>Armed:<br /><img style='width:70%;' src='http://i.imgur.com/rnhl9ud.png' /><br />Unarmed:<br /><img style='width:70%;' src='http://i.imgur.com/p03ua4P.png' /><p>You can see that instances of the police killing an unarmed victim<br />are more concentrated in the southeast, especially in Texas and Georgia.</p><br /><button class='top'>Top</button>",
+		}
 	},
 };
