@@ -16,6 +16,9 @@ function updateMapFilterRaceWeightIllness(){
 	var stateView = $("#state-filter").val();
 	var program = _.contains([null, "USA"], stateView) ? programs.map.race.illness : "";
 	$('#program').html(program);
+	$(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function dataFilterRaceWeightIllness(){

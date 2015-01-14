@@ -15,4 +15,7 @@ function updateMapFilterRaceWeightNone(){
 	var stateView = $("#state-filter").val();
 	var program = _.contains([null, "USA"], stateView) ? programs.map.race.none : "";
 	$("#program").html(program);
+	$(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
