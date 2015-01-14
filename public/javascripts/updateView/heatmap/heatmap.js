@@ -38,6 +38,7 @@ function makeHeatmap(data, stateView){
     coords.push([lat,lng]);
   });
   removeExistingMaps();
+  setMapView(stateView);
   heatLayer = L.heatLayer(coords, {
     radius: 27,
     gradient: selectGradient(stateView),
