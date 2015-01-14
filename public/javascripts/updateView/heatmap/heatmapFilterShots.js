@@ -8,8 +8,12 @@ function updateHeatmapFilterShots(){
 function updateHeatmapFilterShotsWeightNone(){
 	var data = dataFilterShotsWeightNone();
 	makeHeatmap(data);
-	var program = "<p class='program-text one-line'>Shots Heatmap</p>";
+	var stateView = $("#state-filter").val();
+  var program = _.contains([null, "USA"], stateView) ? programs.heatmap.shots.none : "";
 	$('#program').html(program);
+	$(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 var selectHeatmapFilterShotsWeight = {

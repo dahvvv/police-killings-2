@@ -76,7 +76,39 @@ var styleGraphFilterIllnessWeightAge = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "from " + elem.name + ",<br>" + elem.value + " people were killed by police while exhibiting " + elem.label + " of mental illness.";
+      var age = elem.name;
+      var illness = elem.label === "symptoms" ? "yes" : "no";
+      var totalIllness = allKillings.filter(function(el){
+        return el.symptoms_of_mental_illness === illness;
+      });
+      var totalAgeIllness = allKillings.filter(function(el){
+        return el.victim_age === age 
+        && el.symptoms_of_mental_illness === illness;
+      });
+      var percent = ((totalAgeIllness.length/totalIllness.length) * 100).toFixed(1);
+      tip.innerHTML = percent + " percent of people<br />who were killed by the police<br />and who showed " + elem.label + " of mental illness<br />were " + elem.name + " years old.";
+    }
+  },
+  Events: {
+    enable: true,
+    type: 'Native',
+    onClick: function(node, eventInfo, e){
+      graphFilterIllnessWeightAgeTipSample(node);
     }
   }
+};
+
+function graphFilterIllnessWeightAgeTipSample(elem){
+  if (elem.label === "symptoms"){
+    var illness = "yes";
+  } else if (elem.label === "no symptoms"){
+    var illness = "no";
+  };
+  var age = parseInt(elem.name);
+  var collection = allKillings.filter(function(el){
+    return el.victim_age === age 
+    && el.symptoms_of_mental_illness === illness;
+  });
+  var sample = collection[Math.floor(Math.random()*collection.length)];
+  window.open(sample.source);
 };

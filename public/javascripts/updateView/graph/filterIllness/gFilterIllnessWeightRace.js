@@ -23,15 +23,17 @@ function updateGraphFilterIllnessWeightRace(){
 
 function dataGraphFilterIllnessWeightRace(labels){
 	$.each(allKillings, function(i,obj){
-		if (obj.symptoms_of_mental_illness === null || obj.victim_race === null){
+    var race = obj.victim_race;
+		if (obj.symptoms_of_mental_illness === null 
+    || race === null){
 			return true;
 		} else if (obj.symptoms_of_mental_illness === "no"){
 			var illness = "no symptoms";
+      labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(race)]++;
 		} else if (obj.symptoms_of_mental_illness === "yes"){
 			var illness = "symptoms";
+      labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(race)]++;
 		};
-		var race = obj.victim_race;
-		labels["labelObjCrossGraph"][illness][labels["labelArrUpGraph"].indexOf(race)]++;
 	});
 	return labels;
 };
@@ -91,13 +93,14 @@ var styleGraphFilterIllnessWeightRace = {
 
 function graphFilterIllnessWeightRaceTipSample(elem){
   if (elem.label === "symptoms"){
-    var symptoms = "yes";
+    var illness = "yes";
   } else if (elem.label === "no symptoms"){
-    var symptoms = "no";
+    var illness = "no";
   };
   var race = expandRace(elem.name,"horizontal");
   var collection = allKillings.filter(function(el){
-    return el.symptoms_of_mental_illness === symptoms && el.victim_race === race;
+    return el.symptoms_of_mental_illness === illness 
+    && el.victim_race === race;
   });
   var sample = collection[Math.floor(Math.random()*collection.length)];
   window.open(sample.source);
