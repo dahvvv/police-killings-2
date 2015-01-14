@@ -1,6 +1,6 @@
 function updateMapFilterIllness(){
 	readyWeightsToBeShown();
-	$('#race-weight, #age-weight').show();
+	$("#age-weight").show();
 	var weight = detectWeight();
 	selectMapFilterIllnessWeight[weight]();
 };
@@ -8,9 +8,6 @@ function updateMapFilterIllness(){
 var selectMapFilterIllnessWeight = {
 	"none" : function(){
 		updateMapFilterIllnessWeightNone();
-	},
-	"race-weight" : function(){
-		updateMapFilterIllnessWeightRace();
 	},
 	"age-weight" : function(){
 		updateMapFilterIllnessWeightAge();
