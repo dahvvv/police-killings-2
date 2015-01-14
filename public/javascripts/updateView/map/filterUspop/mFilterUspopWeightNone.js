@@ -8,7 +8,8 @@ function updateMapFilterUspopWeightNone(){
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($("#popup-template").html());
+		var templateContent = obj.url_victim_image === null ? $("#popup-template-no-pic").html() : $("#popup-template").html();
+		obj["template"] = _.template(templateContent);
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
