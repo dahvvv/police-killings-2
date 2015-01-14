@@ -12,7 +12,8 @@ function updateMapFilterUnarmedWeightNone(){
 	});
 	var geoData = dataToGeoData(data);
 	makeMap(geoData);
-	var program = programs.map.unarmed.none;
+	var stateView = $("#state-filter").val();
+	var program = _.contains([null, "USA"], stateView) ? programs.map.unarmed.none : "";
 	$("#program").html(program);
 	$(".top").on("click", function(){
     window.scrollTo(0, 0);
