@@ -12,6 +12,7 @@ function removeExistingMaps(){
 };
 
 function setMapView(data, stateView){
+  debugger;
   if (stateView === null || stateView === "USA"){
     $("#program").show();
     $("#display-container").animate({"height":"63%"}, 200, function(){
