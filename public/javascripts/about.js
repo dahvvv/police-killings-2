@@ -1,96 +1,85 @@
 var timeouts = [];
 
-function nextPage(){
-	var pageNum = parseInt($('.pagenum').attr('id'));
-	var newPage = pages[pageNum + 1];
-	$('#page-container').html(newPage);
-	if (pageNum === 1){
-		$("#back-button").show();
+// function nextPage(context){
+// 	debugger;
+// 	stopRotatingImages();
+// 	var pageNum = parseInt($('.pagenum').attr('id'));
+// 	var newPage = pages[pageNum + 1];
+// 	$('#page-container').html(newPage);
+// 	if (pageNum === 1){
+// 		$("#back-button").show();
+// 	};
+// 	if ($(".about-img").length > 0){
+// 		var length = $(".about-img").length;
+// 		var i = 0;
+// 		var timeouts = [];
+// 		rotateImages(i, length);
+// 	};
+// };
+
+function newPage(id){
+	// stopRotatingImages();
+	var pageNum = parseInt($(".pagenum").attr("id"));
+	if (id === "forward-button"){
+		var newPage = pages[pageNum + 1];
+		if (pageNum === 1){ $("#back-button").show(); };
+	} else {
+		var newPage = pages[pageNum - 1];
+		if (pageNum === 2){ $("#back-button").hide(); };
 	};
-	if ($(".about-img").length != 0){
+	$('#page-container').html(newPage);
+	if ($(".about-img").length > 0){
 		var length = $(".about-img").length;
 		var i = 0;
 		var timeouts = [];
 		rotateImages(i, length);
-		// var timeOut = setTimeout(function(){
-		// 	rotateImages(i, length);
-		// 	console.log('1000!');
-		// 	$($(".about-img")[i % length]).fadeOut(500, function(){
-		// 		console.log('500!');
-		// 		$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
-		// 			console.log('1500!');
-		// 			i += 1;
-
-		// 		});
-		// 	});
-		// }, 1000);
 	};
 };
 
-function rotateImages(i, length){
-	timeouts.push(setTimeout(function(){
-		console.log('1000!');
-		$($(".about-img")[i % length]).fadeOut(500, function(){
-			console.log('500!');
-			$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
-				console.log('1500!');
-				i += 1;
-				rotateImages(i, length);
-			});
-		});
-	}, 1000))
-};
-
-function stopRotatingImages(){
-	for (var i = 0; i < timeouts.length; i++){
-		clearTimeout(timeouts[i]);
-		timeouts = [];
-	}
-};
-
-// function rotateImages(i, length){
-// 	console.log('1000!');
-// 	$($(".about-img")[i % length]).fadeOut(500, function(){
-// 		console.log('500!');
-// 		$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
-// 			console.log('1500!');
-// 			i += 1;
-// 			setTimeout(function(){
-// 				rotateImages(i, length);
-// 			}, 1000);
-// 		});
-// 	});
-// };
-
-function prevPage(){
-	var pageNum = parseInt($('.pagenum').attr('id'));
-	var newPage = pages[pageNum - 1];
-	$('#page-container').html(newPage);
-	if (newPage === 1){
-		$("#back-button").hide();
-	};
-	rotateImages(i, length);
-};
-
-// function rotateImages(){
-// 	if ($(".about-img").length != 0){
+// function prevPage(){
+// 	var pageNum = parseInt($('.pagenum').attr('id'));
+// 	var newPage = pages[pageNum - 1];
+// 	$('#page-container').html(newPage);
+// 	if (newPage === 1){
+// 		$("#back-button").hide();
+// 	};
+// 	if ($(".about-img").length > 0){
+// 		stopRotatingImages();
 // 		var length = $(".about-img").length;
 // 		var i = 0;
-// 		var rotation = setInterval(function(){
-// 			$($(".about-img")[i % length]).fadeOut(500, function(){
-// 				$($(".about-img")[(i + 1) % length]).fadeIn(500, function(){
-// 					i += 1;
-// 				});
-// 			});
-// 		}, 1800);
-// 		$(".nav-button, #close-button").on("click", function(){
-// 			clearInterval(rotation);
-// 		});
+// 		var timeouts = [];
+// 		rotateImages(i, length);
 // 	};
 // };
 
-function stopRotation(){
-	clearTimeout(timeOut);
+function rotateImages(i, length){
+	timeouts.push(setTimeout(function(){
+		if (timeouts.length > 0){
+			console.log('1000 chilled/being');
+			$($(".about-img")[i % length]).fadeOut(500, function(){
+				if (timeouts.length > 0){
+					console.log('500 faded out');
+					$($(".about-img")[(i + 1) % length]).fadeIn(1500, function(){
+						if (timeouts.length > 0){
+							console.log('1500 faded in');
+							i += 1;
+						 	rotateImages(i, length); 
+						};
+					});
+				};
+			});
+		};
+	}, 1000))
+};
+
+function stopRotatingImages(id, callback){
+	for (var i = 0; i < timeouts.length; i++){
+		clearTimeout(timeouts[i]);
+	};
+	timeouts = [];
+	setTimeout(function(){
+		callback(id);
+	}, 20);
 };
 
 var pages = {

@@ -101,14 +101,10 @@ $(function(){
     $("#about").slideToggle(600);
   });
 
-  $("#forward-button").on("click", function(e){
+  $(".nav-button").on("click", function(e){
     e.preventDefault();
-    nextPage();
-  });
-
-  $("#back-button").on("click", function(e){
-    e.preventDefault();
-    prevPage();
+    var id = this.id;
+    stopRotatingImages(id, newPage);
   });
 
   $.ajax({
