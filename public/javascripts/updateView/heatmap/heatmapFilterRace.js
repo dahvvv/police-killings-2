@@ -20,9 +20,13 @@ var selectHeatmapFilterRaceWeight = {
 
 function updateHeatmapFilterRaceWeightNone(){
 	var data = dataFilterRaceWeightNone();
-	makeHeatmap(data);
-	var program = "<p class='program-text two-line'>This heatmap is scaled to present a constant population size,<br>in order to emphasize differences in location.</p>";
-	$("#program").html(program);
+	var stateView = $('#state-filter').val();
+	makeHeatmap(data, stateView);
+	var program = _.contains([null, "USA"], stateView) ? programs.heatmap.race.none : "";
+	$('#program').html(program);
+	$(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
 };
 
 function updateHeatmapFilterRaceWeightUspop(){

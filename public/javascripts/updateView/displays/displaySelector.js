@@ -9,9 +9,15 @@ function removeExistingMaps(){
   while (map.hasLayer(heatLayer)) {
     map.removeLayer(heatLayer);
   };
+  if ($("#map-one").css("display") === "none") {
+    $("#display-container-canvaswidget").remove();
+    $("#map-one").show();
+    map.invalidateSize();
+  };
 };
 
 function setMapView(stateView, callback, arg){
+  removeExistingMaps();
   if (_.contains([null, "USA"], stateView)){
     map.setView([defaultLat, defaultLon],defaultZoom);
     $("#display-container").animate({"height":"63%"}, 200, function(){
@@ -29,15 +35,5 @@ function setMapView(stateView, callback, arg){
 function resizeMap(stateView, callback, arg){
   var callback = callback || detectDisplay;
   map.invalidateSize();
-  removeExistingMaps();
   callback(arg, stateView);
 };
-
-// function setMapToStateView(data, stateView){
-//   var view = stateViews[stateView];
-  
-//   map.whenReady(function(){
-//     map.invalidateSize();
-//     makeHeatmap(data, stateView);
-//   });
-// };

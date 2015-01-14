@@ -7,8 +7,8 @@ function updateHeatmapFilterShots(){
 
 function updateHeatmapFilterShotsWeightNone(){
 	var data = dataFilterShotsWeightNone();
-	makeHeatmap(data);
-	var stateView = $("#state-filter").val();
+	var stateView = $('#state-filter').val();
+	makeHeatmap(data, stateView);
   var program = _.contains([null, "USA"], stateView) ? programs.heatmap.shots.none : "";
 	$('#program').html(program);
 	$(".top").on("click", function(){

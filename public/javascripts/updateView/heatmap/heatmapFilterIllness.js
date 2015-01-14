@@ -7,8 +7,8 @@ function updateHeatmapFilterIllness(){
 
 function updateHeatmapFilterIllnessWeightNone(){
 	var data = dataFilterIllnessWeightNone();
-	makeHeatmap(data);
-	var stateView = $("#state-filter").val();
+	var stateView = $('#state-filter').val();
+	makeHeatmap(data, stateView);
   var program = _.contains([null, "USA"], stateView) ? programs.heatmap.illness.none : "";
 	$('#program').html(program);
 	$(".top").on("click", function(){

@@ -41,13 +41,6 @@ function dataFilterAgeWeightNone(){
   return arr.reverse();
 };
 
-// function filterByAge(){
-//   var arr = allKillings.filter(function(el){
-//     return el.victim_age >= enteredAgeRange().min && el.victim_age <= enteredAgeRange().max && el.victim_age != null;
-//   });
-//   return arr;
-// };
-
 function filterAgeNotNil(){
   var arr = allKillings.filter(function(el){
     return el.victim_age != null;

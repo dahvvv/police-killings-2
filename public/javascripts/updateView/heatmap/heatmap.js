@@ -38,12 +38,6 @@ function makeHeatmap(data, stateView){
     coords.push([lat,lng]);
   });
   setMapView(stateView, addHeatLayer, coords);
-  // heatLayer = L.heatLayer(coords, {
-  //   radius: 27,
-  //   gradient: selectGradient(stateView),
-  //   maxZoom: setMaxZoom(data.length, stateView),
-  //   max: 1
-  // });
 };
 
 function addHeatLayer(coords, stateView){
@@ -53,13 +47,7 @@ function addHeatLayer(coords, stateView){
     maxZoom: setMaxZoom(coords.length, stateView),
     max: 1
   });
-  if ($("#map-one").css("display") === "none") {
-    $("#display-container-canvaswidget").remove();
-    $("#map-one").show();
-    heatLayer.addTo(map);
-  } else {
-    heatLayer.addTo(map);
-  };
+  heatLayer.addTo(map);
 };
 
 function selectGradient(stateView){

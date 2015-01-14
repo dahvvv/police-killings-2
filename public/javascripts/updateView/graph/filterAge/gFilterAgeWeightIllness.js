@@ -12,7 +12,7 @@ function updateGraphFilterAgeWeightIllness(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightIllness;
 	createGraph(data, style);
-	var program = program.graph.age.illness;
+	var program = programs.graph.age.illness;
 	$('#program').html(program);
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
@@ -69,7 +69,7 @@ var styleGraphFilterAgeWeightIllness = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = elem.label + "-year-olds<br>with " + elem.name + " of mental illness<br>who were killed by the police:<br>" + elem.value;
+      tip.innerHTML = "On record,<br />the police have killed " + elem.value + " people<br />who exhibited " + elem.name + " of mental illness<br />and were " + elem.label + " years old.";
     }
   },
   Events: {

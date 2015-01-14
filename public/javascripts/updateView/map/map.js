@@ -68,6 +68,11 @@ function makeMap(geoData){
 };
 
 function addGeoLayer(geoData){
+  // if ($("#map-one").css("display") === "none") {
+  //   $("#display-container-canvaswidget").remove();
+  //   $("#map-one").show();
+  // };
+  // map.invalidateSize();
 	geoLayer = L.geoJson(geoData, {
 		pointToLayer: function(feature, latlng){
 			return L.circleMarker(latlng);
@@ -87,10 +92,6 @@ function addGeoLayer(geoData){
       });
 		}
 	});
-	if ($("#map-one").css("display") === "none") {
-    $("#display-container-canvaswidget").remove();
-    $("#map-one").show();
-  };
     // Fix this!!  this is the more attractive slide-to-map view, but it's buggy for some reason
 
     // $("#map-one").slideToggle(750, function(e){
