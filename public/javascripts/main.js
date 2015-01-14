@@ -104,7 +104,7 @@ $(function(){
   $(".nav-button").on("click", function(e){
     e.preventDefault();
     var id = this.id;
-    stopRotatingImages(id, newPage);
+    updatePage(id);
   });
 
   $.ajax({
