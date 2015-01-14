@@ -63,7 +63,6 @@ function dataToGeoData(data){
 };
 
 function makeMap(geoData){
-	removeExistingMaps();
   var stateView = $("#state-filter").val();
 	setMapView(stateView, addGeoLayer, geoData);
 };
