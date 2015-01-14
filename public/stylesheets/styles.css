@@ -95,6 +95,10 @@ a:visited {
   right: 10%;
 }
 
+#back-button {
+  display: none;
+}
+
 .arrow {
   position: absolute;
   width: 0;

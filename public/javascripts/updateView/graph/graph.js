@@ -2,8 +2,16 @@ function updateGraph(){
 	$(".filter-form").hide();
   $(".graph-legend-container").hide();
   var filter = $(".filter-type").attr("id");
-	emptyGraph(selectGraphFilter[filter]);
+  if (_.contains([null,"USA"], $("#state-filter").val())){
+    emptyGraph(selectGraphFilter[filter]);
+  } else {
+    $("#display-container").animate({"height":"63%"}, 100, function(){
+      emptyGraph(selectGraphFilter[filter]);
+    });
+  };
 };
+
+
 
 function emptyGraph(callback){
   if ($("#map-one").css("display") != "none") {
