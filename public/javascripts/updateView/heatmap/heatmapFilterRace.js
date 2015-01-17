@@ -1,7 +1,6 @@
 function updateHeatmapFilterRace(){
 	$("#race-filter-form").show();
-	readyWeightsToBeShown();
-	$("#usPop-weight, #arrests-weight").show();
+	$(".weight, #weight-header").hide();
 	var weight = detectWeight();
 	selectHeatmapFilterRaceWeight[weight]();
 };
@@ -9,12 +8,6 @@ function updateHeatmapFilterRace(){
 var selectHeatmapFilterRaceWeight = {
 	"none" : function(){
 		updateHeatmapFilterRaceWeightNone();
-	},
-	"usPop" : function(){
-		updateHeatmapFilterRaceWeightUspop();
-	},
-	"arrests" : function(){
-		updateHeatmapFilterRaceWeightArrests();
 	},
 };
 
