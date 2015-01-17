@@ -79,7 +79,7 @@ var styleGraphFilterIllnessWeightRace = {
     enable: true,
     onShow: function(tip, elem) {
 
-      tip.innerHTML = "On record,<br>the police have killed " + elem.value + " people<br>who were " + elem.name + "<br>and were exhibiting " + elem.label + " of mental illness.";
+      tip.innerHTML = "On record,<br>the police have killed " + elem.value + " people<br>who were " + elem.name + "<br>and who were exhibiting " + elem.label + " of mental illness.<br />Click for a random example.";
     }
   },
   Events: {

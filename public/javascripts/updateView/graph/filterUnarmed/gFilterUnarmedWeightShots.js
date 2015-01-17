@@ -76,7 +76,7 @@ var styleGraphFilterUnarmedWeightShots = {
     enable: true,
     onShow: function(tip, elem) {
       var shotShots = elem.name === 1 ? "shot" : "shots";
-      tip.innerHTML = elem.value + " times on record,<br>the police have killed someone<br>by firing " + elem.name + " " + shotShots + ",<br>and the victim was " + elem.label + ".";
+      tip.innerHTML = elem.value + " times on record,<br>the police have killed someone<br>by firing " + elem.name + " " + shotShots + ",<br>and the victim was " + elem.label + ".<br />Click for a random example.";
     }
   },
   Events: {

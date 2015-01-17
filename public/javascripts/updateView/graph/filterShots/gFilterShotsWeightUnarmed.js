@@ -67,7 +67,7 @@ var styleGraphFilterShotsWeightUnarmed = {
       var isAre = elem.value === 1 ? "is" : "are";
       var caseCases = elem.value === 1 ? "case" : "cases";
       var timeTimes = elem.label === "1" ? "time" : "times";
-      tip.innerHTML = "<p>There " + isAre + " " + elem.value + " recorded " + caseCases + " in which the police shot " + elem.label + " " + timeTimes + ", and the victim was " + elem.name + ".";
+      tip.innerHTML = "<p>There " + isAre + " " + elem.value + " recorded " + caseCases + " in which the police shot " + elem.label + " " + timeTimes + ", and the victim was " + elem.name + ".<br />Click for a random example.";
     }
   },
   Events: {

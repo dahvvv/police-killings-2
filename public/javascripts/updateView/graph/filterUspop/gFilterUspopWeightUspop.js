@@ -69,7 +69,7 @@ var styleGraphFilterUspopWeightUspop = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "In " + elem.label + ",<br>the police have killed " + elem.value + " people<br>for every million residents.";
+      tip.innerHTML = "In " + elem.label + ",<br>the police have killed " + elem.value + " people<br>for every million residents.<br />Click for a random example.";
     }
   },
   Events: {

@@ -60,7 +60,7 @@ var styleGraphFilterUnarmedWeightNone = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = elem.value + " times on record,<br>the police have killed someone<br>and the victim was " + elem.label + ".";
+      tip.innerHTML = elem.value + " times on record,<br>the police have killed someone<br>and the victim was " + elem.label + ".<br />Click for a random example.";
     }
   },
   Events: {

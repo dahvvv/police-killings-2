@@ -69,7 +69,7 @@ var styleGraphFilterAgeWeightIllness = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "On record,<br />the police have killed " + elem.value + " people<br />who exhibited " + elem.name + " of mental illness<br />and were " + elem.label + " years old.";
+      tip.innerHTML = "On record,<br />the police have killed " + elem.value + " people<br />who exhibited " + elem.name + " of mental illness<br />and were " + elem.label + " years old.<br />Click for a random example.";
     }
   },
   Events: {

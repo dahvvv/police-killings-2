@@ -64,7 +64,7 @@ var styleGraphFilterRaceWeightNone = {
     enable: true,
     onShow: function(tip, elem) {
       var race = expandRace(elem.label, "vertical");
-      tip.innerHTML = "In the United States,<br>" + elem.value + " " + race + " people<br>have been killed by police.";
+      tip.innerHTML = "On record,<br />" + elem.value + " " + race + " people<br>have been killed by the police.<br />Click for a random example.";
     }
   },
   Events: {

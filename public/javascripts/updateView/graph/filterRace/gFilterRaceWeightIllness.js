@@ -86,7 +86,7 @@ var styleGraphFilterRaceWeightIllness = {
       });
       var percent = ((totalIllnessRace.length/totalRace.length) * 100).toFixed(1);
 
-      tip.innerHTML = percent + " percent<br>of " + race + " people killed by police<br>were exhibiting " + elem.name + " of mental illness.";
+      tip.innerHTML = percent + " percent<br />of " + race + " people<br />who were killed by the police<br>were exhibiting " + elem.name + " of mental illness.<br />Click for a random example.";
     }
   },
   Events: {

@@ -61,7 +61,7 @@ var styleGraphFilterIllnessWeightNone = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = "In the United States,<br>" + elem.value + " people<br>have been killed by police<br>while exhibiting " + elem.label + " of mental illness.";
+      tip.innerHTML = "On record,<br />" + elem.value + " people<br />have been killed by the police<br>while exhibiting " + elem.label + " of mental illness.<br />Click for a random example.";
     }
   },
   Events: {

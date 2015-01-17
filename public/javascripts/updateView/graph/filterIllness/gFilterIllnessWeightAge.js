@@ -86,7 +86,7 @@ var styleGraphFilterIllnessWeightAge = {
         && el.symptoms_of_mental_illness === illness;
       });
       var percent = ((totalAgeIllness.length/totalIllness.length) * 100).toFixed(1);
-      tip.innerHTML = percent + " percent of people<br />who were killed by the police<br />and who showed " + elem.label + " of mental illness<br />were " + elem.name + " years old.";
+      tip.innerHTML = percent + " percent of people<br />who were killed by the police<br />and who showed " + elem.label + " of mental illness<br />were " + elem.name + " years old.<br />Click for a random example.";
     }
   },
   Events: {

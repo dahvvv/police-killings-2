@@ -91,7 +91,7 @@ var styleGraphFilterUspopWeightAge = {
         return el.victim_age === age && el.location_of_killing_city === city;
       });
       var percent = ((totalAgeCity.length/totalCity.length) * 100).toFixed(1);
-      tip.innerHTML = "In " + capCity + ",<br>" + percent + " percent of<br>all people killed by the police<br>were " + elem.name + " years old.";
+      tip.innerHTML = "In " + capCity + ",<br>" + percent + " percent of<br>all people killed by the police<br>were " + elem.name + " years old.<br />Click for a random example.";
     }
   },
   Events: {

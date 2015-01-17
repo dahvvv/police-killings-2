@@ -84,7 +84,7 @@ var styleGraphFilterAgeWeightRace = {
     enable: true,
     onShow: function(tip, elem) {
       var yearYears = elem.label === "1" ? "year" : "years";
-      tip.innerHTML = "The police have killed " + elem.value + " people<br>who were " + elem.label + " " + yearYears + " old<br>and " + elem.name + "."
+      tip.innerHTML = "On record,<br />the police have killed " + elem.value + " people<br>who were " + elem.label + " " + yearYears + " old<br>and " + elem.name + ".<br />Click for a random example."
     }
   },
   Events: {

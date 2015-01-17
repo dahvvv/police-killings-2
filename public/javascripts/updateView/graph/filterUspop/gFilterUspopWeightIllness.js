@@ -79,7 +79,7 @@ var styleGraphFilterUspopWeightIllness = {
      //    return el.victim_age === age && el.location_of_killing_city === city;
      //  });
      //  var percent = ((totalAgeCity.length/totalCity.length) * 100).toFixed(1);
-      tip.innerHTML = "In " + elem.label + ",<br>the police have killed " + elem.value + " people<br>who were exhibiting " + elem.name + " of mental illness.";
+      tip.innerHTML = "In " + elem.label + ",<br>the police have killed " + elem.value + " people<br>who were exhibiting " + elem.name + "<br />of mental illness.<br />Click for a random example.";
     }
   },
   Events: {

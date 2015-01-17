@@ -64,7 +64,7 @@ var styleGraphFilterShotsWeightNone = {
     enable: true,
     onShow: function(tip, elem) {
       var shotShots = elem.label === "1" ? "shot" : "shots";
-      tip.innerHTML = elem.value + " times on record,<br>the police have killed someone<br>by firing " + elem.label + " " + shotShots + ".";
+      tip.innerHTML = elem.value + " times on record,<br />the police have killed someone<br />by firing " + elem.label + " " + shotShots + ".<br />Click for a random example.";
     }
   },
   Events: {
