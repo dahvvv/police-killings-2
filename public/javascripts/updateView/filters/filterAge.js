@@ -38,7 +38,7 @@ function dataFilterAgeWeightNone(){
       && el.location_of_killing_state === stateView;
     };
   });
-  return arr.reverse();
+  return arr;
 };
 
 function filterAgeNotNil(){

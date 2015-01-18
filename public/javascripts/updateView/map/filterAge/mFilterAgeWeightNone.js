@@ -1,14 +1,14 @@
 function updateMapFilterAgeWeightNone(){
-	var data = dataFilterAgeWeightNone();
   var lowerBound = 0;
   var upperBound = 107;
-  var lowStandDev = 21;
-  var highStandDev = 48;
+  var lowStandDev = 27;
+  var highStandDev = 42;
   var regR = 3;
   var maxR = 25;
-  var regRGBArr = [85,26,139];
+  var regRGBArr = [113,26,139];
   var youngRGBArr = [255,255,0];
-  var oldRGBArr = [255,0,0];
+  var oldRGBArr = [255,255,255];
+  var data = dataMapFilterAgeWeightNone(lowStandDev, highStandDev, lowerBound, upperBound);
 	$.each(data, function(i,obj){
 		obj["geoStyle"] = {
 	    color: 'black',
@@ -32,4 +32,24 @@ function updateMapFilterAgeWeightNone(){
 	var stateView = $("#state-filter").val();
   var program = _.contains([null, "USA"], stateView) ? programs.map.age.none : "";
 	$('#program').html(program);
+	$(".top").on("click", function(){
+    window.scrollTo(0, 0);
+  });
+};
+
+function dataMapFilterAgeWeightNone(lowStandDev, highStandDev, lowerBound, upperBound){
+  var stateView = $("#state-filter").val();
+  var arr = allKillings.filter(function(el){
+    if (stateView === null || stateView === "USA"){
+      return el.victim_age >= enteredAgeRange().min 
+      && el.victim_age <= enteredAgeRange().max;
+    } else {
+      return el.victim_age >= enteredAgeRange().min 
+      && el.victim_age <= enteredAgeRange().max 
+      && el.location_of_killing_state === stateView;
+    };
+  });
+  return _.sortBy(arr, function(obj){
+    return ageFromStandDev(obj.victim_age, lowStandDev, highStandDev, lowerBound, upperBound);
+  });
 };

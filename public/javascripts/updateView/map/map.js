@@ -110,3 +110,44 @@ function basicRadius(){
     return 10;
   };
 };
+
+function rScale(val,valMin,valMax,rMin,rMax){
+  var multiplier = (val - valMin) / (valMax - valMin);
+  return Math.ceil(rMin + ((rMax - rMin) * multiplier));
+};
+
+function colorScale(val,valMin,valMax,minRGBArr,maxRGBArr){
+  var newRGB = $.map(minRGBArr, function(minColor,i){
+    var multiplier = (val - valMin) / (valMax - valMin);
+    return Math.floor(minColor + ((maxRGBArr[i] - minColor) * multiplier));
+  });
+  return "rgb(" + newRGB[0] + "," + newRGB[1] + "," + newRGB[2] + ")";
+};
+
+function dataMapFilterAgeWeightNone(){
+  var stateView = $("#state-filter").val();
+  var arr = allKillings.filter(function(el){
+    if (stateView === null || stateView === "USA"){
+      return el.victim_age >= enteredAgeRange().min 
+      && el.victim_age <= enteredAgeRange().max;
+    } else {
+      return el.victim_age >= enteredAgeRange().min 
+      && el.victim_age <= enteredAgeRange().max 
+      && el.location_of_killing_state === stateView;
+    };
+  });
+  return _.sortBy(arr, function(obj){
+    return ageFromStandDev(obj.victim_age, 27, 42)
+  });
+};
+
+function ageFromStandDev(age, lowStandDev, highStandDev, lowerBound, upperBound){
+  if (age < lowStandDev){
+    return rScale(age,lowStandDev,lowerBound,0,1000)
+  } else if (age <= highStandDev){
+    return 0;
+  } else {
+    return rScale(age,highStandDev,upperBound,0,1000);
+  };
+};
+
