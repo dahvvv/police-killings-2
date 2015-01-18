@@ -32,7 +32,7 @@ $(function(){
   $(".weight, .filter-form, .weight-form, .graph-legend-container").hide();
 
   map = L.mapbox.map("map-one", "marpborxmarrrpborrrrrx.kg7bjg5l", {
-    scrollWheelZoom: true,
+    scrollWheelZoom: false,
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
