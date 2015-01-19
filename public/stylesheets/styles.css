@@ -1,5 +1,5 @@
 body {
-  background-color: #c8cdcf;
+  background-color: #C8CDCF;
   padding: 0;
   font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
 }
@@ -121,7 +121,7 @@ a:visited {
 .pagenum {
   position: absolute;
   font-size: 1.5em;
-  color: #c8cdcf;
+  color: #C8CDCF;
   width: 100%;
   bottom: 2%;
   left: 48%;

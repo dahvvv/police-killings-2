@@ -48,6 +48,9 @@ function addHeatLayer(coords, stateView){
     max: 1
   });
   heatLayer.addTo(map);
+  map.whenReady(function(){
+    spinner.stop();
+  });
 };
 
 function selectGradient(stateView){

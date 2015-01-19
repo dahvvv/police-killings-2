@@ -2,6 +2,7 @@ function updateMap(){
 	$(".legend, .weight-legend").css({"display":"inline-block"});
   $(".graph-legend-container").hide();
 	var filter = $(".filter-type").attr("id");
+  createSpinner();
   selectMapFilter[filter]();
 };
 
@@ -95,6 +96,9 @@ function addGeoLayer(geoData){
     //   },20);
     // });
   geoLayer.addTo(map);
+  map.whenReady(function(){
+    spinner.stop();
+  });
 };
 
 function basicRadius(){

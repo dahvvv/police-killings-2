@@ -6,6 +6,7 @@ var defaultZoom = 4;
 var geoLayer;
 var heatLayer;
 var graph;
+var spinner;
 
 
 var updateDisplay = {
@@ -35,6 +36,8 @@ $(function(){
     scrollWheelZoom: false,
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
+
+  createSpinner();
 
   $(".filter").on("click", function(e){
     e.preventDefault();
