@@ -81,8 +81,7 @@ function addGeoLayer(geoData){
 			return feature.properties.style;
 		},
 		onEachFeature: function(feature,layer){
-			var template = feature.properties.template;
-			var popupContent = template(feature.properties);
+      var popupContent = feature.properties.template;
       var divNode = document.createElement("DIV");
       divNode.innerHTML = popupContent;
       layer.bindPopup(divNode, {
