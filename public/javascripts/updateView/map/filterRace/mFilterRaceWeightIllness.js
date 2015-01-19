@@ -9,11 +9,16 @@ function updateMapFilterRaceWeightIllness(){
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($('#popup-template').html());
+		var name = obj.victim_name;
+		var age = obj.victim_age;
+		var source = obj.source;
+		var img = obj.url_victim_image;
+		var description = obj.description;
+		obj["template"] = img === null ? templateMapNoPic(name, age, source, description) : templateMap(name, age, source, img, description);
 	});
 	var geoData = dataToGeoData(data);
-	makeMap(geoData);
 	var stateView = $("#state-filter").val();
+	setMapView(stateView, addGeoLayer, geoData);
 	var program = _.contains([null, "USA"], stateView) ? programs.map.race.illness : "";
 	$('#program').html(program);
 	$(".top").on("click", function(){

@@ -8,11 +8,17 @@ function updateMapFilterShotsWeightRace(){
 	    fillOpacity: 1,
 	    opacity: 1,
 		};
-		obj["template"] = _.template($("#shots-race-template").html());
+		var name = obj.victim_name;
+		var age = obj.victim_age;
+		var source = obj.source;
+		var img = obj.url_victim_image;
+		var description = obj.description;
+		var shots = obj.shots_fired;
+		obj["template"] = img === null ? templateMapShotsNoPic(name, age, source, description, shots) : templateMapShots(name, age, source, img, description, shots);
 	});
 	var geoData = dataToGeoData(data);
-	makeMap(geoData);
 	var stateView = $("#state-filter").val();
+	setMapView(stateView, addGeoLayer, geoData);
   var program = _.contains([null, "USA"], stateView) ? programs.map.shots.race : "";
 	$("#program").html(program);
 	$(".top").on("click", function(){

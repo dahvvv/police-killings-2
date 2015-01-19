@@ -25,11 +25,16 @@ function updateMapFilterAgeWeightNone(){
 			obj["geoStyle"]["fillColor"] = colorScale(obj.victim_age,highStandDev,upperBound,regRGBArr,oldRGBArr);
 			obj["geoStyle"]["radius"] = rScale(obj.victim_age,highStandDev,upperBound,regR,maxR);
 		};
-		obj["template"] = _.template($('#popup-template').html());
+    var name = obj.victim_name;
+    var age = obj.victim_age;
+    var source = obj.source;
+    var img = obj.url_victim_image;
+    var description = obj.description;
+    obj["template"] = img === null ? templateMapNoPic(name, age, source, description) : templateMap(name, age, source, img, description);
 	});
 	var geoData = dataToGeoData(data);
-	makeMap(geoData);
 	var stateView = $("#state-filter").val();
+  setMapView(stateView, addGeoLayer, geoData);
   var program = _.contains([null, "USA"], stateView) ? programs.map.age.none : "";
 	$('#program').html(program);
 	$(".top").on("click", function(){

@@ -18,7 +18,6 @@ function updateMapFilterUspopWeightNone(){
 	var geoData = dataToGeoData(data);
 	var stateView = $("#state-filter").val();
 	setMapView(stateView, addGeoLayer, geoData);
-	// makeMap(geoData);
 	var program = _.contains([null, "USA"], stateView) ? programs.map.usPop.none : "";
 	$("#program").html(program);
 	$(".top").on("click", function(){
