@@ -16,7 +16,7 @@ function updateMapFilterUspopWeightNone(){
 	var stateView = $("#state-filter").val();
 	var program = _.contains([null, "USA"], stateView) ? programs.map.usPop.none : "";
 	$("#program").html(program);
-	$("#up-arrow").on("click", function(){
+	$(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
 };

@@ -63,7 +63,7 @@ var styleGraphFilterUspopWeightNone = {
   Tips: {
     enable: true,
     onShow: function(tip, elem) {
-      tip.innerHTML = elem.value + " people<br />have been killed by police in " + elem.label + ".<br />Click for a random example.";
+      tip.innerHTML = "On record,<br>the police have killed " + elem.value + " people<br>in " + elem.label + ".<br />Click for a random example.";
     }
   },
   Events: {
