@@ -62,12 +62,6 @@ function dataToGeoData(data){
 	return geoData;
 };
 
-// can this be killed?
-function makeMap(geoData){
-  var stateView = $("#state-filter").val();
-	setMapView(stateView, addGeoLayer, geoData);
-};
-
 function addGeoLayer(geoData){
   // if ($("#map-one").css("display") === "none") {
   //   $("#display-container-canvaswidget").remove();

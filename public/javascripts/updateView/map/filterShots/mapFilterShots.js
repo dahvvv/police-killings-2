@@ -38,10 +38,10 @@ function programIntroMapShots(data){
 };
 
 function templateMapShots(name,age,source,img,description,shots){
-  return "<div class='popup-container'><h4>" + name + "</h4><h4>" + shots + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><img class='popup-img' src='" + img + "' alt=''><p><strong>" + description + "</strong></p></div>"
+  return "<div class='popup-container'><h4>" + name + "</h4><h4>Shots Fired:  " + shots + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><img class='popup-img' src='" + img + "' alt=''><p><strong>" + description + "</strong></p></div>"
 };
 
 function templateMapShotsNoPic(name,age,source,description,shots){
-  return "<div class='popup-container'><h4>" + name + "</h4><h4>" + shots + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><p><strong>" + description + "</strong></p></div>"
+  return "<div class='popup-container'><h4>" + name + "</h4><h4>Shots Fired:  " + shots + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><p><strong>" + description + "</strong></p></div>"
 };
 

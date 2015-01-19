@@ -9,7 +9,7 @@ function updateMapFilterUspopWeightNone(){
 	    opacity: 1,
 		};
 		var name = obj.victim_name;
-		var age = obj.victim_age;
+		var age = obj.victim_age === null ? "<em>none given</em>" : obj.victim_age;
 		var source = obj.source;
 		var img = obj.url_victim_image;
 		var description = obj.description;
