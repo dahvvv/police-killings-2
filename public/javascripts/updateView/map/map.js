@@ -62,6 +62,7 @@ function dataToGeoData(data){
 	return geoData;
 };
 
+// can this be killed?
 function makeMap(geoData){
   var stateView = $("#state-filter").val();
 	setMapView(stateView, addGeoLayer, geoData);
@@ -148,5 +149,13 @@ function ageFromStandDev(age, lowStandDev, highStandDev, lowerBound, upperBound)
   } else {
     return rScale(age,highStandDev,upperBound,0,1000);
   };
+};
+
+function templateMap(name,age,source,img,description){
+  return "<div class='popup-container'><h4>" + name + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><img class='popup-img' src='" + img + "' alt=''><p><strong>" + description + "</strong></p></div>"
+};
+
+function templateMapNoPic(name,age,source,description){
+  return "<div class='popup-container'><h4>" + name + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><p><strong>" + description + "</strong></p></div>"
 };
 

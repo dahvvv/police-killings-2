@@ -20,7 +20,7 @@ function setMapView(stateView, callback, arg){
   removeExistingMaps();
   if (_.contains([null, "USA"], stateView)){
     map.setView([defaultLat, defaultLon],defaultZoom);
-    $("#display-container").animate({"height":"63%"}, 200, function(){
+    $("#display-container").animate({"height":"63%"}, 100, function(){
       resizeMap(stateView, callback, arg);
     });
   } else {
