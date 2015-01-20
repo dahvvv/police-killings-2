@@ -424,6 +424,8 @@ button.top {
   text-align: center;
   font-size: 1.2em;
   position: relative;
+  max-height: 400px;
+  overflow: auto;
 }
 
 .popup-img {
