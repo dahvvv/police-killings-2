@@ -11,11 +11,8 @@ function updateGraphFilterUspopWeightIllness(){
 	$('#program').html(program);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
-    if (this.id === "spokane"){
-      var elem = {name: "symptoms", label: "Spokane"};
-    } else {
-      var elem = {name: "symptoms", label: "Portland"};
-    };
+    var elem = {name: "symptoms"};
+    elem["label"] = this.id;
     graphFilterUspopWeightIllnessTipSample(elem);
   });
   $(".top").on("click", function(){

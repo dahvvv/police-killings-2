@@ -9,6 +9,11 @@ function updateGraphFilterRaceWeightIllness(){
 	createGraph(data, style);
 	var program = programs.graph.race.illness;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {name: "symptoms", label: "asian"};
+    graphFilterRaceWeightIllnessTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

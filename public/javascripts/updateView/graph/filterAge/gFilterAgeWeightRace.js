@@ -21,6 +21,12 @@ function updateGraphFilterAgeWeightRace(){
 	createGraph(data, style);
 	var program = programs.graph.age.race;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: 18};
+    elem["name"] = this.id;
+    graphFilterAgeWeightRaceTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

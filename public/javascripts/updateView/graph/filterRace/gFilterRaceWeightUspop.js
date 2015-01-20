@@ -9,6 +9,11 @@ function updateGraphFilterRaceWeightUspop(){
 	createGraph(data, style);
 	var program = programs.graph.race.usPop;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "black"};
+    graphFilterRaceWeightUspopTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

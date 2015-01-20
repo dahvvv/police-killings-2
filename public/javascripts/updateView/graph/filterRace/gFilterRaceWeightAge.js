@@ -10,6 +10,15 @@ function updateGraphFilterRaceWeightAge(){
 	createGraph(data, style);
   var program = programs.graph.race.age;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    if (this.id === "black"){
+      var elem = {name: 19, label: "black"};
+    } else {
+      var elem = {name: 35, label: "white"};
+    };
+    graphFilterRaceWeightAgeTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
