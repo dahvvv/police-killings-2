@@ -9,6 +9,11 @@ function updateGraphFilterIllnessWeightNone(){
 	createGraph(data, style);
 	var program = programs.graph.illness.none;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "symptoms"};
+    graphFilterIllnessWeightNoneTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

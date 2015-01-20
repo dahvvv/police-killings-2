@@ -13,6 +13,11 @@ function updateGraphFilterShotsWeightUnarmed(){
 	createGraph(data, style);
 	var program = programs.graph.shots.unarmed;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "20+", name: "unarmed"};
+    graphFilterShotsWeightUnarmedTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

@@ -9,6 +9,11 @@ function updateGraphFilterUnarmedWeightNone(){
 	createGraph(data, style);
 	var program = programs.graph.unarmed.none;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "unarmed"};
+    graphFilterUnarmedWeightNoneTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

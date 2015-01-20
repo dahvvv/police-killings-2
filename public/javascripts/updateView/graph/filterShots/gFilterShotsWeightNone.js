@@ -13,6 +13,11 @@ function updateGraphFilterShotsWeightNone(){
 	createGraph(data, style);
 	var program = programs.graph.shots.none;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "20+"};
+    graphFilterShotsWeightNoneTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
