@@ -12,6 +12,11 @@ function updateGraphFilterUspopWeightUspop(){
 	createGraph(data, style);
 	var program = programs.graph.usPop.usPop;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "Oakland"};
+    graphFilterUspopWeightUspopTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });

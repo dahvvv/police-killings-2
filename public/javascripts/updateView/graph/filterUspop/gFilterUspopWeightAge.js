@@ -10,6 +10,15 @@ function updateGraphFilterUspopWeightAge(){
 	createGraph(data, style);
 	var program = programs.graph.usPop.age;
 	$('#program').html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    if (this.id === "oakland"){
+      var elem = {name: 18, label: "Oakland"};
+    } else {
+      var elem = {name: 19, label: "DC"};
+    };
+    graphFilterUspopWeightAgeTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
