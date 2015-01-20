@@ -62,7 +62,7 @@ var programs = {
 	},
 	heatmap: {
 		usPop: {
-			none: "<p>People killed by police officers in the United States.</p><p style='margin-top:-10%;'><a id='about-link' href='/'>About This Project</a></p>",
+			none: "<p>People killed by police officers in the United States.</p><p style='margin-top:-10%;'><a class='about-link' href='/'>About This Project</a></p>",
 		},
 		age: {
 			none: "<p>This heatmap shows the differences in location<br />between victims of different ages.</p><p><div id='down-arrow'></div></p><p>Adjust the Age Form on the left to adjust who will appear on the map.</p><img style='width:15%;' src='http://i.imgur.com/WthgZy3.png' /><p>This heatmap does not show the total number of victims<br />for any given age range.<br />The graph and map are better ways to see that.<br />Instead, this heatmap is scaled to always show a similar total number of victims<br />in order to emphasize <em>where</em> the victims are.</p>Victims 60 Years Old or Older:<br /><img style='width:15%;display:inline-block;margin-right:5%;' src='http://i.imgur.com/Ickuhpn.png' /><img style='width:70%;display:inline-block;' src='http://i.imgur.com/gjRON7b.png' /><br />Victims 15 Years Old or Younger:<br /><img style='width:15%;display:inline-block;margin-right:5%;' src='http://i.imgur.com/RFdUAtG.png' /><img style='width:70%;display:inline-block;' src='http://i.imgur.com/LFUK1no.png' /><p>You can see that instances of the police killing someone older<br />are more concentrated in the northwest of the country,<br />while instances of the police killing someone younger<br />are more concentrated in the southeast.</p><br /><button class='top'>Top</button>",

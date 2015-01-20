@@ -99,7 +99,7 @@ $(function(){
     updateDisplay[display]();
   });
 
-  $("#about-link, #close-button").on("click", function(e){
+  $("#close-button").on("click", function(e){
     e.preventDefault();
     $("#about").slideToggle(600);
   });

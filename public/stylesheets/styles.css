@@ -127,6 +127,14 @@ a:visited {
   left: 48%;
 }
 
+#about-fixed {
+  position: fixed;
+  bottom: 4%;
+  right: 5%;
+  font-size: 1.2em;
+  display: none;
+}
+
 .description-container {
   background-color: white;
   z-index: 100000000;

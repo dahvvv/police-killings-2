@@ -16,7 +16,7 @@ function updateHeatmapFilterUspopWeightNone(){
 	makeHeatmap(data, stateView);
   var program = _.contains([null, "USA"], stateView) ? programs.heatmap.usPop.none : "";
 	$("#program").html(program);
-	$("#about-link").on("click", function(e){
+	$(".about-link").on("click", function(e){
     e.preventDefault();
     $("#page-container").html(pages[1]);
     $("#page-container").css({"opacity":"0"});

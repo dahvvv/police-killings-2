@@ -3,6 +3,7 @@ function updateMap(){
   $(".graph-legend-container").hide();
 	var filter = $(".filter-type").attr("id");
   createSpinner();
+  $("#about-fixed").show();
   selectMapFilter[filter]();
 };
 

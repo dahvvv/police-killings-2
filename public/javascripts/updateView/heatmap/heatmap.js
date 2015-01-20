@@ -3,6 +3,11 @@ function updateHeatmap(){
   $(".legend, .weight-legend, .graph-legend-container").hide();
   $(".weight, .weight-form").hide();
   var filter = $(".filter-type").attr("id");
+  if (filter === "usPop-filter"){
+    $("#about-fixed").hide();
+  } else {
+    $("#about-fixed").show();
+  };
   selectHeatmapFilter[filter]();
 };
 
