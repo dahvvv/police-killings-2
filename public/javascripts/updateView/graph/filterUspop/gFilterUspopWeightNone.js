@@ -11,7 +11,12 @@ function updateGraphFilterUspopWeightNone(){
 	var style = styleGraphFilterUspopWeightNone;
 	createGraph(data, style);
 	var program = programs.graph.usPop.none;
-	$('#program').html(program);
+	$("#program").html(program);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: "NYC"};
+    graphFilterUspopWeightNoneTipSample(elem);
+  });
   $(".top").on("click", function(){
     window.scrollTo(0, 0);
   });
@@ -76,6 +81,7 @@ var styleGraphFilterUspopWeightNone = {
 };
 
 function graphFilterUspopWeightNoneTipSample(elem){
+  debugger;
   var city = lowercaseCity(elem.label);
   var collection = allKillings.filter(function(el){
     return el.location_of_killing_city === city;
