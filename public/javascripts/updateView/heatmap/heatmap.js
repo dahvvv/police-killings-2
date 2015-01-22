@@ -1,4 +1,5 @@
 function updateHeatmap(){
+  $("#state-filter-form").show();
   $(".weight-type").removeClass();
   $(".legend, .weight-legend, .graph-legend-container").hide();
   $(".weight, .weight-form").hide();

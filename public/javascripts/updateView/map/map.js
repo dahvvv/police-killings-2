@@ -1,4 +1,5 @@
 function updateMap(){
+  $("#state-filter-form").show();
 	$(".legend, .weight-legend").css({"display":"inline-block"});
   $(".graph-legend-container").hide();
 	var filter = $(".filter-type").attr("id");

@@ -1,6 +1,6 @@
 function updateGraph(){
   $("#about-fixed").show();
-	$(".filter-form, .graph-legend-container").hide();
+	$("#state-filter-form, .filter-form, .graph-legend-container").hide();
   var filter = $(".filter-type").attr("id");
   if (_.contains([null,"USA"], $("#state-filter").val())){
     emptyGraph(selectGraphFilter[filter]);
