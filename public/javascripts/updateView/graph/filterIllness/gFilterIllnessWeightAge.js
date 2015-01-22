@@ -9,15 +9,12 @@ function updateGraphFilterIllnessWeightAge(){
   var style = styleGraphFilterIllnessWeightAge;
   createGraph(data, style);
   var program = programs.graph.illness.age;
-  $('#program').html(program);
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {name: 21};
     elem["label"] = this.id;
     graphFilterIllnessWeightAgeTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

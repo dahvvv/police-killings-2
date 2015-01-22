@@ -18,16 +18,13 @@ function updateGraphFilterShotsWeightRace(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterShotsWeightRace;
 	createGraph(data, style);
-	var program = programs.graph.shots.race;
-	$('#program').html(program);
+  var program = programs.graph.shots.race;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: "20+"};
     elem["name"] = this.id;
     graphFilterShotsWeightRaceTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

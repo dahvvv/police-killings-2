@@ -12,15 +12,12 @@ function updateGraphFilterUnarmedWeightShots(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUnarmedWeightShots;
 	createGraph(data, style);
-	var program = programs.graph.unarmed.shots;
-	$('#program').html(program);
+  var program = programs.graph.unarmed.shots;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: "unarmed", name: 14};
     graphFilterUnarmedWeightShotsTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

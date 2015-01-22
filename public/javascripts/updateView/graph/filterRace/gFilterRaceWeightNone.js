@@ -7,15 +7,12 @@ function updateGraphFilterRaceWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterRaceWeightNone;
 	createGraph(data, style);
-	var program = programs.graph.race.none;
-	$('#program').html(program);
+  var program = programs.graph.race.none;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: "black"};
     graphFilterRaceWeightNoneTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

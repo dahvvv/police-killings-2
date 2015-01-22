@@ -7,16 +7,13 @@ function updateGraphFilterUspopWeightIllness(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightIllness;
 	createGraph(data, style);
-	var program = programs.graph.usPop.illness;
-	$('#program').html(program);
+  var program = programs.graph.usPop.illness;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {name: "symptoms"};
     elem["label"] = this.id;
     graphFilterUspopWeightIllnessTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

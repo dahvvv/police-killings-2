@@ -7,15 +7,12 @@ function updateGraphFilterUnarmedWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUnarmedWeightNone;
 	createGraph(data, style);
-	var program = programs.graph.unarmed.none;
-	$('#program').html(program);
+  var program = programs.graph.unarmed.none;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: "unarmed"};
     graphFilterUnarmedWeightNoneTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

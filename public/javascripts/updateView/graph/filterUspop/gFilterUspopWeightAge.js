@@ -8,8 +8,8 @@ function updateGraphFilterUspopWeightAge(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightAge;
 	createGraph(data, style);
-	var program = programs.graph.usPop.age;
-	$('#program').html(program);
+  var program = programs.graph.usPop.age;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     if (this.id === "oakland"){
@@ -18,9 +18,6 @@ function updateGraphFilterUspopWeightAge(){
       var elem = {name: 19, label: "DC"};
     };
     graphFilterUspopWeightAgeTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

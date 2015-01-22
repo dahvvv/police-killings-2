@@ -20,10 +20,7 @@ function updateMapFilterIllnessWeightNone(){
 	var geoData = dataToGeoData(data);
 	var stateView = $("#state-filter").val();
 	setMapView(stateView, addGeoLayer, geoData);
-  var program = _.contains([null, "USA"], stateView) ? programs.map.illness.none : "";
-	$("#program").html(program);
-	$(".top").on("click", function(){
-    window.scrollTo(0, 0);
-  });
+	var program = programs.map.illness.none;
+  setProgram(program, stateView);
 };
 

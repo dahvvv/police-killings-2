@@ -12,15 +12,12 @@ function updateGraphFilterAgeWeightNone(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightNone;
 	createGraph(data, style);
-	var program = programs.graph.age.none;
-	$('#program').html(program);
+  var program = programs.graph.age.none;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: 21};
     graphFilterAgeWeightNoneTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

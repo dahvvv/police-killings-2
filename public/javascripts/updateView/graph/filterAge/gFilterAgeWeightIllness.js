@@ -12,10 +12,13 @@ function updateGraphFilterAgeWeightIllness(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterAgeWeightIllness;
 	createGraph(data, style);
-	var program = programs.graph.age.illness;
-	$('#program').html(program);
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
+  var program = programs.graph.age.illness;
+  setProgram(program, null);
+  $(".graph-img").on("click", function(e){
+    e.preventDefault();
+    var elem = {label: 47};
+    elem["name"] = this.id;
+    graphFilterAgeWeightIllnessTipSample(elem);
   });
 };
 

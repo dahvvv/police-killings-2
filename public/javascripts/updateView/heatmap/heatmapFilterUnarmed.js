@@ -9,11 +9,8 @@ function updateHeatmapFilterUnarmedWeightNone(){
 	var data = dataFilterUnarmedWeightNone();
 	var stateView = $('#state-filter').val();
 	makeHeatmap(data, stateView);
-  var program = _.contains([null, "USA"], stateView) ? programs.heatmap.unarmed.none : "";
-	$('#program').html(program);
-	$(".top").on("click", function(){
-    window.scrollTo(0, 0);
-  });
+	var program = programs.heatmap.unarmed.none;
+	setProgram(program, stateView);
 };
 
 var selectHeatmapFilterUnarmedWeight = {

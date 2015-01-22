@@ -10,15 +10,12 @@ function updateGraphFilterUspopWeightUspop(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterUspopWeightUspop;
 	createGraph(data, style);
-	var program = programs.graph.usPop.usPop;
-	$('#program').html(program);
+  var program = programs.graph.usPop.usPop;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: "Oakland"};
     graphFilterUspopWeightUspopTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

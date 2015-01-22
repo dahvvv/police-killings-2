@@ -9,11 +9,8 @@ function updateHeatmapFilterIllnessWeightNone(){
 	var data = dataFilterIllnessWeightNone();
 	var stateView = $('#state-filter').val();
 	makeHeatmap(data, stateView);
-  var program = _.contains([null, "USA"], stateView) ? programs.heatmap.illness.none : "";
-	$('#program').html(program);
-	$(".top").on("click", function(){
-    window.scrollTo(0, 0);
-  });
+	var program = programs.heatmap.illness.none;
+	setProgram(program, stateView);
 };
 
 var selectHeatmapFilterIllnessWeight = {

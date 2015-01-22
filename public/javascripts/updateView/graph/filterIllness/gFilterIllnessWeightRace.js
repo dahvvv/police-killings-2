@@ -14,16 +14,13 @@ function updateGraphFilterIllnessWeightRace(){
 	var data = labelsToData(labels);
 	var style = styleGraphFilterIllnessWeightRace;
 	createGraph(data, style);
-	var program = programs.graph.illness.race;
-	$('#program').html(program);
+  var program = programs.graph.illness.race;
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     var elem = {label: "symptoms"};
     elem["name"] = this.id;
     graphFilterIllnessWeightRaceTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 

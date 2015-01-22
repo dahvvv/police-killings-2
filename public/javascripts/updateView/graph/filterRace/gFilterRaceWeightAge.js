@@ -9,7 +9,7 @@ function updateGraphFilterRaceWeightAge(){
 	var style = styleGraphFilterRaceWeightAge;
 	createGraph(data, style);
   var program = programs.graph.race.age;
-	$('#program').html(program);
+  setProgram(program, null);
   $(".graph-img").on("click", function(e){
     e.preventDefault();
     if (this.id === "black"){
@@ -18,9 +18,6 @@ function updateGraphFilterRaceWeightAge(){
       var elem = {name: 35, label: "white"};
     };
     graphFilterRaceWeightAgeTipSample(elem);
-  });
-  $(".top").on("click", function(){
-    window.scrollTo(0, 0);
   });
 };
 
