@@ -26,7 +26,7 @@ function setMapView(stateView, callback, arg){
   } else {
     var view = stateViews[stateView];
     map.setView([view.lat, view.lon],view.zoom);
-    $("#display-container").animate({"height":"73%"}, 200, function(){
+    $("#display-container").animate({"height":"80%"}, 200, function(){
       resizeMap(stateView, callback, arg);
     });
   };
