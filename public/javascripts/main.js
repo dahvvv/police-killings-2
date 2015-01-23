@@ -38,11 +38,12 @@ $(function(){
     draggable: true
   }).setView([defaultLat,defaultLon],defaultZoom);
 
-  createSpinner();
-
   $.ajax({
     url: "/api",
     dataType: "JSON",
+    beforeSend: function(){
+      createSpinner();
+    },
     success: function(data){
       allKillings = data;
       updateHeatmap();
