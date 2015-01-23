@@ -110,6 +110,10 @@ $(function(){
     updatePage(id);
   });
 
+  $("#program").on("click", ".top", function(){
+    window.scrollTo(0, 0);
+  });
+
   $.ajax({
     url: "/api",
     dataType: "JSON",

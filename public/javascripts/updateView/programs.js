@@ -2,9 +2,6 @@ function setProgram(program, stateView){
 	var marginTop = _.contains([null, "USA"], stateView) ? "0" : "17%";
 	$("#program").css({"margin-top":marginTop});
 	$('#program').html(program);
-	$(".top").on("click", function(){
-    window.scrollTo(0, 0);
-  });
 };
 
 var programs = {
