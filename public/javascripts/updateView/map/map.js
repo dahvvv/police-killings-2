@@ -151,7 +151,8 @@ function ageFromStandDev(age, lowStandDev, highStandDev, lowerBound, upperBound)
   };
 };
 
-function setMapTemplate(obj){
+function setMapTemplate(obj, shotsMap){
+  var shotsMap = shotsMap || false;
   var name = obj.victim_name;
   var age = obj.victim_age;
   var source = obj.source;
@@ -162,5 +163,12 @@ function setMapTemplate(obj){
   var sourceHTML = source === null ? "" : "<h4><a href='" + source + "' target=_blank>Source</a></h4>";
   var imgHTML = img === null ? "" : "<img class='popup-img' src='" + img + "' alt=''>";
   var descriptionHTML = description === null ? "" : "<p><strong>" + description + "</strong></p>";
-  return "<div class='popup-container'>" + nameHTML + ageHTML + sourceHTML + imgHTML + descriptionHTML + "</div>";
+  if (shotsMap){
+    var shots = obj.shots_fired;
+    var shotsHTML = "<h4>Shots Fired:  " + shots + "</h4>";
+    return "<div class='popup-container'>" + nameHTML + shotsHTML + ageHTML + sourceHTML + imgHTML + descriptionHTML + "</div>";
+  } else {
+    return "<div class='popup-container'>" + nameHTML + ageHTML + sourceHTML + imgHTML + descriptionHTML + "</div>";
+  };
+
 };
