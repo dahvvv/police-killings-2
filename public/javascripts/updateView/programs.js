@@ -1,7 +1,18 @@
 function setProgram(program, stateView){
 	var marginTop = _.contains([null, "USA"], stateView) ? "0" : "17%";
 	$("#program").css({"margin-top":marginTop});
-	$('#program').html(program);
+	$("#program").html(program);
+	fadeArrow($("#down-arrow"));
+};
+
+function fadeArrow(arrow){
+	if (arrow.length === 1){
+		arrow.animate({"opacity":"0"}, 1000, function(){
+			arrow.animate({"opacity":"1"}, 1000, function(){
+				fadeArrow(arrow);
+			});
+		});
+	};
 };
 
 var programs = {
