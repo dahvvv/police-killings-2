@@ -151,11 +151,16 @@ function ageFromStandDev(age, lowStandDev, highStandDev, lowerBound, upperBound)
   };
 };
 
-function templateMap(name,age,source,img,description){
-  return "<div class='popup-container'><h4>" + name + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><img class='popup-img' src='" + img + "' alt=''><p><strong>" + description + "</strong></p></div>"
+function setMapTemplate(obj){
+  var name = obj.victim_name;
+  var age = obj.victim_age;
+  var source = obj.source;
+  var img = obj.url_victim_image;
+  var description = obj.description;
+  var nameHTML = name === null ? "<h4><em>No Name Given</hr>" : "<h4>" + name + "</h4>";
+  var ageHTML = age === null ? "" : "<h4>Age:  " + age + "</h4>";
+  var sourceHTML = source === null ? "" : "<h4><a href='" + source + "' target=_blank>Source</a></h4>";
+  var imgHTML = img === null ? "" : "<img class='popup-img' src='" + img + "' alt=''>";
+  var descriptionHTML = description === null ? "" : "<p><strong>" + description + "</strong></p>";
+  return "<div class='popup-container'>" + nameHTML + ageHTML + sourceHTML + imgHTML + descriptionHTML + "</div>";
 };
-
-function templateMapNoPic(name,age,source,description){
-  return "<div class='popup-container'><h4>" + name + "</h4><h4>Age:  " + age + "</h4><h4><a href='" + source + "' target=_blank>Source</a></h4><p><strong>" + description + "</strong></p></div>"
-};
-
