@@ -7,8 +7,8 @@ function setProgram(program, stateView){
 
 function fadeArrow(arrow){
 	if (arrow.length === 1){
-		arrow.animate({"opacity":"0"}, 1000, function(){
-			arrow.animate({"opacity":"1"}, 1000, function(){
+		arrow.animate({"opacity":"0.1"}, 1800, function(){
+			arrow.animate({"opacity":"1"}, 1800, function(){
 				fadeArrow(arrow);
 			});
 		});
