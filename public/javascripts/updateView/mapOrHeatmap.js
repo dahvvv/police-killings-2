@@ -19,11 +19,13 @@ function removeExistingMaps(){
 function setMapView(stateView, callback, arg){
   removeExistingMaps();
   if (_.contains([null, "USA"], stateView)){
+    $("#back-to-usa").hide();
     map.setView([defaultLat, defaultLon],defaultZoom);
     $("#display-container").animate({"height":"63%"}, 100, function(){
       resizeMap(stateView, callback, arg);
     });
   } else {
+    $("#back-to-usa").show();
     var view = stateViews[stateView];
     map.setView([view.lat, view.lon],view.zoom);
     $("#display-container").animate({"height":"80%"}, 200, function(){

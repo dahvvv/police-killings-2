@@ -196,6 +196,10 @@ select {
   color: black;
 }
 
+#back-to-usa {
+  display: none;
+}
+
 .legend, .weight-legend, .graph-legend {
   position: relative;
   display: inline-block;
@@ -412,8 +416,10 @@ input[type=submit] {
 }
 
 button.top {
-  width: 12.5%;
+  width: 20%;
   font-size: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
 }
 
 .popup-container {
