@@ -5,6 +5,7 @@ var onload = {
 	  $(".weight").on("click", this.setWeight);
 	  $(".filter-form, .weight-form").find("input[type=submit]").on("click", this.setForm);
 	  $("#state-filter").on("change", this.setForm);
+    $("#back-to-usa").on("click", this.backToUsa);
 	  $("#close-button").on("click", function(e){
 	    e.preventDefault();
 	    $("#about").slideToggle(600);
@@ -66,5 +67,10 @@ var onload = {
 		e.preventDefault();
     var display = detectDisplay();
     updateDisplay[display]();
-	}
+	},
+  backToUsa: function(){
+    $("#state-filter").val("USA");
+    var display = detectDisplay();
+    updateDisplay[display]();
+  }
 };
