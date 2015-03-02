@@ -135,6 +135,21 @@ a:visited {
   display: none;
 }
 
+@media only screen and (max-height: 575px) {
+  #page-container p {
+    font-size: 1.6em;
+  }
+
+  .pagenum {
+    font-size: 1.3em;
+  }
+
+  .about-img {
+    width: 40%;
+    left: 30%;
+  }
+}
+
 .description-container {
   background-color: white;
   z-index: 100000000;
